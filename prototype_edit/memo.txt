@@ -1,0 +1,7 @@
+jquery【jquery UI】draggalbeとbroppableの使用方法
+url(https://programmercollege.jp/column/10193/)
+jQuery UIのdraggableで要素をドラッグアンドドロップで移動させてみる
+url(https://mugenweb-note.com/web/jquery/d-and-d)
+要件定義用メモ
+url(https://docs.google.com/document/d/1Z932dpM2if0pJNnB3tNpewlQ-nq1jm3_NrbKJyEggCI/edit#heading=h.gsdyjerm99vl)
+
