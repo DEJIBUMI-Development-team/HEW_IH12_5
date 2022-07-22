@@ -1,11 +1,21 @@
 .wrap {
-	width: 300px;	
-	height: 300px;
+	width: 400px;	
+	height: 400px;
 	border: solid 1px black;
-
 }
 .move3 {
 	width: 60px;
-	height: 60px;
+	height: 100px;
 	border: solid 1px black;
+}
+.paper{
+	writing-mode: vertical-rl;
+	-webkit-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	/* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-feature-settings: "palt";
+    font-feature-settings: "palt"; */
+	width: 40px;
+	font-size: 20px;
 }

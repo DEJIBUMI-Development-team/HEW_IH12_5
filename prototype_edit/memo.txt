@@ -4,4 +4,7 @@ jQuery UIのdraggableで要素をドラッグアンドドロップで移動さ�
 url(https://mugenweb-note.com/web/jquery/d-and-d)
 要件定義用メモ
 url(https://docs.google.com/document/d/1Z932dpM2if0pJNnB3tNpewlQ-nq1jm3_NrbKJyEggCI/edit#heading=h.gsdyjerm99vl)
-
+h2vvR.js
+url(https://tategaki.info/h2vr/)
+縦書き入力
+url(https://qiita.com/oreo/items/da1c0f4ac946c48a8f49)

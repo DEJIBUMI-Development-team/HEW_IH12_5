@@ -3,7 +3,7 @@ $(".move3").resizable({});
 $("#posi").bind("mousemove", function(){
 	var left = $("#posi").css("left")
     var top = $('#posi').css("top");
-	debugger;
+	// debugger;
     $('#left').val(left);
     $('#top').val(top);
 });
