@@ -6,31 +6,34 @@ body,html{
 
 .wrap {
 	margin: 0 auto;
-	width: 300px;	
-	height: 444px;
+	width: 400px;	
+	height: 592px;
 	background-color: white;
 	background-image: url(../img/pic_normal_new_01.jpg);
 	background-repeat: no-repeat;
+	background-size: 400px;
 }
 .move3 {
-	padding-right: 10px;
-	width: 80px;
-	height: 120px;
-	border: solid 1px black;
+	padding: 20px 40px 20px 30px;
+	width: calc(100%-300px);
+	/* padding-right: 50px; */
+	/* width: 80px; */
+	/* height: 120px; */
 }
 .paper{
 	writing-mode: vertical-rl;
 	-webkit-writing-mode: vertical-rl;
 	-ms-writing-mode: vertical-rl;
-	width: 40px;
-	font-size: 20px;
+	font-size: 30px;
 	resize: none;
 }
 :focus {
     outline: none;
 }
-p{
-	margin-left: 10px;
+p{	
+	width: 30px;
+	/* margin: 10px; */
+	font-family: "HanziPen SC" , sans-serif;
 	margin: 0;
 	padding: 0;
 }
@@ -46,4 +49,7 @@ main{
 	padding-top: 50px;
 	background-color: rgb(161, 161, 161);
 	height: 100%;
+}
+.boder{
+	border: dashed 1px black;
 }
