@@ -11,6 +11,28 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 		<script src="./js/h2vR.js"></script>
+		<!-- <reference path="/js/jQuery.d.ts"/> -->
+		<script>
+			//補完機能
+			//vscode上補完機能確保のためhtmlファイルに一時的に記述
+			$(".move3").on("click",(e)=>{
+				debugger;
+				e.stopPropagation();
+				$(".move3").draggable("destroy");
+				$(".move3").addClass("boder");
+			});
+			
+			$(".wrap").on("click",()=>{
+				$(".move3").draggable({containment: "#w3"});
+				$(".move3").removeClass("boder");
+			});
+			
+			$(".move3").hover(()=>{
+				$(".move3").addClass("boder");
+			},()=>{
+				$(".move3").removeClass("boder");
+			});
+		</script>
 	</head>
 	<body>
 		<header>
