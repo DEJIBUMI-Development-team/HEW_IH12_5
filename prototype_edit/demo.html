@@ -11,7 +11,15 @@
 				width: 100px;
 				height: 100px;
 				text-align: center;
-				background-color: rgb(224, 224, 224);
+				/* background-color: rgb(224, 224, 224); */
+				box-sizing: content-box;
+			}
+			.border{
+				border: solid 1px black;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
 			}
 
 			.resizer {
@@ -51,14 +59,16 @@
 	</head>
 	<body>
 		<div class="item">
+			<div class="border">
 			<div class="resizer resizer-tl"></div>
 			<div class="resizer resizer-tr"></div>
 			<div class="resizer resizer-bl"></div>
 			<div class="resizer resizer-br"></div>
 			こんにちは
+			</div>
 		</div>
 		<script>
-			debugger;
+
 			const el = document.querySelector(".item");
 
 			let isResizing = false;
@@ -68,7 +78,7 @@
 			function mousedown(e) {
 			window.addEventListener("mousemove", mousemove);
 			window.addEventListener("mouseup", mouseup);
-
+			debugger;
 			let prevX = e.clientX;
 			let prevY = e.clientY;
 
@@ -135,9 +145,9 @@
 				}
 
 				function mouseup() {
-				window.removeEventListener("mousemove", mousemove);
-				window.removeEventListener("mouseup", mouseup);
-				isResizing = false;
+					window.removeEventListener("mousemove", mousemove);
+					window.removeEventListener("mouseup", mouseup);
+					isResizing = false;
 				}
 			}
 			}
