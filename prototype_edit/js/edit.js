@@ -4,19 +4,21 @@ $(".move3").on("click",(e)=>{
     e.stopPropagation();
     $(".move3").draggable("destroy");
     $(".move3").addClass("boder");
+    $(".edit_c").css("visibility","visible");
 });
 
 $(".wrap").on("click",()=>{
     $(".move3").draggable({containment: "#w3"});
     $(".move3").removeClass("boder");
+    $(".edit_c").css("visibility","hidden")
 });
 
 $(".move3").hover(()=>{
     $(".move3").addClass("boder");
-},()=>{
-    $(".move3").removeClass("boder");
 });
-
+// $(function() {
+//     $(".move3").resizable();
+// });
 // $(".move4").dblclick((e)=>{
 //     debugger;
 //     e.stopPropagation();

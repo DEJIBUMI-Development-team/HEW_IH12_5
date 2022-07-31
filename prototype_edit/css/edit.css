@@ -17,6 +17,8 @@ body,html{
 	padding: 10px 30px 10px 20px;
 	width: calc(100%-300px);
 	margin: 0;
+	position: relative;
+	resize:both; 
 	/* padding-right: 50px; */
 	/* width: 80px; */
 	/* height: 120px; */
@@ -53,4 +55,35 @@ main{
 }
 .boder{
 	border: dashed 1px black;
+}
+.edit_c{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #000;
+	background-color: #fff;
+	visibility: hidden;
+	pointer-events: none; 
+}
+.top_left{
+    top: -4.7%;
+    left: -6.5%;
+}
+.top_right{
+    top: -4.7%;
+    left: 93%;
+}
+.down_left{
+	top: 96%;
+    left: -6.5%;
+}
+.down_right{
+	top: 96%;
+	left: 93%;
+}
+.visible{
+	visibility: visible;
 }

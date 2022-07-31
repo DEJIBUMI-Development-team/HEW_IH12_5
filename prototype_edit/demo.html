@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			.item {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				background-color: rgb(224, 224, 224);
+			}
+
+			.resizer {
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				border-radius: 5px;
+				background-color: blue;
+				z-index: 2;
+			}
+
+			.resizer-tl {
+				top: -1px;
+				left: -1px;
+				cursor: nw-resize;
+			}
+
+			.resizer-tr {
+				top: -1px;
+				right: -1px;
+				cursor: ne-resize;
+			}
+
+			.resizer-bl {
+				bottom: -1px;
+				left: -1px;
+				cursor: sw-resize;
+			}
+
+			.resizer-br {
+				bottom: -1px;
+				right: -1px;
+				cursor: se-resize;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="item">
+			<div class="resizer resizer-tl"></div>
+			<div class="resizer resizer-tr"></div>
+			<div class="resizer resizer-bl"></div>
+			<div class="resizer resizer-br"></div>
+			こんにちは
+		</div>
+		<script>
+			debugger;
+			const el = document.querySelector(".item");
+
+			let isResizing = false;
+
+			el.addEventListener("mousedown", mousedown);
+
+			function mousedown(e) {
+			window.addEventListener("mousemove", mousemove);
+			window.addEventListener("mouseup", mouseup);
+
+			let prevX = e.clientX;
+			let prevY = e.clientY;
+
+			function mousemove(e) {
+				if (!isResizing) {
+					let newX = prevX - e.clientX;
+					let newY = prevY - e.clientY;
+
+					const rect = el.getBoundingClientRect();
+
+					el.style.left = rect.left - newX + "px";
+					el.style.top = rect.top - newY + "px";
+
+					prevX = e.clientX;
+					prevY = e.clientY;
+				}
+			}
+
+			function mouseup() {
+				window.removeEventListener("mousemove", mousemove);
+				window.removeEventListener("mouseup", mouseup);
+			}
+			}
+
+			const resizers = document.querySelectorAll(".resizer");
+			let currentResizer;
+
+			for (let resizer of resizers) {
+			resizer.addEventListener("mousedown", mousedown);
+
+			function mousedown(e) {
+				currentResizer = e.target;
+				isResizing = true;
+
+				let prevX = e.clientX;
+				let prevY = e.clientY;
+
+				window.addEventListener("mousemove", mousemove);
+				window.addEventListener("mouseup", mouseup);
+
+				function mousemove(e) {
+				const rect = el.getBoundingClientRect();
+
+				if (currentResizer.classList.contains("resizer-br")) {       
+					el.style.width = rect.width - (prevX - e.clientX) + "px";
+					el.style.height = rect.height - (prevY - e.clientY) + "px";
+				} else if (currentResizer.classList.contains("resizer-bl")) {
+					el.style.width = rect.width + (prevX - e.clientX) + "px";
+					el.style.height = rect.height - (prevY - e.clientY) + "px";
+					el.style.left = rect.left - (prevX - e.clientX) + "px";
+				} else if (currentResizer.classList.contains("resizer-tr")) {
+					el.style.width = rect.width - (prevX - e.clientX) + "px";
+					el.style.height = rect.height + (prevY - e.clientY) + "px";
+					el.style.top = rect.top - (prevY - e.clientY) + "px";
+				} else {
+					el.style.width = rect.width + (prevX - e.clientX) + "px";
+					el.style.height = rect.height + (prevY - e.clientY) + "px";
+					el.style.top = rect.top - (prevY - e.clientY) + "px";
+					el.style.left = rect.left - (prevX - e.clientX) + "px";
+				}
+
+				prevX = e.clientX;
+				prevY = e.clientY;
+				}
+
+				function mouseup() {
+				window.removeEventListener("mousemove", mousemove);
+				window.removeEventListener("mouseup", mouseup);
+				isResizing = false;
+				}
+			}
+			}
+		</script>
+	</body>
+</html>
