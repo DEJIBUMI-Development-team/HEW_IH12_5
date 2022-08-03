@@ -10,3 +10,5 @@ url(https://tategaki.info/h2vr/)
 url(https://qiita.com/oreo/items/da1c0f4ac946c48a8f49)
 要素幅・文字サイズ同期
 url(https://bnsgt.hatenablog.com/entry/2021/05/01/035516)
+
+メモ
