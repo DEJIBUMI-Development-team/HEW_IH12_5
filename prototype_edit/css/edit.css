@@ -5,6 +5,7 @@ body,html{
 }
 
 .wrap {
+	/* position: relative; */
 	margin: 0 auto;
 	width: 400px;	
 	height: 592px;
@@ -12,6 +13,7 @@ body,html{
 	background-image: url(../img/pic_normal_new_01.jpg);
 	background-repeat: no-repeat;
 	background-size: 400px;
+
 }
 .move3 {
 	padding: 10px 30px 10px 20px;
@@ -36,7 +38,9 @@ body,html{
 p{	
 	width: 30px;
 	/* margin: 10px; */
-	font-family: "HanziPen SC" , sans-serif;
+	/* font-family: "HanziPen SC" , sans-serif; */
+	font-family: serif;
+	font-size: 50px;
 	margin: 0;
 	padding: 0;
 }
@@ -53,37 +57,57 @@ main{
 	background-color: rgb(161, 161, 161);
 	height: 100%;
 }
-.boder{
-	border: dashed 1px black;
+
+/* test */
+.item {
+	position: absolute;
+	top: 150px;
+	left: 450px;
+	/* height: 100px; */
+	writing-mode: vertical-rl;
+	-webkit-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+	/* text-align: center; */
+	/* background-color: rgb(224, 224, 224); */
+	/* box-sizing: content-box; */
 }
-.edit_c{
+.border{
+	border: solid 1px black;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+.resizer {
 	position: absolute;
-	border-radius: 50%;
 	width: 10px;
 	height: 10px;
-	border: 1px solid #000;
-	background-color: #fff;
-	visibility: hidden;
-	pointer-events: none; 
+	border-radius: 5px;
+	background-color: blue;
+	z-index: 2;
 }
-.top_left{
-    top: -4.7%;
-    left: -6.5%;
+
+.resizer-tl {
+	top: -5px;
+	left: -5px;
+	cursor: nw-resize;
 }
-.top_right{
-    top: -4.7%;
-    left: 93%;
+
+.resizer-tr {
+	top: -5px;
+	right: -5px;
+	cursor: ne-resize;
 }
-.down_left{
-	top: 96%;
-    left: -6.5%;
+
+.resizer-bl {
+	bottom: -5px;
+	left: -5px;
+	cursor: sw-resize;
 }
-.down_right{
-	top: 96%;
-	left: 93%;
-}
-.visible{
-	visibility: visible;
+
+.resizer-br {
+	bottom: -5px;
+	right: -5px;
+	cursor: se-resize;
 }
