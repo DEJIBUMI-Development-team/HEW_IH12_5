@@ -10,32 +10,8 @@
 		<link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-		<script src="./js/h2vR.js"></script>
-		///<reference path="/js/jQuery.d.ts"/>
-		<script>
-			//補完機能
-			//vscode上補完機能確保のためhtmlファイルに一時的に記述
-			$(".move3").on("click",(e)=>{
-				debugger;
-				e.stopPropagation();
-				$(".move3").draggable("destroy");
-				$(".move3").addClass("boder");
-				$(".edit_c").css("visibility","visible");
-			});
-
-			$(".wrap").on("click",()=>{
-				$(".move3").draggable({containment: "#w3"});
-				$(".move3").removeClass("boder");
-				$(".edit_c").css("visibility","hidden")
-			});
-
-			$(".move3").hover(()=>{
-				$(".move3").addClass("boder");
-			});
-			$(function() {
-				$(".move3").resizable();
-			});
-		</script>
+		<!-- <script src="./js/h2vR.js"></script> -->
+		<!-- <reference path="/js/jQuery.d.ts"/> -->
 	</head>
 	<body>
 		<header>
@@ -43,12 +19,21 @@
 		</header>
 		<main>
 			<div class="wrap" id="w3">
-				<div class="move3 blue paper" id="posi" contenteditable="true" oncontextmenu="return false;">
+				<!-- <div class="move3 blue paper" id="posi" contenteditable="true" oncontextmenu="return false;">
 					<div class="edit_c top_right"></div>
 					<div class="edit_c top_left"></div>
 					<div class="edit_c down_right"></div>
 					<div class="edit_c down_left"></div>
 					<p class="move4">サンプル1</p>
+				</div> -->
+				<div class="item">
+					<div class="border">
+						<div class="resizer resizer-tl"></div>
+						<div class="resizer resizer-tr"></div>
+						<div class="resizer resizer-bl"></div>
+						<div class="resizer resizer-br"></div>
+						<p contenteditable="true">こんにちは</p> 
+					</div>
 				</div>
 				<!-- <div class="move3 blue paper" id="posi1" contenteditable="true" oncontextmenu="return false;">
 					<p class="move4">サンプル2</p>
@@ -56,25 +41,6 @@
 			</div>
 		</main>
 		<!-- jquery uiを用いた表現  -->
-
-		<!-- <input type="text" id="top">
-		<input type="text" id="left">
-		<button id="button">取得する</button>
-		<div class="h2vr_15 test6">
-			ここが縦書き領域です。<br />
-			初期状態では、h2vR.js は縦書き領域内をゴシック体フォントで描画します。<br />
-		</div>
-  -->
-		<!-- <p class="paper" contenteditable="true">
-			<span>草枕</span>
-			<span>山路を登りながら、こう考えた。</span>
-			<span>智に働けば角が立つ。情に掉させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。</span>
-			<span>住みにくさが高じると、安いところへ引き越したくなる。どこへ越しても住みにくいと悟ったとき、詩が生れて、絵ができる。</span>
-			<span>人の世を作ったのは神でもなければ鬼でもない。やはり向う三件両隣にちらちらするただの人である。ただの人が作った人の世が住みにくいからとて、越す国はあるまい。あれば人でなしの国に行くばかりだ。人でなしの国は人の世よりもなお住みにくかろう。</span>
-			<span>越す事のならぬ世が住みにくければ、住みにくいところをどれほどか、寛容て、束の間の命を、束の間でも住みよくせねばならぬ。ここに詩人という天職ができて、ここに画家という使命が降る。あらゆる芸術の士は人の世を長閑にし、人の心を豊かにするが故に尊い。</span>
-			<span>住みにくき世から、住みにくき煩いを引き抜いて、ありがたい世界をまのあたりに写すのが詩である、画である。あるは音楽と彫刻である。こまかに云えば写さないでもよい。ただまのあたりに見れば、そこに詩も生き、歌も湧く。着想を紙に落さぬともきゅう鏘の音は胸裏に起こる。丹青は画架に向って塗抹せんでも五彩の絢爛は自ずから心眼に映る。ただおのが住む世を、かく観じ得て、霊台方寸のカメラに澆季溷濁の俗界を清くうららかに収め得れば足る。この故に無声の詩人には一句なく、無色の画家には尺けんなきも、かく人世を観じ得るの点において、かく煩悩を解脱するの点において、かく清浄界に出入し得るの点において、またこの不同不二の乾坤を建立し得るの点において、我利私慾の覊絆を掃蕩するの点において、――千金の子よりも、万乗の君よりも、あらゆる俗界の寵児よりも幸福である。</span>
-		</p> -->
-		  <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
 		  <script src="./js/edit.js"></script>
 	</body>
 </html>
