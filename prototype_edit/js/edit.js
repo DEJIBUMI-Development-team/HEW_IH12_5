@@ -1,4 +1,5 @@
 const el = document.querySelector(".item");
+const contentTxt = document.querySelector(".content_p");
 let isResizing = false;
 
 el.addEventListener("mousedown", mousedown);
@@ -14,6 +15,7 @@ function mousedown(e) {
     let prevX = e.clientX;
     let prevY = e.clientY;
 
+    
     // mousemoveされたとき
     function mousemove(e) {
 
@@ -25,6 +27,7 @@ function mousedown(e) {
 
             // 現在地点を定数として取得
             const rect = el.getBoundingClientRect();
+
 
             // top left位置を再設定
             el.style.left = rect.left - newX + "px";
@@ -69,14 +72,16 @@ for (let resizer of resizers) {
         function mousemove(e) {
             // 要素の相対位置を取得
             const rect = el.getBoundingClientRect();
-
+            change_size = 0;
             // 指定要素に付加されているクラス名に応じて処理を変える　
             if (currentResizer.classList.contains("resizer-br")) {
                 // 右下
-                // 幅or高さ　-　(クリック時の座標-現在のカーソル位置)
+                // 幅or高さ　-　(クリック時の座標-現在のカーソル位置) 
+
                 el.style.width = rect.width - (prevX - e.clientX) + "px";
                 el.style.height = rect.height - (prevY - e.clientY) + "px";
-                
+
+            
             } else if (currentResizer.classList.contains("resizer-bl")) {
                 // 左下 
                 // 要素のleft値の変更を行わなければならない
@@ -93,10 +98,19 @@ for (let resizer of resizers) {
             } else {
                 // 左上
                 // 要素の幅、高さ、top値、 left値すべての変更を行う
+                debugger;
+                let currentSize = window.getComputedStyle(contentTxt).fontSize;  
+                currentSize = parseInt(currentSize);          
+                if (prevX - e.clientX > 0) {
+                    currentSize += 1;
+                }else{
+                    currentSize -= 1;
+                }
                 el.style.width = rect.width + (prevX - e.clientX) + "px";
                 el.style.height = rect.height + (prevY - e.clientY) + "px";
                 el.style.top = rect.top - (prevY - e.clientY) + "px";
                 el.style.left = rect.left - (prevX - e.clientX) + "px";
+                contentTxt.style.fontSize = `${currentSize}` + "px";
             }
 
             // 変更後のカーソル位置をprevに退避させる
