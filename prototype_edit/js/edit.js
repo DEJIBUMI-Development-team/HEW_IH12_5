@@ -46,6 +46,7 @@ function mousedown(e) {
         window.removeEventListener("mouseup", mouseup);
     }
 }
+
 const resizers = document.querySelectorAll(".resizer");
 let currentResizer;
 
@@ -77,11 +78,9 @@ for (let resizer of resizers) {
             if (currentResizer.classList.contains("resizer-br")) {
                 // 右下
                 // 幅or高さ　-　(クリック時の座標-現在のカーソル位置) 
-
                 el.style.width = rect.width - (prevX - e.clientX) + "px";
                 el.style.height = rect.height - (prevY - e.clientY) + "px";
 
-            
             } else if (currentResizer.classList.contains("resizer-bl")) {
                 // 左下 
                 // 要素のleft値の変更を行わなければならない
@@ -98,21 +97,22 @@ for (let resizer of resizers) {
             } else {
                 // 左上
                 // 要素の幅、高さ、top値、 left値すべての変更を行う
-                debugger;
-                let currentSize = window.getComputedStyle(contentTxt).fontSize;  
-                currentSize = parseInt(currentSize);          
-                if (prevX - e.clientX > 0) {
-                    currentSize += 1;
-                }else{
-                    currentSize -= 1;
-                }
+                // debugger;
+                // let currentSize = window.getComputedStyle(contentTxt).fontSize;  
+                // currentSize = parseInt(currentSize);          
+                // if (prevX - e.clientX > 0) {
+                //     currentSize += 0.3;
+                // }else{
+                //     currentSize -= 0.3;
+                // }
                 el.style.width = rect.width + (prevX - e.clientX) + "px";
                 el.style.height = rect.height + (prevY - e.clientY) + "px";
                 el.style.top = rect.top - (prevY - e.clientY) + "px";
                 el.style.left = rect.left - (prevX - e.clientX) + "px";
-                contentTxt.style.fontSize = `${currentSize}` + "px";
+                // contentTxt.style.fontSize = `${currentSize}` + "px";
             }
-
+            debugger;
+            // resize();
             // 変更後のカーソル位置をprevに退避させる
             prevX = e.clientX;
             prevY = e.clientY;
@@ -126,4 +126,22 @@ for (let resizer of resizers) {
         }
     }
 }
+// function resize() {
+//     /* 文字数が少なくなったときのため、フォントサイズを戻せるようにします。
+//     他にstyleの属性があればfont-sizeに関するところを除いてstyleに上書きしましょう。
+//     今回はないのでstyle属性ごと削除します。*/
+//     contentTxt.removeAttribute('style');
+//     console.log(contentTxt.getBoundingClientRect().height , contentTxt.scrollHeight);
+//     for (
+//         let size = 30;
+//         contentTxt.getBoundingClientRect().height　< contentTxt.scrollHeight && size > 10;
+//         size -= 3
+//         /* 文字がはみ出すサイズが存在していたので、1ずつ減らすのを3ずつ減らすという少し速いペースでフォントサイズを小さくしてみました。
+//         こちらには正解不正解はなく、場合によって調整して遊んでみてください。*/
+//     ) {
+//         contentTxt.style.fontSize = size + "px";
+//         // textElem.setAttribute("style", `font-size: ${size}px`); // こちらも可能
+//     }
+// }
+
 
