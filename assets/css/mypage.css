@@ -1,6 +1,4 @@
 body {
-    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
-    background-color: rgba(255, 255, 255, 0.500);
-    margin: 0;
-  }
-  
+  background-image: url("/assets/img/water_purple1.jpg");
+  background-size: cover;
+}
