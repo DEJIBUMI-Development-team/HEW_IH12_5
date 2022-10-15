@@ -1,4 +1,128 @@
 body {
-  background-image: url("/assets/img/water_purple1.jpg");
+  background-image: url("../img/water_purple1.jpg");
+  background-attachment: fixed;
   background-size: cover;
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+.user_icon img {
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.user_icon p {
+  font-size: 2em;
+  display: inline-block;
+}
+
+.mypage-box {
+  margin: 0 auto;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.mypage-detail {
+  height: fit-content;
+  float: left;
+  padding: 1em;
+}
+
+.mypage-detail p {
+  margin: auto;
+  display: flex;
+  background: #ececec;
+  width: auto;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+}
+
+.mypage-list {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  width: fit-content;
+  /* width: fit-content;
+  float: left;
+  padding: 1em;
+  justify-content: space-between; */
+}
+
+.mypage-list a {
+  display: flex;
+  background: #ececec;
+  float: left;
+  width: 30%;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
+}
+
+.mypage-list a:hover {
+  background: #eee;
+  text-decoration: none;
+}
+
+.mypage-list a img {
+  height: 50px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+
+/* ################################### */
+
+.container {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+.set-flex {
+  display: flex;
+  height: auto;
+}
+
+.set-flex2 {
+  display: flex;
+  height: auto;
+}
+
+.container .item {
+  margin: 5px;
+  padding: 20px 10px;
+}
+.container .n01 {
+  background-color: #9ee295;
+}
+.container .n02 {
+  background-color: #cfd5ec;
+}
+.container .n03 {
+  background-color: #eccfe5;
+}
+.container .n04 {
+  background-color: #ecdecf;
+}
+.container .n05 {
+  background-color: #cfffec;
+}
+.container .n06 {
+  background-color: #ecbce5;
+}
+.container .n07 {
+  background-color: #ecf9cf;
 }
