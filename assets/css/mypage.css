@@ -20,49 +20,36 @@ h2 {
   display: inline-block;
 }
 
-.mypage-box {
+.container {
+  display: flex;
   margin: 0 auto;
-  max-width: 600px;
-  overflow: hidden;
-  position: relative;
-  background-color: #fff;
-  border-radius: 10px;
-}
-
-.mypage-detail {
-  height: fit-content;
-  float: left;
-  padding: 1em;
-}
-
-.mypage-detail p {
-  margin: auto;
-  display: flex;
-  background: #ececec;
-  width: auto;
-  text-align: center;
-  font-size: 85%;
-  font-weight: bold;
-  padding: 1.3em 0 1em;
-  border-radius: 3px;
-}
-
-.mypage-list {
-  display: flex;
-  margin: 10px 0;
   flex-wrap: wrap;
   width: fit-content;
-  /* width: fit-content;
-  float: left;
-  padding: 1em;
-  justify-content: space-between; */
+  height: fit-content;
 }
 
-.mypage-list a {
+.set-flex {
+  display: flex;
+  width: fit-content;
+}
+
+.set-flex2 {
+  display: flex;
+  width: fit-content;
+}
+
+.container .item {
+  margin: 5px;
+}
+.container .n01 {
+  width: 100px;
+  background-color: #ececec;
+  border-radius: 3px;
+}
+.container .n02 a {
   display: flex;
   background: #ececec;
   float: left;
-  width: 30%;
   text-align: center;
   font-size: 85%;
   font-weight: bold;
@@ -70,59 +57,98 @@ h2 {
   border-radius: 3px;
   justify-content: space-between
 }
-
-.mypage-list a:hover {
+.container .n02 a:hover {
   background: #eee;
   text-decoration: none;
 }
-
-.mypage-list a img {
+.container .n02 a img {
+  width: 50px;
   height: 50px;
   display: block;
   margin: 0 auto 0.7em;
 }
-
-/* ################################### */
-
-.container {
+.container .n03 a {
   display: flex;
-  margin: 10px 0;
-  flex-wrap: wrap;
-  width: fit-content;
+  background: #ececec;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
 }
-
-.set-flex {
+.container .n03 a:hover {
+  background: #eee;
+  text-decoration: none;
+}
+.container .n03 a img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+.container .n04 a {
   display: flex;
-  height: auto;
+  background: #ececec;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
 }
-
-.set-flex2 {
+.container .n04 a img {
+  height: 50px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+.container .n05 a {
   display: flex;
-  height: auto;
+  background: #ececec;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
 }
-
-.container .item {
-  margin: 5px;
-  padding: 20px 10px;
+.container .n05 a img {
+  height: 50px;
+  display: block;
+  margin: 0 auto 0.7em;
 }
-.container .n01 {
-  background-color: #9ee295;
+.container .n06 a {
+  display: flex;
+  background: #ececec;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
 }
-.container .n02 {
-  background-color: #cfd5ec;
+.container .n06 a img {
+  height: 50px;
+  display: block;
+  margin: 0 auto 0.7em;
 }
-.container .n03 {
-  background-color: #eccfe5;
+.container .n07 a {
+  display: flex;
+  background: #ececec;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
 }
-.container .n04 {
-  background-color: #ecdecf;
-}
-.container .n05 {
-  background-color: #cfffec;
-}
-.container .n06 {
-  background-color: #ecbce5;
-}
-.container .n07 {
-  background-color: #ecf9cf;
+.container .n07 a img {
+  height: 50px;
+  display: block;
+  margin: 0 auto 0.7em;
 }
