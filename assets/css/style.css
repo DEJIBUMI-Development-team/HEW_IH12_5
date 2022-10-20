@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+/* ------------------------------------------------
+setting
+--------------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+
+html,body   {height:100%;}
+body  {min-width:960px; width:100%; color:#666; letter-spacing:3pt;}
+body a  {color:#666;}
+
+::selection {background: #fff; color: #98d9e7;}
+::-moz-selection {background: #fff; color: #98d9e7;}
+
+.jsf    {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px; font-style: italic;}
+.jsf_n  {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px;}
+
+/* ------------------------------------------------
+CSS3 animation & parts layout
+--------------------------------------------------- */
+/* link */
+.trans_bg a         {opacity:1; filter:alpha(opacity=100); display:block; overflow:hidden; height:0; -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in;}
+.trans_bg a:hover   {opacity:0; filter:alpha(opacity=0); -moz-transition: all 0.2s ease-in; -webkit-transition:all 0.2s ease-in;}
+.trans_bg_disabled a        {opacity:1; display:block; overflow:hidden; height:0; cursor: default;}
+.trans_bg_disabled a:hover  {}
+
+.obj  {position:absolute; z-index:0;}
+.bimg {border: 1px solid #000000;}
+.t_disabled {color: #cacaca;}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMlhLzTs.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMhhLzTs.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhLw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------
+background
+--------------------------------------------------- */
+.water1 {
+  background: url(../img/water_red2.jpg);
+  background-size: cover;
+  position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  display: block;
+}
+
+/* ------------------------------------------------
+first_view
+--------------------------------------------------- */
+#first_view{
+  /* background-color: rgb(239, 247, 184); */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon{
+  width: 25vw;
+  max-width: 300px;
+  aspect-ratio: 1;
+  border-radius:50%;
+  object-fit: cover;
+  
+  
+}
+
+
+/* ------------------------------------------------
+first_content
+--------------------------------------------------- */
+#first_content{
+  /* background-color: rgba(255, 255, 255, 0.235); */
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#first_content img{
+  width: 25vw;
+  aspect-ratio: 1;
+  object-fit: cover;
+  max-width: 300px;
+  border-radius:50%;
+}
+
+.step{
+  display: block;
+  margin:auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* ------------------------------------------------
+second_content
+--------------------------------------------------- */
+.Shadow   {box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;}
+
+#top_wrapper         {width: 1075px; height: 2830px; margin: 0 auto; position: relative; }
+#top_wrapper .lnk    {z-index: 4;}
+#top_wrapper .stitch {z-index: 3;}
+#top_wrapper .photo  {z-index: 2;}
+
+#top_wrapper #photo_01     { top: 0;      left:60px; }
+#top_wrapper #photo_02     { top: 560px;  right:30px;}
+#top_wrapper #photo_03     { top: 890px;  left:60px;}
+#top_wrapper #photo_04     { top: 1370px; left:77px;}
+#top_wrapper #photo_05     { top: 2040px; right:0;}
+#top_wrapper #photo_06     { top: 2300px; left:0;}
+/* #top_wrapper #photo_07     { top: 2800px; left:77px; } */
+#top_wrapper #description  { top: 70px;   right: 110px; }
+
+#top_wrapper #lnk_01       { top:660px;   left:23%; }
+#top_wrapper #lnk_02       { top:1570px;  left:80%; }
+#top_wrapper #lnk_03       { top:2040px;  left:25%; }
+#top_wrapper #lnk_04       { top:2580px;  right:25%; }
+
+#top_wrapper h2#lnk_01   { background:url(../images/top/lnk_01_on.gif) no-repeat 0 0; width: 70px; }
+#top_wrapper h2#lnk_01 a { background:url(../images/top/lnk_01.gif) no-repeat 0 0; padding-top: 114px; }
+#top_wrapper h2#lnk_02   { background:url(../images/top/lnk_02_on.gif) no-repeat 0 0; width: 150px; }
+#top_wrapper h2#lnk_02 a { background:url(../images/top/lnk_02.gif) no-repeat 0 0; padding-top: 115px; }
+#top_wrapper h2#lnk_03   { background:url(../images/top/lnk_03_on.gif) no-repeat 0 0; width: 174px; }
+#top_wrapper h2#lnk_03 a { background:url(../images/top/lnk_03.gif) no-repeat 0 0; padding-top: 115px; }
+#top_wrapper h2#lnk_04   { background:url(../images/top/lnk_04_on.gif) no-repeat 0 0; width: 90px; }
+#top_wrapper h2#lnk_04 a { background:url(../images/top/lnk_04.gif) no-repeat 0 0; padding-top: 116px; }
+
+/*---------------------svg-----------------------*/
+
+#top_wrapper #stitch_01  { top:190px;   right:25%;  width: 260px; height: 260px; }
+#top_wrapper #stitch_02  { top:1095px;  right:35%;  width: 210px; height: 210px; }
+#top_wrapper #stitch_03  { top:1290px;  left:0;     width: 480px; height: 480px; }
+#top_wrapper #stitch_04  { top:1780px;  right:30%;  width: 330px; height: 330px; }
+#top_wrapper #stitch_05  { top:2095px;  left:77px;   width: 250px; height: 250px;}
+#top_wrapper #stitch_06  { top:2445px;  right:20%;  width: 2px;   height: 440px; }
+/* #top_wrapper #stitch_07  { top:3300px;  left:20%;   width: 190px; height: 190px; } */
+#top_wrapper #stitch_08  { top:330px;   left:130px; width: 570px; height: 570px;}
+
+/* ------------------------------------------------
+third_content
+--------------------------------------------------- */
+#third_content{
+  /* background-color: rgba(68, 45, 221, 0.283); */
+  height: 50vh;
+}
+
+.gift{
+  font-size: 35px;
+  text-align: center;
+}
+
+/* -----------------slider----------------- */
+.sliderArea {
+  /* background: #fff; */
+  overflow: hidden;
+}
+.sliderWide {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.sliderWide .slick-arrow {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+.sliderWide:hover .slick-arrow {
+  opacity: 1;
+}
+.slider {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0;
+}
+.slider .slick-list {
+  overflow: visible;
+}
+/* .slider .slick-track {} */
+.slider .slick-slide {
+  padding: 0 10px;
+  opacity: .5;
+  transition-duration: 0.3s;
+}
+.slider .slick-slide.slick-current {
+  opacity: 1;
+}
+.slider .slick-slide a {
+  display: block;
+}
+.slider .slick-slide a:hover {
+  display: block;
+  opacity: .7;
+}
+.slider img {
+  height: auto;
+  width: 100%;
+}
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+.slick-dots {
+  bottom: -33px;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  text-indent: -9999px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0 12px;
+  outline: 0;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+.slick-dots li button:before {
+  content: none;
+}
+.slick-dots li:nth-child(1) button {
+  background: #f5d1c3;
+}
+.slick-dots li:nth-child(2) button {
+  background: #a9b7ba;
+}
+.slick-dots li:nth-child(3) button {
+  background: #c4d7d1;
+}
+.slick-dots li:nth-child(4) button {
+  background: #b4b1a0;
+}
+.slick-dots li:nth-child(5) button {
+  background: #e5dfd3;
+}
+.slick-dots li button:hover, .slick-dots li.slick-active button {
+  border-radius: 0px;
+  width: 22px;
+  height: 22px;
+}
+
+/* ------------------------------------------------
+sc
+--------------------------------------------------- */
+@media screen and ( max-width:479px )
+{
+	body
+	{
+		font-size: 13px;	
+	}
+}
