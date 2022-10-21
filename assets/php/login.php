@@ -1,6 +1,7 @@
 <?php
 // セッション開始
 session_start();
+include("./ChromePhp.php");
 require_once("./db.php");
 // エラーメッセージの初期化
 $errorMessage = "";
@@ -18,10 +19,19 @@ if (isset($_POST["login"])) {
         // 入力したユーザIDとPWを格納
         $userName = $_POST["userName"];
         $password = $_POST["password"];
-        // $result = db("SELECT * FROM t_user"); 返り値を用いる場合は取得
-        // print_r($result);
-        // db();の場合は insert
-        // db("INSERT INTO t_user (F_user_id, user_name, password, e_mail, tell, dredit_num) VALUES (NULL, '$userName', '$password', 'test1@co.jp', 8000, 123412)");
+        $row = db("SELECT * FROM t_user WHERE user_name = '{$userName}'");
+        print_r($row);
+        ChromePhp::log($row);
+        // if ($row = $stml->fetch(PDO::FETCH_ASSOC)) {
+        //     if (password_verify($password,  $row["password"])) {
+        //         $errorMessage = "承認成功";
+        //     }else {
+        //         $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
+        //     }
+        // }else {
+        //     $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
+        // }
+
     }
 }
 
