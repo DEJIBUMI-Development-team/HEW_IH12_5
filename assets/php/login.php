@@ -1,11 +1,7 @@
 <?php
 // セッション開始
 session_start();
-$db['host'] = "localhost";  // DBサーバのURL
-$db['username'] = "root";  // ユーザー名
-$db['password'] = "";  // ユーザー名のパスワード
-$db['dbname'] = "dejibumidb";  // データベース名
-
+require_once("./db.php");
 // エラーメッセージの初期化
 $errorMessage = "";
 $msg="";
@@ -22,25 +18,10 @@ if (isset($_POST["login"])) {
         // 入力したユーザIDとPWを格納
         $userName = $_POST["userName"];
         $password = $_POST["password"];
-        // ユーザIDとパスワードが入力されていたら認証する
-        $dsn = 'mysql:host=localhost;port=3306;dbname=dejibumidb;charset=utf8';
-
-        // エラー処理
-        try {
-            // Mysqlへの接続への接続を確立
-            $pdo = new PDO($dsn, $db['username'], $db['password'], array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-            $msg = "MySQL への接続確認が取れました。";
-            // 特定要素を変数に代入
-            // $stmt = $pdo->query('SELECT * FROM **** ORDER BY num DESC');
-
-
-
-        } catch (PDOException $e) {
-            $msg = 'データベースエラー';
-        }
-
-
-
+        // $result = db("SELECT * FROM t_user"); 返り値を用いる場合は取得
+        // print_r($result);
+        // db();の場合は insert
+        // db("INSERT INTO t_user (F_user_id, user_name, password, e_mail, tell, dredit_num) VALUES (NULL, '$userName', '$password', 'test1@co.jp', 8000, 123412)");
     }
 }
 
