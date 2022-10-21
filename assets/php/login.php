@@ -19,18 +19,27 @@ if (isset($_POST["login"])) {
         // 入力したユーザIDとPWを格納
         $userName = $_POST["userName"];
         $password = $_POST["password"];
-        $row = db("SELECT * FROM t_user WHERE user_name = '{$userName}'");
-        print_r($row);
-        ChromePhp::log($row);
-        // if ($row = $stml->fetch(PDO::FETCH_ASSOC)) {
-        //     if (password_verify($password,  $row["password"])) {
-        //         $errorMessage = "承認成功";
-        //     }else {
-        //         $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
-        //     }
-        // }else {
-        //     $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
-        // }
+        
+        //クエリをdb.php上のfunction db()に引き渡す
+        $row = db("SELECT user_name, password FROM t_user WHERE user_name = '{$userName}'");
+        
+        //階層を一段階浅くする
+        $merge_row = call_user_func_array("array_merge", $row);
+        //結果情報表示ログ
+        ChromePhp::log($merge_row);
+
+        //ユーザ―判定
+        if ($userName == $merge_row["user_name"]) {
+            // パスワード判定
+            if (password_verify($password,  $merge_row["password"])) {
+                // "承認成功" 対象サイトに遷移
+                // header("./edit.php");
+            }else {
+                $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
+            }
+        }else {
+            $errorMessage = "ユーザ―名または、パスワードに誤りがあります!";
+        }
 
     }
 }
@@ -63,7 +72,6 @@ if (isset($_POST["login"])) {
                         <input type="hidden" name="ticket" value="<?php print $ticket?>">
                         <br>
                         <input type="submit" class="Login_submit" id="login" name="login" value="ログイン">
-                        <p><?php print htmlspecialchars($msg, ENT_QUOTES); ?></p>
                 </form>
 
                 <div class="action">
