@@ -12,8 +12,9 @@ function db($sql): mixed{
         $pdo = new PDO($dsn, $db['username'], $db['password'], array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
         var_dump("MySQL への接続確認が取れました。");
         // 特定要素を変数に代入
-        $stmt = $pdo->prepare($sql);
-        return $stmt->execute();
+        $stml = $pdo->prepare($sql);
+        $stml->execute();
+        return $stml->fetchAll(PDO::FETCH_ASSOC);
         $pdo = null;
     } catch (PDOException $e) {
         return $e;
