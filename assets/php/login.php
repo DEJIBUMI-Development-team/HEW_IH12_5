@@ -1,7 +1,6 @@
 <?php
 // セッション開始
 session_start();
-
 $db['host'] = "localhost";  // DBサーバのURL
 $db['username'] = "root";  // ユーザー名
 $db['password'] = "";  // ユーザー名のパスワード
@@ -21,7 +20,7 @@ if (isset($_POST["login"])) {
     }
     if (!empty($_POST["userName"]) && !empty($_POST["password"])) {
         // 入力したユーザIDとPWを格納
-        $userid = $_POST["userName"];
+        $userName = $_POST["userName"];
         $password = $_POST["password"];
         // ユーザIDとパスワードが入力されていたら認証する
         $dsn = 'mysql:host=localhost;port=3306;dbname=dejibumidb;charset=utf8';
@@ -73,7 +72,7 @@ if (isset($_POST["login"])) {
                         <input type="hidden" name="ticket" value="<?php print $ticket?>">
                         <br>
                         <input type="submit" class="Login_submit" id="login" name="login" value="ログイン">
-                        <p><?php $msg; ?></p>
+                        <p><?php print htmlspecialchars($msg, ENT_QUOTES); ?></p>
                 </form>
 
                 <div class="action">
