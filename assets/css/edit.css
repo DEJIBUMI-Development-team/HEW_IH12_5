@@ -6,6 +6,7 @@ text{
     font-size: 2em;
 }
 .contentbox{
+    position: absolute;
     width:600px;
 }
 .text{
