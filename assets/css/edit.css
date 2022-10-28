@@ -1,7 +1,46 @@
-html, body{
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.content_edit_box {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 10%;
+    background-color: rgb(114, 100, 100);
+}
+main {
+    display: flex;
+    width: 100%;
+    height: 90%;
+}
+.left_m {
+    display: flex;
+    width: 40%;
+}
+.select {
+    width: 16%;
+    height: 100%;
+    background-color: rgb(128, 128, 128);
+}
+.templ_m{
+    width: 84%;
+    height: 100%;
+    background-color: rgb(47, 46, 46);
+}
+.main_edit {
+    width: 60%;
+    height: 100%;
+    background-color: rgb(215, 215, 215);
+}
+.edit_area {
     width: 100%;
     height: 100%;
 }
+/* data-txt */
 text{
     font-size: 2em;
 }
@@ -11,4 +50,13 @@ text{
 }
 .text{
     width:fit-content;
+}
+/* data_img */
+.img_data {
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    background-image: url("../data/img_data/huto01.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
 }

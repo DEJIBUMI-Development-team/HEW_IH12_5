@@ -8,15 +8,36 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="contentbox">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <foreignObject width="100%" height="100%" x="0" y="0">
-                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text">
-                    <text>コンテンツ</text>
+    <header class="content_edit_box">
+        
+    </header>
+    <main>
+        <section class="left_m">
+            <div class="select">
+
+            </div>
+            <div class="templ_m">
+
+            </div>
+        </section>
+        <section class="main_edit">
+            <div class="edit_area">
+                <div class="img_data">
+                    <div class="contentbox">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <foreignObject width="100%" height="100%" x="0" y="0">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text">
+                                    <text>コンテンツ</text>
+                                </div>
+                            </foreignObject>
+                        </svg> 
+                    </div>
                 </div>
-            </foreignObject>
-        </svg> 
-    </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
 <script src="../js/edit.js"></script>
 </body>
 </html>
