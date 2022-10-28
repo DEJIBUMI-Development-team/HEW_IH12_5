@@ -51,8 +51,4 @@ create table t_user_gift(
 	count INT(2),
 	FOREIGN KEY t_user_gift(F_user_id) REFERENCES t_user(F_user_id)
 );
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 3bd9ac3d41e2f145b9d76e6cecd35fd19dafd6be
