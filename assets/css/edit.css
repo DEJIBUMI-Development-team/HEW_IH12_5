@@ -40,25 +40,3 @@ main {
     width: 100%;
     height: 100%;
 }
-/* data-txt */
-text{
-    font-size: 2em;
-}
-.contentbox{
-    position: absolute;
-    border: 2px solid #000;
-}
-.text{
-    width:fit-content;
-    display: inline-block;
-}
-/* data_img */
-.img_data {
-    width: 800px;
-    height: 100%;
-    margin: 0 auto;
-    background-image: url(../data/img_data/huto01.png);
-    background-repeat: no-repeat;
-    background-size: 60%;
-    background-position: center;
-}

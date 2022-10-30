@@ -1,5 +1,5 @@
 <?php
-include("../data/templateTxt-data.php");
+include("../data/templateTxt_data.php");
 ?>
 
 
@@ -10,6 +10,7 @@ include("../data/templateTxt-data.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/edit.css">
+    <link rel="stylesheet" href="../data/templateTxt_data.css">
     <title>Document</title>
 </head>
 <body>
@@ -28,9 +29,7 @@ include("../data/templateTxt-data.php");
         <section class="main_edit">
             <div class="edit_area">
                 <div class="img_data">
-                    <div class="contentbox">
-                        <?php print $temp_object["ft_content"]["dom"];?>
-                    </div>
+                    <?php print $temp_object["ft_content"]["dom"];?>
                 </div>
             </div>
         </section>
