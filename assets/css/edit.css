@@ -46,17 +46,19 @@ text{
 }
 .contentbox{
     position: absolute;
-    width:600px;
+    border: 2px solid #000;
 }
 .text{
     width:fit-content;
+    display: inline-block;
 }
 /* data_img */
 .img_data {
-    width: 80%;
-    height: 90%;
+    width: 800px;
+    height: 100%;
     margin: 0 auto;
-    background-image: url("../data/img_data/huto01.png");
+    background-image: url(../data/img_data/huto01.png);
     background-repeat: no-repeat;
     background-size: 60%;
+    background-position: center;
 }
