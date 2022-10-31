@@ -23,13 +23,26 @@ include("../data/templateTxt_data.php");
 
             </div>
             <div class="templ_m">
+                <form action="" method="post">
+                    <select name="textSelect" id="">
+                        <option value="">--Please choose an option--</option>
+                        <option value="ft_content">テキストテンプレート</option>
+                    </select>
 
+                    <input type="submit" value="選択">
+                </form>
             </div>
         </section>
         <section class="main_edit">
             <div class="edit_area">
                 <div class="img_data">
-                    <?php print $temp_object["ft_content"]["dom"];?>
+                    <?php 
+                        if (isset($_POST["textSelect"])) {
+                            $postDom = $_POST["textSelect"];
+                            echo $temp_object[$postDom]["dom"];
+                            $_POST["textSelect"] = array();                          
+                        }
+                    ?>
                 </div>
             </div>
         </section>
