@@ -14,7 +14,7 @@ class Template_object{
                 <div class="ft_content" id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}">
                     <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
-                        <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="false" class="text"  data-id="ft_${this.dom_count}">
+                        <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
                             <text  data-id="ft_${this.dom_count}">テキスト1</text>
                         </div>
                     </foreignObject>
