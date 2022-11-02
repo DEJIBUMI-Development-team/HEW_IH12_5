@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/edit.css">
-    <link rel="stylesheet" href="../data/templateTxt_data.css">
+    <link rel="stylesheet" href="../data/templateTxt_data_style.css">
     <title>Document</title>
 </head>
 <body>
@@ -34,6 +34,8 @@
     </main>
 
     <!-- footer -->
+
+    <!-- script -->
     <script src="../data/templateTxt_data.js"></script>
     <script src="../js/edit.js"></script>
 </body>
