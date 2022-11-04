@@ -1,11 +1,10 @@
-const el = document.querySelector(".ft_content");
-// const contentTxt = document.querySelector(".content_p");
+var 
+el = [];
 let isResizing = false;
-
-el.addEventListener("mousedown", mousedown);
 
 //itemがクリックされたとき
 function mousedown(e) {
+    // debugger;
     //移動時にmousemove、離れた時にmouseup関数を実行する
     window.addEventListener("mousemove", mousemove);
     window.addEventListener("mouseup", mouseup);
@@ -24,15 +23,16 @@ function mousedown(e) {
             // X,Y座標値差 = 初期値 - 現在地点 
             let newX = prevX - e.clientX;
             let newY = prevY - e.clientY;
-
+            debugger;
             // 現在地点を定数として取得
-            const rect = el.getBoundingClientRect();
-
-
+            x = e.composedPath();
+            y = x[0].dataset.id;
+            var rect = el[y].getBoundingClientRect();
             // top left位置を再設定
-            el.style.left = rect.left - newX + "px";
-            el.style.top = rect.top - newY + "px";
-
+            // console.log(el[x].style.top);
+            el[y].style.left = rect.left - newX + "px";
+            el[y].style.top = rect.top - newY + "px";
+            // console.log(el[x].style.top);
             // カーソル位置を再取得
             prevX = e.clientX;
             prevY = e.clientY;
@@ -46,4 +46,3 @@ function mousedown(e) {
         window.removeEventListener("mouseup", mouseup);
     }
 }
-

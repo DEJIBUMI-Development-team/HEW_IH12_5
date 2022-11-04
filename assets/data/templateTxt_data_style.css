@@ -2,14 +2,27 @@
 text{
     font-size: 2em;
 }
+
 .ft_content{
+    width: 300px;
+    height: 100px;
     position: absolute;
-    border: 2px solid #000;
 }
+
+.edit_svg{
+    /* コンテンツを回転して表示する際はここをいじる */
+    transform: rotate(0deg);
+}
+
+foreignObject{
+    border: solid 1px #000;
+}
+
 .text{
-    width:fit-content;
-    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
+
 /* data_img */
 .img_data {
     width: 800px;

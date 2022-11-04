@@ -1,8 +1,6 @@
 <?php
-include("../data/templateTxt_data.php");
+// include("../data/templateTxt_data.php");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +8,7 @@ include("../data/templateTxt_data.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/edit.css">
-    <link rel="stylesheet" href="../data/templateTxt_data.css">
+    <link rel="stylesheet" href="../data/templateTxt_data_style.css">
     <title>Document</title>
 </head>
 <body>
@@ -20,35 +18,25 @@ include("../data/templateTxt_data.php");
     <main>
         <section class="left_m">
             <div class="select">
-
+                
             </div>
             <div class="templ_m">
-                <form action="" method="post">
-                    <select name="textSelect" id="">
-                        <option value="">--Please choose an option--</option>
-                        <option value="ft_content">テキストテンプレート</option>
-                    </select>
-
-                    <input type="submit" value="選択">
-                </form>
+                <input type="button" value="ft_content" id="temp">
+                <!-- <div id="temp" value="ft_content">テンプレートをclickしてください</div> -->
             </div>
         </section>
         <section class="main_edit">
             <div class="edit_area">
-                <div class="img_data">
-                    <?php 
-                        if (isset($_POST["textSelect"])) {
-                            $postDom = $_POST["textSelect"];
-                            echo $temp_object[$postDom]["dom"];
-                            $_POST["textSelect"] = array();                          
-                        }
-                    ?>
+                <div class="img_data" id="data">
                 </div>
             </div>
         </section>
     </main>
 
     <!-- footer -->
-<script src="../js/edit.js"></script>
+
+    <!-- script -->
+    <script src="../data/templateTxt_data.js"></script>
+    <script src="../js/edit.js"></script>
 </body>
 </html>
