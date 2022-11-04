@@ -1,6 +1,11 @@
 var count = 0; // 挿入済みHTMLDOMのテンプレート総数をカウントする
-let txt = document.getElementById("temp"); // ボタン要素
-txt.addEventListener('click', insert_dom);
+var tempBtnRef = []; // ボタン要素を格納する配列
+
+// 各ボタン要素にクリックイベントを付加
+for (let index = 0; index < 2; index++) {
+    tempBtnRef.push(document.getElementById("temp-" + index));
+    tempBtnRef[index].addEventListener('click', insert_dom);
+}
 
 /**
  * テンプレートHTMLDOMが格納されたオブジェクトを生成するクラス
@@ -12,7 +17,7 @@ class Template_object{
     constructor(count) {
         this.dom_count = count;
     }
-    get temp_object_class(){
+    get temp_objectDom(){
         this.dom_elem = {
             "ft_content" :  {
             "id" : `ft_${this.dom_count}`,
@@ -30,7 +35,7 @@ class Template_object{
             "sc_content" :  {
                 "id" : `sc_${this.dom_count}`,
                 "dom" : `
-                    <div class="ft_content" id="ft_${this.dom_count}" data-id="sc_${this.dom_count}">
+                    <div class="ft_content" id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}">
                         <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
                             <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
@@ -50,6 +55,7 @@ class Template_object{
  * @param elem_value イベントを追加する要素のclass
  */
 function addMouseEvent(elem_value) {
+    debugger;
     el[temp_objects[elem_value].id] = document.getElementById(temp_objects[elem_value].id);
     el[temp_objects[elem_value].id].addEventListener("mousedown", mousedown);
 }
@@ -57,22 +63,28 @@ function addMouseEvent(elem_value) {
 /**
  * DOMをinsertし、Mouseイベントを追加する一連の処理
  */
-async function insert_dom() {
+async function insert_dom(e) {
     try {
-        // resolveするまで、以下を実行しない
         // debugger;
+        // resolveするまで、以下を実行しない()
         await Promise.resolve();
-
-        // インスタンス生成
-        temp_objects = new Template_object(count).temp_object_class;
         
-        var insert = document.getElementById("data");
-        var value = txt.getAttribute('value');
+        // インスタンス生成
+        temp_objects = new Template_object(count).temp_objectDom;
+
+        // クリックされたボタン要素のvalueを取得(temp_objectsのキーとして使用)
+        var BtnRef =  e.composedPath();
+        var value_content = tempBtnRef[BtnRef[0].dataset.tempid]
+        var value = value_content.getAttribute('value');
         
         // DOMのinsert
+        var insert = document.getElementById("data");
         insert.insertAdjacentHTML('afterbegin', temp_objects[value].dom);
 
+        // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
+
+        //incrementCount
         count++;
     } catch (e) {
         // 例外・error
