@@ -1,0 +1,35 @@
+/* data-txt */
+text{
+    font-size: 2em;
+}
+
+.ft_content{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+}
+
+.edit_svg{
+    /* コンテンツを回転して表示する際はここをいじる */
+    transform: rotate(0deg);
+}
+
+foreignObject{
+    border: solid 1px #000;
+}
+
+.text{
+    width: 100%;
+    height: 100%;
+}
+
+/* data_img */
+.img_data {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url(../data/img_data/huto01.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+}
