@@ -24,16 +24,17 @@ function mousedown(e) {
             let newX = prevX - e.clientX;
             let newY = prevY - e.clientY;
             debugger;
+
             // 現在地点を定数として取得
             x = e.composedPath();
             y = x[0].dataset.id;
             var rect = el[y].getBoundingClientRect();
+
             // top left位置を再設定
-            // console.log(el[x].style.top);
             el[y].style.left = rect.left - newX + "px";
             el[y].style.top = rect.top - newY + "px";
+
             // console.log(el[x].style.top);
-            // カーソル位置を再取得
             prevX = e.clientX;
             prevY = e.clientY;
             // console.log("X:"+prevX+" Y:"+prevY);

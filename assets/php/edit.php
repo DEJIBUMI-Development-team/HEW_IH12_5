@@ -21,8 +21,8 @@
                 
             </div>
             <div class="templ_m">
-                <input type="button" value="ft_content" id="temp">
-                <!-- <div id="temp" value="ft_content">テンプレートをclickしてください</div> -->
+                <input type="button" value="ft_content" id="temp-0" data-tempid="0">
+                <input type="button" value="sc_content" id="temp-1" data-tempid="1">
             </div>
         </section>
         <section class="main_edit">
