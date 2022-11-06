@@ -43,7 +43,7 @@ function mousedown(e) {
         window.removeEventListener("mousemove", mousemove);
         window.removeEventListener("mouseup", mouseup);
         calc_position();
-        fetch_domElem();
+        fetch_domElem(Relatively_position);
     }
 }
 
@@ -74,21 +74,21 @@ function calc_position() {
             "top" : (Rect.top - prRect.top) / prRect.height * 100,
             "left" : (Rect.left - prRect.left) / prRect.width * 100,
             "width" :  Rect.width / prRect.width * 100,
-            "height" : Rect.height / prRect.width * 100
+            "height" : Rect.height / prRect.height * 100
         };
     });
 }
 
-function fetch_domElem() {
+function fetch_domElem(Dom_elem) {
     // request.phpとのデータやり取りを行う処理
     fetch("../php/request.php", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(Relatively_position)
+        body: JSON.stringify(Dom_elem)
     })
     .then((response) => {
         if (response.ok) {
-            return response.json()
+            return response.json();
         }
     })
     .then((res) =>{
