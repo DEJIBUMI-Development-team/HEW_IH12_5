@@ -43,6 +43,7 @@ function mousedown(e) {
         window.removeEventListener("mousemove", mousemove);
         window.removeEventListener("mouseup", mouseup);
         calc_position();
+        fetch_domElem();
     }
 }
 
@@ -75,5 +76,25 @@ function calc_position() {
             "width" :  Rect.width / prRect.width * 100,
             "height" : Rect.height / prRect.width * 100
         };
+    });
+}
+
+function fetch_domElem() {
+    // request.phpとのデータやり取りを行う処理
+    fetch("../php/request.php", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(Relatively_position)
+    })
+    .then((response) => {
+        if (response.ok) {
+            return response.json()
+        }
+    })
+    .then((res) =>{
+        console.log(res);
+    })
+    .catch((error) => {
+        console.error("Error", error);
     });
 }
