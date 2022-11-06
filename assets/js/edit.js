@@ -43,7 +43,7 @@ function mousedown(e) {
         window.removeEventListener("mousemove", mousemove);
         window.removeEventListener("mouseup", mouseup);
         calc_position();
-        fetch_domElem();
+        // fetch_domElem();
     }
 }
 
@@ -97,4 +97,8 @@ function fetch_domElem() {
     .catch((error) => {
         console.error("Error", error);
     });
+}
+
+function get_domSytle() {
+    
 }

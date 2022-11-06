@@ -16,13 +16,14 @@ for (let index = 0; index < 2; index++) {
 class Template_object{
     constructor(count) {
         this.dom_count = count;
+        this.temp_key = ["ft_content", "sc_content"]
     }
     get temp_objectDom(){
         this.dom_elem = {
-            "ft_content" :  {
+            [this.temp_key[0]] :  {
             "id" : `ft_${this.dom_count}`,
             "dom" : `
-                <div class="ft_content" id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
+                <div class=${this.temp_key[0]} id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}" class="edit_svg">
                     <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
                         <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
@@ -32,10 +33,10 @@ class Template_object{
                     </svg>                  
                 </div>
             `},
-            "sc_content" :  {
+            [this.temp_key[1]] :  {
                 "id" : `sc_${this.dom_count}`,
                 "dom" : `
-                    <div class="ft_content" id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
+                    <div class=${this.temp_key[1]} id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}">
                         <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
                             <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
