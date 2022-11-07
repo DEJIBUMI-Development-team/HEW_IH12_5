@@ -1,4 +1,3 @@
-var 
 el = [];
 let isResizing = false;
 
@@ -72,6 +71,7 @@ function calc_position() {
          * }
          */ 
         Relatively_position[key] = {
+            "class": this[key].classList.value,
             "top" : (Rect.top - prRect.top) / prRect.height * 100,
             "left" : (Rect.left - prRect.left) / prRect.width * 100,
             "width" :  Rect.width / prRect.width * 100,
@@ -84,7 +84,7 @@ function get_domSytle(abs_contents) {
 
     fetch_object = {};
     Object.keys(abs_contents).forEach((key)=>{
-        debugger;
+        // debugger;
         var content_id = key;
         var txt = document.querySelectorAll(`#${key} text`)[0];
         var text_Dom = document.querySelectorAll(`#${key} .text`)[0];
@@ -95,7 +95,8 @@ function get_domSytle(abs_contents) {
         var textStyle = window.getComputedStyle(text_Dom);
         
         fetch_object[key] = {
-            "id": content_id, 
+            "_id": content_id,
+            "class": this.Relatively_position[key].class,
             "content_txt": txt.textContent,
             "css": {
                 "width": this.Relatively_position[key].width,
