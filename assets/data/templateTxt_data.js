@@ -37,7 +37,7 @@ class Template_object{
                 "id" : `sc_${this.dom_count}`,
                 "dom" : `
                     <div class=${this.temp_key[1]} id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}" class="edit_svg">
                         <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
                             <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
                                 <text  data-id="sc_${this.dom_count}">テキスト2</text>
@@ -56,7 +56,7 @@ class Template_object{
  * @param elem_value イベントを追加する要素のclass
  */
 function addMouseEvent(elem_value) {
-    debugger;
+    // debugger;
     el[temp_objects[elem_value].id] = document.getElementById(temp_objects[elem_value].id);
     el[temp_objects[elem_value].id].addEventListener("mousedown", mousedown);
 }
