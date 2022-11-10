@@ -9,6 +9,11 @@ text{
     height: 100px;
     position: absolute;
 }
+.sc_content{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+}
 
 .edit_svg{
     /* コンテンツを回転して表示する際はここをいじる */
