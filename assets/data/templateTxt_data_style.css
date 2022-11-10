@@ -17,7 +17,7 @@ text{
 
 .edit_svg{
     /* コンテンツを回転して表示する際はここをいじる */
-    transform: rotate(45deg);
+    transform: rotate(0deg);
 }
 
 foreignObject{

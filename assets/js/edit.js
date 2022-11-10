@@ -108,7 +108,7 @@ function get_domSytle(abs_contents) {
                 "font-size": textStyle.fontSize,
                 "transform": angle.transform
             }
-        }
+        };
     });
 }
 
@@ -122,7 +122,7 @@ function fetch_domElem(fetch_contents) {
     })
     .then((response) => {
         if (response.ok) {
-            return response.json()
+            return response.json();
         }
     })
     .then((res) => {
