@@ -1,0 +1,19 @@
+defs
+SVG では、後で再利用できるよう描画オブジェクトを定義します。
+参照される要素は、可能なかぎりdefs要素内で定義されることが推奨されています
+。defs要素内でこれらの要素を定義することは、
+SVG の要素の可読性を向上させ、ひいては操作性をも向上させます。
+defs要素の描画要素は、そのままでは描画されません。
+ビューポート上で描画したい場所へそれらの要素を描画するために、
+<use>要素を使用します。
+
+
+path
+https://developer.mozilla.org/ja/docs/Web/CSS/clip-path
+
+
+desc
+altに近いイメージ
+alt  == 画像が表示されなかった時の代替(あくまでもユーザーのためのもの)
+desc == 検索エンジンに向けてのテキスト(SEO対策)
+https://theorthodoxworks.com/study/svg-title-desc-img-alt/
