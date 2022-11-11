@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <title>でじぶみ</title>
   <link rel="stylesheet" href="../css/gift.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>  
 
@@ -134,6 +137,46 @@
   </div>
   </div>
 </article>
+
+<div class="box00">
+  <nav class="haitatsu">
+    <ul>
+    <li><a href=""><img src="../img/haitatsu.png"></a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- footer-box -->
+<footer class="footer_element">
+  <div class="top_element">
+    <div class="top_inner">
+      <ul class="footer_menu">
+        <li><a href="">利用規約</a></li>
+        <li><a href=""><span>個人利用処理方針</span></a></li>
+        <li><a href="">お客様センター</a></li>
+        <li><a href="">意見提出</a></li>
+      </ul>
+
+      <ul class="sns">
+        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+      </ul>  
+    </div>
+  </div>
+
+  <div class="body_element">
+    <div class="body_inner">
+      <p class="footer_logo"><a href=""><img src="../img/logo.png"></a></p>
+      <p class="footer_info">dejibumi  コールセンター 070-1234-5678 (09:00 ~ 18:00 平日)
+      <br>
+      Copyright © dejibumi. All Rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
 
 </body>
 </html>

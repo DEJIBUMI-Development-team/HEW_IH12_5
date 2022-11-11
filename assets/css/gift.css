@@ -15,6 +15,9 @@ a{text-decoration: none;}*/
 body {font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック''Yu Gothic','メイリオ''ＭＳ Ｐゴシック','MS PGothic';
 line-height: 1.8;}
 
+header{font-family: 'Kaisei Decol', serif;
+    font-family: 'Shippori Mincho', serif;}
+
 /*background*/
 .water{position: fixed;
     top: 0;
@@ -136,3 +139,68 @@ height: 300px;}
 .ite p{font-size: 20px;
     margin: 5px;
     font-weight: bold;}
+
+/* 公式スポンサー */
+.haitatsu img{width: 100%;
+mix-blend-mode: multiply;}
+        
+.haitatsu ul{width: 1200px;
+margin: 0 auto;  
+display: flex;
+margin-top: 10px;}
+        
+.haitatsu li{align-items: center;
+margin: 0 auto ;
+margin-bottom: 20px;}
+
+/* footer-box */
+.top_element{border-top: 1px solid #bcc9dd;
+border-bottom: 1px solid #bcc9dd;
+height: 50px;
+background-color: #dce2ec;}
+        
+.top_inner{width: 1280px;
+margin: 0 auto;}
+        
+.footer_menu{overflow: hidden;
+float: left;
+display: flex;}
+        
+.footer_menu li {margin-top: 10px;}
+        
+.footer_menu a{color: #000;
+font-size: 15px;
+font-weight: bold;
+margin-right: 15px;}
+        
+.footer_menu a:hover{text-decoration: underline;}
+        
+span{color: #1e43bd;}
+        
+.sns{float: right;
+display: flex;}
+        
+.sns li {margin-right: 40px;
+margin-top: 10px;}
+        
+.sns a{color: #333;
+font-weight: bold;
+font-size: 20px;}
+        
+.body_element{background-color: #ecf1f7;}
+        
+.body_inner{width: 1280px;
+margin: 0 auto;
+padding: 20px;
+display: flex;}
+          
+.footer_logo img{width: 100px;
+height: 100px;}
+        
+.footer_info {float: left;
+line-height: 25px;
+padding-top: 20px;}
+        
+.footer_info p{font-size: 15px;
+color: #333;
+align-items: center;}
