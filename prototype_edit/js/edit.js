@@ -170,7 +170,7 @@ function mousedown() {
             // 各辺の長さ計算を行う
             var opposite_side = Math.sqrt((prev.x - Top_position.x) ** 2 + (prev.y - Top_position.y) ** 2);
             var flanking_side_1 = Math.sqrt((prev.x - center_position.x) ** 2, (prev.y - center_position) ** 2);
-            var flanking_side_2 = Math.sqrt((Top_position.x - center_position.x) ** 2, (Top_position.y - center_position.y));
+            var flanking_side_2 = Math.sqrt((Top_position.x - center_position.x) ** 2, (Top_position.y - center_position.y) ** 2);
     
             // 余弦定理を用いてcosΘを求める
             cos_x = (((flanking_side_1 ** 2) + (flanking_side_2 ** 2) - (opposite_side ** 2)) / (2 * flanking_side_1 * flanking_side_2)); 
