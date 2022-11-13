@@ -63,6 +63,7 @@ main{
 	position: absolute;
 	top: 150px;
 	left: 450px;
+	width: 70px;
 	/* height: 100px; */
 	writing-mode: vertical-rl;
 	-webkit-writing-mode: vertical-rl;
@@ -78,6 +79,31 @@ main{
 	margin: 0;
 	padding: 0;
 }
+.rotate{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: yellow;
+	z-index: 2;
+	left: 50%;
+	top: -15%;
+	transform: translate(-50%);
+	cursor: pointer;
+}
+.rotate-center {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: red;
+	z-index: 2;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%);
+	cursor: pointer;
+}
+
 
 .resizer {
 	position: absolute;
