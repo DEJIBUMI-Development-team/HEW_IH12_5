@@ -5,15 +5,6 @@ let isRotate = false
 let isMove = false
 let isRun = false;
 el.addEventListener("mousedown", mousedown);
-const sleep = waitTime => new Promise( resolve => setTimeout(resolve, waitTime) );
-const aFunc = async function( ){
-    if( isRun ) return;
-    isRun = true;
-    // なんらかの処理
-    await sleep( 1000 );
-    // なんらかの処理
-    isRun = false;
-}
 
 //itemがクリックされたとき
 function mousedown(e) {
@@ -160,6 +151,28 @@ for (let resizer of resizers) {
 //         // textElem.setAttribute("style", `font-size: ${size}px`); // こちらも可能
 //     }
 // }
+function sleep(waitSec, callbackFunc) {
+ 
+    // 経過時間（秒）
+    var spanedSec = 0;
+ 
+    // 1秒間隔で無名関数を実行
+    var id = setInterval(function () {
+ 
+        spanedSec++;
+ 
+        // 経過時間 >= 待機時間の場合、待機終了。
+        if (spanedSec >= waitSec) {
+ 
+            // タイマー停止
+            clearInterval(id);
+ 
+            // 完了時、コールバック関数を実行
+            if (callbackFunc) callbackFunc();
+        }
+    }, 1000);
+ 
+}
 
 
 const center = document.querySelector(".rotate-center");
@@ -169,7 +182,7 @@ const rotate_content = document.querySelector(".border");
 Top_fix_Point.addEventListener('mousedown', mousedown);
 
 function mousedown() {
-    debugger;
+    // debugger;
     window.addEventListener("mousemove", mousemove);
     window.addEventListener("mouseup", mouseup);
     isRotate = true;
@@ -185,7 +198,7 @@ function mousedown() {
     var center_position = {
         "x": center_rect.top,
         "y": center_rect.left
-    }
+    };
     // 現在地点を入力
     function mousemove(e) {
         if (isResizing && !isMove) {
@@ -194,13 +207,13 @@ function mousedown() {
             var prev = {
                 "x": e.clientY,
                 "y": e.clientX
-            }
+            };
             // 各辺の長さ計算を行う
             var opposite_side = Math.sqrt(((prev.x - Top_position.x) ** 2) + ((prev.y - Top_position.y) ** 2));
             var flanking_side_1 = Math.sqrt(((prev.x - center_position.x) ** 2) + ((prev.y - center_position.y) ** 2));
             var flanking_side_2 = Math.sqrt(((Top_position.x - center_position.x) ** 2) + ((Top_position.y - center_position.y) ** 2));
     
-            // 余弦定理を用いてcosΘを求める
+            // 余弦定理を用いてcosxを求める
             cos_x = (((flanking_side_1 ** 2) + (flanking_side_2 ** 2) - (opposite_side ** 2)) / (2 * flanking_side_1 * flanking_side_2)); 
         
             // 逆三角関数(arccos)を用いて ラジアン値を求める
@@ -212,15 +225,27 @@ function mousedown() {
             if (prev.y < center_position.y) {
                 degree = 360 - degree;
             }
-
-
-            if ( 90 < degree && degree < 91 || 180 < degree && degree < 181 || 270 < degree && degree < 271) {
-                console.log("stop!")
-                aFunc();
+            
+            if (0 < degree && degree < 10) {
+                degree = 0
             }
+            
+            if (90 < degree && degree < 100) {
+                degree = 90
+            }
+            
+            if (180 < degree && degree < 190) {
+                degree = 180
+            }
+
+            if (270 < degree && degree < 280) {
+                degree = 270
+            }
+            rotate_content.style.transform = `rotate(${degree}deg)`;
+    
             console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
             // console.log(isMove, isResizing, isRotate)
-            rotate_content.style.transform = `rotate(${degree}deg)`;
+            
         }
     }
     function mouseup() {
