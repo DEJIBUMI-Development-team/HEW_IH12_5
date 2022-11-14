@@ -2,8 +2,6 @@ const el = document.querySelector(".item");
 const contentTxt = document.querySelector(".content_p");
 let isResizing = false;
 let isRotate = false
-let isMove = false
-let isRun = false;
 el.addEventListener("mousedown", mousedown);
 
 //itemがクリックされたとき
@@ -16,8 +14,7 @@ function mousedown(e) {
     //現在地を取得
     let prevX = e.clientX;
     let prevY = e.clientY;
-    isMove = true;
-    
+
     // mousemoveされたとき
     function mousemove(e) {
         
@@ -76,7 +73,6 @@ for (let resizer of resizers) {
 
         //mousemoveイベント
         function mousemove(e) {
-            if (!isRotate && !isMove) {
                 // 要素の相対位置を取得
                 const rect = el.getBoundingClientRect();
                 change_size = 0;
@@ -106,13 +102,6 @@ for (let resizer of resizers) {
                     // 左上
                     // 要素の幅、高さ、top値、 left値すべての変更を行う
                     // debugger;
-                    // let currentSize = window.getComputedStyle(contentTxt).fontSize;  
-                    // currentSize = parseInt(currentSize);          
-                    // if (prevX - e.clientX > 0) {
-                    //     currentSize += 1;
-                    // }else{
-                    //     currentSize -= 1;
-                    // }
                     el.style.width = rect.width + (prevX - e.clientX) + "px";
                     el.style.height = rect.height + (prevY - e.clientY) + "px";
                     el.style.top = rect.top - (prevY - e.clientY) + "px";
@@ -123,7 +112,7 @@ for (let resizer of resizers) {
                 // 変更後のカーソル位置をprevに退避させる
                 prevX = e.clientX;
                 prevY = e.clientY;
-            }
+        
         }
 
         //ボタンが外された場合Eventを除去
@@ -134,57 +123,17 @@ for (let resizer of resizers) {
         }
     }
 }
-// function resize() {
-//     /* 文字数が少なくなったときのため、フォントサイズを戻せるようにします。
-//     他にstyleの属性があればfont-sizeに関するところを除いてstyleに上書きしましょう。
-//     今回はないのでstyle属性ごと削除します。*/
-//     contentTxt.removeAttribute('style');
-//     console.log(contentTxt.getBoundingClientRect().height , contentTxt.scrollHeight);
-//     for (
-//         let size = 30;
-//         contentTxt.getBoundingClientRect().height　< contentTxt.scrollHeight && size > 10;
-//         size -= 3
-//         /* 文字がはみ出すサイズが存在していたので、1ずつ減らすのを3ずつ減らすという少し速いペースでフォントサイズを小さくしてみました。
-//         こちらには正解不正解はなく、場合によって調整して遊んでみてください。*/
-//     ) {
-//         contentTxt.style.fontSize = size + "px";
-//         // textElem.setAttribute("style", `font-size: ${size}px`); // こちらも可能
-//     }
-// }
-function sleep(waitSec, callbackFunc) {
- 
-    // 経過時間（秒）
-    var spanedSec = 0;
- 
-    // 1秒間隔で無名関数を実行
-    var id = setInterval(function () {
- 
-        spanedSec++;
- 
-        // 経過時間 >= 待機時間の場合、待機終了。
-        if (spanedSec >= waitSec) {
- 
-            // タイマー停止
-            clearInterval(id);
- 
-            // 完了時、コールバック関数を実行
-            if (callbackFunc) callbackFunc();
-        }
-    }, 1000);
- 
-}
-
 
 const center = document.querySelector(".rotate-center");
 const Top_fix_Point = document.querySelector(".rotate");
 const rotate_content = document.querySelector(".border");
 
-Top_fix_Point.addEventListener('mousedown', mousedown);
+Top_fix_Point.addEventListener('mousedown', mousedownRotate);
 
-function mousedown() {
+function mousedownRotate() {
     // debugger;
-    window.addEventListener("mousemove", mousemove);
-    window.addEventListener("mouseup", mouseup);
+    window.addEventListener("mousemove", mousemoveRotate);
+    window.addEventListener("mouseup", mouseupRotate);
     isRotate = true;
     // クリックされた頂点の要素を取得し、座標としてオブジェクト形式で格納
     var Top_rect = Top_fix_Point.getBoundingClientRect();
@@ -200,8 +149,7 @@ function mousedown() {
         "y": center_rect.left
     };
     // 現在地点を入力
-    function mousemove(e) {
-        if (isResizing && !isMove) {
+    function mousemoveRotate(e) {
             // debugger;
             // 現在地点を(e.clientY, e.clientXとして取得)
             var prev = {
@@ -244,14 +192,13 @@ function mousedown() {
             rotate_content.style.transform = `rotate(${degree}deg)`;
     
             console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
-            // console.log(isMove, isResizing, isRotate)
+            console.log(isMove, isResizing, isRotate)
             
-        }
     }
-    function mouseup() {
-        window.removeEventListener("mousemove", mousemove);
-        window.removeEventListener("mouseup", mouseup);
-        isRotate = false;
+    function mouseupRotate() {
+        window.removeEventListener("mousemove", mousemoveRotate);
+        window.removeEventListener("mouseup", mouseupRotate);
+        isRotate = false
     }
 
 }
