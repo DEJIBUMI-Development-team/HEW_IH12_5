@@ -1,6 +1,7 @@
 var 
-el = [];
+el = {};
 let isResizing = false;
+let isRotate = false;
 
 //itemがクリックされたとき
 function mousedown(e) {
@@ -12,25 +13,25 @@ function mousedown(e) {
     //現在地を取得
     let prevX = e.clientX;
     let prevY = e.clientY;
+
+    clickedDom = e.composedPath();
+    clickedId = clickedDom[0].dataset.id;
     
     // mousemoveされたとき
     function mousemove(e) {
 
         // リサイズが行われていない場合
-        if (!isResizing) {
+        if (!isRotate) {
             // X,Y座標値差 = 初期値 - 現在地点 
             let newX = prevX - e.clientX;
             let newY = prevY - e.clientY;
-            debugger;
 
             // 現在地点を変数として取得
-            clickedDom = e.composedPath();
-            clickedId = clickedDom[0].dataset.id;
-            var rect = el[clickedId].getBoundingClientRect();
+            var rect = el[clickedId].move_elem.getBoundingClientRect();
 
             // top left位置を再設定
-            el[clickedId].style.left = rect.left - newX + "px";
-            el[clickedId].style.top = rect.top - newY + "px";
+            el[clickedId].move_elem.style.left = rect.left - newX + "px";
+            el[clickedId].move_elem.style.top = rect.top - newY + "px";
 
             prevX = e.clientX;
             prevY = e.clientY;
@@ -42,10 +43,109 @@ function mousedown(e) {
     function mouseup() {
         window.removeEventListener("mousemove", mousemove);
         window.removeEventListener("mouseup", mouseup);
-        calc_position();
-        fetch_domElem(Relatively_position);
+        // calc_position();
+        // fetch_domElem(Relatively_position);
     }
 }
+
+function mousedownRotate(e) {
+    // debugger;
+    window.addEventListener("mousemove", mousemoveRotate);
+    window.addEventListener("mouseup", mouseupRotate);
+    isRotate = true;
+    // クリックされた頂点の要素を取得し、座標としてオブジェクト形式で格納
+    debugger;
+    click_rotate_dom = e.composedPath();
+    click_rotate_id = click_rotate_dom[0].dataset.rotate;
+    var top_rect = el[click_rotate_id].rotate_top_fix_point.getBoundingClientRect();
+    var center_rect = el[click_rotate_id].rotate_center.getBoundingClientRect();
+
+    var top_position = {
+        "x": top_rect.top,
+        "y": top_rect.left
+    };
+    // 要素の中心点
+    var center_position = {
+        "x": center_rect.top,
+        "y": center_rect.left
+    };
+    // 現在地点を入力
+    function mousemoveRotate(e) {
+            // debugger;
+            // 現在地点を(e.clientY, e.clientXとして取得)
+            var prev = {
+                "x": e.clientY,
+                "y": e.clientX
+            };
+            // 各辺の長さ計算を行う
+            var opposite_side = Math.sqrt(((prev.x - top_position.x) ** 2) + ((prev.y - top_position.y) ** 2));
+            var flanking_side_1 = Math.sqrt(((prev.x - center_position.x) ** 2) + ((prev.y - center_position.y) ** 2));
+            var flanking_side_2 = Math.sqrt(((top_position.x - center_position.x) ** 2) + ((top_position.y - center_position.y) ** 2));
+    
+            // 余弦定理を用いてcosxを求める
+            cos_x = (((flanking_side_1 ** 2) + (flanking_side_2 ** 2) - (opposite_side ** 2)) / (2 * flanking_side_1 * flanking_side_2)); 
+        
+            // 逆三角関数(arccos)を用いて ラジアン値を求める
+            var radian = Math.acos(cos_x);
+            
+            // 角度に変換する
+            var degree = radian * (180 / Math.PI);
+            
+            if (prev.y < center_position.y) {
+                degree = 360 - degree;
+            }
+            
+            if (0 < degree && degree < 10) {
+                degree = 0
+            }
+            
+            if (90 < degree && degree < 100) {
+                degree = 90
+            }
+            
+            if (180 < degree && degree < 190) {
+                degree = 180
+            }
+
+            if (270 < degree && degree < 280) {
+                degree = 270
+            }
+            el[click_rotate_id].rotate_content.style.transform = `rotate(${degree}deg)`;
+    
+            console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
+            // console.log(isMove, isResizing, isRotate)
+            
+    }
+    function mouseupRotate() {
+        window.removeEventListener("mousemove", mousemoveRotate);
+        window.removeEventListener("mouseup", mouseupRotate);
+        isRotate = false
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * 動的要素の相対位置を計算し、domIDをキーとして、オブジェクトに格納する関数

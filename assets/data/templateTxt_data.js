@@ -20,31 +20,45 @@ class Template_object{
     get temp_objectDom(){
         this.dom_elem = {
             "ft_content" :  {
-            "id" : `ft_${this.dom_count}`,
-            "dom" : `
-                <div class="ft_content" id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}" class="edit_svg">
-                    <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
-                        <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
-                            <text data-id="ft_${this.dom_count}">テキスト1</text>
-                        </div>
-                    </foreignObject>
-                    </svg>                  
-                </div>
+                "id" : `ft_${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `ft_rotate_${this.dom_count}`,
+                    "rotate_center_id": `ft_rotate_center_${this.dom_count}`,
+                    "rotate_content": `ft_rotate_content_${this.dom_count}`
+                },
+                "dom" : `
+                    <div class="ft_content" id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
+                        <div class="rotate" id="ft_rotate_${this.dom_count}" data-rotate="ft_${this.dom_count}"></div>
+                        <div class="rotate-center" id="ft_rotate_center_${this.dom_count}" data-rotate="ft_${this.dom_count}"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}" class="edit_svg" id="ft_rotate_content_${this.dom_count}">
+                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
+                                    <text data-id="ft_${this.dom_count}">テキスト1</text>
+                                </div>
+                            </foreignObject>
+                        </svg>                  
+                    </div>
             `},
             "sc_content" :  {
                 "id" : `sc_${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `sc_rotate_${this.dom_count}`,
+                    "rotate_center_id": `sc_rotate_center_${this.dom_count}`,
+                    "rotate_content": `sc_rotate_content_${this.dom_count}`
+                },
                 "dom" : `
                     <div class="ft_content" id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}">
-                        <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
-                            <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
-                                <text  data-id="sc_${this.dom_count}">テキスト2</text>
-                            </div>
-                        </foreignObject>
+                        <div class="rotate" id="sc_rotate_${this.dom_count}" data-rotate="sc_${this.dom_count}"></div>
+                        <div class="rotate-center" id="sc_rotate_center_${this.dom_count}" data-rotate="sc_${this.dom_count}"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}" id="sc_rotate_content_${this.dom_count}">
+                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
+                                    <text  data-id="sc_${this.dom_count}">テキスト2</text>
+                                </div>
+                            </foreignObject>
                         </svg>                  
                     </div>
-                `},
+            `},
         }
         return this.dom_elem; 
     }
@@ -55,9 +69,14 @@ class Template_object{
  * @param elem_value イベントを追加する要素のclass
  */
 function addMouseEvent(elem_value) {
-    debugger;
-    el[temp_objects[elem_value].id] = document.getElementById(temp_objects[elem_value].id);
-    el[temp_objects[elem_value].id].addEventListener("mousedown", mousedown);
+    el[temp_objects[elem_value].id] = {
+        "move_elem": document.getElementById(temp_objects[elem_value].id),
+        "rotate_center": document.getElementById(temp_objects[elem_value].rotate.rotate_center_id),
+        "rotate_top_fix_point": document.getElementById(temp_objects[elem_value].rotate.rotate_id),
+        "rotate_content": document.getElementById(temp_objects[elem_value].rotate.rotate_content),
+    };
+    el[temp_objects[elem_value].id].move_elem.addEventListener("mousedown", mousedown);
+    el[temp_objects[elem_value].id].rotate_top_fix_point.addEventListener('mousedown', mousedownRotate)
 }
 
 /**

@@ -13,7 +13,6 @@
 </head>
 <body>
     <header class="content_edit_box">
-        
     </header>
     <main>
         <section class="left_m">
