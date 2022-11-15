@@ -132,16 +132,44 @@ main{
 	cursor: nw-resize;
 }
 
+.resizer-tc {
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: nw-resize;
+}
+
 .resizer-tr {
 	top: -5px;
 	right: -5px;
 	cursor: ne-resize;
 }
 
+.resizer-cl {
+	top: 50%;
+	left: 0%;
+	transform: translate(-50%, -50%);
+	cursor: nw-resize;
+}
+
+.resizer-cr {
+	top: 50%;
+	left: 100%;
+	transform: translate(-50%, -50%);
+	cursor: nw-resize;
+}
+
 .resizer-bl {
 	bottom: -5px;
 	left: -5px;
 	cursor: sw-resize;
+}
+
+.resizer-bc {
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: nw-resize;
 }
 
 .resizer-br {
