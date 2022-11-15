@@ -16,44 +16,45 @@ for (let index = 0; index < 2; index++) {
 class Template_object{
     constructor(count) {
         this.dom_count = count;
+        this.elem_unique = ["ft","sc"];
     }
     get temp_objectDom(){
         this.dom_elem = {
             "ft_content" :  {
-                "id" : `ft_${this.dom_count}`,
+                "id" : `${this.elem_unique[0]}_${this.dom_count}`,
                 "rotate":{
-                    "rotate_id": `ft_rotate_${this.dom_count}`,
-                    "rotate_center_id": `ft_rotate_center_${this.dom_count}`,
-                    "rotate_content": `ft_rotate_content_${this.dom_count}`
+                    "rotate_id": `${this.elem_unique[0]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[0]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[0]}_rotate_content_${this.dom_count}`
                 },
                 "dom" : `
-                    <div class="ft_content" id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
-                        <div class="rotate" id="ft_rotate_${this.dom_count}" data-rotate="ft_${this.dom_count}"></div>
-                        <div class="rotate-center" id="ft_rotate_center_${this.dom_count}" data-rotate="ft_${this.dom_count}"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}" class="edit_svg" id="ft_rotate_content_${this.dom_count}">
-                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
-                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
-                                    <text data-id="ft_${this.dom_count}">テキスト1</text>
+                    <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
+                        <div class="rotate" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                        <div class="rotate-center" id="${this.elem_unique[0]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="${this.elem_unique[0]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[0]}_rotate_content_${this.dom_count}">
+                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+                                    <text data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</text>
                                 </div>
                             </foreignObject>
                         </svg>                  
                     </div>
             `},
             "sc_content" :  {
-                "id" : `sc_${this.dom_count}`,
+                "id" : `${this.elem_unique[1]}_${this.dom_count}`,
                 "rotate":{
-                    "rotate_id": `sc_rotate_${this.dom_count}`,
-                    "rotate_center_id": `sc_rotate_center_${this.dom_count}`,
-                    "rotate_content": `sc_rotate_content_${this.dom_count}`
+                    "rotate_id": `${this.elem_unique[1]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[1]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[1]}_rotate_content_${this.dom_count}`
                 },
                 "dom" : `
-                    <div class="ft_content" id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
-                        <div class="rotate" id="sc_rotate_${this.dom_count}" data-rotate="sc_${this.dom_count}"></div>
-                        <div class="rotate-center" id="sc_rotate_center_${this.dom_count}" data-rotate="sc_${this.dom_count}"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}" id="sc_rotate_content_${this.dom_count}">
-                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
-                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
-                                    <text  data-id="sc_${this.dom_count}">テキスト2</text>
+                    <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
+                        <div class="rotate" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="rotate-center" id="${this.elem_unique[1]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
+                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="${this.elem_unique[1]}_${this.dom_count}">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="${this.elem_unique[1]}_${this.dom_count}">
+                                    <text data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト1</text>
                                 </div>
                             </foreignObject>
                         </svg>                  

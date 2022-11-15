@@ -111,8 +111,9 @@ function mousedownRotate(e) {
                 degree = 270
             }
             el[click_rotate_id].rotate_content.style.transform = `rotate(${degree}deg)`;
-    
-            console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
+            
+            // 角度計算用
+            // console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
             // console.log(isMove, isResizing, isRotate)
             
     }
@@ -120,32 +121,10 @@ function mousedownRotate(e) {
         window.removeEventListener("mousemove", mousemoveRotate);
         window.removeEventListener("mouseup", mouseupRotate);
         isRotate = false
+        calc_position();
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**
  * 動的要素の相対位置を計算し、domIDをキーとして、オブジェクトに格納する関数

@@ -46,12 +46,10 @@ main {
 	width: 10px;
 	height: 10px;
 	border-radius: 5px;
-	/* background-color: red; */
-	z-index: 2;
+    visibility: hidden;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	/* cursor: pointer; */
 }
 
 .rotate{
