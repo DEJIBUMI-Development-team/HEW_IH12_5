@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 var 
 el = {};
-=======
-el = [];
->>>>>>> 4136e59e39a9f48b42c6cb69754c7cba9c210e8a
 let isResizing = false;
 let isRotate = false;
 
@@ -125,7 +121,8 @@ function mousedownRotate(e) {
         window.removeEventListener("mousemove", mousemoveRotate);
         window.removeEventListener("mouseup", mouseupRotate);
         isRotate = false
-        calc_position();
+        // calc_position();
+        // get_domSytle(Relatively_position);
     }
 
 }
