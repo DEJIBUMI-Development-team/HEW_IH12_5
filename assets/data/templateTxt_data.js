@@ -16,36 +16,50 @@ for (let index = 0; index < 2; index++) {
 class Template_object{
     constructor(count) {
         this.dom_count = count;
-        this.temp_key = ["ft_content", "sc_content"]
+        this.elem_unique = ["ft","sc"];
     }
     get temp_objectDom(){
         this.dom_elem = {
-            [this.temp_key[0]] :  {
-            "id" : `ft_${this.dom_count}`,
-            "dom" : `
-                <div class=${this.temp_key[0]} id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}" class="edit_svg">
-                    <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
-                        <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
-                            <text data-id="ft_${this.dom_count}">テキスト1</text>
-                        </div>
-                    </foreignObject>
-                    </svg>                  
-                </div>
-            `},
-            [this.temp_key[1]] :  {
-                "id" : `sc_${this.dom_count}`,
+            "ft_content" :  {
+                "id" : `${this.elem_unique[0]}_${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `${this.elem_unique[0]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[0]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[0]}_rotate_content_${this.dom_count}`
+                },
                 "dom" : `
-                    <div class=${this.temp_key[1]} id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}" class="edit_svg">
-                        <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
-                            <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
-                                <text  data-id="sc_${this.dom_count}">テキスト2</text>
-                            </div>
-                        </foreignObject>
+                    <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
+                        <div class="rotate" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                        <div class="rotate-center" id="${this.elem_unique[0]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="${this.elem_unique[0]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[0]}_rotate_content_${this.dom_count}">
+                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+                                    <text data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</text>
+                                </div>
+                            </foreignObject>
                         </svg>                  
                     </div>
-                `},
+            `},
+            "sc_content" :  {
+                "id" : `${this.elem_unique[1]}_${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `${this.elem_unique[1]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[1]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[1]}_rotate_content_${this.dom_count}`
+                },
+                "dom" : `
+                    <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
+                        <div class="rotate" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="rotate-center" id="${this.elem_unique[1]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
+                            <foreignObject width="100%" height="100%" x="0" y="0"  data-id="${this.elem_unique[1]}_${this.dom_count}">
+                                <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="${this.elem_unique[1]}_${this.dom_count}">
+                                    <text data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト1</text>
+                                </div>
+                            </foreignObject>
+                        </svg>                  
+                    </div>
+            `},
         }
         return this.dom_elem; 
     }
@@ -56,9 +70,14 @@ class Template_object{
  * @param elem_value イベントを追加する要素のclass
  */
 function addMouseEvent(elem_value) {
-    // debugger;
-    el[temp_objects[elem_value].id] = document.getElementById(temp_objects[elem_value].id);
-    el[temp_objects[elem_value].id].addEventListener("mousedown", mousedown);
+    el[temp_objects[elem_value].id] = {
+        "move_elem": document.getElementById(temp_objects[elem_value].id),
+        "rotate_center": document.getElementById(temp_objects[elem_value].rotate.rotate_center_id),
+        "rotate_top_fix_point": document.getElementById(temp_objects[elem_value].rotate.rotate_id),
+        "rotate_content": document.getElementById(temp_objects[elem_value].rotate.rotate_content),
+    };
+    el[temp_objects[elem_value].id].move_elem.addEventListener("mousedown", mousedown);
+    el[temp_objects[elem_value].id].rotate_top_fix_point.addEventListener('mousedown', mousedownRotate)
 }
 
 /**

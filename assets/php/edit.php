@@ -2,7 +2,7 @@
 // include("../data/templateTxt_data.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,6 @@
 </head>
 <body>
     <header class="content_edit_box">
-        
     </header>
     <main>
         <section class="left_m">
@@ -32,9 +31,6 @@
             </div>
         </section>
     </main>
-
-    <!-- footer -->
-
     <!-- script -->
     <script src="../data/templateTxt_data.js"></script>
     <script src="../js/edit.js"></script>
