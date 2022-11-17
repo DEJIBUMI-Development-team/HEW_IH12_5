@@ -136,7 +136,7 @@ main{
 	top: 0%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: n-resize;
 }
 
 .resizer-tr {
@@ -149,14 +149,14 @@ main{
 	top: 50%;
 	left: 0%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: w-resize;
 }
 
 .resizer-cr {
 	top: 50%;
 	left: 100%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: e-resize;
 }
 
 .resizer-bl {
@@ -169,7 +169,7 @@ main{
 	top: 100%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: s-resize;
 }
 
 .resizer-br {
