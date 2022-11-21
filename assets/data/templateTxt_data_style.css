@@ -18,6 +18,7 @@ text{
 .edit_svg{
     /* コンテンツを回転して表示する際はここをいじる */
     transform: rotate(0deg);
+    height: 100%;
 }
 
 foreignObject{
@@ -30,6 +31,45 @@ foreignObject{
     height: 100%;
     text-align: center;
     vertical-align: middle;
+}
+
+
+.rotate-center {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+    visibility: hidden;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.rotate{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: yellow;
+    visibility: hidden;
+	z-index: 2;
+	left: 50%;
+	top: -20%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.rotate_fix{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: black;
+	z-index: 2;
+	left: 50%;
+	top: -40%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
 }
 
 /* data_img */
