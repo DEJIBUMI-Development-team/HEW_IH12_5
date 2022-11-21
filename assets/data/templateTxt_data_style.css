@@ -1,17 +1,18 @@
 /* data-txt */
-text{
+p{
+	margin: 0 ;
+	padding: 0;
     font-size: 2em;
-
 }
 
 .ft_content{
     width: 300px;
-    height: 100px;
+    /* height: 100px; */
     position: absolute;
 }
 .sc_content{
     width: 300px;
-    height: 100px;
+    /* height: 100px; */
     position: absolute;
 }
 
@@ -20,6 +21,8 @@ text{
     transform: rotate(0deg);
     height: 100%;
     border: solid 1px #000;
+	z-index: 0;
+
 }
 
 .text{
@@ -27,6 +30,12 @@ text{
     height: 100%;
     text-align: center;
 
+}
+.text > div {
+	width: 100%;
+}
+.text > div > text{
+	width: 100%;
 }
 
 

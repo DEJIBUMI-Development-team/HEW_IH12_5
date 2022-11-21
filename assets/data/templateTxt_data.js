@@ -50,7 +50,7 @@ class Template_object{
                             <div class="rotate_fix" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
                     
                             <div contenteditable="true" class="text"  data-id="${this.elem_unique[0]}_${this.dom_count}">
-                                <text data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</text>
+                                <p data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</p>
                             </div>
                         
                         </div>
@@ -59,6 +59,7 @@ class Template_object{
             `},
             "sc_content" :  {
                 "id" : `${this.elem_unique[1]}_${this.dom_count}`,
+                "resize_class": `.resizer-${this.dom_count}`,
                 "rotate":{
                     "rotate_id": `${this.elem_unique[1]}_rotate_${this.dom_count}`,
                     "rotate_center_id": `${this.elem_unique[1]}_rotate_center_${this.dom_count}`,
@@ -75,9 +76,18 @@ class Template_object{
                     <div data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
                     
                         <div class="rotate_fix" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
-
+                        
+                        <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tc" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-cl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-cr" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bc" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        
                         <div contenteditable="true" class="text"  data-id="${this.elem_unique[1]}_${this.dom_count}">
-                            <text data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト2</text>
+                            <p data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト2</p>
                         </div>
 
                         </div>
