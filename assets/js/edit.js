@@ -21,7 +21,7 @@ function mousedown(e) {
     function mousemove(e) {
 
         // リサイズが行われていない場合
-        if (!isRotate) {
+        if (!isRotate && !isResizing) {
             // X,Y座標値差 = 初期値 - 現在地点 
             let newX = prevX - e.clientX;
             let newY = prevY - e.clientY;
@@ -47,6 +47,100 @@ function mousedown(e) {
         // fetch_domElem(Relatively_position);
     }
 }
+//resizeアニメーションは、以下の処理として実行を行
+function mousedownResize(e) {
+
+    clickedDom = e.composedPath();
+    clickedId = clickedDom[0].dataset.id;
+
+    // リサイズを行う際の要素(resizer)を指定
+    // リサイズを許可し、draggableアニメーションの発動をさせない
+    currentResizer = e.target;
+    isResizing = true;
+
+    //　クリック時のカーソル座標を取得
+    let prevX = e.clientX;
+    let prevY = e.clientY;
+
+    //mousemove mouseupイベントそれぞれを指定要素に付加
+    window.addEventListener("mousemove", mousemoveResize);
+    window.addEventListener("mouseup", mouseupResize);
+
+    //mousemoveイベント
+    function mousemoveResize(e) {
+            // 要素の相対位置を取得
+            const rect = el[clickedId].move_elem.getBoundingClientRect();
+            change_size = 0;
+            // 指定要素に付加されているクラス名に応じて処理を変える　
+            if (currentResizer.classList.contains("resizer-br")) {
+                // 右下
+                // 幅or高さ　-　(クリック時の座標-現在のカーソル位置) 
+
+                el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+                el[clickedId].move_elem.style.height = rect.height - (prevY - e.clientY) + "px";
+
+            } else if (currentResizer.classList.contains("resizer-bc")) {
+                // 下中央 
+                // 要素のheight値の変更を行わなければならない
+                el[clickedId].move_elem.style.height = rect.height - (prevY - e.clientY) + "px";
+            
+            } else if (currentResizer.classList.contains("resizer-bl")) {
+                // 左下 
+                // 要素のleft値の変更を行わなければならない
+                el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
+                el[clickedId].move_elem.style.height = rect.height - (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
+
+            } else if (currentResizer.classList.contains("resizer-cl")) {
+                // 左中央 
+                // 要素のleft値の変更を行わなければならない
+                el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
+                el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
+
+            } else if (currentResizer.classList.contains("resizer-cr")) {
+                // 右中央 
+                // 要素のwidth値の変更を行わなければならない
+                el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+
+            } else if (currentResizer.classList.contains("resizer-tr")) {
+                // 右上 
+                // 要素のtop値の変更を行わなければならない
+                el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+                el[clickedId].move_elem.style.height = rect.height + (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.top = rect.top - (prevY - e.clientY) + "px";
+
+            } else if (currentResizer.classList.contains("resizer-tc")) {
+                // 上中央 
+                // 要素のheight値の変更を行わなければならない
+                el[clickedId].move_elem.style.height = rect.height + (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.top = rect.top - (prevY - e.clientY) + "px";
+
+            } else {
+                // 左上
+                // 要素の幅、高さ、top値、 left値すべての変更を行う
+                // debugger;
+                el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
+                el[clickedId].move_elem.style.height = rect.height + (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.top = rect.top - (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
+                // contentTxt.style.fontSize = `${currentSize}` + "px";
+            }
+
+            // 変更後のカーソル位置をprevに退避させる
+            prevX = e.clientX;
+            prevY = e.clientY;
+    
+    }
+
+    //ボタンが外された場合Eventを除去
+    function mouseupResize() {
+        window.removeEventListener("mousemove", mousemoveResize);
+        window.removeEventListener("mouseup", mouseupResize);
+        isResizing = false;
+    }
+}
+
+
 
 function mousedownRotate(e) {
     // debugger;
