@@ -43,6 +43,8 @@ p{
 	font-size: 50px;
 	margin: 0;
 	padding: 0;
+	/* visibility: visible; */
+	visibility: visible;
 }
 /* 以下デザイン */
 header{
@@ -176,4 +178,12 @@ main{
 	bottom: -5px;
 	right: -5px;
 	cursor: se-resize;
+}
+
+.on_focus_button{
+	display: none;
+}
+
+.on_focus{
+	visibility: hidden;
 }
