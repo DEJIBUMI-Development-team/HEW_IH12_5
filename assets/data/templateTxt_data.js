@@ -29,6 +29,7 @@ class Template_object{
                     "rotate_content": `${this.elem_unique[0]}_rotate_content_${this.dom_count}`,
                     "rotate_top_fix": `${this.elem_unique[0]}_rotate_fix_${this.dom_count}`,
                 },
+                "text_id": `text_${this.dom_count}`,
                 "dom" : `
                     <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
 
@@ -39,17 +40,13 @@ class Template_object{
                         <div class="edit_svg" data-id="${this.elem_unique[0]}_${this.dom_count}" id="${this.elem_unique[0]}_rotate_content_${this.dom_count}">
 
                             <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-tc" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
                             <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-cl" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-cr" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
                             <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-bc" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
                             <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
 
                             <div class="rotate_fix" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
-                    
-                            <div contenteditable="true" class="text"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+
+                            <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
                                 <p data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</p>
                             </div>
                         
@@ -66,28 +63,24 @@ class Template_object{
                     "rotate_content": `${this.elem_unique[1]}_rotate_content_${this.dom_count}`,
                     "rotate_top_fix": `${this.elem_unique[1]}_rotate_fix_${this.dom_count}`
                 },
+                "text_id": `text_${this.dom_count}`,
                 "dom" : `
                     <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
                     
-                    <div class="rotate" id="${this.elem_unique[1]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
-                    
-                    <div class="rotate-center" id="${this.elem_unique[1]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
-                    
-                    <div data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
-                    
-                        <div class="rotate_fix" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="rotate" id="${this.elem_unique[1]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        
+                        <div class="rotate-center" id="${this.elem_unique[1]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        
+                        <div data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
                         
                         <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-tc" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
                         <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-cl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-cr" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
                         <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-bc" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
                         <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        
-                        <div contenteditable="true" class="text"  data-id="${this.elem_unique[1]}_${this.dom_count}">
-                            <p data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト2</p>
+
+                        <div class="rotate_fix" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
+                            <p data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト1</p>
                         </div>
 
                         </div>
@@ -104,22 +97,28 @@ class Template_object{
  * @param elem_value イベントを追加する要素のclass
  */
 function addMouseEvent(elem_value) {
+    var object_ref = temp_objects[elem_value];
     el[temp_objects[elem_value].id] = {
-        "move_elem": document.getElementById(temp_objects[elem_value].id),
-        "rotate_center": document.getElementById(temp_objects[elem_value].rotate.rotate_center_id),
-        "rotate_top_fix_point": document.getElementById(temp_objects[elem_value].rotate.rotate_top_fix),
-        "rotate_content": document.getElementById(temp_objects[elem_value].rotate.rotate_content),
-        "rotate_point": document.getElementById(temp_objects[elem_value].rotate.rotate_id),
-        "resize_point": document.querySelectorAll(temp_objects[elem_value].resize_class)
+        "move_elem": document.getElementById(object_ref.id),
+        "rotate_center": document.getElementById(object_ref.rotate.rotate_center_id),
+        "rotate_top_fix_point": document.getElementById(object_ref.rotate.rotate_top_fix),
+        "rotate_content": document.getElementById(object_ref.rotate.rotate_content),
+        "rotate_point": document.getElementById(object_ref.rotate.rotate_id),
+        "resize_point": document.querySelectorAll(object_ref.resize_class),
+        "edit_text": document.getElementById(object_ref.text_id)
     };
-    el[temp_objects[elem_value].id].move_elem.addEventListener("mousedown", mousedown);
-    el[temp_objects[elem_value].id].rotate_point.addEventListener('mousedown', mousedownRotate);
+
+    // add event
+    el[object_ref.id].move_elem.addEventListener("mousedown", mousedown);
+    el[object_ref.id].rotate_point.addEventListener('mousedown', mousedownRotate);
     debugger;
-    for (let resizer of el[temp_objects[elem_value].id].resize_point) {
+    for (let resizer of el[object_ref.id].resize_point) {
 
         resizer.addEventListener("mousedown", mousedownResize);
 
     }
+    el[object_ref.id].edit_text.addEventListener("dblclick", set_Editable);
+    el[object_ref.id].edit_text.addEventListener("blur", set_Uneditable);
 }
 
 /**
@@ -145,6 +144,7 @@ async function insert_dom(e) {
 
         // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
+        fitty('.fit');
 
         //incrementCount
         count++;

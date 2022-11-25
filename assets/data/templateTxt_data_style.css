@@ -7,6 +7,7 @@ p{
 
 .ft_content{
     width: 300px;
+	min-height: 60px;
     /* height: 100px; */
     position: absolute;
 }
@@ -22,15 +23,22 @@ p{
     height: 100%;
     border: solid 1px #000;
 	z-index: 0;
-
 }
 
 .text{
     width: 100%;
     height: 100%;
     text-align: center;
-
+    border: solid 1px #000;
 }
+.fit {
+    /* border: solid 1px #000; */
+}
+
+.text :focus{
+	outline: 0px solid transparent;
+}
+
 .text > div {
 	width: 100%;
 }
@@ -72,7 +80,7 @@ p{
 	background-color: black;
 	z-index: 2;
 	left: 50%;
-	top: -40%;
+	top: -30px;
 	transform: translate(-50%, -50%);
 	cursor: pointer;
 }
@@ -93,9 +101,16 @@ p{
 	position: absolute;
 	width: 10px;
 	height: 10px;
+	/* border-radius: 5px; */
+	background-color: #fff;
+	border: solid 1px #000;
+	z-index: 2;
+}
+.resizer:hover,
+.resizer:active{
 	border-radius: 5px;
 	background-color: blue;
-	z-index: 2;
+	border:none;
 }
 
 .resizer-tl {

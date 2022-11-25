@@ -2,9 +2,11 @@ var
 el = {};
 let isResizing = false;
 let isRotate = false;
+let isMove = true;
 
 //itemがクリックされたとき
 function mousedown(e) {
+
     // debugger;
     //移動時にmousemove、離れた時にmouseup関数を実行する
     window.addEventListener("mousemove", mousemove);
@@ -16,12 +18,12 @@ function mousedown(e) {
 
     clickedDom = e.composedPath();
     clickedId = clickedDom[0].dataset.id;
-    
+
     // mousemoveされたとき
     function mousemove(e) {
 
         // リサイズが行われていない場合
-        if (!isRotate && !isResizing) {
+        if (!isRotate && !isResizing && isMove) {
             // X,Y座標値差 = 初期値 - 現在地点 
             let newX = prevX - e.clientX;
             let newY = prevY - e.clientY;
@@ -49,9 +51,11 @@ function mousedown(e) {
 }
 //resizeアニメーションは、以下の処理として実行を行
 function mousedownResize(e) {
-
+    fitty('.fit');
     clickedDom = e.composedPath();
     clickedId = clickedDom[0].dataset.id;
+    const get_rect = el[clickedId].move_elem.getBoundingClientRect();
+    const heigh_raitos = get_rect.height / get_rect.width;
 
     // リサイズを行う際の要素(resizer)を指定
     // リサイズを許可し、draggableアニメーションの発動をさせない
@@ -69,63 +73,51 @@ function mousedownResize(e) {
     //mousemoveイベント
     function mousemoveResize(e) {
             // 要素の相対位置を取得
-            const rect = el[clickedId].move_elem.getBoundingClientRect();
+            var rect = el[clickedId].move_elem.getBoundingClientRect();
+
+            // console.log(rect.width, rect.height , rect.height / rect.width);
+
+            var calc_height = (rect.width - (prevX - e.clientX)) * heigh_raitos; 
+
             change_size = 0;
             // 指定要素に付加されているクラス名に応じて処理を変える　
             if (currentResizer.classList.contains("resizer-br")) {
                 // 右下
                 // 幅or高さ　-　(クリック時の座標-現在のカーソル位置) 
-
+                
                 el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = rect.height - (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.height = calc_height + "px";
 
-            } else if (currentResizer.classList.contains("resizer-bc")) {
-                // 下中央 
-                // 要素のheight値の変更を行わなければならない
-                el[clickedId].move_elem.style.height = rect.height - (prevY - e.clientY) + "px";
-            
             } else if (currentResizer.classList.contains("resizer-bl")) {
                 // 左下 
                 // 要素のleft値の変更を行わなければならない
                 el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = rect.height - (prevY - e.clientY) + "px";
-                el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
-
-            } else if (currentResizer.classList.contains("resizer-cl")) {
-                // 左中央 
-                // 要素のleft値の変更を行わなければならない
-                el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
+                el[clickedId].move_elem.style.height = calc_height + "px";
                 el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
 
             } else if (currentResizer.classList.contains("resizer-cr")) {
                 // 右中央 
                 // 要素のwidth値の変更を行わなければならない
                 el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
-
             } else if (currentResizer.classList.contains("resizer-tr")) {
                 // 右上 
                 // 要素のtop値の変更を行わなければならない
                 el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = rect.height + (prevY - e.clientY) + "px";
-                el[clickedId].move_elem.style.top = rect.top - (prevY - e.clientY) + "px";
-
-            } else if (currentResizer.classList.contains("resizer-tc")) {
-                // 上中央 
-                // 要素のheight値の変更を行わなければならない
-                el[clickedId].move_elem.style.height = rect.height + (prevY - e.clientY) + "px";
-                el[clickedId].move_elem.style.top = rect.top - (prevY - e.clientY) + "px";
-
+                el[clickedId].move_elem.style.height = calc_height + "px";
+                rect = el[clickedId].move_elem.getBoundingClientRect();
+                el[clickedId].move_elem.style.top = rect.top - (rect.bottom - get_rect.bottom) + "px";
             } else {
                 // 左上
                 // 要素の幅、高さ、top値、 left値すべての変更を行う
                 // debugger;
                 el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = rect.height + (prevY - e.clientY) + "px";
-                el[clickedId].move_elem.style.top = rect.top - (prevY - e.clientY) + "px";
+                el[clickedId].move_elem.style.height = calc_height + "px";
+                rect = el[clickedId].move_elem.getBoundingClientRect();                
+                el[clickedId].move_elem.style.top = rect.top - Math.floor(rect.bottom - get_rect.bottom) + "px";                
                 el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
-                // contentTxt.style.fontSize = `${currentSize}` + "px";
             }
 
+            fitty('.fit');
             // 変更後のカーソル位置をprevに退避させる
             prevX = e.clientX;
             prevY = e.clientY;
@@ -220,6 +212,21 @@ function mousedownRotate(e) {
     }
 
 }
+
+function set_Editable(e) {
+    isMove = false;
+    clicked_dom = e.composedPath();
+    clicked_id = clicked_dom[0].dataset.id;
+    el[clicked_id].edit_text.contentEditable = "true"
+}
+
+function set_Uneditable(e) {
+    isMove = true;
+    clicked_dom_n = e.composedPath();
+    clicked_id_n = clicked_dom_n[0].dataset.id;
+    el[clicked_id_n].edit_text.contentEditable = "false";
+}
+
 
 /**
  * 動的要素の相対位置を計算し、domIDをキーとして、オブジェクトに格納する関数
