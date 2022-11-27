@@ -51,7 +51,10 @@ function mousedown(e) {
 }
 //resizeアニメーションは、以下の処理として実行を行
 function mousedownResize(e) {
-    fitty('.fit');
+    fitty('.fit', {
+        minSize: 12,
+        maxSize: 100,
+    });
     clickedDom = e.composedPath();
     clickedId = clickedDom[0].dataset.id;
     const get_rect = el[clickedId].move_elem.getBoundingClientRect();
@@ -84,40 +87,60 @@ function mousedownResize(e) {
             if (currentResizer.classList.contains("resizer-br")) {
                 // 右下
                 // 幅or高さ　-　(クリック時の座標-現在のカーソル位置) 
-                
-                el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = calc_height + "px";
+                if (rect.width - (prevX - e.clientX) <= 460) {   
+                    el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+                    if (calc_height <= 148) {
+                        el[clickedId].move_elem.style.height = calc_height + "px";
+                    }
+                }
 
             } else if (currentResizer.classList.contains("resizer-bl")) {
                 // 左下 
                 // 要素のleft値の変更を行わなければならない
-                el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = calc_height + "px";
-                el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
-
+                if (rect.width - (prevX - e.clientX) <= 460) {   
+                    el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
+                    if (calc_height <= 148) {
+                        el[clickedId].move_elem.style.height = calc_height + "px";
+                    }
+                    el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
+                }
             } else if (currentResizer.classList.contains("resizer-cr")) {
                 // 右中央 
                 // 要素のwidth値の変更を行わなければならない
-                el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+                if (rect.width - (prevX - e.clientX) <= 460) {   
+                    el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+                }
+
             } else if (currentResizer.classList.contains("resizer-tr")) {
                 // 右上 
                 // 要素のtop値の変更を行わなければならない
-                el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = calc_height + "px";
-                rect = el[clickedId].move_elem.getBoundingClientRect();
-                el[clickedId].move_elem.style.top = rect.top - (rect.bottom - get_rect.bottom) + "px";
+                if (rect.width - (prevX - e.clientX) <= 460) {
+                    el[clickedId].move_elem.style.width = rect.width - (prevX - e.clientX) + "px";
+                    if (calc_height <= 148) {
+                        el[clickedId].move_elem.style.height = calc_height + "px";
+                        rect = el[clickedId].move_elem.getBoundingClientRect();
+                        el[clickedId].move_elem.style.top = rect.top - (rect.bottom - get_rect.bottom) + "px";
+                    }
+                }
             } else {
                 // 左上
                 // 要素の幅、高さ、top値、 left値すべての変更を行う
                 // debugger;
-                el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
-                el[clickedId].move_elem.style.height = calc_height + "px";
-                rect = el[clickedId].move_elem.getBoundingClientRect();                
-                el[clickedId].move_elem.style.top = rect.top - Math.floor(rect.bottom - get_rect.bottom) + "px";                
-                el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
+                if (rect.width - (prevX - e.clientX) <= 460) {
+                    el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
+                    if (calc_height <= 148) {
+                        el[clickedId].move_elem.style.height = calc_height + "px";
+                        rect = el[clickedId].move_elem.getBoundingClientRect();                
+                        el[clickedId].move_elem.style.top = rect.top - Math.floor(rect.bottom - get_rect.bottom) + "px";                
+                        el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
+                    }
+                }
             }
 
-            fitty('.fit');
+            fitty('.fit', {
+                minSize: 12,
+                maxSize: 100,
+            });
             // 変更後のカーソル位置をprevに退避させる
             prevX = e.clientX;
             prevY = e.clientY;

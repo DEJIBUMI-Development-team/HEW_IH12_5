@@ -45,11 +45,9 @@ class Template_object{
                             <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
 
                             <div class="rotate_fix" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
-
                             <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
                                 <p data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</p>
                             </div>
-                        
                         </div>
            
                     </div>
@@ -119,6 +117,11 @@ function addMouseEvent(elem_value) {
     }
     el[object_ref.id].edit_text.addEventListener("dblclick", set_Editable);
     el[object_ref.id].edit_text.addEventListener("blur", set_Uneditable);
+
+    fitty('.fit', {
+        minSize: 12,
+        maxSize: 100,
+    });
 }
 
 /**
@@ -144,7 +147,7 @@ async function insert_dom(e) {
 
         // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
-        fitty('.fit');
+
 
         //incrementCount
         count++;

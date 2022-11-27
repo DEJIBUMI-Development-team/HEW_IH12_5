@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/edit.css">
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
     <script src="../package/fitty.min.js"></script>
-    <title>Document</title>
+    <title>編集画面</title>
 </head>
 <body>
     <header class="content_edit_box">
