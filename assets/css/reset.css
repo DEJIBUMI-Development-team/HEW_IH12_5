@@ -22,7 +22,6 @@ body {-webkit-text-size-adjust:none; font-size:12px; line-height:1.5em; margin:0
 * html body {font-family:"游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-size:75%;}/* for IE6 */
 *+html body {font-family:"游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-size:75%;}/* for IE7 */
 html>/**/body {font-family:"游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-size:75%;}/* for IE8 */
-html:not(:target) body {font-size:12px; line-height:1.5em; font-family:"游ゴシック体", "Yu Gothic", YuGothic, Osaka, sans-serif; letter-spacing:1px;}
 
 /* -- other tags -- */
 a {overflow:hidden;}
