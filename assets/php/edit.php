@@ -18,7 +18,10 @@
     <main>
         <section class="left_m">
             <div class="select">
-                
+                <div class="select_content"></div>
+                <div class="select_content"></div>
+                <div class="select_content"></div>
+                <div class="select_content"></div>
             </div>
             <div class="templ_m">
                 <input type="button" value="ft_content" id="temp-0" data-tempid="0">
