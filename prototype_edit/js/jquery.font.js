@@ -13,3 +13,11 @@ $(function(){
   $("p").css("fontFamily",font);
   })
 });
+
+$(function(){
+  //テキスト縦横変更
+  $("[name='writingMode']").change(function(){
+    var WTorien = $(this).val();
+  $("p").css("writing-mode",WTorien);
+  })
+});

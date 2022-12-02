@@ -48,8 +48,8 @@ p{
 	margin: 0;
 	padding: 0;
 	visibility: visible;
-	/* -webkit-text-orientation: none;
-	text-orientation: none; */
+	-ms-writing-mode: tb-rl;
+	writing-mode: unset;
 }
 /* 以下デザイン */
 header{
