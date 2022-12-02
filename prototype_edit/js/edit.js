@@ -228,9 +228,9 @@ function mousedownRotate() {
 const focus_item = document.getElementById("focus");
 const visible_content = document.querySelectorAll(".on_focus");
 const block_content = document.querySelectorAll(".on_focus_button");
-debugger;
+
 focus_item.addEventListener(`focus`, () => {
-    debugger
+
     block_content.forEach((element, index) => {
         element.style.display = "block";
     });
@@ -240,7 +240,31 @@ focus_item.addEventListener(`focus`, () => {
 })
 
 focus_item.addEventListener(`blur`, () => {
-    debugger
+
+    if (!isResizing && !isRotate) {
+        block_content.forEach((element, index) => {
+            element.style.display = "none";
+        });
+        visible_content.forEach((element, index) => {
+            element.style.visibility = "hidden";
+        });
+    }
+})
+
+const font = document.getElementById("font");
+const chenge_font = document.querySelectorAll(".chenge_font");
+
+focus_item.addEventListener(`focus`, () => {
+
+    block_content.forEach((element, index) => {
+        element.style.display = "block";
+    });
+    visible_content.forEach((element, index) => {
+        element.style.visibility = "visible";
+    });
+})
+
+focus_item.addEventListener(`blur`, () => {
 
     if (!isResizing && !isRotate) {
         block_content.forEach((element, index) => {
