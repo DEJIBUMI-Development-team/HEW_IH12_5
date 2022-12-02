@@ -4,6 +4,13 @@ let isResizing = false;
 let isRotate = false;
 let isMove = true;
 
+// 削除対象データ格納用変数
+var delete_point_dom;
+
+const edit_area = document.querySelector(".edit_area");
+const edit_area_position = edit_area.getBoundingClientRect();
+const area_center = edit_area_position.left + (edit_area_position.width / 2);
+
 //itemがクリックされたとき
 function mousedown(e) {
 
@@ -30,15 +37,22 @@ function mousedown(e) {
 
             // 現在地点を変数として取得
             var rect = el[clickedId].move_elem.getBoundingClientRect();
-
-            // top left位置を再設定
+                        
             el[clickedId].move_elem.style.left = rect.left - newX + "px";
             el[clickedId].move_elem.style.top = rect.top - newY + "px";
+
+            // top left位置を再設定      
+            el[clickedId].move_elem.style.left = rect.left - newX + "px";
+            el[clickedId].move_elem.style.top = rect.top - newY + "px";
+            // console.log( newX);
+
 
             prevX = e.clientX;
             prevY = e.clientY;
 
         }
+
+
     }
     
     // itemからカーソルが離れた際にイベントを解除
@@ -133,6 +147,7 @@ function mousedownResize(e) {
 
     //ボタンが外された場合Eventを除去
     function mouseupResize() {
+        el[clickedId].move_elem.style.height = "fit-content";
         window.removeEventListener("mousemove", mousemoveResize);
         window.removeEventListener("mouseup", mouseupResize);
         isResizing = false;
@@ -147,7 +162,7 @@ function mousedownRotate(e) {
     window.addEventListener("mouseup", mouseupRotate);
     isRotate = true;
     // クリックされた頂点の要素を取得し、座標としてオブジェクト形式で格納
-    debugger;
+    // debugger;
     click_rotate_dom = e.composedPath();
     click_rotate_id = click_rotate_dom[0].dataset.rotate;
     var top_rect = el[click_rotate_id].rotate_top_fix_point.getBoundingClientRect();
@@ -234,7 +249,6 @@ function set_Uneditable(e) {
     el[clicked_id_n].edit_text.contentEditable = "false";
 }
 
-
 /**
  * 動的要素の相対位置を計算し、domIDをキーとして、オブジェクトに格納する関数
  */
@@ -319,4 +333,33 @@ function fetch_domElem(fetch_contents) {
     .catch((error) => {
         console.error("Error", error);
     });
+}
+
+function view_context_menu(){
+    document.querySelector(".context").addEventListener('contextmenu',function (e){
+        document.getElementById('contextmenu').style.left=e.pageX+"px";
+        document.getElementById('contextmenu').style.top=e.pageY+"px";
+        document.getElementById('contextmenu').style.display="block";
+        
+        // クリックを行った要素を取得
+        clicked_dom = e.composedPath();
+        clicked_id = clicked_dom[0].dataset.id;
+        
+        // 削除対象としてデータを格納
+        delete_point_dom =　clicked_id　;
+
+        console.log(delete_point_dom);
+    });
+    
+    document.body.addEventListener('click',function (e){
+        document.getElementById('contextmenu').style.display="none";
+    });
+}
+
+const remove_button = document.getElementById("remove");
+remove_button.addEventListener("click", remove_element)
+function remove_element(){
+    var remove_elem = document.getElementById(`${delete_point_dom}`);
+    remove_elem.remove();
+    delete el[delete_point_dom];
 }

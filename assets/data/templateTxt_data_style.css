@@ -1,5 +1,7 @@
 /* data-txt */
-p{	
+.fit p,
+.fit h4,
+.fit h1{	
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -7,13 +9,17 @@ p{
 
 .ft_content{
     width: 300px;
-	/* width: fit-content; */
 	height: fit-content;
     position: absolute;
 }
 .sc_content{
-    width: 300px;
-    /* height: 100px; */
+    width: 250px;
+	height: fit-content;
+    position: absolute;
+}
+.th_content{
+    width: 200px;
+	height: fit-content;
     position: absolute;
 }
 
@@ -92,9 +98,9 @@ p{
     width: 800px;
     height: 100%;
     margin: 0 auto;
-    background-image: url(../data/img_data/huto01.png);
+    background-image: url(../data/img_data/OHKA4066.PNG);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 600px, auto;
     background-position: center;
 }
 

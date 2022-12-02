@@ -2,7 +2,7 @@ var count = 0; // 挿入済みHTMLDOMのテンプレート総数をカウント�
 var tempBtnRef = []; // ボタン要素を格納する配列
 
 // 各ボタン要素にクリックイベントを付加
-for (let index = 0; index < 2; index++) {
+for (let index = 0; index < 3; index++) {
     tempBtnRef.push(document.getElementById("temp-" + index));
     tempBtnRef[index].addEventListener('click', insert_dom);
 }
@@ -16,7 +16,7 @@ for (let index = 0; index < 2; index++) {
 class Template_object{
     constructor(count) {
         this.dom_count = count;
-        this.elem_unique = ["ft","sc"];
+        this.elem_unique = ["ft","sc", "th"];
     }
     get temp_objectDom(){
         this.dom_elem = {
@@ -31,7 +31,7 @@ class Template_object{
                 },
                 "text_id": `text_${this.dom_count}`,
                 "dom" : `
-                    <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
+                    <div class="${this.elem_unique[0]}_content context" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}" onContextmenu="return false;">
 
                         <div class="rotate" id="${this.elem_unique[0]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
                     
@@ -46,7 +46,7 @@ class Template_object{
 
                             <div class="rotate_fix" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
                             <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
-                                <p data-id="${this.elem_unique[0]}_${this.dom_count}">テキスト1</p>
+                                <h1 data-id="${this.elem_unique[0]}_${this.dom_count}">見出しを追加</h1>
                             </div>
                         </div>
            
@@ -63,7 +63,7 @@ class Template_object{
                 },
                 "text_id": `text_${this.dom_count}`,
                 "dom" : `
-                    <div class="${this.elem_unique[0]}_content" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
+                    <div class="${this.elem_unique[1]}_content context" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}" onContextmenu="return false;">
                     
                         <div class="rotate" id="${this.elem_unique[1]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
                         
@@ -78,7 +78,40 @@ class Template_object{
 
                         <div class="rotate_fix" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
                         <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
-                            <p data-id="${this.elem_unique[1]}_${this.dom_count}">テキスト1</p>
+                            <h4 data-id="${this.elem_unique[1]}_${this.dom_count}">小見出しを追加</h4>
+                        </div>
+
+                        </div>
+            
+                    </div>
+            `},
+            "th_content" :  {
+                "id" : `${this.elem_unique[2]}_${this.dom_count}`,
+                "resize_class": `.resizer-${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `${this.elem_unique[2]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[2]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[2]}_rotate_content_${this.dom_count}`,
+                    "rotate_top_fix": `${this.elem_unique[2]}_rotate_fix_${this.dom_count}`
+                },
+                "text_id": `text_${this.dom_count}`,
+                "dom" : `
+                    <div class="${this.elem_unique[2]}_content context" id="${this.elem_unique[2]}_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}" onContextmenu="return false;">
+                    
+                        <div class="rotate" id="${this.elem_unique[2]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        
+                        <div class="rotate-center" id="${this.elem_unique[2]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        
+                        <div data-id="${this.elem_unique[2]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[2]}_rotate_content_${this.dom_count}">
+                        
+                        <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+
+                        <div class="rotate_fix" id="${this.elem_unique[2]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">
+                            <p data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
                         </div>
 
                         </div>
@@ -109,7 +142,7 @@ function addMouseEvent(elem_value) {
     // add event
     el[object_ref.id].move_elem.addEventListener("mousedown", mousedown);
     el[object_ref.id].rotate_point.addEventListener('mousedown', mousedownRotate);
-    debugger;
+    // debugger;
     for (let resizer of el[object_ref.id].resize_point) {
 
         resizer.addEventListener("mousedown", mousedownResize);
@@ -117,6 +150,9 @@ function addMouseEvent(elem_value) {
     }
     el[object_ref.id].edit_text.addEventListener("dblclick", set_Editable);
     el[object_ref.id].edit_text.addEventListener("blur", set_Uneditable);
+    
+    // コンテクストメニューを表示する関数を実行
+    view_context_menu()
 
     fitty('.fit', {
         minSize: 12,
@@ -137,6 +173,7 @@ async function insert_dom(e) {
         temp_objects = new Template_object(count).temp_objectDom;
 
         // クリックされたボタン要素のvalueを取得(temp_objectsのキーとして使用)
+    
         var BtnRef =  e.composedPath();
         var value_content = tempBtnRef[BtnRef[0].dataset.tempid]
         var value = value_content.getAttribute('value');
@@ -147,7 +184,6 @@ async function insert_dom(e) {
 
         // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
-
 
         //incrementCount
         count++;
