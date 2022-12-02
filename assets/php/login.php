@@ -55,11 +55,20 @@ if (isset($_POST["login"])) {
         <link rel="stylesheet" href="../css/login.css?v=2"type='text/css'>
         <link rel="shortcut icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
         <link rel="icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
+        <link rel="stylesheet" href="../css/login.css">
         <meta name="robots" content="none,noindex,nofollow">
     </head>
     <body class="Login_body">
-            <h1>LOGIN</h1> 
-            <div class="Login_form">
+            
+        <main>
+        <div id="backgrounds">
+			<div class="water1"></div>
+		</div>
+
+            <div id="first_view">
+				<img class="icon" src="../img/logo.png" alt="">
+			</div>
+            <div class="Login_fo"rm>
                 <form id="loginForm" name="loginForm" action="" method="POST">
                         <div class="user_info">
                             <p class="Login_NM">ユーザー名</p>    
@@ -71,7 +80,9 @@ if (isset($_POST["login"])) {
                         <label for="password"></label><input class="User" type="password" id="password" name="password" value="" placeholder="パスワードを入力"> 
                         <input type="hidden" name="ticket" value="<?php print $ticket?>">
                         <br>
-                        <input type="submit" class="Login_submit" id="login" name="login" value="ログイン">
+                        <div class="Login_ticket">
+                            <input type="submit" class="Login_submit" id="login" name="login" value="ログイン">
+                        </div>
                 </form>
 
                 <div class="action">
@@ -79,5 +90,8 @@ if (isset($_POST["login"])) {
                     <a href="../../index.html" class="Top">トップへ戻る</a>
                 </div>
             </div>
+        </main>    
     </body>
 </html>
+<!-- HTML !-->
+
