@@ -37,14 +37,14 @@ class Template_object{
                     
                         <div class="rotate-center" id="${this.elem_unique[0]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
                     
-                        <div class="edit_svg" data-id="${this.elem_unique[0]}_${this.dom_count}" id="${this.elem_unique[0]}_rotate_content_${this.dom_count}">
+                        <div class="edit_svg on_h" data-id="${this.elem_unique[0]}_${this.dom_count}" id="${this.elem_unique[0]}_rotate_content_${this.dom_count}">
 
-                            <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-tl on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-tr on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-bl on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
 
-                            <div class="rotate_fix" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="rotate_fix on_n" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
                             <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
                                 <h1 data-id="${this.elem_unique[0]}_${this.dom_count}">見出しを追加</h1>
                             </div>
@@ -69,14 +69,14 @@ class Template_object{
                         
                         <div class="rotate-center" id="${this.elem_unique[1]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
                         
-                        <div data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
+                        <div data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg on_h" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
                         
-                        <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tl on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tr on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bl on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
 
-                        <div class="rotate_fix" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="rotate_fix on_n" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
                         <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
                             <h4 data-id="${this.elem_unique[1]}_${this.dom_count}">小見出しを追加</h4>
                         </div>
@@ -102,14 +102,14 @@ class Template_object{
                         
                         <div class="rotate-center" id="${this.elem_unique[2]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
                         
-                        <div data-id="${this.elem_unique[2]}_${this.dom_count}" class="edit_svg" id="${this.elem_unique[2]}_rotate_content_${this.dom_count}">
+                        <div data-id="${this.elem_unique[2]}_${this.dom_count}" class="edit_svg on_h" id="${this.elem_unique[2]}_rotate_content_${this.dom_count}">
                         
-                        <div class="resizer-${this.dom_count} resizer resizer-tl" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-tr" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-bl" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
-                        <div class="resizer-${this.dom_count} resizer resizer-br" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tl on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tr on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bl on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
 
-                        <div class="rotate_fix" id="${this.elem_unique[2]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="rotate_fix on_n" id="${this.elem_unique[2]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
                         <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">
                             <p data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
                         </div>

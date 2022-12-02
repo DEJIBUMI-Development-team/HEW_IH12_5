@@ -60,12 +60,21 @@
                 </div>
             </div>
         </section>
+
+        <!-- 編集エリア -->
         <section class="main_edit">
             <div class="edit_area">
-                <div class="img_data" id="data">
+                <div class="edit_tgl">
+                    <ul>
+                        <li id="edit_on">編集モード</li>
+                        <li id="edit_off">閲覧モード</li>
+                    </ul>
                 </div>
+                <div class="img_data" id="data"></div>
             </div>
         </section>
+        <!-- ========= -->
+
     </main>
     <!-- script -->
     <script src="../data/templateTxt_data.js"></script>

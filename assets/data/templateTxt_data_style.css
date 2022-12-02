@@ -28,7 +28,7 @@
     transform: rotate(0deg);
 	width: 100%;
 	height: fit-content;
-    border: solid 1px #000;
+
 	z-index: 0;
 }
 
@@ -171,4 +171,11 @@
 	bottom: -5px;
 	right: -5px;
 	cursor: se-resize;
+}
+
+.on_n {
+	display: block;
+}
+.on_h {
+    border: solid 1px #000;
 }

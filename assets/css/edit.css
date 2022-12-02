@@ -112,6 +112,19 @@ input {
     width: 70%;
     margin-top: 100px;
 }
+.edit_tgl{
+    position: absolute;
+    top: 92%;
+    left: 600px;
+}
+.edit_tgl ul {
+    display: flex;
+}
+.edit_tgl ul li{
+    margin: 20px 10px;
+    cursor: pointer;
+    list-style: none;
+}
 
 #contextmenu{
     display:none;
@@ -125,5 +138,5 @@ input {
     z-index: 10;
 }
 #contextmenu li{
-    cursor:pointer;
+    cursor: pointer;
 }
