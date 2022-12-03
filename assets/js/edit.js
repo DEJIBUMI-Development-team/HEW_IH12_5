@@ -334,7 +334,11 @@ function calc_position() {
             "top" : (Rect.top - prRect.top) / prRect.height * 100,
             "left" : (Rect.left - prRect.left) / prRect.width * 100,
             "width" :  Rect.width / prRect.width * 100,
-            "height" : Rect.height / prRect.height * 100
+            "height" : Rect.height / prRect.height * 100,
+            "origin_top": Rect.top,
+            "origin_left": Rect.left,
+            "origin_width": Rect.width,
+            "origin_height": Rect.height
         };
     });
 }
@@ -345,8 +349,8 @@ function get_domSytle(abs_contents) {
     Object.keys(abs_contents).forEach((key)=>{
         // debugger;
         var content_id = key;
-        var txt = document.querySelectorAll(`#${key} text`)[0];
-        var text_Dom = document.querySelectorAll(`#${key} .text`)[0];
+        var txt = document.querySelectorAll(`#${key} .text`)[0];
+        var text_Dom = document.querySelectorAll(`#${key} .fit`)[0];
         var angle_content =  document.querySelectorAll(`#${key} .edit_svg`)[0];
 
         // Style
@@ -358,10 +362,14 @@ function get_domSytle(abs_contents) {
             "class": this.Relatively_position[key].class,
             "content_txt": txt.textContent,
             "css": {
-                "width": this.Relatively_position[key].width,
-                "height": this.Relatively_position[key].height,
-                "top": this.Relatively_position[key].top,
-                "left": this.Relatively_position[key].left,
+                "or_width": this.Relatively_position[key].origin_width,
+                "or_height": this.Relatively_position[key].origin_height,
+                "or_top": this.Relatively_position[key].origin_top,
+                "or_left": this.Relatively_position[key].origin_left,
+                "re_width": this.Relatively_position[key].width,
+                "re_height": this.Relatively_position[key].height,
+                "re_top": this.Relatively_position[key].top,
+                "re_left": this.Relatively_position[key].left,
                 "text-align": textStyle.textAlign,
                 "font-family": textStyle.fontFamily,
                 "font-size": textStyle.fontSize,
@@ -382,6 +390,9 @@ function fetch_domElem(fetch_contents) {
     .then((response) => {
         if (response.ok) {
             return response.json();
+        }
+        else{
+            console.log("no");
         }
     })
     .then((res) => {

@@ -45,8 +45,8 @@ class Template_object{
                             <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
 
                             <div class="rotate_fix on_n" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
-                            <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">
-                                <h1 data-id="${this.elem_unique[0]}_${this.dom_count}">見出しを追加</h1>
+                            <div class="fit"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+                                <h1 class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">見出しを追加</h1>
                             </div>
                         </div>
            
@@ -77,8 +77,8 @@ class Template_object{
                         <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
 
                         <div class="rotate_fix on_n" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
-                        <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">
-                            <h4 data-id="${this.elem_unique[1]}_${this.dom_count}">小見出しを追加</h4>
+                        <div class="fit" data-id="${this.elem_unique[1]}_${this.dom_count}">
+                            <h4 class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">小見出しを追加</h4>
                         </div>
 
                         </div>
@@ -110,8 +110,8 @@ class Template_object{
                         <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
 
                         <div class="rotate_fix on_n" id="${this.elem_unique[2]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
-                        <div class="fit" contenteditable="false" class="text" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">
-                            <p data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
+                        <div class="fit" data-id="${this.elem_unique[2]}_${this.dom_count}">
+                            <p  class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
                         </div>
 
                         </div>

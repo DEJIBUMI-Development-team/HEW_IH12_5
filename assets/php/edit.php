@@ -67,7 +67,7 @@
                 <div class="edit_tgl">
                     <ul>
                         <li id="edit_on">編集モード</li>
-                        <li id="edit_off">閲覧モード</li>
+                        <li id="edit_off">調整・閲覧モード</li>
                     </ul>
                 </div>
                 <div class="img_data" id="data"></div>
