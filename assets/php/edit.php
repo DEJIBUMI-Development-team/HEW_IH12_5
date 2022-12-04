@@ -21,7 +21,13 @@
     </div>
 
     <header class="content_edit_box">
-
+        <div class="save" id="save">保存する</div>
+            <div class="edit_tgl">
+                <ul>
+                    <li class="tgl_on" id="edit_on">編集モード</li>
+                    <li id="edit_off">調整・閲覧モード</li>
+                </ul>
+        </div>
     </header>
     <main>
         <section class="left_m">
@@ -63,13 +69,7 @@
         </section>
         <!-- 編集エリア -->
         <section class="main_edit">
-            <div class="save" id="save">保存する</div>
-            <div class="edit_tgl">
-                <ul>
-                    <li class="tgl_on" id="edit_on">編集モード</li>
-                    <li id="edit_off">調整・閲覧モード</li>
-                </ul>
-            </div>
+
             <div class="edit_area">
                 <div class="img_data" id="data"></div>
             </div>

@@ -9,6 +9,7 @@ html, body {
     overflow: hidden;
 }
 .content_edit_box {
+    position: relative;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -17,7 +18,7 @@ html, body {
 }
 .edit_tgl{
     position: absolute;
-    top: 3%;
+    top: 22%;
     left: 600px;
 }
 .edit_tgl ul {
@@ -57,7 +58,7 @@ html, body {
 
 .save {
     position: absolute;
-    top: 5%;
+    top: 45%;
     left: 92%;
     color: white;
     cursor: pointer;
