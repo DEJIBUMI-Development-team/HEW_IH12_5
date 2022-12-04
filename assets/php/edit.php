@@ -21,14 +21,15 @@
     </div>
 
     <header class="content_edit_box">
+
     </header>
     <main>
         <section class="left_m">
             <div class="select">
-                <div class="select_content">てんぷれ</div>
-                <div class="select_content">テキスト</div>
-                <div class="select_content"></div>
-                <div class="select_content"></div>
+                <div class="select_content select_off" id="select_1">IMG</div>
+                <div class="select_content" id="select_2">TEXT</div>
+                <div class="select_content select_off" id="select_3"></div>
+                <div class="select_content select_off" id="select_4"></div>
             </div>
             <div class="templ_m">
                 <div class="template-text-1">
@@ -60,16 +61,16 @@
                 </div>
             </div>
         </section>
-
         <!-- 編集エリア -->
         <section class="main_edit">
+            <div class="save" id="save">保存する</div>
+            <div class="edit_tgl">
+                <ul>
+                    <li class="tgl_on" id="edit_on">編集モード</li>
+                    <li id="edit_off">調整・閲覧モード</li>
+                </ul>
+            </div>
             <div class="edit_area">
-                <div class="edit_tgl">
-                    <ul>
-                        <li id="edit_on">編集モード</li>
-                        <li id="edit_off">調整・閲覧モード</li>
-                    </ul>
-                </div>
                 <div class="img_data" id="data"></div>
             </div>
         </section>

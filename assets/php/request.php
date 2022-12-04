@@ -14,6 +14,7 @@ $raw = file_get_contents('php://input'); // POSTされた生のデータを受�
 $data = json_decode($raw); // json形式をphp変数に変換
 // ChromePhp::log($data);
 $res = json_encode($data, JSON_UNESCAPED_UNICODE); // やりたい処理
+
 ChromePhp::log($res);
 db("INSERT INTO `t_user_edit`(`edit_id`, `F_user_id`, `temp_cd`, `title`, `img_data`, `content_data`) VALUES (
 	'{$db_input["tmp_edit_id"]}',
@@ -24,7 +25,7 @@ db("INSERT INTO `t_user_edit`(`edit_id`, `F_user_id`, `temp_cd`, `title`, `img_d
 	'{$res}'
 )");
 
-$get_elem = db("SELECT content_data FROM t_user_edit");
+$get_elem = db("SELECT content_data FROM t_user_edit where edit_id = 1");
 
 // ChromePhp::log($get_elem);
 // echoすると返せる

@@ -15,6 +15,59 @@ html, body {
     height: 10%;
     background-color: rgb(114, 100, 100);
 }
+.edit_tgl{
+    position: absolute;
+    top: 3%;
+    left: 600px;
+}
+.edit_tgl ul {
+    margin-top: 0px;
+    display: flex;
+    padding-left: 10px;
+}
+.edit_tgl ul li{
+    margin: 20px 10px;
+    cursor: pointer;
+    list-style: none;
+    padding: 5px;
+    border-radius: 7%;
+    color: white;
+    background-color:#656565;
+    transform: translateY(-2px);
+    transition: 0.1s ease-in-out;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.tgl_on{
+    background-color: rgb(47, 46, 46) !important;
+    box-shadow: none !important;
+    transform: translateY(0px) !important;
+}
+
+.edit_tgl ul li:hover,
+.save:hover{
+    background-color: rgb(80, 79, 79);
+    box-shadow: none;
+    transform: translateY(0px);
+}
+.save:active{
+    background-color: rgb(47, 46, 46);
+    box-shadow: none;
+    transform: translateY(0px);
+}
+
+.save {
+    position: absolute;
+    top: 5%;
+    left: 92%;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 7%;
+    background-color:#656565;
+    transform: translateY(-2px);
+    transition: 0.1s ease-in-out;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
 main {
     display: flex;
     width: 100%;
@@ -34,8 +87,25 @@ main {
 .select_content {
     width: 70px;
     height: 70px;
-    background-color: white;
+    color: white;
     margin: 20px auto;
+    text-align: center;
+    line-height: 70px;
+    transform: translateX(15px);
+    cursor: pointer;
+    background-color: rgb(47, 46, 46);
+    transform: translateX(15px);
+    z-index: 100;
+    transition: 0.3s ease-in-out;
+}
+
+.select_off {
+    background-color: #656565;    
+    transform: translateX(0px);
+}
+
+.select_content span{
+    vertical-align: middle;
 }
 .templ_m{
     width: 500px;
@@ -112,19 +182,7 @@ input {
     width: 70%;
     margin-top: 100px;
 }
-.edit_tgl{
-    position: absolute;
-    top: 92%;
-    left: 600px;
-}
-.edit_tgl ul {
-    display: flex;
-}
-.edit_tgl ul li{
-    margin: 20px 10px;
-    cursor: pointer;
-    list-style: none;
-}
+
 
 #contextmenu{
     display:none;

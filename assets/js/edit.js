@@ -27,8 +27,7 @@ function mousedown(e) {
     let prevX = e.clientX;
     let prevY = e.clientY;
 
-    clickedDom = e.composedPath();
-    clickedId = clickedDom[0].dataset.id;
+    clickedId = get_id(e, "id");
 
     // mousemoveされたとき
     function mousemove(e) {
@@ -74,8 +73,8 @@ function mousedownResize(e) {
         maxSize: 100,
     });
 
-    clickedDom = e.composedPath();
-    clickedId = clickedDom[0].dataset.id;
+    clickedId = get_id(e, "id");
+
     const get_rect = el[clickedId].move_elem.getBoundingClientRect();
     const heigh_raitos = get_rect.height / get_rect.width;
 
@@ -86,7 +85,6 @@ function mousedownResize(e) {
 
     //　クリック時のカーソル座標を取得
     let prevX = e.clientX;
-    let prevY = e.clientY;
 
     //  mousemove mouseupイベントそれぞれを指定要素に付加
     window.addEventListener("mousemove", mousemoveResize);
@@ -154,6 +152,9 @@ function mousedownResize(e) {
     }
 }
 
+/**
+ * 要素の回転アニメーション
+ */
 function mousedownRotate(e) {
     // debugger;
     window.addEventListener("mousemove", mousemoveRotate);
@@ -162,8 +163,8 @@ function mousedownRotate(e) {
     
     // クリックされた頂点の要素を取得し、座標としてオブジェクト形式で格納
     // debugger;
-    click_rotate_dom = e.composedPath();
-    click_rotate_id = click_rotate_dom[0].dataset.rotate;
+    click_rotate_id = get_id(e, "rotate");
+
     var top_rect = el[click_rotate_id].rotate_top_fix_point.getBoundingClientRect();
     var center_rect = el[click_rotate_id].rotate_center.getBoundingClientRect();
 
@@ -223,8 +224,7 @@ function mousedownRotate(e) {
         
         // 角度計算用
         // console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
-        // console.log(isMove, isResizing, isRotate)
-            
+        // console.log(isMove, isResizing, isRotate)       
     }
     function mouseupRotate() {
         window.removeEventListener("mousemove", mousemoveRotate);
@@ -236,58 +236,36 @@ function mousedownRotate(e) {
 
 }
 
-// テキスト編集機能のon off
-function set_Editable(e) {
-    isMove = false;
-    clicked_dom = e.composedPath();
-    clicked_id = clicked_dom[0].dataset.id;
-    el[clicked_id].edit_text.contentEditable = "true"
-}
+/**
+ * 各セレクト要素を選択した場合の処理
+ */
+var select_on = document.querySelectorAll(".select_content");
 
-function set_Uneditable(e) {
-    isMove = true;
-    clicked_dom_n = e.composedPath();
-    clicked_id_n = clicked_dom_n[0].dataset.id;
-    el[clicked_id_n].edit_text.contentEditable = "false";
-}
-
-// 編集モード　閲覧モード変更部分
-const on_edit = document.getElementById("edit_on");
-const off_edit = document.getElementById("edit_off");
-on_edit.addEventListener("click", ()=>{
-    var block_elem = document.querySelectorAll(".on_n");
-    var visible_elem = document.querySelectorAll(".on_h");
-    block_elem.forEach((elem)=>{
-        elem.style.display = "block";
-    });
-    visible_elem.forEach((elem)=>{
-        elem.style.border = "solid 1px #000";
-    });        
-});
-off_edit.addEventListener("click", ()=>{
-    var none_elem = document.querySelectorAll(".on_n");
-    var hidden_elem = document.querySelectorAll(".on_h");
-    none_elem.forEach((elem)=>{
-        elem.style.display = "none";
-    });
-    hidden_elem.forEach((elem)=>{
-        elem.style.border = "none"
+select_on.forEach((elem)=>{
+    elem.addEventListener("click", (e)=>{
+        target = e.target.id;
+        var on_elem = document.getElementById(target);
+        on_elem.classList.remove("select_off");
+        var off_elem = document.querySelectorAll(`.select_content:not(#${target})`);
+        off_elem.forEach((off)=>{
+            off.classList.add("select_off");
+        });
     });
 });
 
 
-
-// 対象のDOMを右クリックした時のコンテキストメニュー表示アニメーション
+/**
+ * 対象のDOMを右クリックした時のコンテキストメニュー表示アニメーション
+ */
 function view_context_menu(){
     document.querySelector(".context").addEventListener('contextmenu',function (e){
         document.getElementById('contextmenu').style.left=e.pageX+"px";
         document.getElementById('contextmenu').style.top=e.pageY+"px";
         document.getElementById('contextmenu').style.display="block";
         
-        // クリックを行った要素を取得
-        clicked_dom = e.composedPath();
-        clicked_id = clicked_dom[0].dataset.id;
-        
+        // クリックを行った要素のIDを取得
+        clicked_id = get_id(e, "id");
+
         // 削除対象としてデータを格納
         delete_point_dom = clicked_id;
     });
@@ -297,17 +275,102 @@ function view_context_menu(){
     });
 }
 
-// コンテキストから、対象のDOMを削除するボタンを押した時の処理
+/**
+ * 要素をダブルクリックすることでテキスト編集可能状態にする
+ * @param e event 
+ */
+function set_Editable(e) {
+    isMove = false;
+    clicked_id = get_id(e, "id");
+    el[clicked_id].edit_text.contentEditable = "true";
+}
+
+/**
+ * フォーカスを外した際に、テキストを非編集状態にする
+ * @param e event 
+ */
+
+function set_Uneditable(e) {
+    isMove = true;
+    clicked_id_n = get_id(e, "id");
+    el[clicked_id_n].edit_text.contentEditable = "false";
+}
+
+/**
+ * 指定した要素のidを取得する関数
+ * @param event 指定要素のevent引数 
+ * @param {string} specified_key datasetの参照キー
+ * @returns 指定要素のid
+ */
+function get_id(event, specified_key){
+    clickedDom = event.composedPath();
+    return clickedDom[0].dataset[specified_key];    
+}
+
+
+const on_edit = document.getElementById("edit_on");
+const off_edit = document.getElementById("edit_off");
+
+// 要素を編集モードにする
+on_edit.addEventListener("click", ()=>{
+    off_edit.classList.remove("tgl_on");
+    on_edit.classList.add("tgl_on");
+    var block_elem = document.querySelectorAll(".on_n");
+    var visible_elem = document.querySelectorAll(".on_h");
+    block_elem.forEach((elem)=>{
+        elem.style.display = "block";
+    });
+    visible_elem.forEach((elem)=>{
+        elem.style.border = "solid 1px #000";
+    });        
+});
+
+// 要素を調整・閲覧モードにする
+off_edit.addEventListener("click", ()=>{
+    on_edit.classList.remove("tgl_on");
+    off_edit.classList.add("tgl_on");
+    var none_elem = document.querySelectorAll(".on_n");
+    var hidden_elem = document.querySelectorAll(".on_h");
+    none_elem.forEach((elem)=>{
+        elem.style.display = "none";
+    });
+    hidden_elem.forEach((elem)=>{
+        elem.style.border = "none";
+    });
+});
+
+
 const remove_button = document.getElementById("remove");
 remove_button.addEventListener("click", remove_element)
+/**
+ * コンテキストから、対象のDOMを削除するボタンを押した時の処理
+ */
 function remove_element(){
     var remove_elem = document.getElementById(`${delete_point_dom}`);
     remove_elem.remove();
     delete el[delete_point_dom];
 }
 
+const save_btn = document.getElementById("save");
+save_btn.addEventListener("click", save_elememnt);
+/**
+ * 保存ボタンクリック後に要素の情報を取得し、fetchする一連の処理群
+ */
+function save_elememnt(){
+    // 絶対位置・相対位置を取得
+    var position = calc_position();
+
+    // 各要素のstyleを取得
+    var elem_style = get_domSytle(position);
+
+    // fetch
+    fetch_domElem(elem_style);
+}
+
+
 /**
  * 動的要素の相対位置を計算し、domIDをキーとして、オブジェクトに格納する関数
+ * @returns position object
  */
 function calc_position() {
     // 親要素の絶対位置をを取得
@@ -341,8 +404,14 @@ function calc_position() {
             "origin_height": Rect.height
         };
     });
+    return Relatively_position;
 }
 
+/**
+ * 各要素のstyleを取得する
+ * @param {object} abs_contents 要素の絶対位置及び相対位置
+ * @returns style object
+ */
 function get_domSytle(abs_contents) {
 
     fetch_object = {};
@@ -377,8 +446,14 @@ function get_domSytle(abs_contents) {
             }
         };
     });
+    return fetch_object;
 }
 
+/**
+ * 各要素の情報をrequest.phpにfetchする処理
+ * @param {object} fetch_contents
+ * fetch正常に終了した際、fetchしたオブジェクトを出力する
+ */
 function fetch_domElem(fetch_contents) {
     console.log(JSON.stringify(fetch_contents));
     // request.phpとのデータやり取りを行う処理
@@ -402,4 +477,3 @@ function fetch_domElem(fetch_contents) {
         console.error("Error", error);
     });
 }
-
