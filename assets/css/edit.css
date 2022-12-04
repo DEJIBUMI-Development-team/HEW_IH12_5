@@ -73,6 +73,7 @@ main {
     display: flex;
     width: 100%;
     height: calc(100% - 100px);
+    background-color: rgb(47, 46, 46);
 }
 .left_m {
     display: flex;
@@ -95,7 +96,7 @@ main {
     transform: translateX(15px);
     cursor: pointer;
     background-color: rgb(47, 46, 46);
-    transform: translateX(15px);
+    transform: translateX(16px);
     z-index: 100;
     transition: 0.3s ease-in-out;
 }
@@ -108,12 +109,40 @@ main {
 .select_content span{
     vertical-align: middle;
 }
-.templ_m{
+
+.temp_m,
+.temp_t,
+.temp_e,
+.temp_f{
     width: 500px;
     height: 100%;
     background-color: rgb(47, 46, 46);
     overflow: auto;
+    opacity: 1;
+    animation: fadeIn 0.3s ease-in-out 0s forwards;
 }
+
+.off_t{
+    opacity: 0;
+    display: none;
+}
+@keyframes fadeIn {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+  
+    1% {
+      display: block;
+      opacity: 0;
+    }
+  
+    100% {
+      display: block;
+      opacity: 1;
+    }
+}
+
 .main_edit {
     width: calc(100% - 600px);
     height: 100%;

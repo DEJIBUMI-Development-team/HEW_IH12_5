@@ -32,12 +32,46 @@
     <main>
         <section class="left_m">
             <div class="select">
-                <div class="select_content select_off" id="select_1">IMG</div>
-                <div class="select_content" id="select_2">TEXT</div>
-                <div class="select_content select_off" id="select_3"></div>
-                <div class="select_content select_off" id="select_4"></div>
+                <div class="select_content select_off" id="select_img">IMG</div>
+                <div class="select_content" id="select_text">TEXT</div>
+                <div class="select_content select_off" id="select_elem_1"></div>
+                <div class="select_content select_off" id="select_elem_2"></div>
             </div>
-            <div class="templ_m">
+
+            <!-- 画像テンプレート部分============================== -->
+            <div class="temp_t select_img main-temp-elem off_t ">
+                <div class="template-text-1">
+                    <h2></h2>
+                    <label for="temp-0" class="title-text-1 template-content">
+                        <h1></h1>
+                    </label>
+                    <label for="temp-1" class="title-text-2 template-content">
+                        <h4></h4>
+                    </label>
+                    <label for="temp-2" class="title-text-3 template-content">
+                        <p></p>
+                    </label>
+                    <!-- <input type="button" value="ft_content" id="temp-0" data-tempid="0">
+                    <input type="button" value="sc_content" id="temp-1" data-tempid="1">
+                    <input type="button" value="th_content" id="temp-2" data-tempid="2"> -->
+                </div>
+                <div class="template-text-2">
+                    <h2></h2>
+                    <label for="temp-0" class="text-1 template-content">
+                        <p></p>
+                    </label>
+                    <label for="temp-1" class="text-2 template-content">
+                        <p></p>
+                    </label>
+                    <label for="temp-2" class="text-3 template-content">
+                        <p></p>
+                    </label>
+                </div>
+            </div>
+            <!-- ================================================= -->
+
+            <!-- テキストテンプレート部分====================================== -->
+            <div class="temp_m select_text main-temp-elem" id="text_template">
                 <div class="template-text-1">
                     <h2>テキストをクリックして編集画面に追加</h2>
                     <label for="temp-0" class="title-text-1 template-content">
@@ -66,6 +100,73 @@
                     </label>
                 </div>
             </div>
+            <!-- ============================================================= -->
+            
+            <!-- 仮置き部分==================================================== -->
+            <div class="temp_e select_elem_1 main-temp-elem off_t ">
+                <div class="template-text-1">
+                        <h2></h2>
+                        <label for="temp-0" class="title-text-1 template-content">
+                            <h1></h1>
+                        </label>
+                        <label for="temp-1" class="title-text-2 template-content">
+                            <h4></h4>
+                        </label>
+                        <label for="temp-2" class="title-text-3 template-content">
+                            <p></p>
+                        </label>
+                        <!-- <input type="button" value="ft_content" id="temp-0" data-tempid="0">
+                        <input type="button" value="sc_content" id="temp-1" data-tempid="1">
+                        <input type="button" value="th_content" id="temp-2" data-tempid="2"> -->
+                    </div>
+                    <div class="template-text-2">
+                        <h2></h2>
+                        <label for="temp-0" class="text-1 template-content">
+                            <p></p>
+                        </label>
+                        <label for="temp-1" class="text-2 template-content">
+                            <p></p>
+                        </label>
+                        <label for="temp-2" class="text-3 template-content">
+                            <p></p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================= -->
+            
+            <!-- 仮置き部分==================================================== -->
+            <div class="temp_f select_elem_2 main-temp-elem off_t ">
+                <div class="template-text-1">
+                        <h2></h2>
+                        <label for="temp-0" class="title-text-1 template-content">
+                            <h1></h1>
+                        </label>
+                        <label for="temp-1" class="title-text-2 template-content">
+                            <h4></h4>
+                        </label>
+                        <label for="temp-2" class="title-text-3 template-content">
+                            <p></p>
+                        </label>
+                        <!-- <input type="button" value="ft_content" id="temp-0" data-tempid="0">
+                        <input type="button" value="sc_content" id="temp-1" data-tempid="1">
+                        <input type="button" value="th_content" id="temp-2" data-tempid="2"> -->
+                    </div>
+                    <div class="template-text-2">
+                        <h2></h2>
+                        <label for="temp-0" class="text-1 template-content">
+                            <p></p>
+                        </label>
+                        <label for="temp-1" class="text-2 template-content">
+                            <p></p>
+                        </label>
+                        <label for="temp-2" class="text-3 template-content">
+                            <p></p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================= -->
         </section>
         <!-- 編集エリア -->
         <section class="main_edit">

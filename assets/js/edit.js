@@ -246,10 +246,17 @@ select_on.forEach((elem)=>{
         target = e.target.id;
         var on_elem = document.getElementById(target);
         on_elem.classList.remove("select_off");
+
+        var off_main_elem = document.querySelectorAll(`.main-temp-elem:not(#${target})`);
         var off_elem = document.querySelectorAll(`.select_content:not(#${target})`);
         off_elem.forEach((off)=>{
             off.classList.add("select_off");
         });
+        off_main_elem.forEach((off)=>{
+            off.classList.add("off_t")
+        });
+        var on_main_elem = document.querySelector(`.${target}`);
+        on_main_elem.classList.remove("off_t");
     });
 });
 
