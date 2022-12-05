@@ -1,3 +1,6 @@
+*:focus {
+    outline: none;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -19,24 +22,108 @@ main {
 }
 .left_m {
     display: flex;
-    width: 40%;
+    position: absolute;
+    width: 600px;
+    height: 100%;
 }
 .select {
-    width: 16%;
+    width: 100px;
     height: 100%;
     background-color: rgb(128, 128, 128);
 }
+.select_content {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    margin: 20px auto;
+}
 .templ_m{
-    width: 84%;
+    width: 500px;
     height: 100%;
     background-color: rgb(47, 46, 46);
+    overflow: auto;
 }
 .main_edit {
-    width: 60%;
+    width: calc(100% - 600px);
     height: 100%;
     background-color: rgb(215, 215, 215);
+    margin-left: 600px;
 }
 .edit_area {
     width: 100%;
     height: 100%;
+}
+input {
+    display: none;
+}
+.template-content{
+    width: 100%;
+    cursor: pointer;    
+    text-align: left;
+}
+.template-content h1{
+    margin-top: 0;
+}
+.template-content h1,
+.template-content h4,
+.template-content p{
+    background-color:#474646;
+    padding: 5px;
+    padding-left: 14px;
+}
+
+.template-content h1:hover,
+.template-content h4:hover,
+.template-content p:hover{
+    background-color:#656565;
+}
+
+.template-text-1 h2,
+.template-text-2 h2{
+    font-size: 0.9em;
+}
+.title-text-1 {
+    font-size: 1.5em;
+}
+.title-text-2{
+    font-size: 1.3em;
+}
+.title-text-3{
+    font-size: 1.1em;
+}
+.text-1 {
+    font-size: 1.5em;
+}
+.text-2{
+    font-size: 1.3em;
+}
+.text-3{
+    font-size: 1.1em;
+}
+.template-text-1{
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 70%;
+}
+.template-text-2{
+    color: #fff;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 100px;
+}
+
+#contextmenu{
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:200px;
+    height:60px;
+    border:1px solid #000;
+    background-color:#fff;
+    z-index: 10;
+}
+#contextmenu li{
+    cursor:pointer;
 }
