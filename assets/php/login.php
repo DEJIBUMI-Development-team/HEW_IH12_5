@@ -41,6 +41,20 @@ if (isset($_POST["login"])) {
             // }elseif($_SESSION["..."] == ",,,"){
             //     header("./,,,,.php");
             // }
+
+            // クリック要素ごとにSESSIONの値を入力
+            if (isset($_POST['ScreenTransition'])){
+                // 編集ボタンクリックで"edit"を代入
+                if ($_SESSION['HS'] == "edit") {
+                    $result = "編集画面で";
+                    header("Location:edit.php");
+                  }
+                  // マイページボタンクリックで"mypage"を代入
+                if ($_SESSION['HS'] == "mypage") {
+                    $result = "マイページで";
+                    header("Location:mypage.php");
+            }
+
             
             // ハッシュ値での格納が実装完了した際にコメントを外す
             // if (password_verify($password,  $merge_row["password"])) {
@@ -53,6 +67,7 @@ if (isset($_POST["login"])) {
         }
 
     }
+}
 }
 
 ?>
@@ -83,16 +98,23 @@ if (isset($_POST["login"])) {
                 <form id="loginForm" name="loginForm" action="" method="POST">
                         <div class="user_info">
                             <p class="Login_NM">ユーザー名</p>    
-                            <div class="error"><font color="#ff0000"><?php print htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
+                            <div class="error">
+                                <font color="#ff0000">
+                                    <?php print htmlspecialchars($errorMessage, ENT_QUOTES); ?>
+                                </font>
+                            </div>
                         </div>
                         <label for="userName"></label><input class="User" type="text" id="userName" name="userName" placeholder="ユーザー名を入力" value="<?php if (!empty($_POST["userName"])) {echo htmlspecialchars($_POST["userName"], ENT_QUOTES);} ?>">
                         
                         <p class="Login_PW">パスワード</p>
-                        <label for="password"></label><input class="User" type="password" id="password" name="password" value="" placeholder="パスワードを入力"> 
+                        <label for="password"></label>
+                        <input class="User" type="password" id="password" name="password" value="" placeholder="パスワードを入力"> 
                         <input type="hidden" name="ticket" value="<?php print $ticket?>">
                         <br>
                         <div class="Login_ticket">
-                            <input type="submit" class="Login_submit" id="login" name="login" value="ログイン">
+                            <form action="a.php" method="post">
+                                <input type="submit" class="Login_submit" id="login" name="login ScreenTransition" value="ログイン">
+                            </form>
                         </div>
                 </form>
 
@@ -105,4 +127,3 @@ if (isset($_POST["login"])) {
     </body>
 </html>
 <!-- HTML !-->
-
