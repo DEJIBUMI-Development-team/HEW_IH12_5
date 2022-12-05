@@ -250,28 +250,3 @@ focus_item.addEventListener(`blur`, () => {
         });
     }
 })
-
-const font = document.getElementById("font");
-const chenge_font = document.querySelectorAll(".chenge_font");
-
-focus_item.addEventListener(`focus`, () => {
-
-    block_content.forEach((element, index) => {
-        element.style.display = "block";
-    });
-    visible_content.forEach((element, index) => {
-        element.style.visibility = "visible";
-    });
-})
-
-focus_item.addEventListener(`blur`, () => {
-
-    if (!isResizing && !isRotate) {
-        block_content.forEach((element, index) => {
-            element.style.display = "none";
-        });
-        visible_content.forEach((element, index) => {
-            element.style.visibility = "hidden";
-        });
-    }
-})
