@@ -31,12 +31,23 @@ if (isset($_POST["login"])) {
         //ユーザ―判定
         if ($userName == $merge_row["user_name"]) {
             // パスワード判定
-            if (password_verify($password,  $merge_row["password"])) {
-                // "承認成功" 対象サイトに遷移
-                // header("./edit.php");
-            }else {
-                $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
-            }
+
+            // "承認成功" 対象サイトに遷移
+            // settion内部のvalueを検索して、遷移画面を設定
+            
+            // ↓一例
+            // if ($_SESSION["..."] == "...") {
+            //     header("./....php"); 
+            // }elseif($_SESSION["..."] == ",,,"){
+            //     header("./,,,,.php");
+            // }
+            
+            // ハッシュ値での格納が実装完了した際にコメントを外す
+            // if (password_verify($password,  $merge_row["password"])) {
+
+            // }else {
+            //     $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
+            // }
         }else {
             $errorMessage = "ユーザ―名または、パスワードに誤りがあります!";
         }
