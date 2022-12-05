@@ -16,12 +16,11 @@ $data = json_decode($raw); // json形式をphp変数に変換
 $res = json_encode($data, JSON_UNESCAPED_UNICODE); // やりたい処理
 
 ChromePhp::log($res);
-db("INSERT INTO `t_user_edit`(`edit_id`, `F_user_id`, `temp_cd`, `title`, `img_data`, `content_data`) VALUES (
+db("INSERT INTO `t_user_edit`(`edit_id`, `F_user_id`, `temp_cd`, `title`, `content_data`) VALUES (
 	'{$db_input["tmp_edit_id"]}',
 	'{$db_input["tmp_user_id"]}',
 	'{$db_input["tmp_temp_cd"]}',
 	'{$db_input["tmp_title"]}',
-	'{}',
 	'{$res}'
 )");
 

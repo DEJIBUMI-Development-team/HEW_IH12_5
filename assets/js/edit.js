@@ -266,9 +266,10 @@ select_on.forEach((elem)=>{
 const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "night.PNG", "", "", "", "", "", ""] 
 const insert_element = document.getElementById("data");
 const select_img = document.querySelectorAll(".select-img-all");
-
+var current_url = url[0];
 select_img.forEach((img, index)=>{
     img.addEventListener("click", ()=>{
+        current_url = url[index];
         insert_element.style.backgroundImage = `url(../data/img_data/${url[index]})`;
     });
 });
@@ -432,6 +433,13 @@ function calc_position() {
 function get_domSytle(abs_contents) {
 
     fetch_object = {};
+    const img_data_elem = document.getElementById("data");
+
+    fetch_object._image = {
+        "backgroud-image" : current_url,
+        "background-size": window.getComputedStyle(img_data_elem).backgroundSize,
+    }
+
     Object.keys(abs_contents).forEach((key)=>{
         // debugger;
         var content_id = key;

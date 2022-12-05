@@ -45,24 +45,24 @@
                 </div>
 
                 <div class="select-img-contents-1">
-                    <div class="select-img-1 select-img-all"></div>
-                    <div class="select-img-2 select-img-all"></div>
+                    <div class="select-img-1 select-img-all" id="harinezumi"></div>
+                    <div class="select-img-2 select-img-all" id="kingyo"></div>
                 </div>
                 <div class="select-img-contents-1">
-                    <div class="select-img-3 select-img-all"></div>
-                    <div class="select-img-4 select-img-all"></div>
+                    <div class="select-img-3 select-img-all" id="sc_mimai"></div>
+                    <div class="select-img-4 select-img-all" id="night"></div>
                 </div>
                 <div class="select-img-contents-1">
-                    <div class="select-img-5 select-img-all"></div>
-                    <div class="select-img-6 select-img-all"></div>
+                    <div class="select-img-5 select-img-all" id=""></div>
+                    <div class="select-img-6 select-img-all" id=""></div>
                 </div>
                 <div class="select-img-contents-1">
-                    <div class="select-img-7 select-img-all"></div>
-                    <div class="select-img-8 select-img-all"></div>
+                    <div class="select-img-7 select-img-all" id=""></div>
+                    <div class="select-img-8 select-img-all" id=""></div>
                 </div>
                 <div class="select-img-contents-2">
-                    <div class="select-img-9 select-img-all"></div>
-                    <div class="select-img-10 select-img-all"></div>
+                    <div class="select-img-9 select-img-all" id=""></div>
+                    <div class="select-img-10 select-img-all" id=""></div>
                 </div>
             </div>
             <!-- ================================================= -->
