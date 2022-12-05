@@ -296,7 +296,6 @@ function set_Editable(e) {
  * フォーカスを外した際に、テキストを非編集状態にする
  * @param e event 
  */
-
 function set_Uneditable(e) {
     isMove = true;
     clicked_id_n = get_id(e, "id");
@@ -345,7 +344,6 @@ off_edit.addEventListener("click", ()=>{
         elem.style.border = "none";
     });
 });
-
 
 const remove_button = document.getElementById("remove");
 remove_button.addEventListener("click", remove_element)
