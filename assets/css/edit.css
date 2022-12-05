@@ -167,7 +167,7 @@ main {
 
 .select-img-1{
     margin-right: 10px;
-    background-image: url("../data/img_data/JTDR4454.PNG");
+    background-image: url("../data/img_data/harinezumi.PNG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -175,14 +175,14 @@ main {
 
 .select-img-2{
     margin-left: 10px;
-    background-image: url("../data/img_data/OHKA4066.PNG");
+    background-image: url("../data/img_data/kingyo.PNG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 .select-img-3{
     margin-right: 10px;
-    background-image: url("../data/img_data/PGLS5412.PNG");
+    background-image: url("../data/img_data/sc_mimai.PNG");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -190,8 +190,8 @@ main {
 
 .select-img-4{
     margin-left: 10px;
-    /* background-image: url("../data/img_data/huto01.png"); */
-    background-size: cover;
+    background-image: url("../data/img_data/night.PNG");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
