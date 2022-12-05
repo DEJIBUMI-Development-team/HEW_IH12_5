@@ -260,6 +260,18 @@ select_on.forEach((elem)=>{
     });
 });
 
+/**
+ * 画像選択による、背景画像の差し替え
+ */
+const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "night.PNG", "", "", "", "", "", ""] 
+const insert_element = document.getElementById("data");
+const select_img = document.querySelectorAll(".select-img-all");
+
+select_img.forEach((img, index)=>{
+    img.addEventListener("click", ()=>{
+        insert_element.style.backgroundImage = `url(../data/img_data/${url[index]})`;
+    });
+});
 
 /**
  * 対象のDOMを右クリックした時のコンテキストメニュー表示アニメーション
