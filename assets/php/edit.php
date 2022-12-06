@@ -9,7 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/edit.css">
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
     <script src="../package/fitty.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
     <title>編集画面</title>
 </head>
 <body>
@@ -21,6 +25,29 @@
     </div>
 
     <header class="content_edit_box">
+        <select name="fontFamily">
+            <option value="serif">明朝体</option>
+            <option value="sans-serif">ゴシック体</option>
+            <option value="MS Pゴシック">MS Pゴシック</option>
+            <option value="游ゴシック">游ゴシック</option>
+            <option value="monospace">等幅フォント</option>
+            <option value="fantasy">装飾的フォント</option>
+            <option value="yosugara">夜すがら手書きフォント</option>
+        </select>
+        
+        <select name="fontSize">
+            <option value="40">文字サイズ：小</option>
+            <option value="50">文字サイズ：中</option>
+            <option value="60">文字サイズ：大</option>
+        </select>
+        
+        <select name="writingMode">
+            <option value="unset">横</option>
+            <option value="vertical-lr">縦</option>
+        </select>
+        <!-- ここにカラーピッカーが表示される -->
+        <div class="color-picker"></div>
+
         <div class="save" id="save">保存する</div>
             <div class="edit_tgl">
                 <ul>
@@ -178,5 +205,9 @@
     <!-- script -->
     <script src="../data/templateTxt_data.js"></script>
     <script src="../js/edit.js"></script>
+    <script src="../js/jquery.font.js"></script>
+    <!-- pickr java script -->
+    <script src="../package/pickr.es5.min.js"></script>
+    <script src="../package/pickr.index.js"></script>
 </body>
 </html>
