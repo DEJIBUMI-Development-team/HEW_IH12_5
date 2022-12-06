@@ -1,3 +1,7 @@
+@font-face {
+	font-family: "yosugara";src: url(../fonts/yosugara1.1.ttf);
+}
+
 body,html{
 	margin: 0px;
 	padding: 0px;
@@ -13,13 +17,13 @@ body,html{
 	background-image: url(../img/pic_normal_new_01.jpg);
 	background-repeat: no-repeat;
 	background-size: 400px;
-
+	
 }
 .move3 {
 	padding: 10px 30px 10px 20px;
 	width: calc(100%-300px);
 	margin: 0;
-	position: relative;
+	/* position: relative; */
 	resize:both; 
 	/* padding-right: 50px; */
 	/* width: 80px; */
@@ -36,13 +40,16 @@ body,html{
     outline: none;
 }
 p{	
-	width: 30px;
+	/* width: 30px; */
 	/* margin: 10px; */
-	/* font-family: "HanziPen SC" , sans-serif; */
+	/* src: url(../fonts/yosugara1.1.ttf); */
 	font-family: serif;
 	font-size: 50px;
 	margin: 0;
 	padding: 0;
+	visibility: visible;
+	-ms-writing-mode: tb-rl;
+	writing-mode: unset;
 }
 /* 以下デザイン */
 header{
@@ -61,13 +68,13 @@ main{
 /* test */
 .item {
 	position: absolute;
-	top: 150px;
+	/* top: 150px;
 	left: 450px;
-	width: 70px;
+	width: 70px; */
 	/* height: 100px; */
-	writing-mode: vertical-rl;
+	/* writing-mode: vertical-rl;
 	-webkit-writing-mode: vertical-rl;
-	-ms-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl; */
 	/* text-align: center; */
 	/* background-color: rgb(224, 224, 224); */
 	/* box-sizing: content-box; */
@@ -136,7 +143,7 @@ main{
 	top: 0%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: n-resize;
 }
 
 .resizer-tr {
@@ -149,14 +156,14 @@ main{
 	top: 50%;
 	left: 0%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: w-resize;
 }
 
 .resizer-cr {
 	top: 50%;
 	left: 100%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: e-resize;
 }
 
 .resizer-bl {
@@ -169,11 +176,19 @@ main{
 	top: 100%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	cursor: nw-resize;
+	cursor: s-resize;
 }
 
 .resizer-br {
 	bottom: -5px;
 	right: -5px;
 	cursor: se-resize;
+}
+
+.on_focus_button{
+	display: none;
+}
+
+.on_focus{
+	visibility: hidden;
 }

@@ -224,3 +224,29 @@ function mousedownRotate() {
     }
 
 }
+
+const focus_item = document.getElementById("focus");
+const visible_content = document.querySelectorAll(".on_focus");
+const block_content = document.querySelectorAll(".on_focus_button");
+
+focus_item.addEventListener(`focus`, () => {
+
+    block_content.forEach((element, index) => {
+        element.style.display = "block";
+    });
+    visible_content.forEach((element, index) => {
+        element.style.visibility = "visible";
+    });
+})
+
+focus_item.addEventListener(`blur`, () => {
+
+    if (!isResizing && !isRotate) {
+        block_content.forEach((element, index) => {
+            element.style.display = "none";
+        });
+        visible_content.forEach((element, index) => {
+            element.style.visibility = "hidden";
+        });
+    }
+})
