@@ -1,5 +1,4 @@
 const pickrContainer = document.querySelector('.color-picker');
-const themeContainer = document.querySelector('.theme-container');
 const themes = [
     [
         'nano',
