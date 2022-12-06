@@ -6,7 +6,9 @@ setting
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 html,body   {height:100%;}
-body  {min-width:960px; width:100%; color:#666; letter-spacing:3pt;}
+body  {min-width:960px; width:100%; color:#666;
+   /* letter-spacing:13pt; */
+  }
 body a  {color:#666;}
 
 ::selection {background: #fff; color: #98d9e7;}
@@ -58,32 +60,145 @@ background
   background: url(../img/water_red2.jpg);
   background-size: cover;
   position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   display: block;
 }
+
+.back{
+  animation-name:back;
+  animation-duration:3.3s;
+  }
+
+  @keyframes back{
+    0% {
+      filter: blur(40px);
+      opacity: 0;
+    }
+  
+    80% {
+      filter: blur(40px);
+      opacity: 0;
+    }
+
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
+  /* @keyframes back{
+    0% {
+      filter: sepia(100%);
+    }
+  
+    80% {
+      filter: sepia(100%);
+    }
+
+    100% {
+      filter: sepia(0%);
+    }
+  } */
 
 /* ------------------------------------------------
 first_view
 --------------------------------------------------- */
 #first_view{
-  /* background-color: rgb(239, 247, 184); */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ぼかしから出現 */
+.blur{
+  font-size: 50%;
+  font-size: max(60px);
+  animation-name:blurAnime;
+  animation-duration:3s;
+  animation-fill-mode:forwards;
+  position: relative;
+}
+
+@keyframes blurAnime{
+  0% {
+  filter: blur(80px);
+  transform: scale(1.02);
+  transform: translateY(0px);
+  }
+
+  30% {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+  transform: translateY(0px);
+  }
+
+  80% {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+  transform: translateY(0px);
+  }
+
+  100% {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 0;
+  transform: translateY(-70px);
+  }
+}
+
+
+/* icon見た目 */
 .icon{
   width: 50vw;
   max-width: 500px;
   aspect-ratio: 1;
   border-radius:50%;
   object-fit: cover;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+/* iconアニメーション */
+
+.icon{
+  animation-name:iconAnime;
+  animation-duration:3.3s;
+  }
+  
+  @keyframes iconAnime{
+    0% {
+      opacity: 0;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);;
+    }
+  
+    85% {
+      opacity: 0;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);;
+    }
+
+    100% {
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);;
+    }
+  }
 
 
 /* ------------------------------------------------
@@ -129,13 +244,13 @@ second_content
 #top_wrapper #photo_03     { top: 890px;  left:60px;  width: 382px; height: 255px;}
 #top_wrapper #photo_04     { top: 1370px; left:77px;  width: 734px; height: 491px;}
 #top_wrapper #photo_05     { top: 2040px; right:0;    width: 507px; height: 339px;}
-#top_wrapper #photo_06     { top: 2300px; left:0;     width: 507px; height: 339px;}　
+#top_wrapper #photo_06     { top: 2300px; left:0;     width: 507px; height: 339px;}
 #top_wrapper #description  { top: 70px;   right: 110px; }
 
-#top_wrapper #lnk_00       { top:70px;    left:80%;}
-#top_wrapper #lnk_01       { top:660px;   left:23%;  }
-#top_wrapper #lnk_02       { top:1570px;  left:80%;  }
-#top_wrapper #lnk_03       { top:2040px;  left:25%;  }
+#top_wrapper #lnk_00       { top:70px;    left:80%; }
+#top_wrapper #lnk_01       { top:660px;   left:23%; }
+#top_wrapper #lnk_02       { top:1570px;  left:80%; height: 0px;}
+#top_wrapper #lnk_03       { top:2040px;  left:25%; letter-spacing:13pt; height: 0px;}
 
 #top_wrapper h2#lnk_00   { background:url(../img/00.jpg) no-repeat 0 0; width: 150px; mix-blend-mode: multiply;}
 #top_wrapper h2#lnk_00 a { background:url(../img/00.jpg) no-repeat 0 0; padding-top: 114px; mix-blend-mode: multiply;}

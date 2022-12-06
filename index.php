@@ -1,3 +1,20 @@
+<?php
+session_start();
+    $result = "";
+    if (isset($_POST['add'])) {
+      $_SESSION['HS'] = 'edit';//セッション変数に登録
+      $result = "編集画面で";
+      // echo $_SESSION['HS'];
+      header("Location:a.php");
+    }
+    elseif (isset($_POST['update'])) {
+      $_SESSION['HS'] = 'mypage';//セッション変数に登録
+      $result = "マイページで";
+      // echo $_SESSION['MY'];
+      header("Location:a.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -17,11 +34,12 @@
 		<main>
 
 			<div id="backgrounds">
-				<div class="water1"></div>
+				<div class="water1 back"></div>
 			</div>
 
 			<div id="first_view">
-				<img class="icon" src="assets/img/logo.png" alt="">
+			<div class="blur">届けよう、その想い。</div>
+			<div><img class="icon" src="assets/img/logo.png" alt=""></div>
 			</div>
 
 			<div id="first_content">
@@ -42,17 +60,21 @@
 			<div id="second_content" class="cf">
 				<div id="top_wrapper">
 
-					<h2 id="lnk_00" class="obj trans_bg lnk action"><a href="./about/">about</a></h2>
-					<h2 id="lnk_01" class="obj trans_bg lnk action"><a href="./about/">about</a></h2>
-					<h2 id="lnk_02" class="obj trans_bg lnk action"><a href="./howto/">how to order</a></h2>
-					<h2 id="lnk_03" class="obj trans_bg lnk action"><a href="./detail_list/">details of shirts</a></h2>
+				<form action="index.php" method="post">
+					<button type="submit" name="update" class="button"><h2 id="lnk_00" class="obj trans_bg lnk action"><img src="assets/img/00.jpg" alt=""></h2></button>
+					<button type="submit" name="update" class="button"><h2 id="lnk_01" class="obj trans_bg lnk action"><img src="assets/img/01.jpg" alt=""></h2></button>
+					<button type="submit" name="update" class="button"><h2 id="lnk_02" class="obj trans_bg lnk action"><img src="assets/img/02.jpg" alt=""></h2></button>
+					<button type="submit" name="update" class="button"><h2 id="lnk_03" class="obj trans_bg lnk action"><img src="assets/img/03.jpg" alt=""></h2></button>
+				</form>
 
-							<img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" alt=""/>
-							<img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" alt=""/>
-							<img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" alt=""/>
-							<img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" alt=""/>
-							<img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" alt=""/>
-							<img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" alt=""/>
+					<form action="index.php" method="post">
+						<button type="submit" name="update" class="button"><img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+						<button type="submit" name="update" class="button"><img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+						<button type="submit" name="update" class="button"><img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+						<button type="submit" name="update" class="button"><img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+						<button type="submit" name="update" class="button"><img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+						<button type="submit" name="update" class="button"><img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+					</form>
 
 							<svg id="stitch_08" class="obj stitch flex fadeInTrigger delayScroll">
 								<!-- <desc>Created with Snap</desc>
@@ -648,7 +670,7 @@
 		<!-- <script type="text/javascript" src="assets/js/common.js"></script> -->
 		<!-- <script type="text/javascript" src="assets/js/snap.svg-min.js"></script> -->
 		<script type="text/javascript" src="assets/js/svg.js"></script>
-		<script type="text/javascript" src="assets/js/index.js"></script>
 		<script type="text/javascript" src="assets/js/slick.min.js"></script>
+		<script type="text/javascript" src="assets/js/index.js"></script>
 	</body>
 </html>
