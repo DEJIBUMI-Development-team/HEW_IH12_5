@@ -1,4 +1,13 @@
+
 var el = {};
+
+// forcusされた要素のIDを格納するグローバル変数
+// jquery.font.jsでもこの変数を使用する
+var G_current_focus = "";
+var G_current_text;
+var G_current_width;
+var G_current_height;
+var G_writing_mode;
 
 // 各アニメーションの実行状態フラグ
 let isResizing = false;
@@ -146,6 +155,7 @@ function mousedownResize(e) {
     //ボタンが外された場合Eventを除去
     function mouseupResize() {
         el[clickedId].move_elem.style.height = "fit-content";
+        // el[clickedId].move_elem.style.width = "fit-content";
         window.removeEventListener("mousemove", mousemoveResize);
         window.removeEventListener("mouseup", mouseupResize);
         isResizing = false;
@@ -299,9 +309,32 @@ function view_context_menu(){
  * 要素をダブルクリックすることでテキスト編集可能状態にする
  * @param e event 
  */
+
+// const header = document.querySelector("header");
+// header.addEventListener("focus", set_Editable);
+
 function set_Editable(e) {
     isMove = false;
     clicked_id = get_id(e, "id");
+    
+    G_current_focus = clickedId;
+    G_current_text =  $(`#${G_current_focus}`).find(".text");
+    
+    var current_option = G_current_text.css("fontFamily");
+    var current_mode = G_current_text.css("writingMode");
+    var current_color = G_current_text.css("color");
+
+    pickr.setColor(current_color);
+
+    if (current_mode == "horizontal-tb") {
+        current_mode = "unset";
+    }
+
+    $("#fontFamily").val(current_option);
+    $("#writingMode").val(current_mode);
+    $("#now_elem").text(G_current_text.text());
+
+    
     el[clicked_id].edit_text.contentEditable = "true";
 }
 
@@ -312,6 +345,8 @@ function set_Editable(e) {
 function set_Uneditable(e) {
     isMove = true;
     clicked_id_n = get_id(e, "id");
+    G_current_text =  $(`#${G_current_focus}`).find(".text");
+    $("#now_elem").text(G_current_text.text());
     el[clicked_id_n].edit_text.contentEditable = "false";
 }
 
@@ -332,6 +367,7 @@ const off_edit = document.getElementById("edit_off");
 
 // 要素を編集モードにする
 on_edit.addEventListener("click", ()=>{
+    // debugger;
     off_edit.classList.remove("tgl_on");
     on_edit.classList.add("tgl_on");
     var block_elem = document.querySelectorAll(".on_n");
@@ -341,7 +377,9 @@ on_edit.addEventListener("click", ()=>{
     });
     visible_elem.forEach((elem)=>{
         elem.style.border = "solid 1px #000";
-    });        
+    });
+    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "visible");
+    
 });
 
 // 要素を調整・閲覧モードにする
@@ -356,6 +394,7 @@ off_edit.addEventListener("click", ()=>{
     hidden_elem.forEach((elem)=>{
         elem.style.border = "none";
     });
+    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "hidden");
 });
 
 const remove_button = document.getElementById("remove");
@@ -444,7 +483,7 @@ function get_domSytle(abs_contents) {
         // debugger;
         var content_id = key;
         var txt = document.querySelectorAll(`#${key} .text`)[0];
-        var text_Dom = document.querySelectorAll(`#${key} .fit`)[0];
+        var text_Dom = document.querySelectorAll(`#${key} .text`)[0];
         var angle_content =  document.querySelectorAll(`#${key} .edit_svg`)[0];
 
         // Style
@@ -467,6 +506,8 @@ function get_domSytle(abs_contents) {
                 "text-align": textStyle.textAlign,
                 "font-family": textStyle.fontFamily,
                 "font-size": textStyle.fontSize,
+                "color": textStyle.color,
+                "writingMode": textStyle.writingMode,
                 "transform": angle.transform
             }
         };

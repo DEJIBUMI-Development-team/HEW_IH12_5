@@ -1,5 +1,5 @@
 <?php
-// include("../data/templateTxt_data.php");
+//   opcache_reset();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,9 +15,9 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
     <title>編集画面</title>
+
 </head>
 <body>
-
     <div id="contextmenu">
         <ul>
             <li id="remove">削除する</li>
@@ -25,7 +25,10 @@
     </div>
 
     <header class="content_edit_box">
-        <select name="fontFamily">
+        <div class="now-elem" id="now_elem"></div>
+        <select class="fontFamilys" name="fontFamily" id="fontFamily">
+            <option></option>
+            <option value="Meiryo">メイリオ</option>
             <option value="serif">明朝体</option>
             <option value="sans-serif">ゴシック体</option>
             <option value="MS Pゴシック">MS Pゴシック</option>
@@ -35,25 +38,28 @@
             <option value="yosugara">夜すがら手書きフォント</option>
         </select>
         
-        <select name="fontSize">
+        <select name="fontSize" style="display: none;">
             <option value="40">文字サイズ：小</option>
             <option value="50">文字サイズ：中</option>
             <option value="60">文字サイズ：大</option>
         </select>
         
-        <select name="writingMode">
+        <select class="writtingModes" name="writingMode" id="writingMode">
+            <option></option>
             <option value="unset">横</option>
-            <option value="vertical-lr">縦</option>
+            <option value="vertical-rl">縦</option>
         </select>
-        <!-- ここにカラーピッカーが表示される -->
-        <div class="color-picker"></div>
 
-        <div class="save" id="save">保存する</div>
+        <!-- ここにカラーピッカーが表示される -->
+		<div class="color-picker"></div>
+        <div class="edit_and_save">
             <div class="edit_tgl">
                 <ul>
                     <li class="tgl_on" id="edit_on">編集モード</li>
                     <li id="edit_off">調整・閲覧モード</li>
                 </ul>
+            </div>
+            <div class="save" id="save">保存する</div>
         </div>
     </header>
     <main>
@@ -107,9 +113,9 @@
                     <label for="temp-2" class="title-text-3 template-content">
                         <p>本文を追加</p>
                     </label>
-                    <input type="button" value="ft_content" id="temp-0" data-tempid="0">
-                    <input type="button" value="sc_content" id="temp-1" data-tempid="1">
-                    <input type="button" value="th_content" id="temp-2" data-tempid="2">
+                    <input type="button" value="ft_content" id="temp-0" data-tempid="0" class="hide_box">
+                    <input type="button" value="sc_content" id="temp-1" data-tempid="1" class="hide_box">
+                    <input type="button" value="th_content" id="temp-2" data-tempid="2" class="hide_box">
                 </div>
                 <div class="template-text-2">
                     <h2>テンプレテキストをクリックして編集画面に追加</h2>
