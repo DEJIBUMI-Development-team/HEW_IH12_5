@@ -324,12 +324,13 @@ function set_Editable(e) {
     var current_mode = G_current_text.css("writingMode");
     var current_color = G_current_text.css("color");
 
-    pickr.setColor(current_color);
+
 
     if (current_mode == "horizontal-tb") {
         current_mode = "unset";
     }
 
+    pickr.setColor(current_color);
     $("#fontFamily").val(current_option);
     $("#writingMode").val(current_mode);
     $("#now_elem").text(G_current_text.text());
@@ -406,6 +407,12 @@ function remove_element(){
     var remove_elem = document.getElementById(`${delete_point_dom}`);
     remove_elem.remove();
     delete el[delete_point_dom];
+
+    pickr.setColor("#000");
+    $("#fontFamily").val("none");
+    $("#writingMode").val("none");
+    $("#now_elem").text("");
+    
 }
 
 const save_btn = document.getElementById("save");

@@ -27,7 +27,7 @@
     <header class="content_edit_box">
         <div class="now-elem" id="now_elem"></div>
         <select class="fontFamilys" name="fontFamily" id="fontFamily">
-            <option></option>
+            <option value="none"></option>
             <option value="Meiryo">メイリオ</option>
             <option value="serif">明朝体</option>
             <option value="sans-serif">ゴシック体</option>
@@ -45,7 +45,7 @@
         </select>
         
         <select class="writtingModes" name="writingMode" id="writingMode">
-            <option></option>
+            <option value="none"></option>
             <option value="unset">横</option>
             <option value="vertical-rl">縦</option>
         </select>
