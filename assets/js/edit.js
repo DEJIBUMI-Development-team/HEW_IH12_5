@@ -1,4 +1,3 @@
-
 var el = {};
 
 // forcusされた要素のIDを格納するグローバル変数
@@ -68,8 +67,6 @@ function mousedown(e) {
     function mouseup() {
         window.removeEventListener("mousemove", mousemove);
         window.removeEventListener("mouseup", mouseup);
-        // calc_position();
-        // fetch_domElem(Relatively_position);
     }
 }
 
@@ -103,8 +100,6 @@ function mousedownResize(e) {
     function mousemoveResize(e) {
         // 要素の相対位置を取得
         var rect = el[clickedId].move_elem.getBoundingClientRect();
-
-        // console.log(rect.width, rect.height , rect.height / rect.width);
 
         var calc_height = (rect.width - (prevX - e.clientX)) * heigh_raitos; 
 
@@ -155,7 +150,6 @@ function mousedownResize(e) {
     //ボタンが外された場合Eventを除去
     function mouseupResize() {
         el[clickedId].move_elem.style.height = "fit-content";
-        // el[clickedId].move_elem.style.width = "fit-content";
         window.removeEventListener("mousemove", mousemoveResize);
         window.removeEventListener("mouseup", mouseupResize);
         isResizing = false;
@@ -239,9 +233,7 @@ function mousedownRotate(e) {
     function mouseupRotate() {
         window.removeEventListener("mousemove", mousemoveRotate);
         window.removeEventListener("mouseup", mouseupRotate);
-        isRotate = false
-        // calc_position();
-        // get_domSytle(Relatively_position);
+        isRotate = false;
     }
 
 }
@@ -254,6 +246,7 @@ var select_on = document.querySelectorAll(".select_content");
 select_on.forEach((elem)=>{
     elem.addEventListener("click", (e)=>{
         target = e.target.id;
+        
         var on_elem = document.getElementById(target);
         on_elem.classList.remove("select_off");
 
@@ -262,9 +255,11 @@ select_on.forEach((elem)=>{
         off_elem.forEach((off)=>{
             off.classList.add("select_off");
         });
+        
         off_main_elem.forEach((off)=>{
             off.classList.add("off_t")
         });
+        
         var on_main_elem = document.querySelector(`.${target}`);
         on_main_elem.classList.remove("off_t");
     });
@@ -309,33 +304,32 @@ function view_context_menu(){
  * 要素をダブルクリックすることでテキスト編集可能状態にする
  * @param e event 
  */
-
-// const header = document.querySelector("header");
-// header.addEventListener("focus", set_Editable);
-
 function set_Editable(e) {
+    // ドラッグ移動イベントを実行不可の状態にする
     isMove = false;
     clicked_id = get_id(e, "id");
     
+    // 選択した要素のIDを更新
     G_current_focus = clickedId;
     G_current_text =  $(`#${G_current_focus}`).find(".text");
     
+    // headerの各編集項目の更新を行うために対象のstyleを取得
     var current_option = G_current_text.css("fontFamily");
     var current_mode = G_current_text.css("writingMode");
     var current_color = G_current_text.css("color");
 
-
-
+    // horizontal-tbの場合は一旦unsetに変更
     if (current_mode == "horizontal-tb") {
         current_mode = "unset";
     }
 
+    // 各編集項目の更新
     pickr.setColor(current_color);
     $("#fontFamily").val(current_option);
     $("#writingMode").val(current_mode);
     $("#now_elem").text(G_current_text.text());
 
-    
+    // テキストを編集可能状態に変更
     el[clicked_id].edit_text.contentEditable = "true";
 }
 
@@ -344,10 +338,14 @@ function set_Editable(e) {
  * @param e event 
  */
 function set_Uneditable(e) {
+    // ドラッグ移動イベントを実行可能状態にする
     isMove = true;
     clicked_id_n = get_id(e, "id");
+
     G_current_text =  $(`#${G_current_focus}`).find(".text");
     $("#now_elem").text(G_current_text.text());
+    
+    // テキストを実行不可状態に変更
     el[clicked_id_n].edit_text.contentEditable = "false";
 }
 
@@ -412,7 +410,7 @@ function remove_element(){
     $("#fontFamily").val("none");
     $("#writingMode").val("none");
     $("#now_elem").text("");
-    
+
 }
 
 const save_btn = document.getElementById("save");

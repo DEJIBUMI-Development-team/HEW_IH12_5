@@ -198,9 +198,9 @@
             </div>
             <!-- ============================================================= -->
         </section>
+        
         <!-- 編集エリア -->
         <section class="main_edit">
-
             <div class="edit_area">
                 <div class="img_data" id="data"></div>
             </div>
