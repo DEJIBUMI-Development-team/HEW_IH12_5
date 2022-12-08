@@ -31,7 +31,7 @@ class Template_object{
                 },
                 "text_id": `text_${this.dom_count}`,
                 "dom" : `
-                    <div class="${this.elem_unique[0]}_content context" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}" onContextmenu="return false;">
+                    <div class="${this.elem_unique[0]}_content context main-edit-content" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}" onContextmenu="return false;">
 
                         <div class="rotate" id="${this.elem_unique[0]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
                     
@@ -63,7 +63,7 @@ class Template_object{
                 },
                 "text_id": `text_${this.dom_count}`,
                 "dom" : `
-                    <div class="${this.elem_unique[1]}_content context" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}" onContextmenu="return false;">
+                    <div class="${this.elem_unique[1]}_content context main-edit-content" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}" onContextmenu="return false;">
                     
                         <div class="rotate" id="${this.elem_unique[1]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
                         
@@ -96,7 +96,7 @@ class Template_object{
                 },
                 "text_id": `text_${this.dom_count}`,
                 "dom" : `
-                    <div class="${this.elem_unique[2]}_content context" id="${this.elem_unique[2]}_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}" onContextmenu="return false;">
+                    <div class="${this.elem_unique[2]}_content context main-edit-content" id="${this.elem_unique[2]}_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}" onContextmenu="return false;">
                     
                         <div class="rotate" id="${this.elem_unique[2]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
                         
@@ -111,7 +111,7 @@ class Template_object{
 
                         <div class="rotate_fix on_n" id="${this.elem_unique[2]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
                         <div class="fit" data-id="${this.elem_unique[2]}_${this.dom_count}">
-                            <p  class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
+                            <p class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
                         </div>
 
                         </div>
@@ -184,7 +184,10 @@ async function insert_dom(e) {
 
         // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
-
+        fitty('.fit', {
+            minSize: 12,
+            maxSize: 100,
+        });
         //incrementCount
         count++;
     } catch (e) {

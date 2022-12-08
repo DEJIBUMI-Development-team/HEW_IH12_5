@@ -1,5 +1,13 @@
 var el = {};
 
+// forcusされた要素のIDを格納するグローバル変数
+// jquery.font.jsでもこの変数を使用する
+var G_current_focus = "";
+var G_current_text;
+var G_current_width;
+var G_current_height;
+var G_writing_mode;
+
 // 各アニメーションの実行状態フラグ
 let isResizing = false;
 let isRotate = false;
@@ -59,8 +67,6 @@ function mousedown(e) {
     function mouseup() {
         window.removeEventListener("mousemove", mousemove);
         window.removeEventListener("mouseup", mouseup);
-        // calc_position();
-        // fetch_domElem(Relatively_position);
     }
 }
 
@@ -94,8 +100,6 @@ function mousedownResize(e) {
     function mousemoveResize(e) {
         // 要素の相対位置を取得
         var rect = el[clickedId].move_elem.getBoundingClientRect();
-
-        // console.log(rect.width, rect.height , rect.height / rect.width);
 
         var calc_height = (rect.width - (prevX - e.clientX)) * heigh_raitos; 
 
@@ -229,9 +233,7 @@ function mousedownRotate(e) {
     function mouseupRotate() {
         window.removeEventListener("mousemove", mousemoveRotate);
         window.removeEventListener("mouseup", mouseupRotate);
-        isRotate = false
-        // calc_position();
-        // get_domSytle(Relatively_position);
+        isRotate = false;
     }
 
 }
@@ -244,6 +246,7 @@ var select_on = document.querySelectorAll(".select_content");
 select_on.forEach((elem)=>{
     elem.addEventListener("click", (e)=>{
         target = e.target.id;
+        
         var on_elem = document.getElementById(target);
         on_elem.classList.remove("select_off");
 
@@ -252,9 +255,11 @@ select_on.forEach((elem)=>{
         off_elem.forEach((off)=>{
             off.classList.add("select_off");
         });
+        
         off_main_elem.forEach((off)=>{
             off.classList.add("off_t")
         });
+        
         var on_main_elem = document.querySelector(`.${target}`);
         on_main_elem.classList.remove("off_t");
     });
@@ -266,9 +271,10 @@ select_on.forEach((elem)=>{
 const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "night.PNG", "", "", "", "", "", ""] 
 const insert_element = document.getElementById("data");
 const select_img = document.querySelectorAll(".select-img-all");
-
+var current_url = url[0];
 select_img.forEach((img, index)=>{
     img.addEventListener("click", ()=>{
+        current_url = url[index];
         insert_element.style.backgroundImage = `url(../data/img_data/${url[index]})`;
     });
 });
@@ -299,8 +305,31 @@ function view_context_menu(){
  * @param e event 
  */
 function set_Editable(e) {
+    // ドラッグ移動イベントを実行不可の状態にする
     isMove = false;
     clicked_id = get_id(e, "id");
+    
+    // 選択した要素のIDを更新
+    G_current_focus = clickedId;
+    G_current_text =  $(`#${G_current_focus}`).find(".text");
+    
+    // headerの各編集項目の更新を行うために対象のstyleを取得
+    var current_option = G_current_text.css("fontFamily");
+    var current_mode = G_current_text.css("writingMode");
+    var current_color = G_current_text.css("color");
+
+    // horizontal-tbの場合は一旦unsetに変更
+    if (current_mode == "horizontal-tb") {
+        current_mode = "unset";
+    }
+
+    // 各編集項目の更新
+    pickr.setColor(current_color);
+    $("#fontFamily").val(current_option);
+    $("#writingMode").val(current_mode);
+    $("#now_elem").text(G_current_text.text());
+
+    // テキストを編集可能状態に変更
     el[clicked_id].edit_text.contentEditable = "true";
 }
 
@@ -309,8 +338,14 @@ function set_Editable(e) {
  * @param e event 
  */
 function set_Uneditable(e) {
+    // ドラッグ移動イベントを実行可能状態にする
     isMove = true;
     clicked_id_n = get_id(e, "id");
+
+    G_current_text =  $(`#${G_current_focus}`).find(".text");
+    $("#now_elem").text(G_current_text.text());
+    
+    // テキストを実行不可状態に変更
     el[clicked_id_n].edit_text.contentEditable = "false";
 }
 
@@ -331,6 +366,7 @@ const off_edit = document.getElementById("edit_off");
 
 // 要素を編集モードにする
 on_edit.addEventListener("click", ()=>{
+    // debugger;
     off_edit.classList.remove("tgl_on");
     on_edit.classList.add("tgl_on");
     var block_elem = document.querySelectorAll(".on_n");
@@ -340,7 +376,9 @@ on_edit.addEventListener("click", ()=>{
     });
     visible_elem.forEach((elem)=>{
         elem.style.border = "solid 1px #000";
-    });        
+    });
+    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "visible");
+    
 });
 
 // 要素を調整・閲覧モードにする
@@ -355,6 +393,7 @@ off_edit.addEventListener("click", ()=>{
     hidden_elem.forEach((elem)=>{
         elem.style.border = "none";
     });
+    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "hidden");
 });
 
 const remove_button = document.getElementById("remove");
@@ -366,6 +405,12 @@ function remove_element(){
     var remove_elem = document.getElementById(`${delete_point_dom}`);
     remove_elem.remove();
     delete el[delete_point_dom];
+
+    pickr.setColor("#000");
+    $("#fontFamily").val("none");
+    $("#writingMode").val("none");
+    $("#now_elem").text("");
+
 }
 
 const save_btn = document.getElementById("save");
@@ -432,11 +477,18 @@ function calc_position() {
 function get_domSytle(abs_contents) {
 
     fetch_object = {};
+    const img_data_elem = document.getElementById("data");
+
+    fetch_object._image = {
+        "backgroud-image" : current_url,
+        "background-size": window.getComputedStyle(img_data_elem).backgroundSize,
+    }
+
     Object.keys(abs_contents).forEach((key)=>{
         // debugger;
         var content_id = key;
         var txt = document.querySelectorAll(`#${key} .text`)[0];
-        var text_Dom = document.querySelectorAll(`#${key} .fit`)[0];
+        var text_Dom = document.querySelectorAll(`#${key} .text`)[0];
         var angle_content =  document.querySelectorAll(`#${key} .edit_svg`)[0];
 
         // Style
@@ -459,6 +511,8 @@ function get_domSytle(abs_contents) {
                 "text-align": textStyle.textAlign,
                 "font-family": textStyle.fontFamily,
                 "font-size": textStyle.fontSize,
+                "color": textStyle.color,
+                "writingMode": textStyle.writingMode,
                 "transform": angle.transform
             }
         };
