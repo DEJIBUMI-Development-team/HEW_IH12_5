@@ -377,7 +377,8 @@ on_edit.addEventListener("click", ()=>{
     visible_elem.forEach((elem)=>{
         elem.style.border = "solid 1px #000";
     });
-    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "visible");
+    $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "visible");
+    $(".color-picker").css("display", "block");
     
 });
 
@@ -393,7 +394,8 @@ off_edit.addEventListener("click", ()=>{
     hidden_elem.forEach((elem)=>{
         elem.style.border = "none";
     });
-    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "hidden");
+    $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "hidden");
+    $(".color-picker").css("display", "none");
 });
 
 const remove_button = document.getElementById("remove");
@@ -419,6 +421,15 @@ save_btn.addEventListener("click", save_elememnt);
  * 保存ボタンクリック後に要素の情報を取得し、fetchする一連の処理群
  */
 function save_elememnt(){
+    var result = window.confirm('保存しますか?');
+    
+    if(result) {
+        console.log("clickOk");
+    }
+    else {
+        return;
+    }
+
     // 絶対位置・相対位置を取得
     var position = calc_position();
 
@@ -542,9 +553,11 @@ function fetch_domElem(fetch_contents) {
         }
     })
     .then((res) => {
+        alert("保存しました!!");
         console.log(res);
     })
     .catch((error) => {
+        alert("保存失敗");
         console.error("Error", error);
     });
 }
