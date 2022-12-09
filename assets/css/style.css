@@ -8,7 +8,26 @@ setting
 html,body   {height:100%;}
 body  {min-width:960px; width:100%; color:#666;
    /* letter-spacing:13pt; */
+   animation-name:body;
+   animation-duration:3.3s;
   }
+
+  .body{
+    animation-name:body;
+    animation-duration:3.3s;
+    }
+  
+    @keyframes body{
+      0% {
+        overflow: hidden;
+      }
+
+      100% {
+        overflow: hidden;
+      }
+    }
+    
+
 body a  {color:#666;}
 
 ::selection {background: #fff; color: #98d9e7;}
@@ -212,20 +231,8 @@ first_content
   flex-wrap: wrap;
 }
 
-#first_content img{
-  width: 25vw;
-  aspect-ratio: 1;
-  object-fit: cover;
-  max-width: 300px;
-  /* border-radius:50%; */
-}
-
-.step{
-  display: block;
-  margin:auto;
-  text-align: center;
-  font-size: 30px;
-  mix-blend-mode: multiply;
+video{
+  height: 300px;
 }
 
 /* ------------------------------------------------

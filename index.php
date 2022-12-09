@@ -43,18 +43,7 @@ session_start();
 			</div>
 
 			<div id="first_content">
-				<div class="step">
-					<img src="assets/img/first_step1.jpg" alt="">
-					<p>step1</p>
-				</div>
-				<div class="step">
-					<img src="assets/img/first_step2.jpg" alt="">
-					<p>step2</p>
-				</div>
-				<div class="step">
-					<img src="assets/img/first_step3.jpg" alt="">
-					<p>step3</p>
-				</div>
+			<video controls src="assets/img/dejibumi.mp4" style="height: 50%;"></video>
 			</div>
 
 			<div id="second_content" class="cf">
