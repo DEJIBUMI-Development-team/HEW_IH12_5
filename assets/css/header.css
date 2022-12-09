@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body,h1,h2,h3,h4,p,ul{margin: 0;
+padding: 0;}
+
+.box00{width: 1280px;
+    margin: 0 auto;}
+
+ul{list-style: none;}
+
+.wf-kokoro{font-family: "Kokoro";}
+
+.wf-sawarabimincho {font-family: "Sawarabi Mincho";}
+
+a{text-decoration: none;}*/
+
+* {box-sizing: border-box;} 
+
+body{font-family: 'Kaisei Decol', serif;
+font-family: 'Shippori Mincho', serif;}
+
+/*ヘッダー*/
+.navigator{position:block;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;}
+
+.navigator_content{display: flex;
+    align-items: center;
+    width: 100%;}
+
+.navigator_content img{width: 150px;}    
+
+.navigator_content a{font-size: 20px;
+    font-weight: bold;
+    color: black;}
+
+.navigator_left{display: flex;
+    align-items: center;}
+
+.navigator_left a{margin: 20px;}
+
+.navigator_right{margin-left: auto;}  
+
+.navigator_right a{margin-right: 30px;}
