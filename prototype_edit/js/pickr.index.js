@@ -1,5 +1,4 @@
 const pickrContainer = document.querySelector('.color-picker');
-const themeContainer = document.querySelector('.theme-container');
 const themes = [
     [
         'nano',
@@ -22,79 +21,25 @@ const themes = [
             ],
 
             components: {
+
+                // Main components
                 preview: true,
                 opacity: true,
                 hue: true,
-
+        
+                // Input / output Options
                 interaction: {
-                    hex: false,
-                    rgba: false,
-                    hsva: false,
+                    hex: true,
+                    rgba: true,
+                    hsla: true,
+                    hsva: true,
+                    cmyk: true,
                     input: true,
                     clear: true,
                     save: true
                 }
             }
-        }
-    ],
-    [
-        'monolith',
-        {
-            swatches: [
-                'rgba(244, 67, 54, 1)',
-                'rgba(233, 30, 99, 0.95)',
-                'rgba(156, 39, 176, 0.9)',
-                'rgba(103, 58, 183, 0.85)',
-                'rgba(63, 81, 181, 0.8)',
-                'rgba(33, 150, 243, 0.75)',
-                'rgba(3, 169, 244, 0.7)'
-            ],
-
-            defaultRepresentation: 'HEXA',
-            components: {
-                preview: true,
-                opacity: true,
-                hue: true,
-
-                interaction: {
-                    hex: false,
-                    rgba: false,
-                    hsva: false,
-                    input: true,
-                    clear: true,
-                    save: true
-                }
-            }
-        }
-    ],
-    [
-        'nano',
-        {
-            swatches: [
-                'rgba(244, 67, 54, 1)',
-                'rgba(233, 30, 99, 0.95)',
-                'rgba(156, 39, 176, 0.9)',
-                'rgba(103, 58, 183, 0.85)',
-                'rgba(63, 81, 181, 0.8)',
-                'rgba(33, 150, 243, 0.75)',
-                'rgba(3, 169, 244, 0.7)'
-            ],
-
-            defaultRepresentation: 'HEXA',
-            components: {
-                preview: true,
-                opacity: true,
-                hue: true,
-
-                interaction: {
-                    hex: false,
-                    rgba: false,
-                    hsva: false,
-                    input: true,
-                    clear: true,
-                    save: true
-                }
-            }
+            
         }
     ]
 ];
@@ -108,8 +53,8 @@ for (const [theme, config] of themes) {
     buttons.push(button);
 
     button.addEventListener('click', () => {
-        const el = document.createElement('p');
-        pickrContainer.appendChild(el);
+        const elm = document.createElement('p');
+        pickrContainer.appendChild(elm);
 
         // Delete previous instance
         if (pickr) {
@@ -123,7 +68,7 @@ for (const [theme, config] of themes) {
 
         // Create fresh instance
         pickr = new Pickr(Object.assign({
-            el, theme,
+            elm, theme,
             default: '#42445a'
         }, config));
 

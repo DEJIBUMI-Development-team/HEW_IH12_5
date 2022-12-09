@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/*
+ *
+ * Usage: Base layout
+ *
+ * Name: animation.css
+ *
+ */
+
+
+
+/*---------------------------------------------------------------------
+Common layout
+---------------------------------------------------------------------*/
+.target  {-moz-transition:    all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          -ms-transition:     all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition:         all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          -webkit-transform: translate(0,30px);
+          -moz-transform:    translate(0,30px);
+          -ms-transform:     translate(0,30px);
+          transform:         translate(0,30px);
+          opacity:0;}
+.action  {-webkit-transform: translate(0,0);
+          -moz-transform:    translate(0,0);
+          -ms-transform:     translate(0,0);
+          transform:         translate(0,0);
+          opacity:1}
