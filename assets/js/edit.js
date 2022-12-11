@@ -1,3 +1,4 @@
+// 動的要素を格納するグローバル変数
 var el = {};
 
 // forcusされた要素のIDを格納するグローバル変数
@@ -539,7 +540,7 @@ function get_domSytle(abs_contents) {
 function fetch_domElem(fetch_contents) {
     console.log(JSON.stringify(fetch_contents));
     // request.phpとのデータやり取りを行う処理
-    fetch("../php/request.php", {
+    fetch("../php/save_request.php", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(fetch_contents)

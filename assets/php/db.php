@@ -1,5 +1,5 @@
 <?php
-
+// include("./ChromePhp.php");
 function db($sql): mixed{
     // var_dump($sql);
     $db['host'] = "localhost";  // DBサーバのURL
@@ -17,6 +17,7 @@ function db($sql): mixed{
         return $stml->fetchAll(PDO::FETCH_ASSOC);
         $pdo = null;
     } catch (PDOException $e) {
+        echo $e;
         return $e;
     }
 
