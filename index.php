@@ -50,10 +50,10 @@ session_start();
 				<div id="top_wrapper">
 
 				<form action="index.php" method="post">
-				  <button type="submit" name="update" ><h2 id="lnk_00" class="obj trans_bg lnk action"><img src="assets/img/00.jpg" alt=""></h2></button>
-					<button type="submit" name="update" ><h2 id="lnk_01" class="obj trans_bg lnk action"><img src="assets/img/01.jpg" alt=""></h2></button>
-					<button type="submit" name="update" ><h2 id="lnk_02" class="obj trans_bg lnk action"><img src="assets/img/02.jpg" alt=""></h2></button>
-					<button type="submit" name="update" ><h2 id="lnk_03" class="obj trans_bg lnk action"><img src="assets/img/03.jpg" alt=""></h2></button>
+				  <button type="submit" name="update"><h2 id="lnk_00" class="obj trans_bg lnk action"><img src="assets/img/00.jpg" alt=""></h2></button>
+					<button type="submit" name="update"><h2 id="lnk_01" class="obj trans_bg lnk action"><img src="assets/img/01.jpg" alt=""></h2></button>
+					<button type="submit" name="update"><h2 id="lnk_02" class="obj trans_bg lnk action"><img src="assets/img/02.jpg" alt=""></h2></button>
+					<button type="submit" name="update"><h2 id="lnk_03" class="obj trans_bg lnk action"><img src="assets/img/03.jpg" alt=""></h2></button>
 				</form>
 
 					<form action="index.php" method="post">
