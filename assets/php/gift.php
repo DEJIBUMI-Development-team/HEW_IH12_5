@@ -31,7 +31,7 @@
 
 <!-- Main image -->
 <div class="image-box">
-   <img src="./image/main.png">
+   <img src="../img/main.png">
 </div>
 
 <section class="gift_list">
