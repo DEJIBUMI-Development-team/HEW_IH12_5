@@ -562,3 +562,98 @@ function fetch_domElem(fetch_contents) {
         console.error("Error", error);
     });
 }
+
+window.onload = async function () {
+    try {
+        var query = location.search;
+        var value = query.split('=');
+        if (value[1]) {
+            var serch_id =  decodeURIComponent(value[1]);
+            const params = {method : "POST", body : JSON.stringify({"edit_id" : serch_id})};
+            const response = await fetch("./get_edit_data.php", params);
+            if (response.ok) {
+                var redraw_elem = await response.json();
+                // console.log(redraw_elem);
+                Object.keys(redraw_elem).forEach((key)=>{
+                    if(key == "_image"){
+                        // console.log(key);
+                        // debugger;
+                        var image_path = redraw_elem[key]["backgroud-image"];
+                        const first_insert = document.getElementById("data");
+                        first_insert.style.backgroundImage =`url(../data/img_data/${image_path})`;
+                    }else{
+                        if (redraw_elem[key]["class"].indexOf("ft_content") >= 0) {
+                            var elem_class = "ft_content";
+                        }else if (redraw_elem[key]["class"].indexOf("sc_content") >= 0) {
+                            var elem_class = "sc_content";
+                        }else if (redraw_elem[key]["class"].indexOf("th_content") >= 0) {
+                            var elem_class = "th_content";
+                        }
+
+                        // インスタンス生成
+                        temp_objects = new Template_object(count).temp_objectDom;
+                        
+                        // DOMのinsert
+                        var insert = document.getElementById("data");
+                        insert.insertAdjacentHTML('afterbegin', temp_objects[elem_class].dom);
+
+                        // insertされたDOMにドラッグイベントを付加
+                        addMouseEvent(elem_class);
+                        fitty('.fit', {
+                            minSize: 12,
+                            maxSize: 100,
+                        });
+                        add_style(redraw_elem[key]["content_txt"], redraw_elem[key]["css"], elem_class);
+                        fitty('.fit', {
+                            minSize: 12,
+                            maxSize: 100,
+                        });
+                        //incrementCount
+                        count++;
+                    }
+                    
+                });
+                fitty('.fit', {
+                    minSize: 12,
+                    maxSize: 100,
+                });
+            }
+            else{
+                console.log("no");
+            }
+            fitty('.fit', {
+                minSize: 12,
+                maxSize: 100,
+            });
+        }else {
+            console.log("not save");
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+async function add_style(content_txt, css, elem_class){
+    try {
+        $(`#${temp_objects[elem_class].text_id}`).text(content_txt);
+        $(`#${temp_objects[elem_class].id}`).css("width", css.or_width);
+        $(`#${temp_objects[elem_class].rotate.rotate_content}`).css("transform", css.transform);
+        $(`#${temp_objects[elem_class].text_id}`).css("color", css.color);
+        $(`#${temp_objects[elem_class].text_id}`).css("fontFamily", css['font-family']);
+        $(`#${temp_objects[elem_class].text_id}`).css("textAlign", css["text-align"]);
+        $(`#${temp_objects[elem_class].text_id}`).css("writingMode", css.writingMode);
+        $(`#${temp_objects[elem_class].id}`).css("top", css.or_top);
+        $(`#${temp_objects[elem_class].id}`).css("left", css.or_left);
+        
+        fitty('.fit', {
+            minSize: 12,
+            maxSize: 100,
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}

@@ -40,51 +40,13 @@
 	<form action="logout.php" method="POST">
 	<input type="submit" name="logout" value="ログアウト">
 	</form>
-
-	<script >
-		
-		window.onload = async function(){
-			debugger;
-
-			var insert_pr = document.getElementById("history");
-			var edit_history = await get_edit_history();
-
-			if (!edit_history.length == 0) {
-				edit_history.forEach((elem)=>{
-					console.log(elem.title);
-					insert_pr.insertAdjacentHTML("afterbegin", create_history_dom(elem.edit_id, elem.title));
-				});
-			
-			}else {
-				console.log("NO Data");
-				insert_pr.insertAdjacentHTML("afterbegin", create_history_dom("", ""));
-			}
-
-		}
-
-		function get_edit_history() {
-			var data = JSON.parse('<?php echo $data;?>');
-			return data;
-		}
-		
-		function create_history_dom(id, title){
-			if (!id && !title) {
-				return `
-					<div class="history-no-content">編集した手紙のデータはありません</div>
-				`;
-			}
-
-			return `
-				<div class="history-content history">
-					<div class="history-id">編集画面ID : ${id}</div><div class="history-tile">タイトル : ${title}</div>
-				</div>
-			`;
-		}
-
-		<?php
-    		
-		?>
-
+	<script>
+	// mypage.jsに対して、sqlの結果を返す
+	function get_edit_history() {
+		var data = JSON.parse('<?php echo $data;?>');
+		return data;
+	}
 	</script>
+	<script src="../js/mypage.js"></script>
 </body>
 </html>
