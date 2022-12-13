@@ -2,7 +2,7 @@ var count = 0; // 挿入済みHTMLDOMのテンプレート総数をカウント�
 var tempBtnRef = []; // ボタン要素を格納する配列
 
 // 各ボタン要素にクリックイベントを付加
-for (let index = 0; index < 2; index++) {
+for (let index = 0; index < 3; index++) {
     tempBtnRef.push(document.getElementById("temp-" + index));
     tempBtnRef[index].addEventListener('click', insert_dom);
 }
@@ -16,36 +16,108 @@ for (let index = 0; index < 2; index++) {
 class Template_object{
     constructor(count) {
         this.dom_count = count;
-        this.temp_key = ["ft_content", "sc_content"]
+        this.elem_unique = ["ft","sc", "th"];
     }
     get temp_objectDom(){
         this.dom_elem = {
-            [this.temp_key[0]] :  {
-            "id" : `ft_${this.dom_count}`,
-            "dom" : `
-                <div class=${this.temp_key[0]} id="ft_${this.dom_count}" data-id="ft_${this.dom_count}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="ft_${this.dom_count}" class="edit_svg">
-                    <foreignObject width="100%" height="100%" x="0" y="0"  data-id="ft_${this.dom_count}">
-                        <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="ft_${this.dom_count}">
-                            <text data-id="ft_${this.dom_count}">テキスト1</text>
-                        </div>
-                    </foreignObject>
-                    </svg>                  
-                </div>
-            `},
-            [this.temp_key[1]] :  {
-                "id" : `sc_${this.dom_count}`,
+            "ft_content" :  {
+                "id" : `${this.elem_unique[0]}_${this.dom_count}`,
+                "resize_class": `.resizer-${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `${this.elem_unique[0]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[0]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[0]}_rotate_content_${this.dom_count}`,
+                    "rotate_top_fix": `${this.elem_unique[0]}_rotate_fix_${this.dom_count}`,
+                },
+                "text_id": `text_${this.dom_count}`,
                 "dom" : `
-                    <div class=${this.temp_key[1]} id="sc_${this.dom_count}" data-id="sc_${this.dom_count}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" data-id="sc_${this.dom_count}" class="edit_svg">
-                        <foreignObject width="100%" height="100%" x="0" y="0"  data-id="sc_${this.dom_count}">
-                            <div xmlns="http://www.w3.org/1999/xhtml" contenteditable="true" class="text"  data-id="sc_${this.dom_count}">
-                                <text  data-id="sc_${this.dom_count}">テキスト2</text>
+                    <div class="${this.elem_unique[0]}_content context main-edit-content" id="${this.elem_unique[0]}_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}" onContextmenu="return false;">
+
+                        <div class="rotate" id="${this.elem_unique[0]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                    
+                        <div class="rotate-center" id="${this.elem_unique[0]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                    
+                        <div class="edit_svg on_h" data-id="${this.elem_unique[0]}_${this.dom_count}" id="${this.elem_unique[0]}_rotate_content_${this.dom_count}">
+
+                            <div class="resizer-${this.dom_count} resizer resizer-tl on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-tr on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-bl on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[0]}_${this.dom_count}"></div>
+
+                            <div class="rotate_fix on_n" id="${this.elem_unique[0]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[0]}_${this.dom_count}"></div>
+                            <div class="fit"  data-id="${this.elem_unique[0]}_${this.dom_count}">
+                                <h1 class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[0]}_${this.dom_count}">見出しを追加</h1>
                             </div>
-                        </foreignObject>
-                        </svg>                  
+                        </div>
+           
                     </div>
-                `},
+            `},
+            "sc_content" :  {
+                "id" : `${this.elem_unique[1]}_${this.dom_count}`,
+                "resize_class": `.resizer-${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `${this.elem_unique[1]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[1]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[1]}_rotate_content_${this.dom_count}`,
+                    "rotate_top_fix": `${this.elem_unique[1]}_rotate_fix_${this.dom_count}`
+                },
+                "text_id": `text_${this.dom_count}`,
+                "dom" : `
+                    <div class="${this.elem_unique[1]}_content context main-edit-content" id="${this.elem_unique[1]}_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}" onContextmenu="return false;">
+                    
+                        <div class="rotate" id="${this.elem_unique[1]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        
+                        <div class="rotate-center" id="${this.elem_unique[1]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        
+                        <div data-id="${this.elem_unique[1]}_${this.dom_count}" class="edit_svg on_h" id="${this.elem_unique[1]}_rotate_content_${this.dom_count}">
+                        
+                        <div class="resizer-${this.dom_count} resizer resizer-tl on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tr on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bl on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[1]}_${this.dom_count}"></div>
+
+                        <div class="rotate_fix on_n" id="${this.elem_unique[1]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[1]}_${this.dom_count}"></div>
+                        <div class="fit" data-id="${this.elem_unique[1]}_${this.dom_count}">
+                            <h4 class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[1]}_${this.dom_count}">小見出しを追加</h4>
+                        </div>
+
+                        </div>
+            
+                    </div>
+            `},
+            "th_content" :  {
+                "id" : `${this.elem_unique[2]}_${this.dom_count}`,
+                "resize_class": `.resizer-${this.dom_count}`,
+                "rotate":{
+                    "rotate_id": `${this.elem_unique[2]}_rotate_${this.dom_count}`,
+                    "rotate_center_id": `${this.elem_unique[2]}_rotate_center_${this.dom_count}`,
+                    "rotate_content": `${this.elem_unique[2]}_rotate_content_${this.dom_count}`,
+                    "rotate_top_fix": `${this.elem_unique[2]}_rotate_fix_${this.dom_count}`
+                },
+                "text_id": `text_${this.dom_count}`,
+                "dom" : `
+                    <div class="${this.elem_unique[2]}_content context main-edit-content" id="${this.elem_unique[2]}_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}" onContextmenu="return false;">
+                    
+                        <div class="rotate" id="${this.elem_unique[2]}_rotate_fix_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        
+                        <div class="rotate-center" id="${this.elem_unique[2]}_rotate_center_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        
+                        <div data-id="${this.elem_unique[2]}_${this.dom_count}" class="edit_svg on_h" id="${this.elem_unique[2]}_rotate_content_${this.dom_count}">
+                        
+                        <div class="resizer-${this.dom_count} resizer resizer-tl on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-tr on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-bl on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="resizer-${this.dom_count} resizer resizer-br on_n" data-id="${this.elem_unique[2]}_${this.dom_count}"></div>
+
+                        <div class="rotate_fix on_n" id="${this.elem_unique[2]}_rotate_${this.dom_count}" data-rotate="${this.elem_unique[2]}_${this.dom_count}"></div>
+                        <div class="fit" data-id="${this.elem_unique[2]}_${this.dom_count}">
+                            <p class="text" contenteditable="false" id="text_${this.dom_count}" data-id="${this.elem_unique[2]}_${this.dom_count}">本文を追加</p>
+                        </div>
+
+                        </div>
+            
+                    </div>
+            `},
         }
         return this.dom_elem; 
     }
@@ -56,9 +128,36 @@ class Template_object{
  * @param elem_value イベントを追加する要素のclass
  */
 function addMouseEvent(elem_value) {
+    var object_ref = temp_objects[elem_value];
+    el[temp_objects[elem_value].id] = {
+        "move_elem": document.getElementById(object_ref.id),
+        "rotate_center": document.getElementById(object_ref.rotate.rotate_center_id),
+        "rotate_top_fix_point": document.getElementById(object_ref.rotate.rotate_top_fix),
+        "rotate_content": document.getElementById(object_ref.rotate.rotate_content),
+        "rotate_point": document.getElementById(object_ref.rotate.rotate_id),
+        "resize_point": document.querySelectorAll(object_ref.resize_class),
+        "edit_text": document.getElementById(object_ref.text_id)
+    };
+
+    // add event
+    el[object_ref.id].move_elem.addEventListener("mousedown", mousedown);
+    el[object_ref.id].rotate_point.addEventListener('mousedown', mousedownRotate);
     // debugger;
-    el[temp_objects[elem_value].id] = document.getElementById(temp_objects[elem_value].id);
-    el[temp_objects[elem_value].id].addEventListener("mousedown", mousedown);
+    for (let resizer of el[object_ref.id].resize_point) {
+
+        resizer.addEventListener("mousedown", mousedownResize);
+
+    }
+    el[object_ref.id].edit_text.addEventListener("dblclick", set_Editable);
+    el[object_ref.id].edit_text.addEventListener("blur", set_Uneditable);
+    
+    // コンテクストメニューを表示する関数を実行
+    view_context_menu()
+
+    fitty('.fit', {
+        minSize: 12,
+        maxSize: 100,
+    });
 }
 
 /**
@@ -74,6 +173,7 @@ async function insert_dom(e) {
         temp_objects = new Template_object(count).temp_objectDom;
 
         // クリックされたボタン要素のvalueを取得(temp_objectsのキーとして使用)
+    
         var BtnRef =  e.composedPath();
         var value_content = tempBtnRef[BtnRef[0].dataset.tempid]
         var value = value_content.getAttribute('value');
@@ -84,7 +184,10 @@ async function insert_dom(e) {
 
         // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
-
+        fitty('.fit', {
+            minSize: 12,
+            maxSize: 100,
+        });
         //incrementCount
         count++;
     } catch (e) {
