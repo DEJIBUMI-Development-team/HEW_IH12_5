@@ -599,61 +599,47 @@ window.onload = async function () {
 
                         // insertされたDOMにドラッグイベントを付加
                         addMouseEvent(elem_class);
-                        fitty('.fit', {
-                            minSize: 12,
-                            maxSize: 100,
-                        });
                         add_style(redraw_elem[key]["content_txt"], redraw_elem[key]["css"], elem_class);
                         fitty('.fit', {
                             minSize: 12,
                             maxSize: 100,
                         });
+
                         //incrementCount
                         count++;
                     }
                     
                 });
-                fitty('.fit', {
-                    minSize: 12,
-                    maxSize: 100,
-                });
             }
             else{
                 console.log("no");
             }
-            fitty('.fit', {
-                minSize: 12,
-                maxSize: 100,
-            });
         }else {
             console.log("not save");
         }
-
     } catch (error) {
         console.log(error);
     }
 }
 
 
-async function add_style(content_txt, css, elem_class){
-    try {
-        $(`#${temp_objects[elem_class].text_id}`).text(content_txt);
-        $(`#${temp_objects[elem_class].id}`).css("width", css.or_width);
-        $(`#${temp_objects[elem_class].rotate.rotate_content}`).css("transform", css.transform);
-        $(`#${temp_objects[elem_class].text_id}`).css("color", css.color);
-        $(`#${temp_objects[elem_class].text_id}`).css("fontFamily", css['font-family']);
-        $(`#${temp_objects[elem_class].text_id}`).css("textAlign", css["text-align"]);
-        $(`#${temp_objects[elem_class].text_id}`).css("writingMode", css.writingMode);
-        $(`#${temp_objects[elem_class].id}`).css("top", css.or_top);
-        $(`#${temp_objects[elem_class].id}`).css("left", css.or_left);
-        
+function add_style(content_txt, css, elem_class){
+    $(`#${temp_objects[elem_class].text_id}`).text(content_txt);
+    $(`#${temp_objects[elem_class].rotate.rotate_content}`).css("transform", css.transform);
+    $(`#${temp_objects[elem_class].text_id}`).css("color", css.color);
+    $(`#${temp_objects[elem_class].text_id}`).css("fontFamily", css['font-family']);
+    $(`#${temp_objects[elem_class].text_id}`).css("textAlign", css["text-align"]);
+    $(`#${temp_objects[elem_class].text_id}`).css("writingMode", css.writingMode);
+    $(`#${temp_objects[elem_class].id}`).css("width", css.or_width);
+    $(`#${temp_objects[elem_class].id}`).css("top", css.or_top);
+    $(`#${temp_objects[elem_class].id}`).css("left", css.or_left);
+
+    setTimeout(()=>{
         fitty('.fit', {
             minSize: 12,
             maxSize: 100,
         });
-
-    } catch (error) {
-        console.log(error);
-    }
-
+        visivle_elem = document.querySelector(".edit_area");
+        visivle_elem.classList.remove("hidden");
+    }, 100);
 }

@@ -218,7 +218,7 @@
         
         <!-- 編集エリア -->
         <section class="main_edit">
-            <div class="edit_area">
+            <div class="edit_area hidden">
                 <div class="img_data" id="data"></div>
             </div>
         </section>

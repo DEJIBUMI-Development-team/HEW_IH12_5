@@ -1,9 +1,10 @@
 *:focus {
     outline: none;
 }
-/* [contenteditable="true"]  {
-    border: solid 3px #000;
-} */
+
+.hidden{
+    visibility: hidden;
+}
 
 .color-picker {
     width: 100px;
@@ -349,6 +350,7 @@ main {
     height: 100%;
     background-color: rgb(215, 215, 215);
     margin-left: 600px;
+    transition: 0.5s ease-in-out;
 }
 
 .main-temp-elem::-webkit-scrollbar{
