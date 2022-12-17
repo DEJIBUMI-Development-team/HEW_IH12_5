@@ -10,6 +10,9 @@
     width: 100px;
     margin: 20px;
 }
+.btn{
+    color: #fff;
+}
 
 .fontFamilys {
     /* スタイルの初期化 */

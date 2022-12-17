@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> -->
     <link rel="stylesheet" href="../css/picker.nano.css"/>
+    <!-- <link rel="stylesheet" href="../css/h2vR.css"> -->
     <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script> -->
     <script src="../package/fitty.min.js"></script>
+    <script src="../package/html2canvas.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
     <title>編集画面</title>
@@ -35,6 +38,7 @@
 <!-- □□□□□□□□□□■■■□□□□□□□□□□■■■■□□□□□□□□□□□□□■■■□□□□□□□□□□□□□□□□■■□□□□□□□ -->
 <!-- □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□ --> 
 <body>
+    <a id="getImage" href="" style="display: none"></a>
     <div id="contextmenu">
         <ul>
             <li id="remove">削除する</li>
@@ -166,6 +170,9 @@
                         <input type="button" value="sc_content" id="temp-1" data-tempid="1">
                         <input type="button" value="th_content" id="temp-2" data-tempid="2"> -->
                     </div>
+                    <div id="outputBtn" class="btn btn-primary m-3">
+                        画像表示
+                    </div>
                     <div class="template-text-2">
                         <h2></h2>
                         <label for="temp-0" class="text-1 template-content">
@@ -223,7 +230,6 @@
             </div>
         </section>
         <!-- ========= -->
-
     </main>
     <!-- script -->
     <script src="../data/templateTxt_data.js"></script>
@@ -232,5 +238,7 @@
     <!-- pickr java script -->
     <script src="../package/pickr.es5.min.js"></script>
     <script src="../package/pickr.index.js"></script>
+    <!--  -->
+    <!-- <script src="../package/h2vR.js"></script> -->
 </body>
 </html>

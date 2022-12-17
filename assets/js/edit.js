@@ -451,6 +451,9 @@ function calc_position() {
     const prDom = document.getElementById("data");
     const prRect = prDom.getBoundingClientRect();
     
+    // debugger;
+    // const data_mergin_left = parseInt(window.getComputedStyle(prDom).marginLeft, 10);
+
     // 動的要素の繰り返し処理
     Relatively_position = {};
     Object.keys(el).forEach((key)=>{
@@ -466,6 +469,8 @@ function calc_position() {
          * "height"  : (子要素のheight / 親要素のheight) * 100 (%)
          * }
          */ 
+
+
         Relatively_position[key] = {
             "class": this[key].classList.value,
             "top" : (Rect.top - prRect.top) / prRect.height * 100,
@@ -573,7 +578,6 @@ window.onload = async function () {
             const response = await fetch("./get_edit_data.php", params);
             if (response.ok) {
                 var redraw_elem = await response.json();
-                // console.log(redraw_elem);
                 Object.keys(redraw_elem).forEach((key)=>{
                     if(key == "_image"){
                         // console.log(key);
@@ -630,6 +634,9 @@ function add_style(content_txt, css, elem_class){
     $(`#${temp_objects[elem_class].text_id}`).css("fontFamily", css['font-family']);
     $(`#${temp_objects[elem_class].text_id}`).css("textAlign", css["text-align"]);
     $(`#${temp_objects[elem_class].text_id}`).css("writingMode", css.writingMode);
+
+
+
     $(`#${temp_objects[elem_class].id}`).css("width", css.or_width);
     $(`#${temp_objects[elem_class].id}`).css("top", css.or_top);
     $(`#${temp_objects[elem_class].id}`).css("left", css.or_left);
@@ -641,5 +648,28 @@ function add_style(content_txt, css, elem_class){
         });
         visivle_elem = document.querySelector(".edit_area");
         visivle_elem.classList.remove("hidden");
-    }, 100);
+    }, 200);
 }
+
+// function html2image(html) {
+//     var capture = document.querySelector(html);
+//     html2canvas(capture, {useCORS: true}).then(canvas => {
+//         var base64 = canvas.toDataURL('image/png');
+//         // $('#image').attr("src", base64);     //画面に画像表示
+//         $('#download').attr('href', base64);
+//         $('#download').attr('download', FNAME_SAVE);
+//         $('#download')[0].click();             //自動ダウンロード
+//     });
+// }
+
+const outputBtn = document.getElementById("outputBtn");  //ボタン
+const element = document.getElementById("data");  //画像化したい要素
+const getImage = document.getElementById("getImage");  //ダウンロード用隠しリンク
+
+outputBtn.addEventListener('click', ()=>{
+  html2canvas(element).then(canvas => {
+    getImage.setAttribute("href", canvas.toDataURL());
+    getImage.setAttribute("download", "test.png");
+    getImage.click();
+  });			
+});
