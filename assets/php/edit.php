@@ -9,18 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/edit.css">
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> -->
     <link rel="stylesheet" href="../css/picker.nano.css"/>
-    <!-- <link rel="stylesheet" href="../css/h2vR.css"> -->
     <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
-    <!-- <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script> -->
     <script src="../package/fitty.min.js"></script>
     <script src="../package/html2canvas.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script src="../package/tategaki.js"></script>
     <title>編集画面</title>
 
 </head>
+
 <!-- □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□ -->
 <!-- □□□□□□□□□□□□□□□□□□□□□■□□□□□□□□□□□□□□□□□■□□□□□□■□■□□□□□□□□□□□□□□□□□□□ -->
 <!-- □■■■■■■■■■■■■■□□□□□□□■□□□□■□■□□□□□□□□□□■■□□□□□■□■□□□□□■■■■■□□□□□□□□□ -->
@@ -222,9 +221,9 @@
             </div>
             <!-- ============================================================= -->
         </section>
-        
         <!-- 編集エリア -->
         <section class="main_edit">
+        
             <div class="edit_area hidden">
                 <div class="img_data" id="data"></div>
             </div>
@@ -239,6 +238,5 @@
     <script src="../package/pickr.es5.min.js"></script>
     <script src="../package/pickr.index.js"></script>
     <!--  -->
-    <!-- <script src="../package/h2vR.js"></script> -->
 </body>
 </html>

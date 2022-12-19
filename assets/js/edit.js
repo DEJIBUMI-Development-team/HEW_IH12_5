@@ -651,25 +651,106 @@ function add_style(content_txt, css, elem_class){
     }, 200);
 }
 
-// function html2image(html) {
-//     var capture = document.querySelector(html);
-//     html2canvas(capture, {useCORS: true}).then(canvas => {
-//         var base64 = canvas.toDataURL('image/png');
-//         // $('#image').attr("src", base64);     //画面に画像表示
-//         $('#download').attr('href', base64);
-//         $('#download').attr('download', FNAME_SAVE);
-//         $('#download')[0].click();             //自動ダウンロード
-//     });
-// }
-
 const outputBtn = document.getElementById("outputBtn");  //ボタン
 const element = document.getElementById("data");  //画像化したい要素
 const getImage = document.getElementById("getImage");  //ダウンロード用隠しリンク
 
-outputBtn.addEventListener('click', ()=>{
-  html2canvas(element).then(canvas => {
-    getImage.setAttribute("href", canvas.toDataURL());
-    getImage.setAttribute("download", "test.png");
-    getImage.click();
-  });			
+outputBtn.addEventListener('click', async function(){
+
+    // 各テキストを所得
+    // 縦書きが存在するかの確認処理
+    // writing-modeを外す
+    // h2vの縦書きに変換
+    // 画像変換処理
+    // h2vの縦書きを外す
+    // writing-modeを再設定
+    // 処理完了
+    try {
+        var evacation_dom = [];
+        var evacation_text = [];
+        var reset_writing = $(".text");
+        await (async function () {
+            await reset_writing.each(async (_, elem) => {
+                if ($(elem).css("writing-mode") === "vertical-rl") {
+                    debugger;
+                    var data_id = $(elem).data("id");
+                    var par_elem = $(elem).parents(`#${data_id}`);
+                    if($(elem).css("font-family") === "yosugara"){
+                        par_elem.css("width", par_elem.width()-2);
+                    }else if ($(elem).css("font-family") === "serif") {
+                        par_elem.css("width", par_elem.width()-21);
+                    }else {
+                        par_elem.css("width", par_elem.width()-19);
+                    }
+
+
+                    fitty('.fit', {
+                        minSize: 12,
+                        maxSize: 100,
+                    });
+
+                    $(elem).css("writing-mode", "unset");
+                    $(elem).css("-webkit-writing-mode", "unset");
+                    $(elem).css("-ms-writing-mode", "unset");
+
+                    evacation_text.push($(elem).text());
+                    evacation_dom.push($(elem));
+                    $(elem).text(" " + $(elem).text());
+                    console.log("b");
+                }
+            });
+        })();
+
+
+        if (evacation_dom.length != 0) {
+            evacation_dom.forEach((elem) => {
+                var text = elem[0].textContent;
+                elem.tategaki(text.length);
+            });
+        }
+
+
+        setTimeout(() => {
+            html2canvas(element, {
+                backgroundColor: null
+            }).then( (canvas) => {
+                getImage.setAttribute("href", canvas.toDataURL());
+                getImage.setAttribute("download", "test.png");
+                getImage.click();
+
+            });
+        }, 10);
+
+
+        setTimeout(() => {
+            evacation_dom.forEach((elem, index) => {
+                console.log(4);
+                $(elem).css("writing-mode", "vertical-rl");
+                $(elem).css("-webkit-writing-mode", "vertical-rl");
+                $(elem).css("-ms-writing-mode", "vertical-rl");
+
+                elem.empty();
+                elem.text(evacation_text[index]);
+
+                var data_id = $(elem).data("id");
+                var par_elem = $(elem).parents(`#${data_id}`);
+
+                if($(elem).css("font-family") === "yosugara"){
+                    par_elem.css("width", par_elem.width()+2);
+                }else if ($(elem).css("font-family") === "serif") {
+                    par_elem.css("width", par_elem.width()+21);
+                }else {
+                    par_elem.css("width", par_elem.width()+19);
+                }
+
+                fitty('.fit', {
+                    minSize: 12,
+                    maxSize: 100,
+                });
+            });
+        }, 1000);
+
+    } catch (error) {
+        console.log(error)
+    }
 });
