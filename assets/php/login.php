@@ -74,56 +74,56 @@ if (isset($_POST["login"])) {
 
 <!doctype html>
 <html>
-    <head>
-        <meta name="robots" content="none.noindex">
-        <meta charset="UTF-8">
-        <title>ログイン</title>
-        <link rel="stylesheet" href="../css/login.css?v=2"type='text/css'>
-        <link rel="shortcut icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
-        <link rel="icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
-        <link rel="stylesheet" href="../css/login.css">
-        <meta name="robots" content="none,noindex,nofollow">
-    </head>
-    <body class="Login_body">
-            
-        <main>
+<head>
+    <meta name="robots" content="none.noindex">
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="../css/login.css?v=2"type='text/css'>
+    <link rel="shortcut icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <meta name="robots" content="none,noindex,nofollow">
+</head>
+<body class="Login_body">
+    <main>
         <div id="backgrounds">
 			<div class="water1"></div>
 		</div>
 
-            <div id="first_view">
-				<img class="icon" src="../img/logo.png" alt="">
-			</div>
-            <div class="Login_fo"rm>
-                <form id="loginForm" name="loginForm" action="" method="POST">
-                        <div class="user_info">
-                            <p class="Login_NM">ユーザー名</p>    
-                            <div class="error">
-                                <font color="#ff0000">
-                                    <?php print htmlspecialchars($errorMessage, ENT_QUOTES); ?>
-                                </font>
-                            </div>
+        <div id="first_view">
+			<img class="icon" src="../img/logo.png" alt="">
+		</div>
+        
+        <div class="Login_fo"rm>
+            <form id="loginForm" name="loginForm" action="" method="POST">
+                    <div class="user_info">
+                        <p class="Login_NM">ユーザー名</p>    
+                        <div class="error">
+                            <font color="#ff0000">
+                                <?php print htmlspecialchars($errorMessage, ENT_QUOTES); ?>
+                            </font>
                         </div>
-                        <label for="userName"></label><input class="User" type="text" id="userName" name="userName" placeholder="ユーザー名を入力" value="<?php if (!empty($_POST["userName"])) {echo htmlspecialchars($_POST["userName"], ENT_QUOTES);} ?>">
+                    </div>
+                    <label for="userName"></label><input class="User" type="text" id="userName" name="userName" placeholder="ユーザー名を入力" value="<?php if (!empty($_POST["userName"])) {echo htmlspecialchars($_POST["userName"], ENT_QUOTES);} ?>">
                         
-                        <p class="Login_PW">パスワード</p>
-                        <label for="password"></label>
-                        <input class="User" type="password" id="password" name="password" value="" placeholder="パスワードを入力"> 
-                        <input type="hidden" name="ticket" value="<?php print $ticket?>">
-                        <br>
-                        <div class="Login_ticket">
-                            <form action="a.php" method="post">
-                                <input type="submit" class="Login_submit" id="login" name="login ScreenTransition" value="ログイン">
-                            </form>
-                        </div>
-                </form>
+                    <p class="Login_PW">パスワード</p>
+                    <label for="password"></label>
+                    <input class="User" type="password" id="password" name="password" value="" placeholder="パスワードを入力"> 
+                    <input type="hidden" name="ticket" value="<?php print $ticket?>">
+                    <br>
+                    <div class="Login_ticket">
+                        <form action="a.php" method="post">
+                            <input type="submit" class="Login_submit" id="login" name="login ScreenTransition" value="ログイン">
+                        </form>
+                    </div>
+            </form>
 
-                <div class="action">
-                    <!-- <a href="./SingnUp.php" class="SingnUp">会員登録はこちらから</a> -->
-                    <a href="../../index.html" class="Top">トップへ戻る</a>
-                </div>
+            <div class="action">
+                <!-- <a href="./SingnUp.php" class="SingnUp">会員登録はこちらから</a> -->
+                <a href="../../index.php" class="Top">トップへ戻る</a>
             </div>
-        </main>    
-    </body>
+        </div>
+    </main>    
+</body>
 </html>
 <!-- HTML !-->
