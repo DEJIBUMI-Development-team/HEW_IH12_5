@@ -108,21 +108,6 @@ background
       opacity: 1;
     }
   }
-  
-  /* @keyframes back{
-    0% {
-      filter: sepia(100%);
-    }
-  
-    80% {
-      filter: sepia(100%);
-    }
-
-    100% {
-      filter: sepia(0%);
-    }
-  } */
-
 /* ------------------------------------------------
 first_view
 --------------------------------------------------- */
@@ -181,9 +166,9 @@ first_view
   border-radius:50%;
   object-fit: cover;
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* iconアニメーション */
@@ -191,40 +176,39 @@ first_view
 .icon{
   animation-name:iconAnime;
   animation-duration:3.3s;
+}
+  
+@keyframes iconAnime{
+  0% {
+    opacity: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+   }
+  
+  85% {
+    opacity: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
   }
-  
-  @keyframes iconAnime{
-    0% {
-      opacity: 0;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);;
-    }
-  
-    85% {
-      opacity: 0;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);;
-    }
 
-    100% {
-      opacity: 1;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);;
-    }
+  100% {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
   }
+}
 
 
 /* ------------------------------------------------
 first_content
 --------------------------------------------------- */
 #first_content{
-  /* background-color: rgba(255, 255, 255, 0.235); */
   height: 75vh;
   display: flex;
   justify-content: center;

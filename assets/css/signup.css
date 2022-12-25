@@ -178,13 +178,7 @@ signup_from
 }
 
 .signup_ticket{
-    padding-top: 20px;
-}
-
-.signup_submit{
-    height: 35px;
-    width: 100px;
-    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .action{
@@ -194,18 +188,18 @@ signup_from
 /* ------------------------------------------------
 sc
 --------------------------------------------------- */
-@media screen and ( max-width:479px )
+/* @media screen and ( max-width:479px )
 {
 	body
 	{
 		font-size: 5px;	
 	}
-
+ */
 
 /* ------------------------------------------------
 signup_from
 --------------------------------------------------- */
-.signup_NM{
+/* .signup_NM{
     font-size: 15px;
 }
 
@@ -214,4 +208,4 @@ signup_from
 }
 
 
-}
+} */

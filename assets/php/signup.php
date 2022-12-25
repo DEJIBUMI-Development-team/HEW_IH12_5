@@ -57,12 +57,12 @@ if (!empty($_POST)) {
                 <p>でじぶみをご利用するために、次のフォームに必要事項をご記入ください。</p>
                 <br> -->
     
-                <div class="control">
+                <div class="control signup_ticket">
                     <label for="name" class="signup_NM">ユーザー名</label>
                     <input id="name" type="text" name="name">
                 </div>
     
-                <div class="control">
+                <div class="control signup_ticket">
                     <label for="email" class="signup_NM">メールアドレス<span class="required">必須</span></label>
                     <input id="email" type="email" name="email">
                     <?php if (!empty($error["email"]) && $error['email'] === 'blank'): ?>
@@ -72,7 +72,7 @@ if (!empty($_POST)) {
                     <?php endif ?>
                 </div>
     
-                <div class="control">
+                <div class="control signup_ticket">
                     <label for="password" class="signup_NM">パスワード<span class="required">必須</span></label>
                     <input id="password" type="password" name="password">
                     <?php if (!empty($error["password"]) && $error['password'] === 'blank'): ?>
@@ -80,11 +80,13 @@ if (!empty($_POST)) {
                     <?php endif ?>
                 </div>
     
-                <div class="control">
+                <div class="control signup_ticket">
                     <button type="submit" class="btn signup_submit">確認</button>
                 </div>
 
-                <a href="../../assets/php/login.php">ログインする</a>
+                <div class="signup_ticket">
+                    <a href="../../assets/php/login.php">ログインする</a>
+                </div>
             </form>
         </div>
     </main>
