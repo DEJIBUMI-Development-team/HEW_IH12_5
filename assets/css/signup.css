@@ -89,7 +89,7 @@ CSS3 animation & parts layout
 /* link */
 /* .trans_bg a         {opacity:1; filter:alpha(opacity=100); display:block; overflow:hidden; height:0; -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in;}
 .trans_bg a:hover   {opacity:0; filter:alpha(opacity=0); -moz-transition: all 0.2s ease-in; -webkit-transition:all 0.2s ease-in;}
-.trans_bg_disabled a        {opacity:1; display:block; overflow:hidden; height:0; cursor: default;} */w
+.trans_bg_disabled a        {opacity:1; display:block; overflow:hidden; height:0; cursor: default;} */
 
 .obj  {position:absolute; z-index:0;}
 .t_disabled {color: #cacaca;}
@@ -143,8 +143,6 @@ background
 first_view
 --------------------------------------------------- */
 #first_view{
-    /* background-color: rgb(239, 247, 184); */
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,15 +157,14 @@ first_view
   }
 
 /* ------------------------------------------------
-Login_from
+signup_from
 --------------------------------------------------- */
 
-.Login_fo{
+.signup_fo{
     text-align: center;
 }
 
-
-.Login_NM{
+.signup_NM{
     font-size: 25px;
 }
 
@@ -176,45 +173,39 @@ Login_from
     width: 250px;
 }
 
-.Login_PW{
+.signup_PW{
     font-size: 25px;
 }
 
-.Login_ticket{
-    padding-top: 20px;
-}
-
-.Login_submit{
-    height: 35px;
-    width: 100px;
+.signup_ticket{
+    padding-bottom: 20px;
 }
 
 .action{
     padding-top: 20px;
 }
 
-
 /* ------------------------------------------------
 sc
 --------------------------------------------------- */
-@media screen and ( max-width:479px )
+/* @media screen and ( max-width:479px )
 {
 	body
 	{
 		font-size: 5px;	
 	}
-
+ */
 
 /* ------------------------------------------------
-Login_from
+signup_from
 --------------------------------------------------- */
-.Login_NM{
+/* .signup_NM{
     font-size: 15px;
 }
 
-.Login_PW{
+.signup_PW{
     font-size: 15px;
 }
 
 
-}
+} */
