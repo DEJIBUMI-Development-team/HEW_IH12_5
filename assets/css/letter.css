@@ -1,0 +1,11 @@
+body{
+	background-image: url("../data/img_data/white_wood.jpg");
+}
+.img_elem {
+	width: 800px;
+	margin: 0 auto;
+}
+.img_elem img{
+	width: 100%;
+	margin: 0 auto;
+}

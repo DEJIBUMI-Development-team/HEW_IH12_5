@@ -48,11 +48,12 @@ if (isset($_POST["login"])) {
                 if ($_SESSION['HS'] == "edit") {
                     $result = "編集画面で";
                     header("Location:edit.php");
-                  }
+                }
                   // マイページボタンクリックで"mypage"を代入
                 if ($_SESSION['HS'] == "mypage") {
                     $result = "マイページで";
                     header("Location:mypage.php");
+                
             }
 
             

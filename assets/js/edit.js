@@ -570,6 +570,7 @@ function fetch_domElem(fetch_contents) {
 
 window.onload = async function () {
     try {
+        var visivle_elem = document.querySelector(".edit_area");
         var query = location.search;
         var value = query.split('=');
         if (value[1]) {
@@ -619,6 +620,7 @@ window.onload = async function () {
                 console.log("no");
             }
         }else {
+            visivle_elem.classList.remove("hidden");
             console.log("not save");
         }
     } catch (error) {
@@ -646,7 +648,7 @@ function add_style(content_txt, css, elem_class){
             minSize: 12,
             maxSize: 100,
         });
-        visivle_elem = document.querySelector(".edit_area");
+        var visivle_elem = document.querySelector(".edit_area");
         visivle_elem.classList.remove("hidden");
     }, 200);
 }

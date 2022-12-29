@@ -1,5 +1,8 @@
 <?php
-//   opcache_reset();
+
+session_start();
+$_SESSION["user_id"] = "text";  
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
