@@ -40,27 +40,30 @@ if (!empty($_POST)) {
     <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/signup.css">
 </head>
-<body>
+<body class="signup_body">
+
     <main>
         <div id="backgrounds">
                 <div class="water1"></div>
         </div>
+        
         <div id="first_view">
             <img class="icon" src="../img/logo.png" alt="">
         </div>
-        <div class="content">
-            <form action="" method="POST">
-                <h1>アカウント作成</h1>
+
+        <div class="content signup_fo">
+            <form id="signupForm" name="signupForm" action="" method="POST">
+                <!-- <h1>アカウント作成</h1>
                 <p>でじぶみをご利用するために、次のフォームに必要事項をご記入ください。</p>
-                <br>
+                <br> -->
     
-                <div class="control">
-                    <label for="name">ユーザー名</label>
+                <div class="control signup_ticket">
+                    <label for="name" class="signup_NM">ユーザー名</label>
                     <input id="name" type="text" name="name">
                 </div>
     
-                <div class="control">
-                    <label for="email">メールアドレス<span class="required">必須</span></label>
+                <div class="control signup_ticket">
+                    <label for="email" class="signup_NM">メールアドレス<span class="required">必須</span></label>
                     <input id="email" type="email" name="email">
                     <?php if (!empty($error["email"]) && $error['email'] === 'blank'): ?>
                         <p class="error">＊メールアドレスを入力してください</p>
@@ -69,17 +72,20 @@ if (!empty($_POST)) {
                     <?php endif ?>
                 </div>
     
-                <div class="control">
-                    <label for="password">パスワード<span class="required">必須</span></label>
+                <div class="control signup_ticket">
+                    <label for="password" class="signup_NM">パスワード<span class="required">必須</span></label>
                     <input id="password" type="password" name="password">
                     <?php if (!empty($error["password"]) && $error['password'] === 'blank'): ?>
                         <p class="error">＊パスワードを入力してください</p>
                     <?php endif ?>
                 </div>
     
-                <div class="control">
-                    <button type="submit" class="btn">確認する</button>
-                    <button type="submit" class="btn">ログインする</button>
+                <div class="control signup_ticket">
+                    <button type="submit" class="btn signup_submit">確認</button>
+                </div>
+
+                <div class="signup_ticket">
+                    <a href="../../assets/php/login.php">ログインする</a>
                 </div>
             </form>
         </div>
