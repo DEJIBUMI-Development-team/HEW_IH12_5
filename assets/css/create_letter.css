@@ -1,0 +1,105 @@
+body {
+	background-image: url(../img/water_blue1.jpg);
+	background-size: cover;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+}
+body,
+html {
+	height: 100%;
+}
+
+.survey-open {
+	margin: 20px 0px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.suvey-block {
+	margin-top: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+.exit {
+	margin: 20px 0px;
+	cursor: pointer;
+	display: block;
+	width: 60px;
+}
+
+.form-content {
+	margin: 5%;
+	width: 40%;
+	/* background-color: white; */
+	/* background: whitesmoke;
+	padding: 10px; */
+}
+
+#dragDropArea {
+	background-color: #f4f4f4;
+	padding: 10px;
+	border: #ddd dashed 5px;
+	min-height: 200px;
+	text-align: center;
+}
+
+#dragDropArea p {
+	color: #999;
+	font-weight: bold;
+	font-size: 14px;
+	font-size: 1.4em;
+}
+
+#dragDropArea .drag-drop-buttons {
+	margin-top: 20px;
+	font-size: 12px;
+	font-size: 1.2em;
+}
+
+.drag-drop-buttons input {
+	margin: auto;
+}
+
+#previewArea img {
+	width: 200px;
+}
+
+input[type=text] {
+	width: 40%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+.product-item {
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	height: 600px;
+	width: 20%;
+	margin-top: 5%;
+	background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+}
+
+.product-price {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.product-breakdown {
+	margin-top: 20px;
+}
+
+.submit-input {
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+}

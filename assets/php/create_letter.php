@@ -56,91 +56,106 @@ if (isset($_POST["submit"])) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		.survey-open {
-			margin: 20px 0px;
-		}
-
-		.hidden {
-			display: none;
-		}
-
-		.exit {
-			margin: 20px 0px;
-		}
-
-		#dragDropArea {
-			background-color: #f4f4f4;
-			margin: 10px;
-			padding: 10px;
-			border: #ddd dashed 5px;
-			min-height: 200px;
-			text-align: center;
-		}
-
-		#dragDropArea p {
-			color: #999;
-			font-weight: bold;
-			font-size: 14px;
-			font-size: 1.4em;
-		}
-
-		#dragDropArea .drag-drop-buttons {
-			margin-top: 20px;
-			font-size: 12px;
-			font-size: 1.2em;
-		}
-
-		.drag-drop-buttons input {
-			margin: auto;
-		}
-	</style>
+	<link rel="stylesheet" href="../css/create_letter.css">
+	<title>手紙設定画面</title>
 </head>
 
 <body>
 	<form method="POST" action="" enctype="multipart/form-data">
-		<div id="dragDropArea">
-			<div class="drag-drop-inside">
-				<p class="drag-drop-info">ここにファイルをドロップ</p>
-				<p>または</p>
-				<p class="drag-drop-buttons">
-					<input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="image" onChange="photoPreview(event)">
-				</p>
-				<div id="previewArea"></div>
-			</div>
-		</div>
-		<!-- <input type="file" name="image">
-		<br> -->
-
-		<div class="survey-open">アンケート機能を利用する</div>
-
-		<div class="survey hidden">
-			<input type="text" name="survey_title" placeholder="アンケートタイトルを追加" class="input_element" disabled>
-			<br>
-			<div class="suvey-block" id="survey_elem">
-				<div class="survery-contents">
-					<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
-				</div>
-
-				<div class="survey-contents">
-					<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
+		<div class="form-content">
+			<div id="dragDropArea">
+				<div class="drag-drop-inside">
+					<p class="drag-drop-info">ここにファイルをドロップ</p>
+					<p>または</p>
+					<p class="drag-drop-buttons">
+						<input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="image" onChange="photoPreview(event)">
+					</p>
+					<div id="previewArea"></div>
 				</div>
 			</div>
-			<button id="add" type="button">追加</button>
-			<button id="delete" type="button">削除</button>
-			<div class="exit">閉じる</div>
+			<!-- <input type="file" name="image">
+			<br> -->
+
+			<div class="survey-open">アンケート機能を利用する</div>
+
+			<div class="survey hidden">
+				<input type="text" name="survey_title" placeholder="アンケートタイトルを追加" class="input_element" disabled>
+				<br>
+				<div class="suvey-block" id="survey_elem">
+					<div class="survey-contents">
+						<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
+					</div>
+
+					<div class="survey-contents">
+						<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
+					</div>
+				</div>
+				<button id="add" type="button">追加</button>
+				<button id="delete" type="button">削除</button>
+				<div class="exit">閉じる</div>
+			</div>
+		</div>
+		<div class="product-item">
+			<h3>お支払総額</h3>
+			<div class="product-price">0円</div>
+			<div class="product-breakdown">
+				<div>------</div>
+				<div class="dejibumi-price price">手紙設定料金 : 0円</div>
+				<div class="survey-price price">アンケート利用料金 : 0円</div>
+				<div class="gift-price price">ギフト総計 : 0円</div>
+			</div>
+			<input type="submit" value="お支払いはこちらから" name="submit" class="submit-input">
 		</div>
 
-
-		<input type="submit" value="送信！" name="submit">
 	</form>
 
 	<script>
+		let total_price = 0;
+		let img_price = 0;
+		let survey_price = 0;
+		let gift_price = 0;
+
+		const total_view_content = document.querySelector(".product-price");
+		const dejibumi_img = document.querySelector(".dejibumi-price");
+		const survey_price_view = document.querySelector(".survey-price");
+		const gift_prince_view = document.querySelector(".gift-price");
+
+		var is_survey = false;
+		var is_setImg = false;
+		var is_setGift = false;
+
+		function set_price() {
+			if (is_setImg) {
+				img_price = 800;
+			} else {
+				img_price = 0;
+			}
+
+			if (is_survey) {
+				survey_price = 500;
+			} else {
+				survey_price = 0;
+			}
+
+			if (is_setGift) {
+				gift_price = 0
+			} else {
+				gift_price = 0;
+			}
+
+			total_price = img_price + survey_price + gift_price;
+
+			total_view_content.textContent = `${total_price}円`;
+			dejibumi_img.textContent = `手紙設定料金 : ${img_price}円`;
+			survey_price_view.textContent = `アンケート利用料金 : ${survey_price}円`;
+			gift_prince_view.textContent = `ギフト総計 : ${gift_price}円`;
+		}
+
 		const add_button_elem = document.getElementById("add");
 		const survey_elem = document.getElementById("survey_elem");
+
 		add_button_elem.addEventListener("click", () => {
-			survey_elem.insertAdjacentHTML('afterbegin', '<div class="survey-contents"><input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element"></div>');
+			survey_elem.insertAdjacentHTML("beforeend", '<div class="survey-contents"><input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element"></div>');
 		});
 
 		const survey_open = document.querySelector(".survey-open");
@@ -152,6 +167,9 @@ if (isset($_POST["submit"])) {
 			input_elem.forEach((input) => {
 				input.disabled = false;
 			});
+			is_survey = true;
+			survey_open.style.visibility = "hidden";
+			set_price();
 		});
 
 		survey_exit.addEventListener("click", () => {
@@ -159,29 +177,35 @@ if (isset($_POST["submit"])) {
 				input.disabled = true;
 			});
 			survey.classList.add("hidden");
+			survey_open.style.visibility = "visible";
+			is_survey = false;
+			set_price();
 		});
 
 		const delete_button_elem = document.getElementById("delete");
 		delete_button_elem.addEventListener("click", () => {
 			// debugger;
-			var survey_contents = document.querySelectorAll(".survey-contents")
-
+			var survey_contents = document.querySelectorAll(".survey-contents");
 			if (survey_contents.length > 2) {
-
 				var last_elem = survey_elem.lastElementChild;
 				last_elem.remove();
 			}
 
 		});
+
 		var fileArea = document.getElementById('dragDropArea');
 		var fileInput = document.getElementById('fileInput');
 		fileArea.addEventListener('dragover', function(evt) {
 			evt.preventDefault();
+			is_setImg = true;
 			fileArea.classList.add('dragover');
+			set_price();
 		});
 		fileArea.addEventListener('dragleave', function(evt) {
 			evt.preventDefault();
+			is_setImg = false;
 			fileArea.classList.remove('dragover');
+			set_price();
 		});
 		fileArea.addEventListener('drop', function(evt) {
 			evt.preventDefault();
@@ -194,7 +218,10 @@ if (isset($_POST["submit"])) {
 		});
 
 		function photoPreview(event, f = null) {
+			debugger;
 			var file = f;
+			is_setImg = false;
+			set_price();
 			if (file === null) {
 				file = event.target.files[0];
 			}
@@ -210,8 +237,13 @@ if (isset($_POST["submit"])) {
 				img.setAttribute("src", reader.result);
 				img.setAttribute("id", "previewImage");
 				preview.appendChild(img);
+				if (preview.hasChildNodes()) {
+					is_setImg = true;
+				} else {
+					is_setImg = false;
+				}
+				set_price();
 			};
-
 			reader.readAsDataURL(file);
 		}
 	</script>
