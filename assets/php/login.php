@@ -47,12 +47,12 @@ if (isset($_POST["login"])) {
                 // 編集ボタンクリックで"edit"を代入
                 if ($_SESSION['HS'] == "edit") {
                     $result = "編集画面で";
-                    header("Location:edit.php");
+                    header("Location:assets/php/edit.php");
                   }
                   // マイページボタンクリックで"mypage"を代入
                 if ($_SESSION['HS'] == "mypage") {
                     $result = "マイページで";
-                    header("Location:mypage.php");
+                    header("Location:assets/php/");
             }
 
             
