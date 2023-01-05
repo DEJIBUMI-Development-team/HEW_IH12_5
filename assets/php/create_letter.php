@@ -1,42 +1,16 @@
 <?php
 session_start();
-// データベースに接続
-function connectDB()
-{
-	$param = 'mysql:dbname=dejibumidb;host=localhost';
-	try {
-		$pdo = new PDO($param, 'root', '');
-		return $pdo;
-	} catch (PDOException $e) {
-		exit($e->getMessage());
-	}
-}
-$pdo = connectDB();
 $data = [];
 
 if (isset($_POST["submit"])) {
 	if (!empty($_FILES["image"]["name"])) {
-		$img_name = $_FILES["image"]["name"];
-		$content = file_get_contents($_FILES["image"]["tmp_name"]);
-		$sql = 'INSERT INTO t_user_letter(F_user_id, name, raw_data) VALUES(
-			:num,
-			:img_name, 
-			:content 
-		)';
-		$stmt = $pdo->prepare($sql);
-		$stmt->bindValue(':num', 1, PDO::PARAM_INT);
-		$stmt->bindValue(':img_name', $img_name, PDO::PARAM_STR);
-		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
-		$stmt->execute();
-		$id =  $pdo->lastInsertId();
+		$_SESSION["img_name"] = $_FILES["image"]["name"];
+		$_SESSION["img_content"] = file_get_contents($_FILES["image"]["tmp_name"]);
 		if (!empty($_POST["survey"])) {
 			$data = [
-				"id" => $id,
 				"title" => $_POST["survey_title"],
 				"survey" => $_POST["survey"]
 			];
-		} else {
-			$data["id"] = $id;
 		}
 
 		$data = http_build_query($data);
@@ -45,8 +19,6 @@ if (isset($_POST["submit"])) {
 		echo "画像を選択してください";
 	}
 }
-
-
 
 ?>
 <!DOCTYPE html>
@@ -73,8 +45,6 @@ if (isset($_POST["submit"])) {
 					<div id="previewArea"></div>
 				</div>
 			</div>
-			<!-- <input type="file" name="image">
-			<br> -->
 
 			<div class="survey-open">アンケート機能を利用する</div>
 
@@ -94,6 +64,7 @@ if (isset($_POST["submit"])) {
 				<button id="delete" type="button">削除</button>
 				<div class="exit">閉じる</div>
 			</div>
+
 		</div>
 		<div class="product-item">
 			<h3>お支払総額</h3>
@@ -144,7 +115,6 @@ if (isset($_POST["submit"])) {
 			}
 
 			total_price = img_price + survey_price + gift_price;
-
 			total_view_content.textContent = `${total_price}円`;
 			dejibumi_img.textContent = `手紙設定料金 : ${img_price}円`;
 			survey_price_view.textContent = `アンケート利用料金 : ${survey_price}円`;
