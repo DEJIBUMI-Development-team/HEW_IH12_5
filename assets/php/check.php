@@ -31,34 +31,39 @@ if (!empty($_POST['check'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>確認画面</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/check.css">
 </head>
 <body>
+    <div id="backgrounds">
+		<div class="water1 back"></div>
+	</div>
     <div class="content">
         <form action="" method="POST">
             <input type="hidden" name="check" value="checked">
-            <h1>入力情報の確認</h1>
+            <h1 id="title">入力情報の確認</h1>
             <p>ご入力情報に変更が必要な場合、下のボタンを押し、変更を行ってください。</p>
             <p>登録情報はあとから変更することもできます。</p>
             <?php if (!empty($error) && $error === "error"): ?>
                 <p class="error">＊会員登録に失敗しました。</p>
             <?php endif ?>
-            <hr>
+            <hr id="line">
  
-            <div class="control">
-                <p>ニックネーム</p>
-                <p><span class="fas fa-angle-double-right"></span> <span class="check-info"><?php echo htmlspecialchars($_SESSION['join']['name'], ENT_QUOTES); ?></span></p>
-            </div>
- 
-            <div class="control">
-                <p>メールアドレス</p>
-                <p><span class="fas fa-angle-double-right"></span> <span class="check-info"><?php echo htmlspecialchars($_SESSION['join']['email'], ENT_QUOTES); ?></span></p>
-            </div>
+            <div class="user_information">
+                <div class="control">
+                    <p>ニックネーム</p>
+                    <p><span class="fas fa-angle-double-right"></span> <span class="check-info"><?php echo htmlspecialchars($_SESSION['join']['name'], ENT_QUOTES); ?></span></p>
+                </div>
+    
+                <div class="control">
+                    <p>メールアドレス</p>
+                    <p><span class="fas fa-angle-double-right"></span> <span class="check-info"><?php echo htmlspecialchars($_SESSION['join']['email'], ENT_QUOTES); ?></span></p>
+                </div>
 
-            <br>
-            <a href="entry.php" class="back-btn">変更する</a>
-            <button type="submit" class="btn next-btn">登録する</button>
-            <div class="clear"></div>
+                <br>
+                <a href="signup.php" class="back-btn">変更する</a>
+                <button type="submit" class="btn next-btn">登録する</button>
+                <div class="clear"></div>
+            </div>
         </form>
     </div>
 </body>

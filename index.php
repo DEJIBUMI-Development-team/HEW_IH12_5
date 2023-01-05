@@ -18,7 +18,6 @@ session_start();
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +27,8 @@ session_start();
 		<link rel="stylesheet" href="assets/css/reset.css">
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/animation.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
 	</head>
 	<body>
 		<header></header>
@@ -43,11 +44,14 @@ session_start();
 			</div>
 
 			<div id="first_content">
-			 <video controls src="assets/img/dejibumi.mp4" style="height: 50%;"></video>
+			 <!-- <video controls src="assets/img/dejibumi.mp4" style="height: 50%;"></video> -->
+			 <h2>でじぶみ説明動画</h2>
+       <!-- 無限に波が広がる -->
+       <a href="assets/img/dejibumi.mp4" class="btnripple2 video-open"><span></span></a>
 			</div>
 
 			<div id="second_content" class="cf">
-				<div id="top_wrapper">
+			<div id="top_wrapper">
 
 				 <!-- 見出しnumber -->
 				 <form action="index.php" method="post">
@@ -59,16 +63,16 @@ session_start();
 
 				 <!-- コンテンツ写真 -->
 				 <form action="index.php" method="post">
-					<button type="submit" name="update"><img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" alt=""/></button>
-					<button type="submit" name="update"><img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" alt=""/></button>
-					<button type="submit" name="update"><img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" alt=""/></button>
-					<button type="submit" name="update"><img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" alt=""/></button>
-					<button type="submit" name="update"><img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" alt=""/></button>
-					<button type="submit" name="update"><img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" alt=""/></button>
+				  <a href="assets/php/signup.php"><img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" alt=""/></a>
+					<a href="assets/php/signup.php"><img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" alt=""/></a>
+					<a href="assets/php/signup.php"><img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" alt=""/></a>
+					<a href="assets/php/signup.php"><img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" alt=""/></a>
+					<a href="assets/php/signup.php"><img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" alt=""/></a>
+					<a href="assets/php/signup.php"><img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" alt=""/></a>
 				 </form>
 
 				 <!-- SVGアニメーション -->
-				 <svg id="stitch_08" class="obj stitch flex fadeInTrigger delayScroll">
+				 <svg id="stitch_08" class="obj stitch delayScroll">
 				  <line class="line" x1="0" x2="5"   y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="10"  y1="0" y2="10"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="15"  y1="0" y2="15"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -316,7 +320,7 @@ session_start();
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 				 </svg>  
-				 <svg id="stitch_03" class="obj stitch flex fadeInTrigger delayScroll">
+				 <svg id="stitch_03" class="obj stitch delayScroll">
 					<desc>Created with Snap</desc>
 					<line x1="480" x2="480" y1="0" y2="0"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="475" y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -416,7 +420,7 @@ session_start();
 					<line x1="480" x2="5"   y1="0" y2="475" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="0"   y1="0" y2="480" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 				 </svg>
-				 <svg id="stitch_04" class="obj stitch flex fadeInTrigger delayScroll">
+				 <svg id="stitch_04" class="obj stitch delayScroll">
 					<desc>Created with Snap</desc>
 					<line x1="0" x2="5"   y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="10"  y1="0" y2="10"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -587,7 +591,7 @@ session_start();
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 				 </svg>
-				 <svg id="stitch_06" class="obj stitch flex fadeInTrigger delayScroll">
+				 <svg id="stitch_06" class="obj stitch delayScroll">
 					<desc>Created with Snap</desc>
 					<line x1="0" x2="0" y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="0" y1="0" y2="15"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -655,6 +659,8 @@ session_start();
 		<footer></footer>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 		<script type="text/javascript" src="assets/js/svg.js"></script>
 		<script type="text/javascript" src="assets/js/slick.min.js"></script>
 		<script type="text/javascript" src="assets/js/index.js"></script>

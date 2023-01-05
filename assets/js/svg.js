@@ -1,4 +1,3 @@
-
 function delayScrollAnime() {
 	var time = 0.03;//遅延時間を増やす秒数の値
 	var value = time;
