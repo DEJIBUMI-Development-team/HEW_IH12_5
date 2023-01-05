@@ -3,9 +3,15 @@
 first_view
 --------------------------------------------------- */
 // 読み込み時に一番上表示
-$(function() {
-  $('html,body').animate({ scrollTop: 0 }, '1');
+$(window).on('beforeunload', function(e){
+  /** 更新される直前の処理 */
+  scrollTo(0, 0);
+  console.log('beforeunload');
 });
+
+    // function scrollToTop() {
+    //   scrollTo(0, 0);
+    //  }
 /* ------------------------------------------------
 first_content
 --------------------------------------------------- */
