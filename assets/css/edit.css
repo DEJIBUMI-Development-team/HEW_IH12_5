@@ -403,6 +403,7 @@ main {
 
 .template-text-1 h2,
 .template-text-2 h2{
+    text-decoration: underline;
     font-size: 0.9em;
 }
 
@@ -458,4 +459,36 @@ main {
 
 #contextmenu li{
     cursor: pointer;
+}
+.h4-output{
+    margin-bottom: 2px;
+    font-weight: 100;
+    margin-top: 0px;
+}
+.exp {
+    margin-top: 0;
+}
+.dejibumi-title {
+    cursor: auto;
+    font-size: 1.2em;
+    margin-bottom: 2px;
+    width: 100%;
+    text-align: left;
+    background-color: #474646;
+    /* border-radius: 4px; */
+    color: white;
+    box-shadow: 0 3px 3px -2px rgb(3 29 41 / 15%);
+
+}
+.dejibumi-title p:focus{
+    border: 2px solid white;
+}
+.p-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0.6em 1.5em 0.6em 0.5em;
+}
+.title-exp {
+    width: 100%;
+    margin-bottom: 20px;
 }

@@ -7,13 +7,14 @@ ChromePhp::log($_SESSION["user_id"]);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/edit.css">
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
-    <link rel="stylesheet" href="../css/picker.nano.css"/>
+    <link rel="stylesheet" href="../css/picker.nano.css" />
     <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
     <script src="../package/fitty.min.js"></script>
     <script src="../package/html2canvas.min.js"></script>
@@ -39,7 +40,8 @@ ChromePhp::log($_SESSION["user_id"]);
 <!-- □□□□□□□■■□□□□□□□□□□□□■□□□□□□■■□□□□□■■■□□□□□■□□□□□■□□■□■■□□□□□■■□□□□□ -->
 <!-- □□□□□□□□■■■□□□□□□□□□□□■□□□■■■□□□□□□□■□□□□□■■□□□□□□□□□■■□□□□□■■□□□□□□ -->
 <!-- □□□□□□□□□□■■■□□□□□□□□□□■■■■□□□□□□□□□□□□□■■■□□□□□□□□□□□□□□□□■■□□□□□□□ -->
-<!-- □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□ --> 
+<!-- □□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□ -->
+
 <body>
     <a id="getImage" href="" style="display: none"></a>
     <div id="contextmenu">
@@ -61,13 +63,13 @@ ChromePhp::log($_SESSION["user_id"]);
             <option value="fantasy">装飾的フォント</option>
             <option value="yosugara">夜すがら手書きフォント</option>
         </select>
-        
+
         <select name="fontSize" style="display: none;">
             <option value="40">文字サイズ：小</option>
             <option value="50">文字サイズ：中</option>
             <option value="60">文字サイズ：大</option>
         </select>
-        
+
         <select class="writtingModes" name="writingMode" id="writingMode">
             <option value="none"></option>
             <option value="unset">横</option>
@@ -75,7 +77,7 @@ ChromePhp::log($_SESSION["user_id"]);
         </select>
 
         <!-- ここにカラーピッカーが表示される -->
-		<div class="color-picker"></div>
+        <div class="color-picker"></div>
         <div class="edit_and_save">
             <div class="edit_tgl">
                 <ul>
@@ -89,11 +91,40 @@ ChromePhp::log($_SESSION["user_id"]);
     <main>
         <section class="left_m">
             <div class="select">
+                <div class="select_content" id="select_elem_1"></div>
                 <div class="select_content select_off" id="select_img">IMG</div>
-                <div class="select_content" id="select_text">TEXT</div>
-                <div class="select_content select_off" id="select_elem_1"></div>
+                <div class="select_content select_off" id="select_text">TEXT</div>
                 <div class="select_content select_off" id="select_elem_2"></div>
             </div>
+
+            <!-- 仮置き部分==================================================== -->
+            <div class="temp_e select_elem_1 main-temp-elem">
+                <div class="template-text-1">
+                    <h2>タイトル設定</h2>
+                    <div class="dejibumi-title labal-output">
+                        <p class="p-title" contenteditable="true">タイトルを入力してください</p>
+                    </div>
+                    <div class="title-exp">
+                        <p class="exp">現在編集中のでじぶみのタイトルを設定できます。</p>
+                        <p class="">設定したタイトルは</p>
+                        <ul>
+                            <li>マイページの編集履歴</li>
+                            <li>PNGファイル変換時のファイル名</li>
+                        </ul>
+                        <p class="">の二つで用いられます。</p>
+                        <p class="">保存するには、画面右上にある「保存する」をクリックしてください。</p>
+                    </div>
+
+                    <h2>でじぶみ作成</h2>
+                    <label for="outputBtn" class="title-text-1 template-content labal-output">
+                        <h4 class="h4-output">でじぶみを作成(画像に変換)</h4>
+                    </label>
+                    <p class="exp">現在編集中のでじぶみをPNGファイルに変換します。</p>
+                    <input type="button" id="outputBtn" style="display: none;">
+                </div>
+            </div>
+            </div>
+            <!-- ============================================================= -->
 
             <!-- 画像テンプレート部分============================== -->
             <div class="temp_t select_img main-temp-elem off_t">
@@ -125,7 +156,7 @@ ChromePhp::log($_SESSION["user_id"]);
             <!-- ================================================= -->
 
             <!-- テキストテンプレート部分====================================== -->
-            <div class="temp_m select_text main-temp-elem" id="text_template">
+            <div class="temp_m select_text main-temp-elem off_t " id="text_template">
                 <div class="template-text-1">
                     <h2>テキストをクリックして編集画面に追加</h2>
                     <label for="temp-0" class="title-text-1 template-content">
@@ -155,79 +186,43 @@ ChromePhp::log($_SESSION["user_id"]);
                 </div>
             </div>
             <!-- ============================================================= -->
-            
-            <!-- 仮置き部分==================================================== -->
-            <div class="temp_e select_elem_1 main-temp-elem off_t ">
-                <div class="template-text-1">
-                        <h2></h2>
-                        <label for="temp-0" class="title-text-1 template-content">
-                            <h1></h1>
-                        </label>
-                        <label for="temp-1" class="title-text-2 template-content">
-                            <h4></h4>
-                        </label>
-                        <label for="temp-2" class="title-text-3 template-content">
-                            <p></p>
-                        </label>
-                        <!-- <input type="button" value="ft_content" id="temp-0" data-tempid="0">
-                        <input type="button" value="sc_content" id="temp-1" data-tempid="1">
-                        <input type="button" value="th_content" id="temp-2" data-tempid="2"> -->
-                    </div>
-                    <div id="outputBtn" class="btn btn-primary m-3">
-                        画像表示
-                    </div>
-                    <div class="template-text-2">
-                        <h2></h2>
-                        <label for="temp-0" class="text-1 template-content">
-                            <p></p>
-                        </label>
-                        <label for="temp-1" class="text-2 template-content">
-                            <p></p>
-                        </label>
-                        <label for="temp-2" class="text-3 template-content">
-                            <p></p>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <!-- ============================================================= -->
-            
+
             <!-- 仮置き部分==================================================== -->
             <div class="temp_f select_elem_2 main-temp-elem off_t ">
                 <div class="template-text-1">
-                        <h2></h2>
-                        <label for="temp-0" class="title-text-1 template-content">
-                            <h1></h1>
-                        </label>
-                        <label for="temp-1" class="title-text-2 template-content">
-                            <h4></h4>
-                        </label>
-                        <label for="temp-2" class="title-text-3 template-content">
-                            <p></p>
-                        </label>
-                        <!-- <input type="button" value="ft_content" id="temp-0" data-tempid="0">
-                        <input type="button" value="sc_content" id="temp-1" data-tempid="1">
-                        <input type="button" value="th_content" id="temp-2" data-tempid="2"> -->
-                    </div>
-                    <div class="template-text-2">
-                        <h2></h2>
-                        <label for="temp-0" class="text-1 template-content">
-                            <p></p>
-                        </label>
-                        <label for="temp-1" class="text-2 template-content">
-                            <p></p>
-                        </label>
-                        <label for="temp-2" class="text-3 template-content">
-                            <p></p>
-                        </label>
-                    </div>
+                    <h2></h2>
+                    <label for="temp-0" class="title-text-1 template-content">
+                        <h1></h1>
+                    </label>
+                    <label for="temp-1" class="title-text-2 template-content">
+                        <h4></h4>
+                    </label>
+                    <label for="temp-2" class="title-text-3 template-content">
+                        <p></p>
+                    </label>
+                    <input type="button" value="" id="">
+                    <input type="button" value="" id="">
+                    <input type="button" value="" id="">
                 </div>
+                <div class="template-text-2">
+                    <h2></h2>
+                    <label for="temp-0" class="text-1 template-content">
+                        <p></p>
+                    </label>
+                    <label for="temp-1" class="text-2 template-content">
+                        <p></p>
+                    </label>
+                    <label for="temp-2" class="text-3 template-content">
+                        <p></p>
+                    </label>
+                </div>
+            </div>
             </div>
             <!-- ============================================================= -->
         </section>
         <!-- 編集エリア -->
         <section class="main_edit">
-        
+
             <div class="edit_area hidden">
                 <div class="img_data" id="data"></div>
             </div>
@@ -241,6 +236,26 @@ ChromePhp::log($_SESSION["user_id"]);
     <!-- pickr java script -->
     <script src="../package/pickr.es5.min.js"></script>
     <script src="../package/pickr.index.js"></script>
+    <script>
+        $(function() {
+            $(".dejibumi-title").on("keydown", function(e) {
+                if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        });
+        // onKeyPress = {
+        //     (event) => {
+        //         if (event.key === 'Enter') {
+        //             return event.preventDefault()
+        //         }
+        //     }
+        // }
+    </script>
+
     <!--  -->
 </body>
+
 </html>

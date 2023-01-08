@@ -49,7 +49,7 @@ function mousedown(e) {
 
             // 現在地点を変数として取得
             var rect = el[clickedId].move_elem.getBoundingClientRect();
-                        
+
             el[clickedId].move_elem.style.left = rect.left - newX + "px";
             el[clickedId].move_elem.style.top = rect.top - newY + "px";
 
@@ -63,7 +63,7 @@ function mousedown(e) {
 
         }
     }
-    
+
     // itemからカーソルが離れた際にイベントを解除
     function mouseup() {
         window.removeEventListener("mousemove", mousemove);
@@ -102,7 +102,7 @@ function mousedownResize(e) {
         // 要素の相対位置を取得
         var rect = el[clickedId].move_elem.getBoundingClientRect();
 
-        var calc_height = (rect.width - (prevX - e.clientX)) * heigh_raitos; 
+        var calc_height = (rect.width - (prevX - e.clientX)) * heigh_raitos;
 
         change_size = 0;
         // 指定要素に付加されているクラス名に応じて処理を変える　
@@ -134,7 +134,7 @@ function mousedownResize(e) {
             el[clickedId].move_elem.style.width = rect.width + (prevX - e.clientX) + "px";
             el[clickedId].move_elem.style.height = calc_height + "px";
             rect = el[clickedId].move_elem.getBoundingClientRect();
-            el[clickedId].move_elem.style.top = rect.top - Math.floor(rect.bottom - get_rect.bottom) + "px";                
+            el[clickedId].move_elem.style.top = rect.top - Math.floor(rect.bottom - get_rect.bottom) + "px";
             el[clickedId].move_elem.style.left = rect.left - (prevX - e.clientX) + "px";
         }
 
@@ -165,7 +165,7 @@ function mousedownRotate(e) {
     window.addEventListener("mousemove", mousemoveRotate);
     window.addEventListener("mouseup", mouseupRotate);
     isRotate = true;
-    
+
     // クリックされた頂点の要素を取得し、座標としてオブジェクト形式で格納
     // debugger;
     click_rotate_id = get_id(e, "rotate");
@@ -183,7 +183,7 @@ function mousedownRotate(e) {
         "x": center_rect.top,
         "y": center_rect.left
     };
-    
+
     // 現在地点を入力
     function mousemoveRotate(e) {
         // debugger;
@@ -198,26 +198,26 @@ function mousedownRotate(e) {
         var flanking_side_2 = Math.sqrt(((top_position.x - center_position.x) ** 2) + ((top_position.y - center_position.y) ** 2));
 
         // 余弦定理を用いてcosxを求める
-        cos_x = (((flanking_side_1 ** 2) + (flanking_side_2 ** 2) - (opposite_side ** 2)) / (2 * flanking_side_1 * flanking_side_2)); 
-    
+        cos_x = (((flanking_side_1 ** 2) + (flanking_side_2 ** 2) - (opposite_side ** 2)) / (2 * flanking_side_1 * flanking_side_2));
+
         // 逆三角関数(arccos)を用いて ラジアン値を求める
         var radian = Math.acos(cos_x);
-        
+
         // 角度に変換する
         var degree = radian * (180 / Math.PI);
-        
+
         if (prev.y < center_position.y) {
             degree = 360 - degree;
         }
-        
+
         if (0 < degree && degree < 10) {
             degree = 0
         }
-        
+
         if (90 < degree && degree < 100) {
             degree = 90
         }
-        
+
         if (180 < degree && degree < 190) {
             degree = 180
         }
@@ -226,7 +226,7 @@ function mousedownRotate(e) {
             degree = 270
         }
         el[click_rotate_id].rotate_content.style.transform = `rotate(${degree}deg)`;
-        
+
         // 角度計算用
         // console.log(opposite_side, flanking_side_1, flanking_side_2, cos_x, radian, degree);
         // console.log(isMove, isResizing, isRotate)       
@@ -244,23 +244,23 @@ function mousedownRotate(e) {
  */
 var select_on = document.querySelectorAll(".select_content");
 
-select_on.forEach((elem)=>{
-    elem.addEventListener("click", (e)=>{
+select_on.forEach((elem) => {
+    elem.addEventListener("click", (e) => {
         target = e.target.id;
-        
+
         var on_elem = document.getElementById(target);
         on_elem.classList.remove("select_off");
 
         var off_main_elem = document.querySelectorAll(`.main-temp-elem:not(#${target})`);
         var off_elem = document.querySelectorAll(`.select_content:not(#${target})`);
-        off_elem.forEach((off)=>{
+        off_elem.forEach((off) => {
             off.classList.add("select_off");
         });
-        
-        off_main_elem.forEach((off)=>{
+
+        off_main_elem.forEach((off) => {
             off.classList.add("off_t")
         });
-        
+
         var on_main_elem = document.querySelector(`.${target}`);
         on_main_elem.classList.remove("off_t");
     });
@@ -269,12 +269,12 @@ select_on.forEach((elem)=>{
 /**
  * 画像選択による、背景画像の差し替え
  */
-const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "night.PNG", "", "", "", "", "", ""] 
+const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "night.PNG", "", "", "", "", "", ""]
 const insert_element = document.getElementById("data");
 const select_img = document.querySelectorAll(".select-img-all");
 var current_url = url[0];
-select_img.forEach((img, index)=>{
-    img.addEventListener("click", ()=>{
+select_img.forEach((img, index) => {
+    img.addEventListener("click", () => {
         current_url = url[index];
         insert_element.style.backgroundImage = `url(../data/img_data/${url[index]})`;
     });
@@ -283,21 +283,21 @@ select_img.forEach((img, index)=>{
 /**
  * 対象のDOMを右クリックした時のコンテキストメニュー表示アニメーション
  */
-function view_context_menu(){
-    document.querySelector(".context").addEventListener('contextmenu',function (e){
-        document.getElementById('contextmenu').style.left=e.pageX+"px";
-        document.getElementById('contextmenu').style.top=e.pageY+"px";
-        document.getElementById('contextmenu').style.display="block";
-        
+function view_context_menu() {
+    document.querySelector(".context").addEventListener('contextmenu', function (e) {
+        document.getElementById('contextmenu').style.left = e.pageX + "px";
+        document.getElementById('contextmenu').style.top = e.pageY + "px";
+        document.getElementById('contextmenu').style.display = "block";
+
         // クリックを行った要素のIDを取得
         clicked_id = get_id(e, "id");
 
         // 削除対象としてデータを格納
         delete_point_dom = clicked_id;
     });
-    
-    document.body.addEventListener('click',function (e){
-        document.getElementById('contextmenu').style.display="none";
+
+    document.body.addEventListener('click', function (e) {
+        document.getElementById('contextmenu').style.display = "none";
     });
 }
 
@@ -309,11 +309,11 @@ function set_Editable(e) {
     // ドラッグ移動イベントを実行不可の状態にする
     isMove = false;
     clicked_id = get_id(e, "id");
-    
+
     // 選択した要素のIDを更新
     G_current_focus = clickedId;
-    G_current_text =  $(`#${G_current_focus}`).find(".text");
-    
+    G_current_text = $(`#${G_current_focus}`).find(".text");
+
     // headerの各編集項目の更新を行うために対象のstyleを取得
     var current_option = G_current_text.css("fontFamily");
     var current_mode = G_current_text.css("writingMode");
@@ -343,9 +343,9 @@ function set_Uneditable(e) {
     isMove = true;
     clicked_id_n = get_id(e, "id");
 
-    G_current_text =  $(`#${G_current_focus}`).find(".text");
+    G_current_text = $(`#${G_current_focus}`).find(".text");
     $("#now_elem").text(G_current_text.text());
-    
+
     // テキストを実行不可状態に変更
     el[clicked_id_n].edit_text.contentEditable = "false";
 }
@@ -356,9 +356,9 @@ function set_Uneditable(e) {
  * @param {string} specified_key datasetの参照キー
  * @returns 指定要素のid
  */
-function get_id(event, specified_key){
+function get_id(event, specified_key) {
     clickedDom = event.composedPath();
-    return clickedDom[0].dataset[specified_key];    
+    return clickedDom[0].dataset[specified_key];
 }
 
 
@@ -366,33 +366,33 @@ const on_edit = document.getElementById("edit_on");
 const off_edit = document.getElementById("edit_off");
 
 // 要素を編集モードにする
-on_edit.addEventListener("click", ()=>{
+on_edit.addEventListener("click", () => {
     // debugger;
     off_edit.classList.remove("tgl_on");
     on_edit.classList.add("tgl_on");
     var block_elem = document.querySelectorAll(".on_n");
     var visible_elem = document.querySelectorAll(".on_h");
-    block_elem.forEach((elem)=>{
+    block_elem.forEach((elem) => {
         elem.style.display = "block";
     });
-    visible_elem.forEach((elem)=>{
+    visible_elem.forEach((elem) => {
         elem.style.border = "solid 1px #000";
     });
     $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "visible");
     $(".color-picker").css("display", "block");
-    
+
 });
 
 // 要素を調整・閲覧モードにする
-off_edit.addEventListener("click", ()=>{
+off_edit.addEventListener("click", () => {
     on_edit.classList.remove("tgl_on");
     off_edit.classList.add("tgl_on");
     var none_elem = document.querySelectorAll(".on_n");
     var hidden_elem = document.querySelectorAll(".on_h");
-    none_elem.forEach((elem)=>{
+    none_elem.forEach((elem) => {
         elem.style.display = "none";
     });
-    hidden_elem.forEach((elem)=>{
+    hidden_elem.forEach((elem) => {
         elem.style.border = "none";
     });
     $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "hidden");
@@ -404,7 +404,7 @@ remove_button.addEventListener("click", remove_element)
 /**
  * コンテキストから、対象のDOMを削除するボタンを押した時の処理
  */
-function remove_element(){
+function remove_element() {
     var remove_elem = document.getElementById(`${delete_point_dom}`);
     remove_elem.remove();
     delete el[delete_point_dom];
@@ -421,10 +421,10 @@ save_btn.addEventListener("click", save_elememnt);
 /**
  * 保存ボタンクリック後に要素の情報を取得し、fetchする一連の処理群
  */
-function save_elememnt(){
+function save_elememnt() {
     var result = window.confirm('保存しますか?');
-    
-    if(result) {
+
+    if (result) {
         console.log("clickOk");
     }
     else {
@@ -450,16 +450,16 @@ function calc_position() {
     // 親要素の絶対位置をを取得
     const prDom = document.getElementById("data");
     const prRect = prDom.getBoundingClientRect();
-    
+
     // debugger;
     // const data_mergin_left = parseInt(window.getComputedStyle(prDom).marginLeft, 10);
 
     // 動的要素の繰り返し処理
     Relatively_position = {};
-    Object.keys(el).forEach((key)=>{
+    Object.keys(el).forEach((key) => {
         // 動的要素の絶対位置を取得
-        var Rect =  this[key].getBoundingClientRect();
-        
+        var Rect = this[key].getBoundingClientRect();
+
         // 相対位置を計算(グローバル変数にオブジェクト型で格納)
         /**
          * 相対位置計算 => {
@@ -468,15 +468,15 @@ function calc_position() {
          * "width" : (子要素のwidth / 親要素のwidth) * 100 (%)
          * "height"  : (子要素のheight / 親要素のheight) * 100 (%)
          * }
-         */ 
+         */
 
 
         Relatively_position[key] = {
             "class": this[key].classList.value,
-            "top" : (Rect.top - prRect.top) / prRect.height * 100,
-            "left" : (Rect.left - prRect.left) / prRect.width * 100,
-            "width" :  Rect.width / prRect.width * 100,
-            "height" : Rect.height / prRect.height * 100,
+            "top": (Rect.top - prRect.top) / prRect.height * 100,
+            "left": (Rect.left - prRect.left) / prRect.width * 100,
+            "width": Rect.width / prRect.width * 100,
+            "height": Rect.height / prRect.height * 100,
             "origin_top": Rect.top,
             "origin_left": Rect.left,
             "origin_width": Rect.width,
@@ -485,6 +485,23 @@ function calc_position() {
     });
     return Relatively_position;
 }
+
+var title_elem = document.querySelector(".p-title");
+var title = title_elem.textContent;
+title_elem.addEventListener("blur", () => {
+    title_elem = document.querySelector(".p-title");
+    title = title_elem.textContent;
+    if (title.length == 0) {
+        title_elem.textContent = "タイトルを入力してください";
+    }
+});
+title_elem.addEventListener("focus",()=>{
+    title_elem = document.querySelector(".p-title");
+    if (title_elem.textContent === "タイトルを入力してください") {
+        title_elem.textContent = "";
+        title = title_elem.textContent;
+    }
+});
 
 /**
  * 各要素のstyleを取得する
@@ -497,21 +514,27 @@ function get_domSytle(abs_contents) {
     const img_data_elem = document.getElementById("data");
 
     fetch_object._image = {
-        "backgroud-image" : current_url,
+        "backgroud-image": current_url,
         "background-size": window.getComputedStyle(img_data_elem).backgroundSize,
     }
+    
+    if (title === "タイトルを入力してください") {
+        title = "sample";
+    }
 
-    Object.keys(abs_contents).forEach((key)=>{
+    fetch_object.title = title;
+
+    Object.keys(abs_contents).forEach((key) => {
         // debugger;
         var content_id = key;
         var txt = document.querySelectorAll(`#${key} .text`)[0];
         var text_Dom = document.querySelectorAll(`#${key} .text`)[0];
-        var angle_content =  document.querySelectorAll(`#${key} .edit_svg`)[0];
+        var angle_content = document.querySelectorAll(`#${key} .edit_svg`)[0];
 
         // Style
         var angle = window.getComputedStyle(angle_content);
         var textStyle = window.getComputedStyle(text_Dom);
-        
+
         fetch_object[key] = {
             "_id": content_id,
             "class": this.Relatively_position[key].class,
@@ -547,25 +570,25 @@ function fetch_domElem(fetch_contents) {
     // request.phpとのデータやり取りを行う処理
     fetch("../php/save_request.php", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(fetch_contents)
     })
-    .then((response) => {
-        if (response.ok) {
-            return response.json();
-        }
-        else{
-            console.log("no");
-        }
-    })
-    .then((res) => {
-        alert("保存しました!!");
-        console.log(res);
-    })
-    .catch((error) => {
-        alert("保存失敗");
-        console.error("Error", error);
-    });
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            else {
+                console.log("no");
+            }
+        })
+        .then((res) => {
+            alert("保存しました!!");
+            console.log(res);
+        })
+        .catch((error) => {
+            alert("保存失敗");
+            console.error("Error", error);
+        });
 }
 
 window.onload = async function () {
@@ -574,30 +597,39 @@ window.onload = async function () {
         var query = location.search;
         var value = query.split('=');
         if (value[1]) {
-            var serch_id =  decodeURIComponent(value[1]);
-            const params = {method : "POST", body : JSON.stringify({"edit_id" : serch_id})};
+            var serch_id = decodeURIComponent(value[1]);
+            const params = { method: "POST", body: JSON.stringify({ "edit_id": serch_id }) };
             const response = await fetch("./get_edit_data.php", params);
             if (response.ok) {
                 var redraw_elem = await response.json();
-                Object.keys(redraw_elem).forEach((key)=>{
-                    if(key == "_image"){
+                Object.keys(redraw_elem).forEach((key) => {
+                    if (key == "_image") {
                         // console.log(key);
                         // debugger;
                         var image_path = redraw_elem[key]["backgroud-image"];
                         const first_insert = document.getElementById("data");
-                        first_insert.style.backgroundImage =`url(../data/img_data/${image_path})`;
-                    }else{
+                        first_insert.style.backgroundImage = `url(../data/img_data/${image_path})`;
+                        visivle_elem.classList.remove("hidden");
+                    } else if (key == "title") {
+                        var redraw_title = redraw_elem["title"];
+                        if (redraw_title === "sample") {
+                            redraw_title = "タイトルを入力してください"
+                        }
+                        title_elem = document.querySelector(".p-title");
+                        title_elem.textContent = redraw_title;
+                        title = redraw_title;
+                    } else {
                         if (redraw_elem[key]["class"].indexOf("ft_content") >= 0) {
                             var elem_class = "ft_content";
-                        }else if (redraw_elem[key]["class"].indexOf("sc_content") >= 0) {
+                        } else if (redraw_elem[key]["class"].indexOf("sc_content") >= 0) {
                             var elem_class = "sc_content";
-                        }else if (redraw_elem[key]["class"].indexOf("th_content") >= 0) {
+                        } else if (redraw_elem[key]["class"].indexOf("th_content") >= 0) {
                             var elem_class = "th_content";
                         }
 
                         // インスタンス生成
                         temp_objects = new Template_object(count).temp_objectDom;
-                        
+
                         // DOMのinsert
                         var insert = document.getElementById("data");
                         insert.insertAdjacentHTML('afterbegin', temp_objects[elem_class].dom);
@@ -609,17 +641,16 @@ window.onload = async function () {
                             minSize: 12,
                             maxSize: 100,
                         });
-
                         //incrementCount
                         count++;
                     }
-                    
+
                 });
             }
-            else{
+            else {
                 console.log("no");
             }
-        }else {
+        } else {
             visivle_elem.classList.remove("hidden");
             console.log("not save");
         }
@@ -629,7 +660,7 @@ window.onload = async function () {
 }
 
 
-function add_style(content_txt, css, elem_class){
+function add_style(content_txt, css, elem_class) {
     $(`#${temp_objects[elem_class].text_id}`).text(content_txt);
     $(`#${temp_objects[elem_class].rotate.rotate_content}`).css("transform", css.transform);
     $(`#${temp_objects[elem_class].text_id}`).css("color", css.color);
@@ -643,7 +674,7 @@ function add_style(content_txt, css, elem_class){
     $(`#${temp_objects[elem_class].id}`).css("top", css.or_top);
     $(`#${temp_objects[elem_class].id}`).css("left", css.or_left);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         fitty('.fit', {
             minSize: 12,
             maxSize: 100,
@@ -657,7 +688,7 @@ const outputBtn = document.getElementById("outputBtn");  //ボタン
 const element = document.getElementById("data");  //画像化したい要素
 const getImage = document.getElementById("getImage");  //ダウンロード用隠しリンク
 
-outputBtn.addEventListener('click', async function(){
+outputBtn.addEventListener('click', async function () {
 
     // 各テキストを所得
     // 縦書きが存在するかの確認処理
@@ -677,12 +708,12 @@ outputBtn.addEventListener('click', async function(){
                     debugger;
                     var data_id = $(elem).data("id");
                     var par_elem = $(elem).parents(`#${data_id}`);
-                    if($(elem).css("font-family") === "yosugara"){
-                        par_elem.css("width", par_elem.width()-2);
-                    }else if ($(elem).css("font-family") === "serif") {
-                        par_elem.css("width", par_elem.width()-21);
-                    }else {
-                        par_elem.css("width", par_elem.width()-19);
+                    if ($(elem).css("font-family") === "yosugara") {
+                        par_elem.css("width", par_elem.width() - 2);
+                    } else if ($(elem).css("font-family") === "serif") {
+                        par_elem.css("width", par_elem.width() - 21);
+                    } else {
+                        par_elem.css("width", par_elem.width() - 19);
                     }
 
 
@@ -715,9 +746,12 @@ outputBtn.addEventListener('click', async function(){
         setTimeout(() => {
             html2canvas(element, {
                 backgroundColor: null
-            }).then( (canvas) => {
+            }).then((canvas) => {
+                if (title === "タイトルを入力してください") {
+                    title = "sample";
+                }
                 getImage.setAttribute("href", canvas.toDataURL());
-                getImage.setAttribute("download", "test.png");
+                getImage.setAttribute("download", `${title}.png`);
                 getImage.click();
 
             });
@@ -737,12 +771,12 @@ outputBtn.addEventListener('click', async function(){
                 var data_id = $(elem).data("id");
                 var par_elem = $(elem).parents(`#${data_id}`);
 
-                if($(elem).css("font-family") === "yosugara"){
-                    par_elem.css("width", par_elem.width()+2);
-                }else if ($(elem).css("font-family") === "serif") {
-                    par_elem.css("width", par_elem.width()+21);
-                }else {
-                    par_elem.css("width", par_elem.width()+19);
+                if ($(elem).css("font-family") === "yosugara") {
+                    par_elem.css("width", par_elem.width() + 2);
+                } else if ($(elem).css("font-family") === "serif") {
+                    par_elem.css("width", par_elem.width() + 21);
+                } else {
+                    par_elem.css("width", par_elem.width() + 19);
                 }
 
                 fitty('.fit', {
