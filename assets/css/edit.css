@@ -2,7 +2,7 @@
     outline: none;
 }
 
-.hidden{
+.hidden {
     visibility: hidden;
 }
 
@@ -10,7 +10,8 @@
     width: 100px;
     margin: 20px;
 }
-.btn{
+
+.btn {
     color: #fff;
 }
 
@@ -21,19 +22,22 @@
     appearance: none;
 
     display: inline-block;
-    width: 200px; 
+    width: 200px;
     margin: 20px;
     padding: 0.6em 1.5em 0.6em 0.5em;
-    cursor: pointer; /* カーソルを指に */
-    line-height: 1.4; /* 行高 */
+    cursor: pointer;
+    /* カーソルを指に */
+    line-height: 1.4;
+    /* 行高 */
     font-size: 0.95em;
     font-weight: 700;
-    color: white; 
-    border-radius: 4px; 
+    color: white;
+    border-radius: 4px;
     background-color: #474646;
-    box-shadow: 0 3px 3px -2px rgba(3, 29, 41, 0.15); /* 影 */
+    box-shadow: 0 3px 3px -2px rgba(3, 29, 41, 0.15);
+    /* 影 */
     /* 三角マークを作る */
-    background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.4) 50%),  linear-gradient(135deg, rgba(0,0,0,0.4) 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(135deg, rgba(0, 0, 0, 0.4) 50%, transparent 50%);
     background-size: 5px 5px, 5px 5px;
     background-position: calc(100% - 14.5px) 50%, calc(100% - 10px) 50%;
     background-repeat: no-repeat;
@@ -46,7 +50,8 @@
     border-radius: 4px;
     color: white;
     box-shadow: 0 3px 3px -2px rgba(3, 29, 41, 0.15);
-    padding: 0.2em 1.5em 0.2em 0.5em; /* 文字周りの余白 */
+    padding: 0.2em 1.5em 0.2em 0.5em;
+    /* 文字周りの余白 */
 }
 
 .writtingModes {
@@ -56,26 +61,30 @@
     appearance: none;
 
     display: inline-block;
-    width: 70px; 
+    width: 70px;
     margin: 20px;
     padding: 0.6em 1.5em 0.6em 0.5em;
-    cursor: pointer; /* カーソルを指に */
-    line-height: 1.4; /* 行高 */
+    cursor: pointer;
+    /* カーソルを指に */
+    line-height: 1.4;
+    /* 行高 */
     font-size: 0.95em;
     font-weight: 700;
-    color: white; 
-    border-radius: 4px; 
+    color: white;
+    border-radius: 4px;
     background-color: #474646;
-    box-shadow: 0 3px 3px -2px rgba(3, 29, 41, 0.15); /* 影 */
+    box-shadow: 0 3px 3px -2px rgba(3, 29, 41, 0.15);
+    /* 影 */
 
     /* 三角マーク */
-    background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.4) 50%),  linear-gradient(135deg, rgba(0,0,0,0.4) 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(135deg, rgba(0, 0, 0, 0.4) 50%, transparent 50%);
     background-size: 5px 5px, 5px 5px;
     background-position: calc(100% - 14.5px) 50%, calc(100% - 10px) 50%;
     background-repeat: no-repeat;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -97,7 +106,7 @@ html, body {
     margin-left: auto;
 }
 
-.edit_tgl{
+.edit_tgl {
     /* position: absolute; */
     margin: 20px;
     width: 300px;
@@ -109,33 +118,33 @@ html, body {
     padding-left: 10px;
 }
 
-.edit_tgl ul li{
+.edit_tgl ul li {
     margin: 20px 10px;
     cursor: pointer;
     list-style: none;
     padding: 5px;
     border-radius: 7%;
     color: white;
-    background-color:#656565;
+    background-color: #656565;
     transform: translateY(-2px);
     transition: 0.1s ease-in-out;
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
-.tgl_on{
+.tgl_on {
     background-color: rgb(47, 46, 46) !important;
     box-shadow: none !important;
     transform: translateY(0px) !important;
 }
 
 .edit_tgl ul li:hover,
-.save:hover{
+.save:hover {
     background-color: rgb(80, 79, 79);
     box-shadow: none;
     transform: translateY(0px);
 }
 
-.save:active{
+.save:active {
     background-color: rgb(47, 46, 46);
     box-shadow: none;
     transform: translateY(0px);
@@ -147,10 +156,10 @@ html, body {
     margin: 40px 25px 20px 0px;
     padding: 5px;
     border-radius: 7%;
-    background-color:#656565;
+    background-color: #656565;
     transform: translateY(-2px);
     transition: 0.1s ease-in-out;
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
     height: 25px;
 }
 
@@ -190,18 +199,18 @@ main {
 }
 
 .select_off {
-    background-color: #656565;    
+    background-color: #656565;
     transform: translateX(0px);
 }
 
-.select_content span{
+.select_content span {
     vertical-align: middle;
 }
 
 .temp_m,
 .temp_t,
 .temp_e,
-.temp_f{
+.temp_f {
     width: 500px;
     height: 100%;
     background-color: rgb(47, 46, 46);
@@ -210,53 +219,53 @@ main {
     animation: fadeIn 0.3s ease-in-out 0s forwards;
 }
 
-.off_t{
+.off_t {
     opacity: 0;
     display: none;
 }
 
 @keyframes fadeIn {
     0% {
-      display: none;
-      opacity: 0;
+        display: none;
+        opacity: 0;
     }
-  
+
     1% {
-      display: block;
-      opacity: 0;
+        display: block;
+        opacity: 0;
     }
-  
+
     100% {
-      display: block;
-      opacity: 1;
+        display: block;
+        opacity: 1;
     }
 }
 
-.select-img-contents-1{
+.select-img-contents-1 {
     display: flex;
     margin-top: 20px;
     justify-content: center;
 }
 
-.select-img-contents-2{
+.select-img-contents-2 {
     display: flex;
     margin-top: 20px;
     padding-bottom: 50px;
     justify-content: center;
 }
 
-.select-img-all{
+.select-img-all {
     cursor: pointer;
     background-color: #474646;
     width: 150px;
     height: 200px;
 }
 
-.select-img-all:hover{
+.select-img-all:hover {
     opacity: 0.7;
 }
 
-.select-img-1{
+.select-img-1 {
     margin-right: 10px;
     background-image: url("../data/img_data/harinezumi.PNG");
     background-size: cover;
@@ -264,7 +273,7 @@ main {
     background-position: center;
 }
 
-.select-img-2{
+.select-img-2 {
     margin-left: 10px;
     background-image: url("../data/img_data/kingyo.PNG");
     background-size: cover;
@@ -272,7 +281,7 @@ main {
     background-position: center;
 }
 
-.select-img-3{
+.select-img-3 {
     margin-right: 10px;
     background-image: url("../data/img_data/sc_mimai.PNG");
     background-size: cover;
@@ -280,7 +289,7 @@ main {
     background-position: center;
 }
 
-.select-img-4{
+.select-img-4 {
     margin-left: 10px;
     background-image: url("../data/img_data/night.PNG");
     background-size: 100%;
@@ -288,7 +297,7 @@ main {
     background-position: center;
 }
 
-.select-img-5{
+.select-img-5 {
     margin-right: 10px;
     /* background-image: url("../data/img_data/JTDR4454.PNG"); */
     background-size: cover;
@@ -296,7 +305,7 @@ main {
     background-position: center;
 }
 
-.select-img-6{
+.select-img-6 {
     margin-left: 10px;
     /* background-image: url("../data/img_data/OHKA4066.PNG"); */
     background-size: cover;
@@ -304,7 +313,7 @@ main {
     background-position: center;
 }
 
-.select-img-7{
+.select-img-7 {
     margin-right: 10px;
     /* background-image: url("../data/img_data/JTDR4454.PNG"); */
     background-size: cover;
@@ -312,7 +321,7 @@ main {
     background-position: center;
 }
 
-.select-img-8{
+.select-img-8 {
     margin-left: 10px;
     /* background-image: url("../data/img_data/OHKA4066.PNG"); */
     background-size: cover;
@@ -320,7 +329,7 @@ main {
     background-position: center;
 }
 
-.select-img-9{
+.select-img-9 {
     margin-right: 10px;
     /* background-image: url("../data/img_data/JTDR4454.PNG"); */
     background-size: cover;
@@ -328,7 +337,7 @@ main {
     background-position: center;
 }
 
-.select-img-10{
+.select-img-10 {
     margin-left: 10px;
     /* background-image: url("../data/img_data/OHKA4066.PNG"); */
     background-size: cover;
@@ -336,7 +345,7 @@ main {
     background-position: center;
 }
 
-.select-img-title{
+.select-img-title {
     font-size: 0.8em;
     color: white;
 }
@@ -356,15 +365,15 @@ main {
     transition: 0.5s ease-in-out;
 }
 
-.main-temp-elem::-webkit-scrollbar{
+.main-temp-elem::-webkit-scrollbar {
     width: 10px;
 }
 
-.main-temp-elem::-webkit-scrollbar-track{
+.main-temp-elem::-webkit-scrollbar-track {
     background-color: #ccc;
 }
 
-.main-temp-elem::-webkit-scrollbar-thumb{
+.main-temp-elem::-webkit-scrollbar-thumb {
     background-color: #474646;
 }
 
@@ -377,33 +386,32 @@ main {
     display: none;
 }
 
-.template-content{
+.template-content {
     width: 100%;
-    cursor: pointer;    
+    cursor: pointer;
     text-align: left;
 }
 
-.template-content h1{
+.template-content h1 {
     margin-top: 0;
 }
 
 .template-content h1,
 .template-content h4,
-.template-content p{
-    background-color:#474646;
+.template-content p {
+    background-color: #474646;
     padding: 5px;
     padding-left: 14px;
 }
 
 .template-content h1:hover,
 .template-content h4:hover,
-.template-content p:hover{
-    background-color:#656565;
+.template-content p:hover {
+    background-color: #656565;
 }
 
 .template-text-1 h2,
-.template-text-2 h2{
-    text-decoration: underline;
+.template-text-2 h2 {
     font-size: 0.9em;
 }
 
@@ -411,11 +419,11 @@ main {
     font-size: 1.5em;
 }
 
-.title-text-2{
+.title-text-2 {
     font-size: 1.3em;
 }
 
-.title-text-3{
+.title-text-3 {
     font-size: 1.1em;
 }
 
@@ -423,51 +431,54 @@ main {
     font-size: 1.5em;
 }
 
-.text-2{
+.text-2 {
     font-size: 1.3em;
 }
 
-.text-3{
+.text-3 {
     font-size: 1.1em;
 }
 
-.template-text-1{
+.template-text-1 {
     color: #fff;
     margin: 0 auto;
     margin-top: 50px;
     width: 70%;
 }
 
-.template-text-2{
+.template-text-2 {
     color: #fff;
     margin: 0 auto;
     width: 70%;
     margin-top: 100px;
 }
 
-#contextmenu{
-    display:none;
-    position:fixed;
-    left:0px;
-    top:0px;
-    width:200px;
-    height:60px;
-    border:1px solid #000;
-    background-color:#fff;
+#contextmenu {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    height: 60px;
+    border: 1px solid #000;
+    background-color: #fff;
     z-index: 10;
 }
 
-#contextmenu li{
+#contextmenu li {
     cursor: pointer;
 }
-.h4-output{
+
+.h4-output {
     margin-bottom: 2px;
     font-weight: 100;
     margin-top: 0px;
 }
+
 .exp {
     margin-top: 0;
 }
+
 .dejibumi-title {
     cursor: auto;
     font-size: 1.2em;
@@ -480,15 +491,30 @@ main {
     box-shadow: 0 3px 3px -2px rgb(3 29 41 / 15%);
 
 }
-.dejibumi-title p:focus{
+
+.dejibumi-title p:focus {
     border: 2px solid white;
+    opacity: 1;
 }
-.p-title{
+
+.p-title {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 0.6em 1.5em 0.6em 0.5em;
+    opacity: 0.8;
 }
+
 .title-exp {
     width: 100%;
     margin-bottom: 20px;
+}
+
+.deibumi-create-title {
+    margin-top: 30px;
+}
+
+.underline {
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 2px;
 }

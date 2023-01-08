@@ -91,7 +91,7 @@ ChromePhp::log($_SESSION["user_id"]);
     <main>
         <section class="left_m">
             <div class="select">
-                <div class="select_content" id="select_elem_1"></div>
+                <div class="select_content" id="select_elem_1">SAVE</div>
                 <div class="select_content select_off" id="select_img">IMG</div>
                 <div class="select_content select_off" id="select_text">TEXT</div>
                 <div class="select_content select_off" id="select_elem_2"></div>
@@ -100,27 +100,33 @@ ChromePhp::log($_SESSION["user_id"]);
             <!-- 仮置き部分==================================================== -->
             <div class="temp_e select_elem_1 main-temp-elem">
                 <div class="template-text-1">
-                    <h2>タイトル設定</h2>
+                    <h2 class="underline">タイトル設定</h2>
                     <div class="dejibumi-title labal-output">
                         <p class="p-title" contenteditable="true">タイトルを入力してください</p>
                     </div>
                     <div class="title-exp">
-                        <p class="exp">現在編集中のでじぶみのタイトルを設定できます。</p>
-                        <p class="">設定したタイトルは</p>
+                        <p class="exp">現在編集中のでじぶみのタイトルを設定できます。<br>設定したタイトルは、</p>
+                        <!-- <p class="">設定したタイトルは</p> -->
                         <ul>
                             <li>マイページの編集履歴</li>
                             <li>PNGファイル変換時のファイル名</li>
+                            <li>オプション付でじぶみ作成時のタイトル</li>
                         </ul>
-                        <p class="">の二つで用いられます。</p>
+                        <p class="">の3つで用いられます。</p>
                         <p class="">保存するには、画面右上にある「保存する」をクリックしてください。</p>
                     </div>
 
-                    <h2>でじぶみ作成</h2>
+                    <h2 class="deibumi-create-title underline">でじぶみ作成</h2>
                     <label for="outputBtn" class="title-text-1 template-content labal-output">
                         <h4 class="h4-output">でじぶみを作成(画像に変換)</h4>
                     </label>
                     <p class="exp">現在編集中のでじぶみをPNGファイルに変換します。</p>
+                    <label for="to_create_letter" class="title-text-1 template-content labal-output">
+                        <h4 class="h4-output">オプション付でじぶみを作成</h4>
+                    </label>
+                    <p>作成したでじぶみに背景・ギフト・アンケート機能を付加できる手紙を作成できます。<br>先にでじぶみを画像に変換してからご利用ください。</p>
                     <input type="button" id="outputBtn" style="display: none;">
+                    <input type="button" id="to_create_letter" style="display: none;">
                 </div>
             </div>
             </div>
@@ -129,7 +135,7 @@ ChromePhp::log($_SESSION["user_id"]);
             <!-- 画像テンプレート部分============================== -->
             <div class="temp_t select_img main-temp-elem off_t">
                 <div class="select-title">
-                    <h2 class="select-img-title">画像をクリックして背景に追加</h2>
+                    <h2 class="select-img-title underline">画像をクリックして背景に追加</h2>
                 </div>
 
                 <div class="select-img-contents-1">
@@ -158,7 +164,7 @@ ChromePhp::log($_SESSION["user_id"]);
             <!-- テキストテンプレート部分====================================== -->
             <div class="temp_m select_text main-temp-elem off_t " id="text_template">
                 <div class="template-text-1">
-                    <h2>テキストをクリックして編集画面に追加</h2>
+                    <h2 class="underline">テキストをクリックして編集画面に追加</h2>
                     <label for="temp-0" class="title-text-1 template-content">
                         <h1>見出しを追加</h1>
                     </label>
@@ -173,7 +179,7 @@ ChromePhp::log($_SESSION["user_id"]);
                     <input type="button" value="th_content" id="temp-2" data-tempid="2" class="hide_box">
                 </div>
                 <div class="template-text-2">
-                    <h2>テンプレテキストをクリックして編集画面に追加</h2>
+                    <h2 class="underline">テンプレテキストをクリックして編集画面に追加</h2>
                     <label for="temp-0" class="text-1 template-content">
                         <p>テンプレ1はこちら</p>
                     </label>

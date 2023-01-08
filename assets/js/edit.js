@@ -366,7 +366,9 @@ const on_edit = document.getElementById("edit_on");
 const off_edit = document.getElementById("edit_off");
 
 // 要素を編集モードにする
-on_edit.addEventListener("click", () => {
+on_edit.addEventListener("click", change_edit);
+
+function change_edit() {
     // debugger;
     off_edit.classList.remove("tgl_on");
     on_edit.classList.add("tgl_on");
@@ -381,10 +383,13 @@ on_edit.addEventListener("click", () => {
     $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "visible");
     $(".color-picker").css("display", "block");
 
-});
+}
+
 
 // 要素を調整・閲覧モードにする
-off_edit.addEventListener("click", () => {
+off_edit.addEventListener("click", change_preview);
+
+function change_preview() {
     on_edit.classList.remove("tgl_on");
     off_edit.classList.add("tgl_on");
     var none_elem = document.querySelectorAll(".on_n");
@@ -397,7 +402,7 @@ off_edit.addEventListener("click", () => {
     });
     $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "hidden");
     $(".color-picker").css("display", "none");
-});
+}
 
 const remove_button = document.getElementById("remove");
 remove_button.addEventListener("click", remove_element)
@@ -495,7 +500,7 @@ title_elem.addEventListener("blur", () => {
         title_elem.textContent = "タイトルを入力してください";
     }
 });
-title_elem.addEventListener("focus",()=>{
+title_elem.addEventListener("focus", () => {
     title_elem = document.querySelector(".p-title");
     if (title_elem.textContent === "タイトルを入力してください") {
         title_elem.textContent = "";
@@ -517,7 +522,7 @@ function get_domSytle(abs_contents) {
         "backgroud-image": current_url,
         "background-size": window.getComputedStyle(img_data_elem).backgroundSize,
     }
-    
+
     if (title === "タイトルを入力してください") {
         title = "sample";
     }
@@ -699,9 +704,12 @@ outputBtn.addEventListener('click', async function () {
     // writing-modeを再設定
     // 処理完了
     try {
+        var result = window.confirm("でじぶみを生成します。よろしいですか？");
+        if (!result) { return; }
         var evacation_dom = [];
         var evacation_text = [];
         var reset_writing = $(".text");
+        change_preview();
         await (async function () {
             await reset_writing.each(async (_, elem) => {
                 if ($(elem).css("writing-mode") === "vertical-rl") {
@@ -789,4 +797,9 @@ outputBtn.addEventListener('click', async function () {
     } catch (error) {
         console.log(error)
     }
+});
+
+const to_create_letter = document.getElementById("to_create_letter");
+to_create_letter.addEventListener("click", ()=>{
+    window.open("../php/create_letter.php", "_blank");
 });

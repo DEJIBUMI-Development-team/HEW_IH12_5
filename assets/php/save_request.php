@@ -15,7 +15,7 @@ $user_id = $_SESSION["user_id"];
 if (!empty($_GET["edit_id"])) {
 	$_SESSION["edit_id"] = $_GET["edit_id"];
 }
-if(!isset($_SESSION["edit_id"])) {
+if (!isset($_SESSION["edit_id"])) {
 	$_SESSION["edit_id"] = 0;
 }
 
@@ -23,7 +23,7 @@ $edit_id = $_SESSION["edit_id"];
 $db_input = [
 	"table_name" => "t_user_edit",
 	"edit_id" => $edit_id,
-	"user_id"=> $_SESSION["user_id"],
+	"user_id" => $_SESSION["user_id"],
 	"title" => $data->title,
 ];
 
@@ -39,7 +39,7 @@ if (empty($elem[0])) {
 	)");
 	$_SESSION["edit_id"] = $_SESSION["last_id"];
 	$edit_id = $_SESSION["edit_id"];
-}else {
+} else {
 	// レコード更新
 	ChromePhp::log("UPDATE");
 	db("UPDATE `t_user_edit` SET title = '{$db_input["title"]}', content_data = '{$res}' WHERE `edit_id` = {$edit_id}");
