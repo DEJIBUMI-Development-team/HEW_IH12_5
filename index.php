@@ -24,11 +24,11 @@ session_start();
 		<title>でじぶみ</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-		<link rel="stylesheet" href="assets/css/reset.css">
-		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/animation.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
     <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="assets/css/style.css">
 	</head>
 	<body>
 		<header></header>
@@ -43,11 +43,22 @@ session_start();
 			 <div><img class="icon" src="assets/img/logo.png" alt=""></div>
 			</div>
 
+			<div class="scrolldown1"><span>Scroll</span></div>
+
 			<div id="first_content">
-			 <!-- <video controls src="assets/img/dejibumi.mp4" style="height: 50%;"></video> -->
-			 <h2>でじぶみ説明動画</h2>
-       <!-- 無限に波が広がる -->
-       <a href="assets/img/dejibumi.mp4" class="btnripple2 video-open"><span></span></a>
+		  	<h2 class="gift">サイト説明</h2>
+					<div class="sliderArea">
+						<div class="sliderWide">
+							<ul class="slider">
+								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto01.jpg" alt="125naroom"></a></li>
+								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto02.jpg" alt="125naroom"></a></li>
+								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto03.jpg" alt="125naroom"></a></li>
+								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto04.jpg" alt="125naroom"></a></li>
+								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto05.jpg" alt="125naroom"></a></li>
+							</ul>
+						</div>
+					</div>
+
 			</div>
 
 			<div id="second_content" class="cf">

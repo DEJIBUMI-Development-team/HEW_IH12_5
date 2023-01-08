@@ -8,25 +8,33 @@ $(window).on('beforeunload', function(e){
   console.log('beforeunload');
 });
 
-    // function scrollToTop() {
-    //   scrollTo(0, 0);
-    //  }
+// スクロールアニメーション
+
+
+// 右下固定edit遷移ボタン
+
+
+// 左下固定説明動画固定ウィンドウ
+
+
 /* ------------------------------------------------
 first_content
 --------------------------------------------------- */
+// スライダー
+
 //モーダル表示
-$(".video-open").modaal({
-  overlay_close:true,//モーダル背景クリック時に閉じるか
-  type: 'video',
-  background: '#FFEDB3', // 背景色
-  overlay_opacity:0.4, // 透過具合
-  before_open:function(){// モーダルが開く前に行う動作
-    $('html').css('overflow-y','hidden');/*縦スクロールバーを出さない*/
-  },
-  after_close:function(){// モーダルが閉じた後に行う動作
-    $('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
-  }
-  });
+// $(".video-open").modaal({
+//   overlay_close:true,//モーダル背景クリック時に閉じるか
+//   type: 'video',
+//   background: '#FFEDB3', // 背景色
+//   overlay_opacity:0.4, // 透過具合
+//   before_open:function(){// モーダルが開く前に行う動作
+//     $('html').css('overflow-y','hidden');/*縦スクロールバーを出さない*/
+//   },
+//   after_close:function(){// モーダルが閉じた後に行う動作
+//     $('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
+//   }
+//   });
 
 /* ------------------------------------------------
 second_content
