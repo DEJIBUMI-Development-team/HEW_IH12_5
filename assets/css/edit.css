@@ -1,13 +1,17 @@
 *:focus {
     outline: none;
 }
-/* [contenteditable="true"]  {
-    border: solid 3px #000;
-} */
+
+.hidden{
+    visibility: hidden;
+}
 
 .color-picker {
     width: 100px;
     margin: 20px;
+}
+.btn{
+    color: #fff;
 }
 
 .fontFamilys {
@@ -31,7 +35,7 @@
     /* 三角マークを作る */
     background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.4) 50%),  linear-gradient(135deg, rgba(0,0,0,0.4) 50%, transparent 50%);
     background-size: 5px 5px, 5px 5px;
-    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
+    background-position: calc(100% - 14.5px) 50%, calc(100% - 10px) 50%;
     background-repeat: no-repeat;
 }
 
@@ -67,7 +71,7 @@
     /* 三角マーク */
     background-image: linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.4) 50%),  linear-gradient(135deg, rgba(0,0,0,0.4) 50%, transparent 50%);
     background-size: 5px 5px, 5px 5px;
-    background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%;
+    background-position: calc(100% - 14.5px) 50%, calc(100% - 10px) 50%;
     background-repeat: no-repeat;
 }
 
@@ -349,6 +353,7 @@ main {
     height: 100%;
     background-color: rgb(215, 215, 215);
     margin-left: 600px;
+    transition: 0.5s ease-in-out;
 }
 
 .main-temp-elem::-webkit-scrollbar{

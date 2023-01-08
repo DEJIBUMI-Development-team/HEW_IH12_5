@@ -1,0 +1,94 @@
+@font-face {
+	font-family: "yosugara";
+	src: url(../data/fonts/yosugara1.1.ttf);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+body {
+	background-image: url("../data/img_data/white_wood.jpg");
+}
+
+.img_elem {
+	margin: 70px auto 3%;
+	width: 800px;
+}
+
+.img_elem img {
+	width: 100%;
+	margin: 0 auto;
+	transform: scale(1);
+}
+
+.survey-form {
+	width: 400px;
+	margin: 100px auto;
+	margin-bottom: 100px;
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+	height: fit-content;
+}
+
+.survey-contents {
+	margin-left: 20px;
+}
+
+.survey-title h3 {
+	font-family: serif;
+	font-size: 1.5em;
+}
+
+.survey input {
+	display: none;
+}
+
+.input-content {
+	font-family: serif;
+	font-size: 1.1em;
+}
+
+.input-label {
+	display: block;
+	cursor: pointer;
+	width: fit-content;
+}
+
+.input-content h4 {
+	padding: 2px;
+}
+
+.input-label:hover {
+	background-color: rgb(214, 214, 214);
+}
+
+input:checked + label {
+	background: #939393;
+	font-weight: 500;
+	color: #fff;
+}
+
+label {
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+}
+
+@media all and (max-width: 820px) {
+	.img_elem {
+		width: 100%;
+		transform: scale(1.2);
+	}
+}
+
+@media all and (max-width: 450px) {
+	.img_elem {
+		width: 100%;
+		transform: scale(1.4);
+	}
+}

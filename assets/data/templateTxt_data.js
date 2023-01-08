@@ -174,7 +174,7 @@ async function insert_dom(e) {
 
         // クリックされたボタン要素のvalueを取得(temp_objectsのキーとして使用)
     
-        var BtnRef =  e.composedPath();
+        var BtnRef = e.composedPath();
         var value_content = tempBtnRef[BtnRef[0].dataset.tempid]
         var value = value_content.getAttribute('value');
         

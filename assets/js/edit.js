@@ -1,3 +1,4 @@
+// 動的要素を格納するグローバル変数
 var el = {};
 
 // forcusされた要素のIDを格納するグローバル変数
@@ -377,7 +378,8 @@ on_edit.addEventListener("click", ()=>{
     visible_elem.forEach((elem)=>{
         elem.style.border = "solid 1px #000";
     });
-    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "visible");
+    $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "visible");
+    $(".color-picker").css("display", "block");
     
 });
 
@@ -393,7 +395,8 @@ off_edit.addEventListener("click", ()=>{
     hidden_elem.forEach((elem)=>{
         elem.style.border = "none";
     });
-    $(".now-elem, .fontFamilys, .writtingModes, .color-picker").css("visibility", "hidden");
+    $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "hidden");
+    $(".color-picker").css("display", "none");
 });
 
 const remove_button = document.getElementById("remove");
@@ -419,6 +422,15 @@ save_btn.addEventListener("click", save_elememnt);
  * 保存ボタンクリック後に要素の情報を取得し、fetchする一連の処理群
  */
 function save_elememnt(){
+    var result = window.confirm('保存しますか?');
+    
+    if(result) {
+        console.log("clickOk");
+    }
+    else {
+        return;
+    }
+
     // 絶対位置・相対位置を取得
     var position = calc_position();
 
@@ -439,6 +451,9 @@ function calc_position() {
     const prDom = document.getElementById("data");
     const prRect = prDom.getBoundingClientRect();
     
+    // debugger;
+    // const data_mergin_left = parseInt(window.getComputedStyle(prDom).marginLeft, 10);
+
     // 動的要素の繰り返し処理
     Relatively_position = {};
     Object.keys(el).forEach((key)=>{
@@ -454,6 +469,8 @@ function calc_position() {
          * "height"  : (子要素のheight / 親要素のheight) * 100 (%)
          * }
          */ 
+
+
         Relatively_position[key] = {
             "class": this[key].classList.value,
             "top" : (Rect.top - prRect.top) / prRect.height * 100,
@@ -528,7 +545,7 @@ function get_domSytle(abs_contents) {
 function fetch_domElem(fetch_contents) {
     console.log(JSON.stringify(fetch_contents));
     // request.phpとのデータやり取りを行う処理
-    fetch("../php/request.php", {
+    fetch("../php/save_request.php", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(fetch_contents)
@@ -542,9 +559,200 @@ function fetch_domElem(fetch_contents) {
         }
     })
     .then((res) => {
+        alert("保存しました!!");
         console.log(res);
     })
     .catch((error) => {
+        alert("保存失敗");
         console.error("Error", error);
     });
 }
+
+window.onload = async function () {
+    try {
+        var visivle_elem = document.querySelector(".edit_area");
+        var query = location.search;
+        var value = query.split('=');
+        if (value[1]) {
+            var serch_id =  decodeURIComponent(value[1]);
+            const params = {method : "POST", body : JSON.stringify({"edit_id" : serch_id})};
+            const response = await fetch("./get_edit_data.php", params);
+            if (response.ok) {
+                var redraw_elem = await response.json();
+                Object.keys(redraw_elem).forEach((key)=>{
+                    if(key == "_image"){
+                        // console.log(key);
+                        // debugger;
+                        var image_path = redraw_elem[key]["backgroud-image"];
+                        const first_insert = document.getElementById("data");
+                        first_insert.style.backgroundImage =`url(../data/img_data/${image_path})`;
+                    }else{
+                        if (redraw_elem[key]["class"].indexOf("ft_content") >= 0) {
+                            var elem_class = "ft_content";
+                        }else if (redraw_elem[key]["class"].indexOf("sc_content") >= 0) {
+                            var elem_class = "sc_content";
+                        }else if (redraw_elem[key]["class"].indexOf("th_content") >= 0) {
+                            var elem_class = "th_content";
+                        }
+
+                        // インスタンス生成
+                        temp_objects = new Template_object(count).temp_objectDom;
+                        
+                        // DOMのinsert
+                        var insert = document.getElementById("data");
+                        insert.insertAdjacentHTML('afterbegin', temp_objects[elem_class].dom);
+
+                        // insertされたDOMにドラッグイベントを付加
+                        addMouseEvent(elem_class);
+                        add_style(redraw_elem[key]["content_txt"], redraw_elem[key]["css"], elem_class);
+                        fitty('.fit', {
+                            minSize: 12,
+                            maxSize: 100,
+                        });
+
+                        //incrementCount
+                        count++;
+                    }
+                    
+                });
+            }
+            else{
+                console.log("no");
+            }
+        }else {
+            visivle_elem.classList.remove("hidden");
+            console.log("not save");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
+function add_style(content_txt, css, elem_class){
+    $(`#${temp_objects[elem_class].text_id}`).text(content_txt);
+    $(`#${temp_objects[elem_class].rotate.rotate_content}`).css("transform", css.transform);
+    $(`#${temp_objects[elem_class].text_id}`).css("color", css.color);
+    $(`#${temp_objects[elem_class].text_id}`).css("fontFamily", css['font-family']);
+    $(`#${temp_objects[elem_class].text_id}`).css("textAlign", css["text-align"]);
+    $(`#${temp_objects[elem_class].text_id}`).css("writingMode", css.writingMode);
+
+
+
+    $(`#${temp_objects[elem_class].id}`).css("width", css.or_width);
+    $(`#${temp_objects[elem_class].id}`).css("top", css.or_top);
+    $(`#${temp_objects[elem_class].id}`).css("left", css.or_left);
+
+    setTimeout(()=>{
+        fitty('.fit', {
+            minSize: 12,
+            maxSize: 100,
+        });
+        var visivle_elem = document.querySelector(".edit_area");
+        visivle_elem.classList.remove("hidden");
+    }, 200);
+}
+
+const outputBtn = document.getElementById("outputBtn");  //ボタン
+const element = document.getElementById("data");  //画像化したい要素
+const getImage = document.getElementById("getImage");  //ダウンロード用隠しリンク
+
+outputBtn.addEventListener('click', async function(){
+
+    // 各テキストを所得
+    // 縦書きが存在するかの確認処理
+    // writing-modeを外す
+    // h2vの縦書きに変換
+    // 画像変換処理
+    // h2vの縦書きを外す
+    // writing-modeを再設定
+    // 処理完了
+    try {
+        var evacation_dom = [];
+        var evacation_text = [];
+        var reset_writing = $(".text");
+        await (async function () {
+            await reset_writing.each(async (_, elem) => {
+                if ($(elem).css("writing-mode") === "vertical-rl") {
+                    debugger;
+                    var data_id = $(elem).data("id");
+                    var par_elem = $(elem).parents(`#${data_id}`);
+                    if($(elem).css("font-family") === "yosugara"){
+                        par_elem.css("width", par_elem.width()-2);
+                    }else if ($(elem).css("font-family") === "serif") {
+                        par_elem.css("width", par_elem.width()-21);
+                    }else {
+                        par_elem.css("width", par_elem.width()-19);
+                    }
+
+
+                    fitty('.fit', {
+                        minSize: 12,
+                        maxSize: 100,
+                    });
+
+                    $(elem).css("writing-mode", "unset");
+                    $(elem).css("-webkit-writing-mode", "unset");
+                    $(elem).css("-ms-writing-mode", "unset");
+
+                    evacation_text.push($(elem).text());
+                    evacation_dom.push($(elem));
+                    $(elem).text(" " + $(elem).text());
+                    console.log("b");
+                }
+            });
+        })();
+
+
+        if (evacation_dom.length != 0) {
+            evacation_dom.forEach((elem) => {
+                var text = elem[0].textContent;
+                elem.tategaki(text.length);
+            });
+        }
+
+
+        setTimeout(() => {
+            html2canvas(element, {
+                backgroundColor: null
+            }).then( (canvas) => {
+                getImage.setAttribute("href", canvas.toDataURL());
+                getImage.setAttribute("download", "test.png");
+                getImage.click();
+
+            });
+        }, 10);
+
+
+        setTimeout(() => {
+            evacation_dom.forEach((elem, index) => {
+                console.log(4);
+                $(elem).css("writing-mode", "vertical-rl");
+                $(elem).css("-webkit-writing-mode", "vertical-rl");
+                $(elem).css("-ms-writing-mode", "vertical-rl");
+
+                elem.empty();
+                elem.text(evacation_text[index]);
+
+                var data_id = $(elem).data("id");
+                var par_elem = $(elem).parents(`#${data_id}`);
+
+                if($(elem).css("font-family") === "yosugara"){
+                    par_elem.css("width", par_elem.width()+2);
+                }else if ($(elem).css("font-family") === "serif") {
+                    par_elem.css("width", par_elem.width()+21);
+                }else {
+                    par_elem.css("width", par_elem.width()+19);
+                }
+
+                fitty('.fit', {
+                    minSize: 12,
+                    maxSize: 100,
+                });
+            });
+        }, 1000);
+
+    } catch (error) {
+        console.log(error)
+    }
+});
