@@ -4,7 +4,6 @@ include("db.php");
 
 $raw = file_get_contents('php://input'); // POSTされた生のデータを受け取る
 $data = json_decode($raw); // json形式をphp変数に変換
-
 // ChromePhp::log($data);
 $edit_id = $data->{"edit_id"};
 // ChromePhp::log($edit_id);

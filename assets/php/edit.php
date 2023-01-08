@@ -1,8 +1,9 @@
 <?php
-
+include("./ChromePhp.php");
 session_start();
-$_SESSION["user_id"] = "text";  
-
+// echo $_SESSION["user_id"];
+// user_id取得確認;
+ChromePhp::log($_SESSION["user_id"]);
 ?>
 <!DOCTYPE html>
 <html lang="ja">

@@ -14,6 +14,7 @@ function db($sql): mixed{
         // 特定要素を変数に代入
         $stml = $pdo->prepare($sql);
         $stml->execute();
+        $_SESSION["last_id"] = $pdo->lastInsertId();
         return $stml->fetchAll(PDO::FETCH_ASSOC);
         $pdo = null;
     } catch (PDOException $e) {
