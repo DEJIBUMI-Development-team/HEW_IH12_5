@@ -15,11 +15,11 @@ ChromePhp::log($_SESSION["user_id"]);
     <link rel="stylesheet" href="../css/edit.css">
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
     <link rel="stylesheet" href="../css/picker.nano.css" />
-    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
     <script src="../package/fitty.min.js"></script>
     <script src="../package/html2canvas.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
     <script src="../package/tategaki.js"></script>
     <title>編集画面</title>
 
@@ -78,6 +78,8 @@ ChromePhp::log($_SESSION["user_id"]);
 
         <!-- ここにカラーピッカーが表示される -->
         <div class="color-picker"></div>
+        <div class="mypage" style="display: none;">マイページへ</div>
+        <div class="top" style="display: none;">トップに戻る</div>
         <div class="edit_and_save">
             <div class="edit_tgl">
                 <ul>
@@ -106,7 +108,6 @@ ChromePhp::log($_SESSION["user_id"]);
                     </div>
                     <div class="title-exp">
                         <p class="exp">現在編集中のでじぶみのタイトルを設定できます。<br>設定したタイトルは、</p>
-                        <!-- <p class="">設定したタイトルは</p> -->
                         <ul>
                             <li>マイページの編集履歴</li>
                             <li>PNGファイル変換時のファイル名</li>
@@ -252,13 +253,6 @@ ChromePhp::log($_SESSION["user_id"]);
                 }
             });
         });
-        // onKeyPress = {
-        //     (event) => {
-        //         if (event.key === 'Enter') {
-        //             return event.preventDefault()
-        //         }
-        //     }
-        // }
     </script>
 
     <!--  -->

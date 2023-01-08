@@ -157,10 +157,47 @@ body {
     padding: 5px;
     border-radius: 7%;
     background-color: #656565;
-    transform: translateY(-2px);
     transition: 0.1s ease-in-out;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
     height: 25px;
+}
+.mypage:hover {
+    background-color: rgb(47, 46, 46);
+    box-shadow: none;
+}
+
+.mypage {
+    color: white;
+    cursor: pointer;
+    margin: 40px 25px 20px 0px;
+    padding: 5px;
+    border-radius: 7%;
+    background-color: #656565;
+    transform: translateY(-2px);
+    transition: 0.1s ease-in-out;
+    height: 25px;
+    position: absolute;
+    left: 150px;
+
+}
+.top:hover {
+    background-color: rgb(47, 46, 46);
+    box-shadow: none;
+}
+
+.top {
+    color: white;
+    cursor: pointer;
+    margin: 40px 25px 20px 0px;
+    padding: 5px;
+    border-radius: 7%;
+    background-color: #656565;
+    transform: translateY(-2px);
+    transition: 0.1s ease-in-out;
+    height: 25px;
+    position: absolute;
+    left: 20px;
+
 }
 
 main {

@@ -382,7 +382,7 @@ function change_edit() {
     });
     $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "visible");
     $(".color-picker").css("display", "block");
-
+    $(".mypage, .top").css("display", "none");
 }
 
 
@@ -402,6 +402,8 @@ function change_preview() {
     });
     $(".now-elem, .fontFamilys, .writtingModes").css("visibility", "hidden");
     $(".color-picker").css("display", "none");
+    $(".mypage, .top").css("display", "block");
+
 }
 
 const remove_button = document.getElementById("remove");
@@ -802,4 +804,16 @@ outputBtn.addEventListener('click', async function () {
 const to_create_letter = document.getElementById("to_create_letter");
 to_create_letter.addEventListener("click", ()=>{
     window.open("../php/create_letter.php", "_blank");
+});
+const to_mypage = document.querySelector(".mypage");
+to_mypage.addEventListener("click", ()=>{
+    var result = window.confirm("マイページに移動します。保存されていないデータは破棄されます。よろしいですか？");
+    if (!result) { return; }
+    window.open("../php/mypage.php");
+});
+const to_toppage = document.querySelector(".top");
+to_toppage.addEventListener("click", ()=>{
+    var result = window.confirm("TOPページに移動します。保存されていないデータは破棄されます。よろしいですか？");
+    if (!result) { return; }
+    window.open("../../index.php");
 });
