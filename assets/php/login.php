@@ -39,6 +39,7 @@ if (isset($_POST["login"])) {
             // パスワード判定
             if (password_verify($password,  $merge_row["password"])) {
                 $_SESSION["user_id"] = $merge_row["F_user_id"];
+                $_SESSION["user_name"] = $merge_row["user_name"];
                 if ($_SESSION['HS'] == "edit") {
                     $result = "編集画面で";
                     header("Location:./edit.php");

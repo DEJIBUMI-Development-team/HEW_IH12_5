@@ -1,5 +1,6 @@
 <?php
 include("./db.php");
+include("./ChromePhp.php");
 session_start();
 if (!empty($_SESSION["user_id"])) {
 	$user_id = $_SESSION["user_id"];
@@ -8,6 +9,12 @@ if (!empty($_SESSION["user_id"])) {
 }
 $data =  db("SELECT edit_id, title FROM t_user_edit where F_user_id = {$user_id}");
 $data = json_encode($data);
+
+if (isset($_POST["logout"])) {
+	$_SESSION = array();
+	header("Location:../../index.php");		
+	session_destroy();
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +32,7 @@ $data = json_encode($data);
 	<h2>でじぶみページ</h2>
 	<div class="user_icon">
 		<img src="../img/user_icon.svg" alt="マイページ">
-		<p>user_name<?php //echo h($login_user['name']) 
-					?></p>
+		<p><?php echo $_SESSION["user_name"]; ?></p>
 	</div>
 	<div class="container">
 		<div class="item n01">
@@ -36,19 +42,15 @@ $data = json_encode($data);
 			<div class="set-flex">
 				<div class="item n02"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"></a></div>
 				<div class="item n03"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a></div>
-				<!-- <div class="item n04"><a href="test.php"><img src="none" alt="none"></a></div> -->
 			</div>
 			<div class="set-flex2">
-				<!-- <div class="item n05"><a href="test.php"><img src="none" alt="none"></a></div> -->
-				<!-- <div class="item n06"><a href="test.php"><img src="none" alt="none"></a></div> -->
-				<!-- <div class="item n07"><a href="test.php"><img src="none" alt="none"></a></div> -->
 			</div>
 		</div>
 	</div>
 	<div class="view-history" id="history">
-
+		<div class="new_edit">でじぶみを新規作成</div>
 	</div>
-	<form action="logout.php" method="POST">
+	<form action="" method="POST">
 		<input type="submit" name="logout" value="ログアウト">
 	</form>
 	<script>
@@ -67,11 +69,11 @@ $data = json_encode($data);
 				if (!edit_history.length == 0) {
 					edit_history.forEach((elem) => {
 						console.log(elem.title);
-						insert_pr.insertAdjacentHTML("afterbegin", create_history_dom(elem.edit_id, elem.title));
+						insert_pr.insertAdjacentHTML("beforeend", create_history_dom(elem.edit_id, elem.title));
 					});
 				} else {
 					console.log("NO Data");
-					insert_pr.insertAdjacentHTML("afterbegin", create_history_dom("", ""));
+					insert_pr.insertAdjacentHTML("beforeend", create_history_dom("", ""));
 				}
 
 				const redraw_element = document.querySelectorAll(".history");

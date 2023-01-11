@@ -164,7 +164,7 @@ h2 {
   margin: 0 auto;
   width: 70%;
   min-height: 30px;
-  border: solid 2px;
+  /* border: solid 2px; */
   background-color: #fff;
 }
 
