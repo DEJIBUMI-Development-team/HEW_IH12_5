@@ -26,7 +26,7 @@ $db_input = [
 	"title" => $data->title,
 ];
 
-if (!empty($edit_id)) {
+if (isset($edit_id)) {
 	$db_input["edit_id"] = $edit_id;
 	$elem = db("SELECT * FROM t_user_edit where edit_id = {$edit_id}");
 }else {
