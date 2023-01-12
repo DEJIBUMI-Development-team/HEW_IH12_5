@@ -34,6 +34,27 @@
    <img src="../img/main.png">
 </div>
 
+<section class="best_list">
+  <div class="best_list_title">
+   <h1>🎁 人気商品リスト 🎁</h1> 
+  </div>
+<div class="best_list_content">
+  <div class="best-items">
+    <div><img src="../img/best1.jpg" alt="best1"></div>
+    <div><img src="../img/best2.jpg" alt="best2"></div>
+    <div><img src="../img/best3.jpg" alt="best3"></div>
+    <div><img src="../img/best4.jpg" alt="best4"></div>
+    <div><img src="../img/best5.jpg" alt="best5"></div>
+    <div><img src="../img/best6.jpg" alt="best6"></div>
+    <div><img src="../img/best7.jpg" alt="best7"></div> 
+    <div><img src="../img/best8.jpg" alt="best8"></div>
+    <div><img src="../img/best9.jpg" alt="best9"></div>
+    <div><img src="../img/best10.jpg" alt="best10"></div>
+    <div><img src="../img/best11.jpg" alt="best11"></div>
+  </div>
+</div>  
+</section>
+
 <section class="gift_list">
   <div class="gift_list_content">
     <a href=""><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
@@ -65,28 +86,6 @@
       <div><a href=""><img src="../img/ca11.jpg" alt="ca11"><p>ビューティー</p></a></div>
     </div>
   </div>  
-</section>
-
- 
-<section class="best_list">
-  <div class="best_list_title">
-   <h1>🎁 人気商品リスト 🎁</h1> 
-  </div>
-<div class="best_list_content">
-  <div class="best-items">
-    <div><img src="../img/best1.jpg" alt="best1"></div>
-    <div><img src="../img/best2.jpg" alt="best2"></div>
-    <div><img src="../img/best3.jpg" alt="best3"></div>
-    <div><img src="../img/best4.jpg" alt="best4"></div>
-    <div><img src="../img/best5.jpg" alt="best5"></div>
-    <div><img src="../img/best6.jpg" alt="best6"></div>
-    <div><img src="../img/best7.jpg" alt="best7"></div> 
-    <div><img src="../img/best8.jpg" alt="best8"></div>
-    <div><img src="../img/best9.jpg" alt="best9"></div>
-    <div><img src="../img/best10.jpg" alt="best10"></div>
-    <div><img src="../img/best11.jpg" alt="best11"></div>
-  </div>
-</div>  
 </section>
 
 <section class="brand_list">
@@ -149,11 +148,11 @@
           <section class="brand_item">
             <a href="">
             <div class="item_name">
-              <img src="../img/saruta.png  ">
-              <p>猿田彦コーヒー</p>
+              <img src="../img/gongcha.jpg">
+              <p>貢茶</p>
             </div>
             <div class="item_list">
-              <img src="../img/saruta1.webp"></a>
+              <img src="../img/GONG.jpg"></a>
             </div>
           </section>
 
@@ -475,9 +474,9 @@
   <div class="top_element">
     <div class="top_inner">
       <ul class="footer_menu">
-        <li><a href="">利用約款</a></li>
+        <li><a href="">利用規約</a></li>
         <li><a href=""><span>個人利用処理方針</span></a></li>
-        <li><a href="">客様センター</a></li>
+        <li><a href="">お客様センター</a></li>
         <li><a href="">意見提出</a></li>
       </ul>
 
