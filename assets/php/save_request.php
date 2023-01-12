@@ -15,20 +15,25 @@ $user_id = $_SESSION["user_id"];
 if (!empty($_GET["edit_id"])) {
 	$_SESSION["edit_id"] = $_GET["edit_id"];
 }
-if (!isset($_SESSION["edit_id"])) {
-	$_SESSION["edit_id"] = 0;
+
+if (isset($_SESSION["edit_id"])) {
+	$edit_id = $_SESSION["edit_id"];
 }
 
-$edit_id = $_SESSION["edit_id"];
 $db_input = [
 	"table_name" => "t_user_edit",
-	"edit_id" => $edit_id,
 	"user_id" => $_SESSION["user_id"],
 	"title" => $data->title,
 ];
 
-$elem = db("SELECT * FROM t_user_edit where edit_id = {$edit_id}");
-if (empty($elem[0])) {
+if (isset($edit_id)) {
+	$db_input["edit_id"] = $edit_id;
+	$elem = db("SELECT * FROM t_user_edit where edit_id = {$edit_id}");
+}else {
+	$elem = array();
+}
+
+if (empty($elem)) {
 	// レコード追加
 	ChromePhp::log("INSERT");
 	db("INSERT INTO `t_user_edit`(`edit_id`, `F_user_id`, `title`, `content_data`) VALUES (
