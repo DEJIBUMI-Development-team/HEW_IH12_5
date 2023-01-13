@@ -22,6 +22,29 @@ first_content
 --------------------------------------------------- */
 // スライダー
 
+var pics_src = new Array("./assets/img/Explanation-01.png","./assets/img/Explanation-02.png","./assets/img/Explanation-03.png");
+    var num = 0;
+
+    function go_forward(){
+        if (num == 2) {
+            num = 0;
+        }
+        else {
+            num ++;
+        }
+        document.getElementById("mypic").src=pics_src[num];
+    }
+
+    function go_back(){
+        if (num == 0) {
+            num = 2;
+        }
+        else {
+            num --;
+        }
+        document.getElementById("mypic").src=pics_src[num];
+    }
+
 //モーダル表示
 // $(".video-open").modaal({
 //   overlay_close:true,//モーダル背景クリック時に閉じるか
@@ -39,7 +62,6 @@ first_content
 /* ------------------------------------------------
 second_content
 --------------------------------------------------- */
-
 // 1. 動くきっかけを独自の名前（関数：fadeAnime）で定義
 
 function fadeAnime(){

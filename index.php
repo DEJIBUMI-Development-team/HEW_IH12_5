@@ -5,7 +5,7 @@ session_start();
       $_SESSION['HS'] = 'edit';//セッション変数に登録
       $result = "編集画面で";
       // echo $_SESSION['HS'];
-      header("Location:a.php");
+      header("Location:./assets/php/signup.php");
     }
     elseif (isset($_POST['update'])) {
       $_SESSION['HS'] = 'mypage';//セッション変数に登録
@@ -22,15 +22,15 @@ session_start();
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>でじぶみ</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-		<link rel="stylesheet" href="assets/css/animation.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/slick-theme.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/slick.css">
+		<link rel="stylesheet" href="./assets/css/animation.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
     <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
-		<link rel="stylesheet" href="assets/css/reset.css">
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="./assets/css/reset.css">
+		<link rel="stylesheet" href="./assets/css/style.css">
 	</head>
-	<body>
+	<body class="body_box">
 		<header></header>
 		<main>
 
@@ -41,23 +41,16 @@ session_start();
 			<div id="first_view">
 			 <div class="blur">届けよう、その想い。</div>
 			 <div><img class="icon" src="assets/img/logo.png" alt=""></div>
+			 <div class="scrolldown1"><span>Scroll</span></div>
 			</div>
 
-			<div class="scrolldown1"><span>Scroll</span></div>
-
 			<div id="first_content">
-		  	<h2 class="gift">サイト説明</h2>
-					<div class="sliderArea">
-						<div class="sliderWide">
-							<ul class="slider">
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto01.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto02.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto03.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto04.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto05.jpg" alt="125naroom"></a></li>
-							</ul>
-						</div>
-					</div>
+		  	<!-- <h2 class="Explanation">サイト説明</h2> -->
+				<div id="Eslider">
+					<p id="Ebutton-left" onclick="go_back()"></p>
+					<img id="mypic" src="./assets/img/Explanation-01.png" width="400" height="300">
+					<p id="Ebutton-right" onclick="go_forward()"></p>
+				</div>
 
 			</div>
 
@@ -74,12 +67,12 @@ session_start();
 
 				 <!-- コンテンツ写真 -->
 				 <form action="index.php" method="post">
-				  <a href="assets/php/signup.php"><img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" alt=""/></a>
+				  <img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" name="update" alt=""/>
+					<img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" name="update" alt=""/>
+					<img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" name="update" alt=""/>
+					<img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" name="update" alt=""/>
+					<img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" name="update" alt=""/>
+					<img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" name="update" alt=""/>
 				 </form>
 
 				 <!-- SVGアニメーション -->
@@ -672,8 +665,8 @@ session_start();
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-		<script type="text/javascript" src="assets/js/svg.js"></script>
-		<script type="text/javascript" src="assets/js/slick.min.js"></script>
-		<script type="text/javascript" src="assets/js/index.js"></script>
+		<script type="text/javascript" src="./assets/js/svg.js"></script>
+		<script type="text/javascript" src="./assets/js/slick.min.js"></script>
+		<script type="text/javascript" src="./assets/js/index.js"></script>
 	</body>
 </html>
