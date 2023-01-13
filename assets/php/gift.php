@@ -34,6 +34,17 @@
    <img src="../img/main.png">
 </div>
 
+<section class="gift_list">
+  <div class="gift_list_content">
+    <a href=""><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
+    <a href=""><img src="../img/list1.jpg" alt=""><p>誕生日 プレゼント</p></a>
+    <a href=""><img src="../img/list2.jpg" alt=""><p>配達 プレゼント</p></a>
+    <a href=""><img src="../img/list3.jpg" alt=""><p>結婚 プレゼント</p></a>
+    <a href=""><img src="../img/list5.jpg" alt=""><p>軽い プレゼント</p></a>
+    <a href=""><img src="../img/list4.jpg" alt=""><p>健康・サプリメント</p></a>
+  </div>
+</section>
+
 <section class="best_list">
   <div class="best_list_title">
    <h1>🎁 人気商品リスト 🎁</h1> 
@@ -53,17 +64,6 @@
     <div><img src="../img/best11.jpg" alt="best11"></div>
   </div>
 </div>  
-</section>
-
-<section class="gift_list">
-  <div class="gift_list_content">
-    <a href=""><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
-    <a href=""><img src="../img/list1.jpg" alt=""><p>誕生日 プレゼント</p></a>
-    <a href=""><img src="../img/list2.jpg" alt=""><p>配達 プレゼント</p></a>
-    <a href=""><img src="../img/list3.jpg" alt=""><p>結婚 プレゼント</p></a>
-    <a href=""><img src="../img/list5.jpg" alt=""><p>軽い プレゼント</p></a>
-    <a href=""><img src="../img/list4.jpg" alt=""><p>健康・サプリメント</p></a>
-  </div>
 </section>
 
 <section class="category_list">

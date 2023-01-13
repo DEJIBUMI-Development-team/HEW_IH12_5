@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>でじぶみ</title>
-  <link rel="stylesheet" href="./css/shohin.css">
+  <link rel="stylesheet" href="../css/shohin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
@@ -16,7 +16,7 @@
 <header class="navigator">
   <div class="navigator_content">
     <div class="navigator_left">
-      <a href="index.html"><img src="./image/logo.png" alt="logo"></a>
+      <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
       <a href="">手紙一覧</a>
       <a href="gift.html">ギフト</a>
       <a href="">マイページ</a>
@@ -46,10 +46,10 @@
 <div class="item_wrap">
   <div class="item_meta">
     <div class="item_meta_image">
-      <img src="./image/starbucks/stame.jpg">
+      <img src="../img/starbucks/stame.jpg">
     </div>
     <div class="item_meta_font">
-      <h2>スターバックス</h2>
+      <h2>カフェ アメリカ―ノ</h2>
     </div>
   </div>
 </div>
@@ -76,7 +76,7 @@
 
   <div class="body_element">
     <div class="body_inner">
-      <p class="footer_logo"><a href=""><img src="./image/logo.png"></a></p>
+      <p class="footer_logo"><a href=""><img src="../img/logo.png"></a></p>
       <p class="footer_info">dejibumi  コールセンター 070-1234-5678 (09:00 ~ 18:00 平日)
       <br>
       Copyright © dejibumi. All Rights reserved.</p>
