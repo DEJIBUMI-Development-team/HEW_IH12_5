@@ -67,17 +67,23 @@
 
 .rotate_fix{
 	position: absolute;
-	width: 10px;
-	height: 10px;
+	width: 40px;
+	height: 40px;
 	border-radius: 5px;
-	background-color: black;
-	z-index: 2;
+	background-image: url("../img/rotate.png");
+	background-size: cover;
+	z-index: 3;
 	left: 50%;
 	top: -30px;
 	transform: translate(-50%, -50%);
 	cursor: pointer;
 }
 
+/* .rotate_fix img{
+	width: 30px;
+	height: 30px;
+	z-index: 2;
+} */
 /* data_img */
 .img_data {
     width: 800px;

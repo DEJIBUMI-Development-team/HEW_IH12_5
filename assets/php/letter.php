@@ -40,7 +40,10 @@ if (!empty($_GET["title"])) {
 			<form action="" method="post" class="survey-form">
 				<div class="survey-contents">
 					<div class="survey-title"><h3>{$title}</h3></div>
-			
+					<div class="respondent">
+						<label for="respondent-title"><h4>お名前</h4></label>
+						<input type="text" id="respondent-title" name="respondent-name">
+					</div>		
 			EOD;
 
 		foreach ($_GET["survey"] as $key => $value) {
@@ -54,6 +57,9 @@ if (!empty($_GET["title"])) {
 				EOD;
 		}
 		echo <<<EOD
+				<div class="survey-submit">
+					<input type="submit" name="submit" value="アンケートを送信する" id="submit">				
+				</div>
 				</div>
 			</form>
 			EOD;
