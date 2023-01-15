@@ -62,6 +62,9 @@ ChromePhp::log($_SESSION["user_id"]);
             <option value="monospace">等幅フォント</option>
             <option value="fantasy">装飾的フォント</option>
             <option value="yosugara">夜すがら手書きフォント</option>
+            <option value="karakaze">からかぜ手書きフォント</option>
+            <option value="yunafont">ゆな手書きフォント</option>
+            <option value="Asobifont">遊びメモ書きフォント</option>
         </select>
 
         <select name="fontSize" style="display: none;">
@@ -181,14 +184,23 @@ ChromePhp::log($_SESSION["user_id"]);
                 </div>
                 <div class="template-text-2">
                     <h2 class="underline">テンプレテキストをクリックして編集画面に追加</h2>
-                    <label for="temp-0" class="text-1 template-content">
-                        <p>テンプレ1はこちら</p>
+                    <label for="temp-2" class="text-0 template-content" data-font="sans-serif">
+                        <p data-font="sans-serif">メイリオ</p>
                     </label>
-                    <label for="temp-1" class="text-2 template-content">
-                        <p>テンプレ2はこちら</p>
+                    <label for="temp-2" class="text-1 template-content" data-font="serif">
+                        <p data-font="serif">明朝体</p>
                     </label>
-                    <label for="temp-2" class="text-3 template-content">
-                        <p>テキスト3はこちら</p>
+                    <label for="temp-2" class="text-2 template-content" data-font="yosugara">
+                        <p data-font="yosugara">夜すがら手書きフォント</p>
+                    </label>
+                    <label for="temp-2" class="text-3 template-content" data-font="karakaze">
+                        <p data-font="karakaze">からかぜてがきフォント</p>
+                    </label>
+                    <label for="temp-2" class="text-4 template-content" data-font="yunafont">
+                        <p data-font="yunafont">ゆな手書きフォント</p>
+                    </label>
+                    <label for="temp-2" class="text-5 template-content" data-font="Asobifont">
+                        <p data-font="Asobifont">遊びメモ書きフォント</p>
                     </label>
                 </div>
             </div>
@@ -237,8 +249,8 @@ ChromePhp::log($_SESSION["user_id"]);
         <!-- ========= -->
     </main>
     <!-- script -->
-    <script src="../data/templateTxt_data.js"></script>
     <script src="../js/edit.js"></script>
+    <script src="../data/templateTxt_data.js"></script>
     <script src="../js/jquery.font.js"></script>
     <!-- pickr java script -->
     <script src="../package/pickr.es5.min.js"></script>

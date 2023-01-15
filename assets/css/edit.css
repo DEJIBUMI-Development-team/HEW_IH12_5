@@ -463,17 +463,34 @@ main {
 .title-text-3 {
     font-size: 1.1em;
 }
+.text-0{
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
 
 .text-1 {
     font-size: 1.5em;
+    font-family: serif;
 }
 
 .text-2 {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    font-family: "yosugara";
 }
 
 .text-3 {
-    font-size: 1.1em;
+    font-size: 1.5em;
+    font-family: "karakaze";
+}
+
+.text-4 {
+    font-size: 1.5em;
+    font-family: "yunafont";
+}
+
+.text-5 {
+    font-size: 1.5em;
+    font-family: "Asobifont";
 }
 
 .template-text-1 {
