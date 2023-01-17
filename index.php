@@ -69,7 +69,7 @@ session_start();
 
 					<div class="css-speech-bubble">
 						<label for="submit">
-							<h2 id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">>
+							<h2 id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">
 								<img src="../HEW_IH12_5/assets/img/00.jpg" alt="">
 							</h2>
 						</label>
