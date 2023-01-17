@@ -492,6 +492,21 @@ main {
     font-size: 1.5em;
     font-family: "Asobifont";
 }
+.font-test:focus{
+    border: #ccc 1px solid;
+}
+
+.text-0 p,
+.text-1 p,
+.text-2 p,
+.text-3 p,
+.text-4 p,
+.text-5 p{
+    cursor: auto;
+    background-color: #474646;
+    padding: 5px;
+    padding-left: 14px;
+}
 
 .template-text-1 {
     color: #fff;
