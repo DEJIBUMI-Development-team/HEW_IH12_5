@@ -68,16 +68,17 @@ session_start();
 					<form action="index.php" method="post">
 
 					<div class="css-speech-bubble">
-						<button type="submit" name="update" class="text">
-							<h2 id="lnk_00" class="obj trans_bg lnk action">
+						<label for="submit">
+							<h2 id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">>
 								<img src="../HEW_IH12_5/assets/img/00.jpg" alt="">
 							</h2>
-						</button>
+						</label>
+						<input class="text" type="submit" id="submit" name="update" style="display:none">
 						<p class="speech-bubble">吹き出しが表示されます</p>
 					</div>
 
 					<div class="css-speech-bubble">
-						<button type="submit" name="update" class="text"><h2 id="lnk_01" class="obj trans_bg lnk action"><img src="assets/img/01.jpg" alt=""></h2></button>
+						<button type="submit" name="update" class="text"><h2 id="lnk_01" class="obj trans_bg lnk action"><img class="" src="assets/img/01.jpg" alt=""></h2></button>
 						<p class="speech-bubble">吹き出しが表示されます</p>
 					</div>
 
