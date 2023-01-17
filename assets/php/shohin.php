@@ -34,9 +34,9 @@
   <div class="map_inner">
     <div class="map_channer">
       <ul class="map_list">
-        <li><a href="index.html">Home</a></li>
-        <li class="line"><a href="customer.html">顧客センター</a></li>
-        <li class="line"><a href="info.html">最新情報</a></li>
+        <li><a href="gift.html">ギフト</a></li>
+        <li class="line"><a href="starbucks.html">スターバックス</a></li>
+        <li class="line"><a href="shohin.html">カフェ アメリカーノ(Short~Venti)</a></li>
       </ul>
     </div>
   </div>
@@ -45,12 +45,54 @@
 <!-- itme-box -->
 <div class="item_wrap">
   <div class="item_meta">
-    <div class="item_meta_image">
-      <img src="../img/starbucks/stame.jpg">
+    <div class="item_img-container">
+      <div class="item_img-viewer">
+        <img src="../img/starbucks/stame.jpg">
+      </div>
     </div>
-    <div class="item_meta_font">
-      <h2>カフェ アメリカ―ノ</h2>
+    <div class="item_text">
+      <div class="item_info">
+        <div class="sg-item-type">
+          モバイルギフト
+        </div>
+        <h2 class="item_name">カフェ アメリカーノ(Short~Venti)</h2>
+        <p class="item_subname">やっぱり甘い物食べる時はスターバックスアメリカーノ</p>
+        <div class="item_price">
+          <p>￥370~500</p>
+        </div>
+        <div class="item_note">
+          <p>• 有効期限は購入日から1年後に満了します。</p>
+          <p>• プレゼント方法: リンク共有 / ライン(SNS)</p>
+        </div>
+        <div class="item_actions-container">
+          <p>※ 最大5個までプレゼントできます。</p>
+          <div class="item_actions">
+            <button type="button">Short</button>
+            <button type="button">Tall</button>
+            <button type="button">Grande</button>
+            <button type="button">Venti</button>
+          </div>  
+            <div class="sg-counter">
+              <select name="個数" class="item_select">
+                <option value="">数量を選択</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <button class="item_but">プレゼント</button>
+              <hr>
+            </div>
+              <div class="item_brand-store">
+              <a href=""><img src="../img/Starbucks.png">
+              <p>スターバックス</p>
+              </a>
+              </div>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 </div>
 
