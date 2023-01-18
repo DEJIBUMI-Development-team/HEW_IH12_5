@@ -71,7 +71,7 @@ first_view
   
   .icon{
     width: 40vw;
-    max-width: 500px;
+    max-width: 330px;
     aspect-ratio: 1;
     border-radius:50%;
     object-fit: cover;
