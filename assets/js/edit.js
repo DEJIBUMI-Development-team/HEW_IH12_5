@@ -269,7 +269,7 @@ select_on.forEach((elem) => {
 /**
  * 画像選択による、背景画像の差し替え
  */
-const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "night.PNG", "", "", "", "", "", ""]
+const url = ["harinezumi.PNG", "kingyo.PNG", "sc_mimai.PNG", "modan.PNG", "xmas.PNG", "kouyou.png", "sakura.png", "oiwai.png", "oiwai_1.png", "night.png"];
 const insert_element = document.getElementById("data");
 const select_img = document.querySelectorAll(".select-img-all");
 var current_url = url[0];
