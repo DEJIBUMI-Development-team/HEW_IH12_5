@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="../css/shohin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-  
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>  
 
@@ -14,21 +15,7 @@
  <div class="water"></div>
 </div>
 
-<header class="navigator">
-  <div class="navigator_content">
-    <div class="navigator_left">
-      <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
-      <a href="">手紙一覧</a>
-      <a href="gift.html">ギフト</a>
-      <a href="">マイページ</a>
-    </div>
-
-    <div class="navigator_right">
-      <a href="">会員登録</a>
-      <a href="">ログイン</a>
-    </div>
-  </div>
-</header>
+<?php include("./header.php")?>
 
 <!-- map-box -->
 <div class="map_wrap">
@@ -142,34 +129,7 @@
 </div>
 
 <!-- footer-box -->
-<footer class="footer_element">
-  <div class="top_element">
-    <div class="top_inner">
-      <ul class="footer_menu">
-        <li><a href="">利用規約</a></li>
-        <li><a href=""><span>個人利用処理方針</span></a></li>
-        <li><a href="">お客様センター</a></li>
-        <li><a href="">意見提出</a></li>
-      </ul>
-
-      <ul class="sns">
-        <li><a href=""><i class="fab fa-twitter"></i></a></li>
-        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-        <li><a href=""><i class="fab fa-instagram"></i></a></li>
-        <li><a href=""><i class="fab fa-youtube"></i></a></li>
-      </ul>  
-    </div>
-  </div>
-
-  <div class="body_element">
-    <div class="body_inner">
-      <p class="footer_logo"><a href=""><img src="../img/logo.png"></a></p>
-      <p class="footer_info">dejibumi  コールセンター 070-1234-5678 (09:00 ~ 18:00 平日)
-      <br>
-      Copyright © dejibumi. All Rights reserved.</p>
-    </div>
-  </div>
-</footer>
+<?php include("./footer.php")?>
 <script
   src="https://code.jquery.com/jquery-3.6.1.js"
   integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="

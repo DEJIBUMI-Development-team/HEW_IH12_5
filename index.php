@@ -32,7 +32,6 @@ session_start();
     <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
 	</head>
 	<body>
-		<?php include("./assets/php/header.php")?>
 		<main>
 
 			<div id="backgrounds">
