@@ -62,6 +62,9 @@ ChromePhp::log($_SESSION["user_id"]);
             <option value="monospace">等幅フォント</option>
             <option value="fantasy">装飾的フォント</option>
             <option value="yosugara">夜すがら手書きフォント</option>
+            <option value="karakaze">からかぜ手書きフォント</option>
+            <option value="yunafont">ゆな手書きフォント</option>
+            <option value="Asobifont">遊びメモ書きフォント</option>
         </select>
 
         <select name="fontSize" style="display: none;">
@@ -96,7 +99,7 @@ ChromePhp::log($_SESSION["user_id"]);
                 <div class="select_content" id="select_elem_1">SAVE</div>
                 <div class="select_content select_off" id="select_img">IMG</div>
                 <div class="select_content select_off" id="select_text">TEXT</div>
-                <div class="select_content select_off" id="select_elem_2"></div>
+                <div class="select_content select_off" id="select_elem_2" style="display:none"></div>
             </div>
 
             <!-- 仮置き部分==================================================== -->
@@ -180,15 +183,24 @@ ChromePhp::log($_SESSION["user_id"]);
                     <input type="button" value="th_content" id="temp-2" data-tempid="2" class="hide_box">
                 </div>
                 <div class="template-text-2">
-                    <h2 class="underline">テンプレテキストをクリックして編集画面に追加</h2>
-                    <label for="temp-0" class="text-1 template-content">
-                        <p>テンプレ1はこちら</p>
+                    <h2 class="underline">フォントテンプレート(自由に編集できます)</h2>
+                    <label class="text-0" data-font="sans-serif">
+                        <p class="font-test" data-font="sans-serif" contenteditable = "true">メイリオ</p>
                     </label>
-                    <label for="temp-1" class="text-2 template-content">
-                        <p>テンプレ2はこちら</p>
+                    <label class="text-1" data-font="serif">
+                        <p class="font-test" data-font="serif" contenteditable = "true">明朝体</p>
                     </label>
-                    <label for="temp-2" class="text-3 template-content">
-                        <p>テキスト3はこちら</p>
+                    <label class="text-2" data-font="yosugara">
+                        <p class="font-test" data-font="yosugara" contenteditable = "true">夜すがら手書きフォント</p>
+                    </label>
+                    <label class="text-3" data-font="karakaze">
+                        <p class="font-test" data-font="karakaze" contenteditable = "true">からかぜてがきフォント</p>
+                    </label>
+                    <label class="text-4" data-font="yunafont">
+                        <p class="font-test" data-font="yunafont" contenteditable = "true">ゆな手書きフォント</p>
+                    </label>
+                    <label class="text-5" data-font="Asobifont">
+                        <p class="font-test" data-font="Asobifont" contenteditable = "true">遊びメモ書きフォント</p>
                     </label>
                 </div>
             </div>
@@ -237,15 +249,15 @@ ChromePhp::log($_SESSION["user_id"]);
         <!-- ========= -->
     </main>
     <!-- script -->
-    <script src="../data/templateTxt_data.js"></script>
     <script src="../js/edit.js"></script>
+    <script src="../data/templateTxt_data.js"></script>
     <script src="../js/jquery.font.js"></script>
     <!-- pickr java script -->
     <script src="../package/pickr.es5.min.js"></script>
     <script src="../package/pickr.index.js"></script>
     <script>
         $(function() {
-            $(".dejibumi-title").on("keydown", function(e) {
+            $(".dejibumi-title, .font-test").on("keydown", function(e) {
                 if ((e.which && e.which === 13) || (e.keyCode && e.keyCode === 13)) {
                     return false;
                 } else {

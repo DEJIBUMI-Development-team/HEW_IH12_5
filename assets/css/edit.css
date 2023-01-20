@@ -328,56 +328,56 @@ main {
 
 .select-img-4 {
     margin-left: 10px;
-    background-image: url("../data/img_data/night.PNG");
-    background-size: 100%;
+    background-image: url("../data/img_data/modan.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .select-img-5 {
     margin-right: 10px;
-    /* background-image: url("../data/img_data/JTDR4454.PNG"); */
-    background-size: cover;
+    background-image: url("../data/img_data/xmas.PNG");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .select-img-6 {
     margin-left: 10px;
-    /* background-image: url("../data/img_data/OHKA4066.PNG"); */
-    background-size: cover;
+    background-image: url("../data/img_data/kouyou.png");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .select-img-7 {
     margin-right: 10px;
-    /* background-image: url("../data/img_data/JTDR4454.PNG"); */
-    background-size: cover;
+    background-image: url("../data/img_data/sakura.png");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .select-img-8 {
     margin-left: 10px;
-    /* background-image: url("../data/img_data/OHKA4066.PNG"); */
-    background-size: cover;
+    background-image: url("../data/img_data/oiwai.png");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .select-img-9 {
     margin-right: 10px;
-    /* background-image: url("../data/img_data/JTDR4454.PNG"); */
-    background-size: cover;
+    background-image: url("../data/img_data/oiwai_1.png");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .select-img-10 {
     margin-left: 10px;
-    /* background-image: url("../data/img_data/OHKA4066.PNG"); */
-    background-size: cover;
+    background-image: url("../data/img_data/night.png");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -463,17 +463,49 @@ main {
 .title-text-3 {
     font-size: 1.1em;
 }
+.text-0{
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
 
 .text-1 {
     font-size: 1.5em;
+    font-family: serif;
 }
 
 .text-2 {
-    font-size: 1.3em;
+    font-size: 1.5em;
+    font-family: "yosugara";
 }
 
 .text-3 {
-    font-size: 1.1em;
+    font-size: 1.5em;
+    font-family: "karakaze";
+}
+
+.text-4 {
+    font-size: 1.5em;
+    font-family: "yunafont";
+}
+
+.text-5 {
+    font-size: 1.5em;
+    font-family: "Asobifont";
+}
+.font-test:focus{
+    border: #ccc 1px solid;
+}
+
+.text-0 p,
+.text-1 p,
+.text-2 p,
+.text-3 p,
+.text-4 p,
+.text-5 p{
+    cursor: auto;
+    background-color: #474646;
+    padding: 5px;
+    padding-left: 14px;
 }
 
 .template-text-1 {
