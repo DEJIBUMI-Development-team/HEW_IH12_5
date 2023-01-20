@@ -4,6 +4,11 @@ session_start();
 // echo $_SESSION["user_id"];
 // user_id取得確認;
 ChromePhp::log($_SESSION["user_id"]);
+
+if (!isset($_SESSION["user_id"])) {
+    $_SESSION["HS"] = "edit";
+    header("Location:./login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">

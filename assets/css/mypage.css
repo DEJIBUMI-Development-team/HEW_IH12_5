@@ -142,7 +142,7 @@ h2 {
   position: absolute;
 } 
 
-.container .n04 a {
+.container .n04 .logout {
   display: flex;
   width: 255px;
   height: 130px;
@@ -153,13 +153,14 @@ h2 {
   font-weight: bold;
   padding: 1.3em 0 1em;
   border-radius: 3px;
-  justify-content: space-between
+  justify-content: space-between;
+  cursor: pointer;
 }
-.container .n04 a:hover {
+.container .n04 .logout:hover {
   background: #eee;
   text-decoration: none;
 }
-.container .n04 a img {
+.container .n04 .logout img {
   mix-blend-mode: multiply;
   width: 100px;
   height: 100px;
@@ -176,7 +177,6 @@ h2 {
   margin: 0 auto;
   width: 70%;
   min-height: 30px;
-  border: solid 2px;
   background-color: #fff;
 }
 
@@ -246,4 +246,10 @@ h2 {
   z-index: 3;
   line-height: 3;
   padding: 10px 0;
+}
+
+.new_edit{
+  width: 100px;
+  margin-left: auto;
+  margin-right: 20px;
 }
