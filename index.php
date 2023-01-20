@@ -52,7 +52,7 @@ session_start();
 			</div>
 
 			<div id="first_content">
-		  	<!-- <h2 class="Explanation">サイト説明</h2> -->
+		  	<h2 class="Explanation">作り方は簡単３ステップ</h2>
 				<div id="Eslider">
 					<p id="Ebutton-left" onclick="go_back()"></p>
 					<img id="mypic" src="./assets/img/Explanation-01.png" width="400" height="300">
@@ -69,30 +69,38 @@ session_start();
 
 					<div class="css-speech-bubble">
 						<label for="submit">
-							<h2 id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">
-								<img src="../HEW_IH12_5/assets/img/00.jpg" alt="">
-							</h2>
+							<img src="assets/img/00.jpg" id="lnk_00"  class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
 						<input class="text" type="submit" id="submit" name="update" style="display:none">
 						<p class="speech-bubble">吹き出しが表示されます</p>
 					</div>
 
 					<div class="css-speech-bubble">
-						<button type="submit" name="update" class="text"><h2 id="lnk_01" class="obj trans_bg lnk action"><img class="" src="assets/img/01.jpg" alt=""></h2></button>
+						<label for="submit">
+							<!-- <h2 id="lnk_01" class="obj trans_bg lnk action"> -->
+								<img src="assets/img/01.jpg" id="lnk_01"  class="obj trans_bg lnk action" style="cursor: pointer;">
+							<!-- </h2> -->
+						</label>
 						<p class="speech-bubble">吹き出しが表示されます</p>
 					</div>
 
-							<button type="submit" name="update">
-								<h2 id="lnk_02" class="obj trans_bg lnk action">
-									<img src="assets/img/02.jpg" alt="">
-								</h2>
-							</button>
+					<div class="css-speech-bubble">
+						<button type="submit" name="update" class="text">
+							<h2 id="lnk_02" class="obj trans_bg lnk action">
+								<img src="assets/img/02.jpg" alt="">
+							</h2>
+						</button>
+						<p class="speech-bubble">吹き出しが表示されます</p>
+					</div>
 
-							<button type="submit" name="update">
-								<h2 id="lnk_03" class="obj trans_bg lnk action">
-									<img src="assets/img/03.jpg" alt="">
-								</h2>
-							</button>
+						<div class="css-speech-bubble">
+						<button type="submit" name="update" class="text">
+							<h2 id="lnk_03" class="obj trans_bg lnk action">
+								<img src="assets/img/03.jpg" alt="">
+							</h2>
+						</button>
+						<p class="speech-bubble">吹き出しが表示されます</p>
+					</div>
 					</form>
 
 					<!-- コンテンツ写真 -->
