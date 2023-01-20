@@ -3,7 +3,7 @@
 session_start();
 
 // 仮置き
-// $_SESSION['HS'] = "edit";
+$_SESSION['HS'] = "edit";
 // echo $_SESSION["HS"];
 
 
