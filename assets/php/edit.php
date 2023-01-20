@@ -101,10 +101,10 @@ if (!isset($_SESSION["user_id"])) {
     <main>
         <section class="left_m">
             <div class="select">
-                <div class="select_content" id="select_elem_1">SAVE</div>
-                <div class="select_content select_off" id="select_img">IMG</div>
-                <div class="select_content select_off" id="select_text">TEXT</div>
-                <div class="select_content select_off" id="select_elem_2" style="display:none"></div>
+                <div class="select_content select_1" id="select_elem_1"></div>
+                <div class="select_content select_2 select_off" id="select_img"></div>
+                <div class="select_content select_3 select_off" id="select_text"></div>
+                <div class="select_content select_4 select_off" id="select_elem_2" style="display:none"></div>
             </div>
 
             <!-- 仮置き部分==================================================== -->
