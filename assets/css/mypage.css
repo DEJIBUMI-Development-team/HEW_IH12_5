@@ -1,0 +1,255 @@
+body {
+  /* background-image: url("../img/water_purple1.jpg"); */
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  background-color: rgb(248, 248, 215);
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+.user_icon img {
+  margin-left: 15%;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.user_icon p {
+  margin-left: 15px;
+  font-size: 2em;
+  display: inline-block;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 70%;
+  height: fit-content;
+}
+
+.set-flex {
+  display: flex;
+  width: fit-content;
+}
+
+.set-flex2 {
+  display: flex;
+  width: fit-content;
+}
+
+.container .item {
+  display: flex;
+  margin: 5px;
+}
+
+.container .n01 a {
+  display: flex;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  width: 255px;
+  height: 130px;
+  background: #e4e4e4; 
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
+} 
+.container .n01 a:hover {
+  background: #eee;
+  text-decoration: none;
+}
+.container .n01 a img {
+  mix-blend-mode: multiply;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+.container .n01 p {
+  transform: translate(100px,110px);
+  display:inline-block;
+  position: absolute;
+} 
+
+.container .n02 a {
+  display: flex;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  width: 255px;
+  height: 130px;
+  background: #e4e4e4;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
+}
+.container .n02 a:hover {
+  background: #eee;
+  text-decoration: none;
+}
+.container .n02 a img {
+  mix-blend-mode: multiply;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+.container .n02 p {
+  transform: translate(70px,110px);
+  display:inline-block;
+  position: absolute;
+} 
+
+.container .n03 a {
+  display: flex;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  width: 255px;
+  height: 130px;
+  background: #e4e4e4;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between
+}
+.container .n03 a:hover {
+  background: #eee;
+  text-decoration: none;
+}
+.container .n03 a img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+.container .n03 p {
+  transform: translate(70px,110px);
+  display:inline-block;
+  position: absolute;
+} 
+
+.container .n04 .logout {
+  display: flex;
+  width: 255px;
+  height: 130px;
+  background: #e4e4e4;
+  float: left;
+  text-align: center;
+  font-size: 85%;
+  font-weight: bold;
+  padding: 1.3em 0 1em;
+  border-radius: 3px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.container .n04 .logout:hover {
+  background: #eee;
+  text-decoration: none;
+}
+.container .n04 .logout img {
+  mix-blend-mode: multiply;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+.container .n04 p {
+  transform: translate(85px,110px);
+  display:inline-block;
+  position: absolute;
+}
+
+.view-history{
+  margin: 0 auto;
+  width: 70%;
+  min-height: 30px;
+  background-color: #fff;
+}
+
+.history-content{
+  display: flex;
+  padding: 20px;
+}
+
+.history {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+}
+
+.history:hover{
+  opacity: 0.7;
+}
+
+.history-id{
+  padding: 2px 0px;
+  margin-right: 30px;
+  display: block;
+}
+.history-title{
+  padding: 2px 0px;
+  display: block;
+  margin: 0 auto 0.7em;
+}
+
+
+.view-history{
+  margin: 0 auto;
+  width: 70%;
+  min-height: 30px;
+  /* border: solid 2px; */
+  background-color: #fff;
+}
+
+.history-content{
+  display: flex;
+  padding: 20px;
+}
+
+.history {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+}
+
+.history:hover{
+  opacity: 0.7;
+}
+
+.history-id{
+  padding: 2px 0px;
+  margin-right: 30px;
+  display: block;
+}
+.history-title{
+  padding: 2px 0px;
+  display: block;
+}
+.delete {
+  margin-left: auto;
+  z-index: 3;
+  line-height: 3;
+  padding: 10px 0;
+}
+
+.new_edit{
+  width: 100px;
+  margin-left: auto;
+  margin-right: 20px;
+}

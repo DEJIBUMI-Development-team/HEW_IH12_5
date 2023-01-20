@@ -4,26 +4,26 @@ const themes = [
         'nano',
         {
             swatches: [
+                'rgba(0, 0, 0, 1)',
                 'rgba(255, 255, 255, 1)',
-                'rgba(233, 30, 99, 0.95)',
-                'rgba(156, 39, 176, 0.9)',
-                'rgba(103, 58, 183, 0.85)',
-                'rgba(63, 81, 181, 0.8)',
-                'rgba(33, 150, 243, 0.75)',
-                'rgba(3, 169, 244, 0.7)'
+                'rgba(255, 0, 0, 1)',
+                'rgba(255, 165, 0, 1)',
+                'rgba(255, 255, 0, 1)',
+                'rgba(0, 255, 0, 1)',
+                'rgba(0, 0, 255, 1)'
             ],
 
             components: {
-                preview: true,
-                opacity: true,
-                hue: true,
+                preview: true,  //現在のカラー
+                opacity: false, //透明度
+                hue: true,      //色相バー
 
                 interaction: {
                     hex: false,
                     rgba: false,
                     hsva: false,
                     input: true,
-                    clear: true,
+                    clear: false,
                     save: true
                 }
             }
