@@ -182,7 +182,7 @@ a {text-decoration:underline;}
 a:hover {text-decoration:none;}
 
 /* -- form -- */
-input,textarea {}
+/* input,textarea {} */
 
 /* Start of "Micro clearfix" */
 .cf { zoom: 1; }

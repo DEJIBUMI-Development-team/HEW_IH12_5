@@ -75,13 +75,12 @@ session_start();
 						<p class="speech-bubble">吹き出しが表示されます</p>
 					</div>
 
-					<div class="css-speech-bubble">
+					<div class="css-speech-bubble2">
 						<label for="submit">
-							<!-- <h2 id="lnk_01" class="obj trans_bg lnk action"> -->
-								<img src="assets/img/01.jpg" id="lnk_01"  class="obj trans_bg lnk action" style="cursor: pointer;">
-							<!-- </h2> -->
+							<img src="assets/img/01.jpg" id="lnk_01"  class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<p class="speech-bubble">吹き出しが表示されます</p>
+						<input class="text2" type="submit" id="submit" name="update" style="display:none">
+						<p class="speech-bubble2">吹き出しが表示されます</p>
 					</div>
 
 					<div class="css-speech-bubble">
