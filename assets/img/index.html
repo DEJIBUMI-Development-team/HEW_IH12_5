@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>お料理サイト</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>レシピサイト</h1>
+        </header>
+        <main>
+            <section class="section">
+                <h2 class="title"></h2>
+                <hr>
+                <ul class="list">
+                    <!-- liをjsで作る -->
+                    <!-- （axiosでインターネット上から取得したデータで） -->
+                    <!-- axios -> HTTPリクエストをJS上で行うためのライブラリ -->
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <small>&copy; 2022 Yoon Yeojun</small>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        // axiosのアクセス
+        // axios.get(url) HTTPリクエストをしている
+        // axios.post(url)
+
+        // 料理のレシピのJSON
+        // https://gist.githubusercontent.com/Kazunari-h/a4b948ee2ecb68519c18b68e1812e77c/raw/f9d09b38771604d1f16f8c0a2c126ef6c68f7719/section.json
+
+        // JSON
+        // JSの連想配列(key, value)
+/* 
+{
+    "name": "おすすめレシピ",
+    "child": [連想配列, 連想配列....]
+}
+*/
+        axios
+            .get("https://gist.githubusercontent.com/Kazunari-h/a4b948ee2ecb68519c18b68e1812e77c/raw/5efd92a2cf774987bb714e190065df89bdf5f1e8/section.json")
+            .then(res => {
+
+                // 取得した結果はthenの中で処理される
+                // 取得したJSONはres.dataの中にある
+                console.log(res.data);
+                // titleとclassがついた要素の中身をres.data.nameにする
+                document.querySelector(".title").innerHTML = res.data.name
+
+                // forEach 中身を取得しながら配列を繰り返す
+                // res.data.child 配列
+                res.data.child.forEach(item => {
+                    console.log(item.name);
+
+                    // createElement 要素を作り出す
+                    const li = document.createElement("li")
+                    const img = document.createElement("img")
+                    const h2 = document.createElement("h2")
+                    const p = document.createElement("p")
+                    
+                    img.src = item.img
+                    img.classList.add("thumbnail")
+                    h2.innerText = item.name
+
+                    // 要素A.appendChild(要素B)
+                    // appendChildは 要素Aに要素Bを追加する
+                    li.appendChild(img)
+                    li.appendChild(h2)
+                    li.appendChild(p)
+                    document.querySelector(".list").appendChild(li)
+                });
+
+                // for (const item of res.data.child) {
+                //     //
+                // }
+            })
+    </script>
+</body>
+</html>

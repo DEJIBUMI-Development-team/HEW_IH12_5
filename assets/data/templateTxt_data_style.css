@@ -1,3 +1,7 @@
+@font-face {
+	font-family: "yosugara";src: url(./fonts/yosugara1.1.ttf);
+}
+
 /* data-txt */
 .fit p,
 .fit h4,
@@ -28,32 +32,13 @@
     transform: rotate(0deg);
 	width: 100%;
 	height: fit-content;
-    border: solid 1px #000;
-	z-index: 0;
-}
 
-.text{
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    border: solid 1px #000;
+	z-index: 0;
 }
 .fit {
 	width: fit-content;
 	height: fit-content;
 }
-
-.text :focus{
-	outline: 0px solid transparent;
-}
-
-.text > div {
-	width: 100%;
-}
-.text > div > text{
-	width: 100%;
-}
-
 
 .rotate-center {
 	position: absolute;
@@ -98,7 +83,7 @@
     width: 800px;
     height: 100%;
     margin: 0 auto;
-    background-image: url(../data/img_data/OHKA4066.PNG);
+    background-image: url(../data/img_data/harinezumi.PNG);
     background-repeat: no-repeat;
     background-size: 600px, auto;
     background-position: center;
@@ -172,3 +157,11 @@
 	right: -5px;
 	cursor: se-resize;
 }
+
+.on_n {
+	display: block;
+}
+.on_h {
+    border: solid 1px #000;
+}
+

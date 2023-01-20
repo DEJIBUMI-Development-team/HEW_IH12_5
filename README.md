@@ -14,41 +14,54 @@
 ### create t_user
 ユーザ―情報格納
 ```
-create table t_user(
-	F_user_id int AUTO_INCREMENT,
-	user_name VARCHAR(20),
-	password VARCHAR(255),
-	e_mail VARCHAR(255),
-	tell int(12),
-	dredit_num int(15),
-	PRIMARY KEY (F_user_id)	
-);
+CREATE TABLE `t_user` (
+  `F_user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(20) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `e_mail` varchar(255) DEFAULT NULL,
+  `tell` int(12) DEFAULT NULL,
+  `dredit_num` int(15) DEFAULT NULL,
+  PRIMARY KEY (`F_user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4
 ```
 
 ### create_user_edit
 編集情報格納
 ```
-create table t_user_edit(
-	edit_id int(5),
-	F_user_id  int(5),
-	temp_cd int(4),
-	title VARCHAR(255),
-	img_data json,
-	content_data json,
-	PRIMARY KEY (edit_id),
-    FOREIGN KEY t_user_edit(F_user_id) REFERENCES t_user(F_user_id)
-);
+CREATE TABLE `t_user_edit` (
+  `edit_id` int(5) NOT NULL AUTO_INCREMENT,
+  `F_user_id` int(5) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `content_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`content_data`)),
+  PRIMARY KEY (`edit_id`),
+  KEY `t_user_edit` (`F_user_id`),
+  CONSTRAINT `t_user_edit` FOREIGN KEY (`F_user_id`) REFERENCES `t_user` (`F_user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4
 ```
 
 ### t_user_gift
 ギフト情報の格納
 ```
-create table t_user_gift(
-	gift_id INT(5),
-	F_user_id INT(5),
-	gift_cd VARCHAR(20),
-	send_username VARCHAR(20),
-	count INT(2),
-	FOREIGN KEY t_user_gift(F_user_id) REFERENCES t_user(F_user_id)
-);
+CREATE TABLE `t_user_gift` (
+  `gift_id` int(5) DEFAULT NULL,
+  `F_user_id` int(5) DEFAULT NULL,
+  `gift_cd` varchar(20) DEFAULT NULL,
+  `send_username` varchar(20) DEFAULT NULL,
+  `count` int(2) DEFAULT NULL,
+  KEY `t_user_gift` (`F_user_id`),
+  CONSTRAINT `t_user_gift` FOREIGN KEY (`F_user_id`) REFERENCES `t_user` (`F_user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+```
+### t_user_letter
+でじぶみの格納
+```
+CREATE TABLE `t_user_letter` (
+  `letter_id` int(5) NOT NULL AUTO_INCREMENT,
+  `F_user_id` int(5) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `raw_data` mediumblob NOT NULL,
+  PRIMARY KEY (`letter_id`),
+  KEY `F_user_id` (`F_user_id`),
+  CONSTRAINT `t_user_letter` FOREIGN KEY (`F_user_id`) REFERENCES `t_user` (`F_user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4
 ```

@@ -22,7 +22,6 @@ body {-webkit-text-size-adjust:none; font-size:12px; line-height:1.5em; margin:0
 * html body {font-family:"游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-size:75%;}/* for IE6 */
 *+html body {font-family:"游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-size:75%;}/* for IE7 */
 html>/**/body {font-family:"游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-size:75%;}/* for IE8 */
-html:not(:target) body {font-size:12px; line-height:1.5em; font-family:"游ゴシック体", "Yu Gothic", YuGothic, Osaka, sans-serif; letter-spacing:1px;}
 
 /* -- other tags -- */
 a {overflow:hidden;}
@@ -47,12 +46,12 @@ article, aside, dialog, figure, footer, header,hgroup, nav, section {display:blo
 Style Setup
 ---------------------------------------------------------------------*/
 /* -- layout -- */
-.f_left   {float:left; display:inline;}
+/* .f_left   {float:left; display:inline;}
 .f_right  {float:right; display:inline;}
 .t_center {text-align:center !important;}
 .t_right  {text-align:right !important;}
 .t_left   {text-align:left !important;}
-.clear    {clear:both;}
+.clear    {clear:both;} */
 
 .mb3   {margin-bottom:3px !important;}
 .mb5   {margin-bottom:5px !important;}
