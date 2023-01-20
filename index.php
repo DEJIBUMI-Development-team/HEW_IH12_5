@@ -696,11 +696,11 @@ if (isset($_POST['add'])) {
 			<div class="sliderArea">
 				<div class="sliderWide">
 					<ul class="slider">
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto01.jpg" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto02.jpg" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto03.jpg" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto04.jpg" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto05.jpg" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/godiva.png" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/saruta1.webp" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/tullys.png" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/star1.jpg" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/kome.jpg" alt="125naroom"></a></li>
 					</ul>
 				</div>
 			</div>
