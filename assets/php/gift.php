@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>でじぶみ</title>
-  <link rel="stylesheet" href="../css/gift1.css">
+  <link rel="stylesheet" href="../css/gift.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 </head>
@@ -16,7 +16,7 @@
 <header class="navigator">
   <div class="navigator_content">
     <div class="navigator_left">
-      <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
+      <a href="main.php"><img src="../img/logo.png" alt="logo"></a>
       <a href="">手紙一覧</a>
       <a href="">ギフト</a>
       <a href="">マイページ</a>
@@ -31,18 +31,39 @@
 
 <!-- Main image -->
 <div class="image-box">
-   <img src="./image/main.png">
+   <img src="../img/main.png">
 </div>
 
 <section class="gift_list">
   <div class="gift_list_content">
-    <a href=""><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
+    <a href="gift1.php"><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
     <a href=""><img src="../img/list1.jpg" alt=""><p>誕生日 プレゼント</p></a>
     <a href=""><img src="../img/list2.jpg" alt=""><p>配達 プレゼント</p></a>
     <a href=""><img src="../img/list3.jpg" alt=""><p>結婚 プレゼント</p></a>
     <a href=""><img src="../img/list5.jpg" alt=""><p>軽い プレゼント</p></a>
     <a href=""><img src="../img/list4.jpg" alt=""><p>健康・サプリメント</p></a>
   </div>
+</section>
+
+<section class="best_list">
+  <div class="best_list_title">
+   <h1>🎁 人気商品リスト 🎁</h1> 
+  </div>
+<div class="best_list_content">
+  <div class="best-items">
+    <div><img src="../img/best1.jpg" alt="best1"></div>
+    <div><img src="../img/best2.jpg" alt="best2"></div>
+    <div><img src="../img/best3.jpg" alt="best3"></div>
+    <div><img src="../img/best4.jpg" alt="best4"></div>
+    <div><img src="../img/best5.jpg" alt="best5"></div>
+    <div><img src="../img/best6.jpg" alt="best6"></div>
+    <div><img src="../img/best7.jpg" alt="best7"></div> 
+    <div><img src="../img/best8.jpg" alt="best8"></div>
+    <div><img src="../img/best9.jpg" alt="best9"></div>
+    <div><img src="../img/best10.jpg" alt="best10"></div>
+    <div><img src="../img/best11.jpg" alt="best11"></div>
+  </div>
+</div>  
 </section>
 
 <section class="category_list">
@@ -67,28 +88,6 @@
   </div>  
 </section>
 
- 
-<section class="best_list">
-  <div class="best_list_title">
-   <h1>🎁 人気商品リスト 🎁</h1> 
-  </div>
-<div class="best_list_content">
-  <div class="best-items">
-    <div><img src="../img/best1.jpg" alt="best1"></div>
-    <div><img src="../img/best2.jpg" alt="best2"></div>
-    <div><img src="../img/best3.jpg" alt="best3"></div>
-    <div><img src="../img/best4.jpg" alt="best4"></div>
-    <div><img src="../img/best5.jpg" alt="best5"></div>
-    <div><img src="../img/best6.jpg" alt="best6"></div>
-    <div><img src="../img/best7.jpg" alt="best7"></div> 
-    <div><img src="../img/best8.jpg" alt="best8"></div>
-    <div><img src="../img/best9.jpg" alt="best9"></div>
-    <div><img src="../img/best10.jpg" alt="best10"></div>
-    <div><img src="../img/best11.jpg" alt="best11"></div>
-  </div>
-</div>  
-</section>
-
 <section class="brand_list">
   <h1>人気ブランド</h1>
   <div class="wrapper">
@@ -103,7 +102,7 @@
 
         <div id="tab-1" class="tab-content current">
           <section class="brand_item">
-            <a href="">
+            <a href="starbucks.php">
             <div class="item_name">
               <img src="../img/Starbucks.png">
               <p>スターバックス</p>
@@ -149,11 +148,11 @@
           <section class="brand_item">
             <a href="">
             <div class="item_name">
-              <img src="../img/saruta.png  ">
-              <p>猿田彦コーヒー</p>
+              <img src="../img/gongcha.jpg">
+              <p>貢茶</p>
             </div>
             <div class="item_list">
-              <img src="../img/saruta1.webp"></a>
+              <img src="../img/GONG.jpg"></a>
             </div>
           </section>
 
@@ -475,9 +474,9 @@
   <div class="top_element">
     <div class="top_inner">
       <ul class="footer_menu">
-        <li><a href="">利用約款</a></li>
+        <li><a href="">利用規約</a></li>
         <li><a href=""><span>個人利用処理方針</span></a></li>
-        <li><a href="">客様センター</a></li>
+        <li><a href="">お客様センター</a></li>
         <li><a href="">意見提出</a></li>
       </ul>
 
