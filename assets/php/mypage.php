@@ -2,6 +2,13 @@
 include("./db.php");
 include("./ChromePhp.php");
 session_start();
+
+if (!isset($_SESSION["user_id"])) {
+	$_SESSION["HS"] = "mypage";
+	header("Location:./login.php");
+	exit;
+}
+
 if (!empty($_SESSION["user_id"])) {
 	$user_id = $_SESSION["user_id"];
 } else {

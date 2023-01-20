@@ -27,11 +27,12 @@ session_start();
 		<link rel="stylesheet" href="assets/css/reset.css">
 		<link rel="stylesheet" href="assets/css/style.css">
 		<link rel="stylesheet" href="assets/css/animation.css">
+		<link rel="stylesheet" href="./assets/css/header.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
     <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
 	</head>
 	<body>
-		<header></header>
+		<?php include("./assets/php/header.php")?>
 		<main>
 
 			<div id="backgrounds">
