@@ -20,7 +20,7 @@
 
   <div class="body_element">
     <div class="body_inner">
-      <p class="footer_logo"><a href=""><img src="../img/logo.png"></a></p>
+      <p class="footer_logo"><a href=""><img src="/HEW_IH12_5/assets/img/logo.png"></a></p>
       <p class="footer_info">dejibumi  コールセンター 070-1234-5678 (09:00 ~ 18:00 平日)
       <br>
       Copyright © dejibumi. All Rights reserved.</p>

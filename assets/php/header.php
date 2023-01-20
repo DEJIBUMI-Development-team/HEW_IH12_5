@@ -1,4 +1,4 @@
-<header class="navigator">
+<header class="navigator scroll_tgl">
   <div class="navigator_content">
     <div class="navigator_left">
       <a href="/HEW_IH12_5/index.php"><img src="/HEW_IH12_5/assets/img/logo.png" alt="logo"></a>

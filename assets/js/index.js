@@ -140,3 +140,28 @@ $(document).ready(function() {
     touchMove: true
   });
 });
+
+const header_element = document.querySelector(".navigator");
+let scroll_offset = 0;
+window.addEventListener("scroll",()=>{
+  debugger;
+  scroll_offset = window.pageYOffset;
+  if (scroll_offset > 0) {
+    header_element.classList.remove("scroll_tgl");
+  }else {
+    header_element.classList.add("scroll_tgl");
+  }
+});
+const hover_icon = document.querySelector(".icon");
+const hover_text = document.querySelector(".hover_text");
+hover_icon.addEventListener("mouseover",()=>{
+  hover_text.classList.remove("hover_tgl");
+});
+hover_icon.addEventListener("mouseout",()=>{
+  hover_text.classList.add("hover_tgl");
+});
+window.addEventListener("load", () => {
+  setTimeout(()=>{
+    hover_icon.style.pointerEvents = "auto";
+  }, 3500);
+});
