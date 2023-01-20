@@ -511,12 +511,12 @@ second_content
   padding: 20px;
   border: 1px solid #ccc;
 }
-.css-speech-bubble2 {
+.speech-bubble2 {
   display: none;
   width: 200px;
   position: absolute;
-  top: 400;
-  left: 291px;
+  top: 585px;
+  left: 279px;
   padding: 16px;
   border-radius: 5px;
   background: #33cc99;
