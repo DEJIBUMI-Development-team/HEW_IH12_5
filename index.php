@@ -11,7 +11,7 @@ session_start();
       $_SESSION['HS'] = 'mypage';//セッション変数に登録
       $result = "マイページで";
       // echo $_SESSION['MY'];
-      header("Location:a.php");
+      header("Location:./assets/php/mypage.php");
     }
 ?>
 
