@@ -2,6 +2,13 @@
 include("./db.php");
 include("./ChromePhp.php");
 session_start();
+
+if (!isset($_SESSION["user_id"])) {
+	$_SESSION["HS"] = "mypage";
+	header("Location:./login.php");
+	exit;
+}
+
 if (!empty($_SESSION["user_id"])) {
 	$user_id = $_SESSION["user_id"];
 } else {
@@ -50,16 +57,11 @@ if (isset($_POST["logout"])) {
 		</p>
 	</div>
 	<div class="container">
-		<div class="item n01">
-			<p>・test<br>・test<br>・test<br>・test<br></p>
-		</div>
-		<div>
-			<div class="set-flex">
-				<div class="item n02"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"></a></div>
-				<div class="item n03"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a></div>
-			</div>
-			<div class="set-flex2">
-			</div>
+		<div class="set-flex">
+			<div class="item n01"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"><br></a><p>決済情報</p></div>
+			<div class="item n02"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a><p>クレジットカード</p></div>
+			<div class="item n03"><a href="barcode.php"><img src="../img/barcode.png" alt="バーコード決済"></a><p>バーコード決済</p></div>
+			<label for="submit" class="item n04"><div class="logout"><img src="../img/logout.png" alt="ログアウト"></div><p>ログアウト</p></label>
 		</div>
 	</div>
 	<div class="view-history" id="history">
@@ -68,7 +70,7 @@ if (isset($_POST["logout"])) {
 		</form>
 	</div>
 	<form action="" method="POST">
-		<input type="submit" name="logout" value="ログアウト">
+		<input type="submit" name="logout" value="ログアウト" id="submit" style="display: none;">
 	</form>
 	<script>
 		// mypage.jsに対して、sqlの結果を返す

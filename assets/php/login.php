@@ -43,12 +43,16 @@ if (isset($_POST["login"])) {
                 if ($_SESSION['HS'] == "edit") {
                     $result = "編集画面で";
                     header("Location:./edit.php");
-                }
-                // マイページボタンクリックで"mypage"を代入
-                if ($_SESSION['HS'] == "mypage") {
+                }elseif ($_SESSION['HS'] == "mypage") {
                     $result = "マイページで";
                     header("Location:./mypage.php");
+                }elseif ($_SESSION['HS'] == "gift") {
+                    $result = "ギフトページで";
+                    header("Location:./gift.php");
+                }else {
+                    header("Location./mypage.php");   
                 }
+
             } else {
                 $errorMessage = "ユーザ―名または、パスワードに誤りがあります";
             }

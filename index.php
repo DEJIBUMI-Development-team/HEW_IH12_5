@@ -1,97 +1,148 @@
 <?php
 session_start();
-    $result = "";
-    if (isset($_POST['add'])) {
-      $_SESSION['HS'] = 'edit';//セッション変数に登録
-      $result = "編集画面で";
-      // echo $_SESSION['HS'];
-      header("Location:a.php");
-    }
-    elseif (isset($_POST['update'])) {
-      $_SESSION['HS'] = 'mypage';//セッション変数に登録
-      $result = "マイページで";
-      // echo $_SESSION['MY'];
-      header("Location:a.php");
-    }
+$result = "";
+if (isset($_POST['add'])) {
+	$_SESSION['HS'] = 'edit'; //セッション変数に登録
+	$result = "編集画面で";
+	// echo $_SESSION['HS'];
+	header("Location:./assets/php/signup.php");
+} elseif (isset($_POST['update'])) {
+	$_SESSION['HS'] = 'mypage'; //セッション変数に登録
+	$result = "マイページで";
+	// echo $_SESSION['MY'];
+	header("Location:./assets/php/mypage.php");
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>でじぶみ</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-		<link rel="stylesheet" href="assets/css/reset.css">
-		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="assets/css/animation.css">
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
-    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
-	</head>
-	<body>
-		<header></header>
-		<main>
 
-			<div id="backgrounds">
-				<div class="water1 back"></div>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>でじぶみ</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/animation.css">
+	<link rel="stylesheet" href="./assets/css/header.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+	<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
+	<link rel="stylesheet" href="./assets/css/header.css">
+	<link rel="stylesheet" href="./assets/css/footer.css">
+	<link rel="stylesheet" href="./assets/css/reset.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="body_box">
+	<?php include("./assets/php/header.php") ?>
+	<main>
+		<!-- 右下固定ボタン -->
+		<div class="container">
+			<p>
+				<a href="./assets/img/dejibumi.mp4" id="video-open" class="video-open elm" style="opacity:0;">サイト説明動画</a>
+			</p>
+		</div>
+
+		<!-- 背景 -->
+		<div id="backgrounds">
+			<div class="water1 back"></div>
+		</div>
+
+		<div id="first_view">
+			<div class="blur">届けよう、その想い。</div>
+			<div class="hover_text hover_tgl">
+				<h3>新たな手紙のカタチ</h3>
+				<h3>伝えたい想いを</h3>
+				<h3>でじぶみで</h3>
+			</div>
+			<img class="icon" src="assets/img/logo.png" alt="">
+			<div class="scrolldown1"><span>Scroll</span></div>
+		</div>
+
+		<div id="first_content">
+			<h2 class="Explanation">作り方は簡単３ステップ</h2>
+			<div id="Eslider">
+				<p id="Ebutton-left" onclick="go_back()"></p>
+				<img id="mypic" src="./assets/img/Explanation-01.png" width="400" height="300">
+				<p id="Ebutton-right" onclick="go_forward()"></p>
 			</div>
 
-			<div id="first_view">
-			 <div class="blur">届けよう、その想い。</div>
-			 <div><img class="icon" src="assets/img/logo.png" alt=""></div>
-			</div>
+		</div>
 
-			<div id="first_content">
-			 <!-- <video controls src="assets/img/dejibumi.mp4" style="height: 50%;"></video> -->
-			 <h2>でじぶみ説明動画</h2>
-       <!-- 無限に波が広がる -->
-       <a href="assets/img/dejibumi.mp4" class="btnripple2 video-open"><span></span></a>
-			</div>
-
-			<div id="second_content" class="cf">
+		<div id="second_content" class="cf">
 			<div id="top_wrapper">
 
-				 <!-- 見出しnumber -->
-				 <form action="index.php" method="post">
-				  <button type="submit" name="update"><h2 id="lnk_00" class="obj trans_bg lnk action"><img src="assets/img/00.jpg" alt=""></h2></button>
-					<button type="submit" name="update"><h2 id="lnk_01" class="obj trans_bg lnk action"><img src="assets/img/01.jpg" alt=""></h2></button>
-					<button type="submit" name="update"><h2 id="lnk_02" class="obj trans_bg lnk action"><img src="assets/img/02.jpg" alt=""></h2></button>
-					<button type="submit" name="update"><h2 id="lnk_03" class="obj trans_bg lnk action"><img src="assets/img/03.jpg" alt=""></h2></button>
-				 </form>
+				<!-- 見出しnumber -->
+				<form action="index.php" method="post">
 
-				 <!-- コンテンツ写真 -->
-				 <form action="index.php" method="post">
-				  <a href="assets/php/signup.php"><img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-					<a href="assets/php/signup.php"><img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" alt=""/></a>
-				 </form>
+					<div class="css-speech-bubble">
+						<label for="submit">
+							<img src="assets/img/00.jpg" id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">
+						</label>
+						<input class="text" type="submit" id="submit" name="update" style="display:none">
+						<p class="speech-bubble">吹き出しが表示されます</p>
+					</div>
 
-				 <!-- SVGアニメーション -->
-				 <svg id="stitch_08" class="obj stitch delayScroll">
-				  <line class="line" x1="0" x2="5"   y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="10"  y1="0" y2="10"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="15"  y1="0" y2="15"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="20"  y1="0" y2="20"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="25"  y1="0" y2="25"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="30"  y1="0" y2="30"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="35"  y1="0" y2="35"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="40"  y1="0" y2="40"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="45"  y1="0" y2="45"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="50"  y1="0" y2="50"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="55"  y1="0" y2="55"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="60"  y1="0" y2="60"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="65"  y1="0" y2="65"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="70"  y1="0" y2="70"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="75"  y1="0" y2="75"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="80"  y1="0" y2="80"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="85"  y1="0" y2="85"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="90"  y1="0" y2="90"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line class="line" x1="0" x2="95"  y1="0" y2="95"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<div class="css-speech-bubble2">
+						<label for="submit1">
+							<img src="assets/img/01.jpg" id="lnk_01" class="obj trans_bg lnk action" style="cursor: pointer;">
+						</label>
+						<input class="text2" type="submit" id="submit1" name="update" style="display:none">
+						<p class="speech-bubble2">吹き出しが表示されます</p>
+					</div>
+
+					<div class="css-speech-bubble3">
+						<label for="submit2">
+							<img src="assets/img/02.jpg" id="lnk_02" class="obj trans_bg lnk action" style="cursor: pointer;">
+						</label>
+						<input class="text3" type="submit" id="submit2" name="update" style="display:none">
+						<p class="speech-bubble3">吹き出しが表示されます</p>
+					</div>
+
+					<div class="css-speech-bubble4">
+						<label for="submit3">
+							<img src="assets/img/03.jpg" id="lnk_03" class="obj trans_bg lnk action" style="cursor: pointer;">
+						</label>
+						<input class="text4" type="submit" id="submit3" name="update" style="display:none">
+						<p class="speech-bubble4">吹き出しが表示されます</p>
+					</div>
+
+				</form>
+
+				<!-- コンテンツ写真 -->
+				<form action="index.php" method="post">
+					<img src="./assets/img/photo_01.jpg" id="photo_01" class="obj photo Shadow fadeInTrigger" name="update" alt="" />
+					<img src="./assets/img/photo_02.jpg" id="photo_02" class="obj photo Shadow fadeInTrigger" name="update" alt="" />
+					<img src="./assets/img/photo_03.jpg" id="photo_03" class="obj photo Shadow fadeInTrigger" name="update" alt="" />
+					<img src="./assets/img/photo_04.jpg" id="photo_04" class="obj photo Shadow fadeInTrigger" name="update" alt="" />
+					<img src="./assets/img/photo_05.jpg" id="photo_05" class="obj photo Shadow fadeInTrigger" name="update" alt="" />
+					<img src="./assets/img/photo_06.jpg" id="photo_06" class="obj photo Shadow fadeInTrigger" name="update" alt="" />
+				</form>
+
+				<!-- SVGアニメーション -->
+				<svg id="stitch_08" class="obj stitch delayScroll">
+					<line class="line" x1="0" x2="5" y1="0" y2="5" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="10" y1="0" y2="10" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="15" y1="0" y2="15" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="20" y1="0" y2="20" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="25" y1="0" y2="25" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="30" y1="0" y2="30" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="35" y1="0" y2="35" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="40" y1="0" y2="40" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="45" y1="0" y2="45" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="50" y1="0" y2="50" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="55" y1="0" y2="55" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="60" y1="0" y2="60" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="65" y1="0" y2="65" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="70" y1="0" y2="70" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="75" y1="0" y2="75" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="80" y1="0" y2="80" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="85" y1="0" y2="85" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="90" y1="0" y2="90" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line class="line" x1="0" x2="95" y1="0" y2="95" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="100" y1="0" y2="100" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="105" y1="0" y2="105" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="110" y1="0" y2="110" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -187,12 +238,12 @@ session_start();
 					<line class="line" x1="0" x2="560" y1="0" y2="560" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="565" y1="0" y2="565" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line class="line" x1="0" x2="570" y1="0" y2="570" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-				 </svg>
-				 <svg id="stitch_01" class="obj stitch deg45">
+				</svg>
+				<svg id="stitch_01" class="obj stitch deg45">
 					<desc>Created with Snap</desc><!-- SEOテキスト -->
 					<path d="M130,26 A104,104 0 0,1 130,234" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path><!-- SVGに関する視覚的情報 -->
-				 </svg>
-				 <svg id="stitch_02" class="obj stitch">
+				</svg>
+				<svg id="stitch_02" class="obj stitch">
 					<desc>Created with Snap</desc>
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
@@ -319,29 +370,29 @@ session_start();
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path class="fadeup" d="M105,21 A84,84 0 1,1 103.53399785926818,21.012793606863127" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
-				 </svg>  
-				 <svg id="stitch_03" class="obj stitch delayScroll">
+				</svg>
+				<svg id="stitch_03" class="obj stitch delayScroll">
 					<desc>Created with Snap</desc>
-					<line x1="480" x2="480" y1="0" y2="0"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="475" y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="470" y1="0" y2="10"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="465" y1="0" y2="15"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="460" y1="0" y2="20"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="455" y1="0" y2="25"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="450" y1="0" y2="30"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="445" y1="0" y2="35"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="440" y1="0" y2="40"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="435" y1="0" y2="45"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="430" y1="0" y2="50"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="425" y1="0" y2="55"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="420" y1="0" y2="60"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="415" y1="0" y2="65"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="410" y1="0" y2="70"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="405" y1="0" y2="75"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="400" y1="0" y2="80"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="395" y1="0" y2="85"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="390" y1="0" y2="90"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="385" y1="0" y2="95"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="480" y1="0" y2="0" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="475" y1="0" y2="5" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="470" y1="0" y2="10" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="465" y1="0" y2="15" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="460" y1="0" y2="20" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="455" y1="0" y2="25" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="450" y1="0" y2="30" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="445" y1="0" y2="35" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="440" y1="0" y2="40" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="435" y1="0" y2="45" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="430" y1="0" y2="50" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="425" y1="0" y2="55" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="420" y1="0" y2="60" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="415" y1="0" y2="65" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="410" y1="0" y2="70" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="405" y1="0" y2="75" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="400" y1="0" y2="80" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="395" y1="0" y2="85" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="390" y1="0" y2="90" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="385" y1="0" y2="95" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="380" y1="0" y2="100" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="375" y1="0" y2="105" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="370" y1="0" y2="110" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -399,54 +450,54 @@ session_start();
 					<line x1="480" x2="110" y1="0" y2="370" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="105" y1="0" y2="375" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="480" x2="100" y1="0" y2="380" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="95"  y1="0" y2="385" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="90"  y1="0" y2="390" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="85"  y1="0" y2="395" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="80"  y1="0" y2="400" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="75"  y1="0" y2="405" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="70"  y1="0" y2="410" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="65"  y1="0" y2="415" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="60"  y1="0" y2="420" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="55"  y1="0" y2="425" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="50"  y1="0" y2="430" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="45"  y1="0" y2="435" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="40"  y1="0" y2="440" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="35"  y1="0" y2="445" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="30"  y1="0" y2="450" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="25"  y1="0" y2="455" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="20"  y1="0" y2="460" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="15"  y1="0" y2="465" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="10"  y1="0" y2="470" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="5"   y1="0" y2="475" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="480" x2="0"   y1="0" y2="480" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-				 </svg>
-				 <svg id="stitch_04" class="obj stitch delayScroll">
+					<line x1="480" x2="95" y1="0" y2="385" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="90" y1="0" y2="390" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="85" y1="0" y2="395" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="80" y1="0" y2="400" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="75" y1="0" y2="405" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="70" y1="0" y2="410" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="65" y1="0" y2="415" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="60" y1="0" y2="420" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="55" y1="0" y2="425" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="50" y1="0" y2="430" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="45" y1="0" y2="435" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="40" y1="0" y2="440" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="35" y1="0" y2="445" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="30" y1="0" y2="450" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="25" y1="0" y2="455" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="20" y1="0" y2="460" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="15" y1="0" y2="465" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="10" y1="0" y2="470" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="5" y1="0" y2="475" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="480" x2="0" y1="0" y2="480" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+				</svg>
+				<svg id="stitch_04" class="obj stitch delayScroll">
 					<desc>Created with Snap</desc>
-					<line x1="0" x2="5"   y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="10"  y1="0" y2="10"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="15"  y1="0" y2="15"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="20"  y1="0" y2="20"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="25"  y1="0" y2="25"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="30"  y1="0" y2="30"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="35"  y1="0" y2="35"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="40"  y1="0" y2="40"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="45"  y1="0" y2="45"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="50"  y1="0" y2="50"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="55 " y1="0" y2="55"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="60"  y1="0" y2="60"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="65"  y1="0" y2="65"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="70"  y1="0" y2="70"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="75"  y1="0" y2="75"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="80"  y1="0" y2="80"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="85"  y1="0" y2="85"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="90"  y1="0" y2="90"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="95"  y1="0" y2="95"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="5" y1="0" y2="5" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="10" y1="0" y2="10" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="15" y1="0" y2="15" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="20" y1="0" y2="20" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="25" y1="0" y2="25" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="30" y1="0" y2="30" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="35" y1="0" y2="35" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="40" y1="0" y2="40" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="45" y1="0" y2="45" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="50" y1="0" y2="50" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="55 " y1="0" y2="55" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="60" y1="0" y2="60" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="65" y1="0" y2="65" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="70" y1="0" y2="70" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="75" y1="0" y2="75" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="80" y1="0" y2="80" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="85" y1="0" y2="85" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="90" y1="0" y2="90" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="95" y1="0" y2="95" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="100" y1="0" y2="100" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="105" y1="0" y2="105" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="110" y1="0" y2="110" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="115" y1="0" y2="115" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="120" y1="0" y2="120" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-          <line x1="0" x2="125" y1="0" y2="125" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="125" y1="0" y2="125" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="130" y1="0" y2="130" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="135" y1="0" y2="135" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="140" y1="0" y2="140" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -502,8 +553,8 @@ session_start();
 					<line x1="0" x2="390" y1="0" y2="390" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="395" y1="0" y2="395" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="400" y1="0" y2="400" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-				 </svg>
-				 <svg id="stitch_05" class="obj stitch deg180">
+				</svg>
+				<svg id="stitch_05" class="obj stitch deg180">
 					<desc>Created with Snap</desc>
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
@@ -590,19 +641,19 @@ session_start();
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
 					<path d="M125,25 A100,100 0 0,1 125,225" stroke="#000000" fill="none" style="stroke-width: 1; stroke-dasharray: 5, 5;"></path>
-				 </svg>
-				 <svg id="stitch_06" class="obj stitch delayScroll">
+				</svg>
+				<svg id="stitch_06" class="obj stitch delayScroll">
 					<desc>Created with Snap</desc>
-					<line x1="0" x2="0" y1="0" y2="5"   fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="15"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="25"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="35"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="45"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="55"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="65"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="75"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="85"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-					<line x1="0" x2="0" y1="0" y2="95"  fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="5" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="15" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="25" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="35" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="45" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="55" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="65" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="75" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="85" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
+					<line x1="0" x2="0" y1="0" y2="95" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="0" y1="0" y2="105" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="0" y1="0" y2="115" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="0" y1="0" y2="125" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
@@ -636,33 +687,34 @@ session_start();
 					<line x1="0" x2="0" y1="0" y2="405" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="0" y1="0" y2="415" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
 					<line x1="0" x2="0" y1="0" y2="425" fill="none" stroke="#000000" style="stroke-width: 1; stroke-dasharray: 5, 5;"></line>
-				 </svg>
-				</div>				
+				</svg>
 			</div>
+		</div>
 
-			<div id="third_content">
-				<h2 class="gift">贈り物</h2>
-					<div class="sliderArea">
-						<div class="sliderWide">
-							<ul class="slider">
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto01.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto02.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto03.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto04.jpg" alt="125naroom"></a></li>
-								<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto05.jpg" alt="125naroom"></a></li>
-							</ul>
-						</div>
-					</div>
+		<div id="third_content">
+			<h2 class="gift">贈り物</h2>
+			<div class="sliderArea">
+				<div class="sliderWide">
+					<ul class="slider">
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto01.jpg" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto02.jpg" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto03.jpg" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto04.jpg" alt="125naroom"></a></li>
+						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="https://125naroom.com/demo/img/itukanokotonokoto05.jpg" alt="125naroom"></a></li>
+					</ul>
 				</div>
-			
-		</main>
-		<footer></footer>
+			</div>
+		</div>
 
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-		<script type="text/javascript" src="assets/js/svg.js"></script>
-		<script type="text/javascript" src="assets/js/slick.min.js"></script>
-		<script type="text/javascript" src="assets/js/index.js"></script>
-	</body>
+	</main>
+	<?php include("./assets/php/footer.php") ?>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+	<script type="text/javascript" src="./assets/js/svg.js"></script>
+	<script type="text/javascript" src="./assets/js/slick.min.js"></script>
+	<script type="text/javascript" src="./assets/js/index.js"></script>
+</body>
+
 </html>
