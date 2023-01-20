@@ -16,7 +16,7 @@
 <header class="navigator">
   <div class="navigator_content">
     <div class="navigator_left">
-      <a href="index.html"><img src="../img/logo.png" alt="logo"></a>
+      <a href="main.php"><img src="../img/logo.png" alt="logo"></a>
       <a href="">手紙一覧</a>
       <a href="">ギフト</a>
       <a href="">マイページ</a>
@@ -36,7 +36,7 @@
 
 <section class="gift_list">
   <div class="gift_list_content">
-    <a href=""><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
+    <a href="gift1.php"><img src="../img/list.jpg" alt=""><p>NEW GIFTS</p></a>
     <a href=""><img src="../img/list1.jpg" alt=""><p>誕生日 プレゼント</p></a>
     <a href=""><img src="../img/list2.jpg" alt=""><p>配達 プレゼント</p></a>
     <a href=""><img src="../img/list3.jpg" alt=""><p>結婚 プレゼント</p></a>
@@ -102,7 +102,7 @@
 
         <div id="tab-1" class="tab-content current">
           <section class="brand_item">
-            <a href="">
+            <a href="starbucks.php">
             <div class="item_name">
               <img src="../img/Starbucks.png">
               <p>スターバックス</p>

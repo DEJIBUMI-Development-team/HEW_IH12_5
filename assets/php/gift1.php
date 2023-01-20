@@ -31,7 +31,7 @@
 
 <section class="new_gift">
   <div class="new_gift_title">
-    <a href="gift1.html"><img src="../img/list.jpg"></a>
+    <a href="gift1.php"><img src="../img/list.jpg"></a>
     <h2>NEW GIFTS
     <p>新しいプレゼントを紹介します。</p>
     </h2>

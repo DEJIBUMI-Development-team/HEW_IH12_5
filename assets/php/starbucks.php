@@ -40,7 +40,7 @@
 
   <div class="Starbucks_menu1">
     <section class="Starbucks_item">
-      <a href="">
+      <a href="shohin.php">
       <div class="item_name">
         <img src="../img/starbucks/stame.jpg">
       <div class="item_title">
