@@ -50,24 +50,11 @@ if (isset($_POST["logout"])) {
 		</p>
 	</div>
 	<div class="container">
-<<<<<<< HEAD
-		<div class="item n01">
-			<p>・test<br>・test<br>・test<br>・test<br></p>
-		</div>
-		<div>
-			<div class="set-flex">
-				<div class="item n02"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"></a></div>
-				<div class="item n03"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a></div>
-			</div>
-			<div class="set-flex2">
-			</div>
-=======
 		<div class="set-flex">
 			<div class="item n01"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"><br></a><p>決済情報</p></div>
 			<div class="item n02"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a><p>クレジットカード</p></div>
 			<div class="item n03"><a href="barcode.php"><img src="../img/barcode.png" alt="バーコード決済"></a><p>バーコード決済</p></div>
 			<div class="item n04"><a href="logout.php"><img src="../img/logout.png" alt="ログアウト"></a><p>ログアウト</p></div>
->>>>>>> 68a5ef47dfbb6714fa8555c6d645dfa6632de16c
 		</div>
 	</div>
 	<div class="view-history" id="history">
@@ -75,15 +62,9 @@ if (isset($_POST["logout"])) {
 			<input type="submit" name="new" value="でじぶみを新規作成">
 		</form>
 	</div>
-<<<<<<< HEAD
-	<form action="" method="POST">
-		<input type="submit" name="logout" value="ログアウト">
-	</form>
-=======
 	<!-- <form action="" method="POST">
 		<input type="submit" name="logout" value="ログアウト">
 	</form> -->
->>>>>>> 68a5ef47dfbb6714fa8555c6d645dfa6632de16c
 	<script>
 		// mypage.jsに対して、sqlの結果を返す
 		function get_edit_history() {
