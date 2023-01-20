@@ -108,6 +108,10 @@ transition: 0.5s ease;}
 .category_list_content a:hover{color: #666;
 opacity: 0.5;}
 
+.multiple-items p{text-align: center;
+margin-top: 10px;
+width: 175px;}
+
 .slick-arrow{position: absolute; top:50%; transform: translateY(-50%);
 width: 20px;
 height: 30px;

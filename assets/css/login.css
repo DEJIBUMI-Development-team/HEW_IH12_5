@@ -6,7 +6,7 @@ setting
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 html,body   {height:100%; overflow: hidden;}
-body  {min-width:960px; width:100%; color:#666; letter-spacing:3pt;}
+body  {min-width:960px; width:100%; color:#666; letter-spacing:3pt; margin: 0;}
 body a  {color:#666;}
 
 ::selection {background: #fff; color: #98d9e7;}
@@ -71,7 +71,7 @@ first_view
   
   .icon{
     width: 40vw;
-    max-width: 500px;
+    max-width: 330px;
     aspect-ratio: 1;
     border-radius:50%;
     object-fit: cover;
