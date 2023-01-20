@@ -522,6 +522,7 @@ second_content
   background: #33cc99;
   color: #fff;
   font-weight: bold;
+  z-index: 10;
 }
 .speech-bubble2:after {
   position: absolute;
@@ -538,6 +539,92 @@ second_content
   content: " ";
 }
 .text2:hover + .speech-bubble2 {
+  display: block;
+}
+/*---------------------吹き出し3-----------------------*/
+.css-speech-bubble3 {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.text3 {
+  width: 200px;
+  /* position: relative; */
+  /* margin:80px 50px 50px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.speech-bubble3 {
+  display: none;
+  width: 200px;
+  position: absolute;
+  top: 585px;
+  left: 279px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10;
+}
+.speech-bubble3:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text3:hover + .speech-bubble3 {
+  display: block;
+}
+/*---------------------吹き出し4-----------------------*/
+.css-speech-bubble4 {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.text4 {
+  width: 200px;
+  /* position: relative; */
+  /* margin:80px 50px 50px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.speech-bubble4 {
+  display: none;
+  width: 200px;
+  position: absolute;
+  top: 585px;
+  left: 279px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10;
+}
+.speech-bubble4:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text4:hover + .speech-bubble4 {
   display: block;
 }
 /* ------------------------------------------------

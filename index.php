@@ -85,23 +85,22 @@ session_start();
 						<p class="speech-bubble2">吹き出しが表示されます</p>
 					</div>
 
-					<div class="css-speech-bubble">
-						<button type="submit" name="update" class="text">
-							<h2 id="lnk_02" class="obj trans_bg lnk action">
-								<img src="assets/img/02.jpg" alt="">
-							</h2>
-						</button>
-						<p class="speech-bubble">吹き出しが表示されます</p>
+					<div class="css-speech-bubble3">
+						<label for="submit2">
+							<img src="assets/img/02.jpg" id="lnk_02"  class="obj trans_bg lnk action" style="cursor: pointer;">
+						</label>
+						<input class="text3" type="submit" id="submit2" name="update" style="display:none">
+						<p class="speech-bubble3">吹き出しが表示されます</p>
 					</div>
 
-						<div class="css-speech-bubble">
-						<button type="submit" name="update" class="text">
-							<h2 id="lnk_03" class="obj trans_bg lnk action">
-								<img src="assets/img/03.jpg" alt="">
-							</h2>
-						</button>
-						<p class="speech-bubble">吹き出しが表示されます</p>
+					<div class="css-speech-bubble4">
+						<label for="submit3">
+							<img src="assets/img/03.jpg" id="lnk_03"  class="obj trans_bg lnk action" style="cursor: pointer;">
+						</label>
+						<input class="text4" type="submit" id="submit3" name="update" style="display:none">
+						<p class="speech-bubble4">吹き出しが表示されます</p>
 					</div>
+
 					</form>
 
 					<!-- コンテンツ写真 -->
