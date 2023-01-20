@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+body,h1,h2,h3,h4,p,ul{margin: 0;
+padding: 0;
+overflow-x: hidden;}
+
+.box00{width: 1280px;
+    margin: 0 auto;}
+
+ul{list-style: none;}
+
+a{text-decoration: none;}*/
+
+* {box-sizing: border-box;} 
+
+body {font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック''Yu Gothic','メイリオ''ＭＳ Ｐゴシック','MS PGothic';
+line-height: 1.8;}
+
+header{font-family: 'Kaisei Decol', serif;
+    font-family: 'Shippori Mincho', serif;}
+
+/*background*/
+.water{position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url(../image/water_blue1.jpg);}
+
+/*ヘッダー*/
+.navigator{position:block;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;}
+
+.navigator_content{display: flex;
+    align-items: center;
+    width: 100%;}
+
+.navigator_content img{width: 150px;}    
+
+.navigator_content a{font-size: 20px;
+    font-weight: bold;
+    color: black;}
+
+.navigator_left{display: flex;
+    align-items: center;}
+
+.navigator_left a{margin: 20px;}
+
+.navigator_right{margin-left: auto;}  
+
+.navigator_right a{margin-right: 30px;}
+
+/*mainimg*/
+.image-box{width: 1900px;
+margin: 0 auto;}
+
+
+/*giftlist*/
+.gift_list{width: 1180px;
+margin: 80px auto 100px;
+padding: 0 16px;}
+
+.gift_list_content{display: flex;}
+
+.gift_list_content img{width: 175px;
+height: 175px;
+border-radius: 100%;
+margin: 10px;}
+
+.gift_list_content p{font-size: 18px;
+font-weight: bold;
+color: #000;
+text-align: center;}
+
+.gift_list_content a{color:#000;
+transition: 0.5s ease;}
+
+.gift_list_content a:hover{color: #666;
+opacity: 0.5;}
+
+/*category_list*/
+.category_list{width: 1180px;
+margin: 40px auto 80px;
+padding: 0 16px;}
+
+.category_list h1{font-size: 28px;
+font-weight: bold;}
+
+.category_list_content{width: 1180px;
+margin: 50px auto 40px;
+padding: 0 16px;}
+
+.category_list_content img{width: 175px;
+height: 175px;
+border-radius: 10%;}
+
+.category_list_content p{font-size: 18px;
+font-weight: bold;
+text-align: center;}
+
+.category_list_content a{color:#000;
+transition: 0.5s ease;}
+
+.category_list_content a:hover{color: #666;
+opacity: 0.5;}
+
+.multiple-items p{text-align: center;
+margin-top: 10px;
+width: 175px;}
+
+.slick-arrow{position: absolute; top:50%; transform: translateY(-50%);
+width: 20px;
+height: 30px;
+border: none;
+text-indent: -9999px; overflow: hidden;}
+
+.slick-prev{z-index: 100;left: -5%;
+background: url(../image/angle-left-solid.svg);}
+
+.slick-next{z-index: 100; right: -5%;
+background: url(../image/angle-right-solid.svg);}
+
+/*best_list*/
+.best_list{width: 1000px;
+margin: 80px auto 100px;
+padding: 0 16px;}
+    
+.best_list h1{font-size: 20px;
+font-weight: bold;
+margin:20px;
+text-align: center;}
+    
+.best_list_content{width: 1000px;
+margin: 50px auto 40px;
+padding: 0 16px;}
+
+.best_list_content img{width: 220px;
+height: 200px;
+border-radius: 5%;}
+
+
+/*brand_list*/
+.brand_list{width: 1180px;
+margin: 60px auto;
+padding: 0 20px;}
+    
+.brand_list h1{font-size: 30px;
+font-weight: bold;
+margin: 10px;}
+
+.brand_list_wrapper{width: 1180px;
+margin: 26px auto 18px;
+padding: 0;}
+
+.brand_list_category{display: flex;
+flex-wrap: wrap;}
+
+.brand_list_category ul{list-style: none;
+display: flex;
+font-size: 16px;
+font-weight: 600;}
+
+.brand_list_category li{width: 120px;
+margin: 10px;
+padding: 10px;
+border-radius: 20px;
+background: #f3f3f3;
+cursor: pointer;
+text-align: center;}
+
+.brand_list_category li:hover{color: #666;
+opacity: 0.5;}
+
+.tab-content{display: none;
+padding: 15px;}
+  
+.tab-content.current{width: 1280px;
+display: flex;
+flex-wrap: wrap;}
+
+.brand_item{width: 275px;
+height: 275px;
+padding: 10px;
+margin: 10px;}
+
+.brand_item:hover{background-color: #666;
+opacity: 0.5;}
+
+.item_name{display: flex;
+text-align: center;
+align-items: center;
+margin-bottom: 20px;}
+
+.item_name img{width: 50px;
+height: 50px;
+mix-blend-mode: multiply;}
+
+.item_name p{margin-left: 15px;
+color: #000;
+font-weight: 600;}
+
+.item_list{margin: 10px;}
+
+.item_list img{width: 250px;
+height: 150px;
+border-radius: 15px;}
+
+/* 配達 */
+.haitatsu img{width: 100%;
+mix-blend-mode: multiply;}
+    
+.haitatsu ul{width: 1200px;
+margin: 0 auto;  
+display: flex;
+margin-top: 10px;}
+    
+.haitatsu li{align-items: center;
+margin: 0 auto ;
+margin-bottom: 20px;}
+
+/* footer-box */
+.top_element{border-top: 1px solid #bcc9dd;
+border-bottom: 1px solid #bcc9dd;
+height: 50px;
+background-color: #dce2ec;}
+        
+.top_inner{width: 1280px;
+margin: 0 auto;}
+        
+.footer_menu{overflow: hidden;
+float: left;
+display: flex;}
+        
+.footer_menu li {margin-top: 10px;}
+        
+.footer_menu a{color: #000;
+font-size: 15px;
+font-weight: bold;
+margin-right: 15px;}
+        
+.footer_menu a:hover{text-decoration: underline;}
+        
+span{color: #1e43bd;}
+        
+.sns{float: right;
+display: flex;}
+        
+.sns li {margin-right: 40px;
+margin-top: 10px;}
+        
+.sns a{color: #333;
+font-weight: bold;
+font-size: 20px;}
+        
+.body_element{background-color: #ecf1f7;}
+        
+.body_inner{width: 1280px;
+margin: 0 auto;
+padding: 20px;
+display: flex;}
+          
+.footer_logo img{width: 100px;
+height: 100px;}
+        
+.footer_info {float: left;
+line-height: 25px;
+padding-top: 20px;}
+        
+.footer_info p{font-size: 15px;
+color: #333;
+align-items: center;}

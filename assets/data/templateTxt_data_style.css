@@ -1,0 +1,187 @@
+@font-face {
+	font-family: "yosugara";
+	src: url(./fonts/yosugara1.1.ttf);
+}
+@font-face {
+	font-family: "karakaze";
+	src: url(./fonts/karakaze-R.ttf);
+}
+@font-face {
+	font-family: "yunafont";
+	src: url(./fonts/YuNaFont.ttf);
+}
+@font-face {
+	font-family: "Asobifont";
+	src: url(./fonts/AsobiMemogaki-Regular-1-01.ttf);
+}
+
+
+/* data-txt */
+.fit p,
+.fit h4,
+.fit h1{	
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.ft_content{
+    width: 300px;
+	height: fit-content;
+    position: absolute;
+}
+.sc_content{
+    width: 250px;
+	height: fit-content;
+    position: absolute;
+}
+.th_content{
+    width: 200px;
+	height: fit-content;
+    position: absolute;
+}
+
+.edit_svg{
+    /* コンテンツを回転して表示する際はここをいじる */
+    transform: rotate(0deg);
+	width: 100%;
+	height: fit-content;
+
+	z-index: 0;
+}
+.fit {
+	width: fit-content;
+	height: fit-content;
+}
+
+.rotate-center {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+    visibility: hidden;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.rotate{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: yellow;
+    visibility: hidden;
+	z-index: 2;
+	left: 50%;
+	top: -20%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+.rotate_fix{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	background-image: url("../img/rotate.png");
+	background-size: cover;
+	z-index: 3;
+	left: 50%;
+	top: -30px;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+}
+
+/* .rotate_fix img{
+	width: 30px;
+	height: 30px;
+	z-index: 2;
+} */
+/* data_img */
+.img_data {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url(../data/img_data/harinezumi.PNG);
+    background-repeat: no-repeat;
+    background-size: 600px, auto;
+    background-position: center;
+}
+
+/* resize style */
+.resizer {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	/* border-radius: 5px; */
+	background-color: #fff;
+	border: solid 1px #000;
+	z-index: 2;
+}
+.resizer:hover,
+.resizer:active{
+	border-radius: 5px;
+	background-color: blue;
+	border:none;
+}
+
+.resizer-tl {
+	top: -5px;
+	left: -5px;
+	cursor: nw-resize;
+}
+
+.resizer-tc {
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: n-resize;
+}
+
+.resizer-tr {
+	top: -5px;
+	right: -5px;
+	cursor: ne-resize;
+}
+
+.resizer-cl {
+	top: 50%;
+	left: 0%;
+	transform: translate(-50%, -50%);
+	cursor: w-resize;
+}
+
+.resizer-cr {
+	top: 50%;
+	left: 100%;
+	transform: translate(-50%, -50%);
+	cursor: e-resize;
+}
+
+.resizer-bl {
+	bottom: -5px;
+	left: -5px;
+	cursor: sw-resize;
+}
+
+.resizer-bc {
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: s-resize;
+}
+
+.resizer-br {
+	bottom: -5px;
+	right: -5px;
+	cursor: se-resize;
+}
+
+.on_n {
+	display: block;
+}
+.on_h {
+    border: solid 1px #000;
+}
+

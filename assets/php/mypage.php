@@ -1,6 +1,6 @@
 <?php
 include("./db.php");
-// include("./ChromePhp.php");
+include("./ChromePhp.php");
 session_start();
 if (!empty($_SESSION["user_id"])) {
 	$user_id = $_SESSION["user_id"];

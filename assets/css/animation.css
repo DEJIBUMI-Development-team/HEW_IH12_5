@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*---------------------------------------------------------------------
+Common layout
+---------------------------------------------------------------------*/
+/* .target  {-moz-transition:    all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          -ms-transition:     all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          transition:         all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+          -webkit-transform: translate(0,30px);
+          -moz-transform:    translate(0,30px);
+          -ms-transform:     translate(0,30px);
+          transform:         translate(0,30px);
+          opacity:0;} */
+/* .action  {-webkit-transform: translate(0,0);
+          -moz-transform:    translate(0,0);
+          -ms-transform:     translate(0,0);
+          transform:         translate(0,0);
+          opacity:1} */
+
+
+
+/* ------------------------------------------------
+second_content 
+--------------------------------------------------- */
+
+/*----------- IMG ----------*/
+.In{
+  animation-name: fadeInAnime;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+
+/*----------- SVG ----------*/
+
+/* その場で */
+.fadein{
+  animation-name:fadeInAnime;/* アニメーションの名前を定義 */
+  animation-duration:0.1s;/* 再生時間 */
+  animation-fill-mode:forwards;
+  opacity:0;/* 初期非表示 */
+  }
+  
+/* SVG IMG 対応 */
+
+.fadeInTrigger{
+  opacity: 0;
+}
+
+  @keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
