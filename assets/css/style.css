@@ -278,10 +278,10 @@ first_view
   animation-name:iconAnime;
   animation-duration:3.3s;
   padding: 10px;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
-.icon:hover {
+.icon_top {
   left: 40%;
 }
 
