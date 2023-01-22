@@ -234,6 +234,27 @@ main {
     z-index: 100;
     transition: 0.3s ease-in-out;
 }
+.select_1{
+    background-repeat: no-repeat;
+    background-size: 92%;
+    background-position-x: 58%;
+    background-position-y: 110%;
+    background-image: url(../img/save_icon.png);
+}
+.select_2{
+    background-repeat: no-repeat;
+    background-size: 92%;
+    background-position-x: 58%;
+    background-position-y: 110%;
+    background-image: url(../img/img_icon.png);
+}
+.select_3 {
+    background-repeat: no-repeat;
+    background-size: 92%;
+    background-position-x: 58%;
+    background-position-y: 110%;
+    background-image: url(../img/text.png);
+}
 
 .select_off {
     background-color: #656565;
