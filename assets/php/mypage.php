@@ -45,11 +45,13 @@ if (isset($_POST["logout"])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/mypage.css">
+	<link rel="stylesheet" href="../css/header.css">
 	<title>マイページ</title>
 </head>
 
 <body>
-	<h2>でじぶみページ</h2>
+	<?php include("./header.php")?>
+	<h2>マイページ</h2>
 	<div class="user_icon">
 		<img src="../img/user_icon.svg" alt="マイページ">
 		<p>
