@@ -147,9 +147,6 @@ const hover_text = document.querySelector(".hover_text");
 
 let scroll_offset = 0;
 
-const hover_icon = document.querySelector(".icon");
-const hover_text = document.querySelector(".hover_text");
-
 window.addEventListener("scroll",()=>{
   debugger;
   scroll_offset = window.pageYOffset;
@@ -161,8 +158,6 @@ window.addEventListener("scroll",()=>{
     hover_icon.classList.add("icon_top");
     hover_text.classList.remove("hover_tgl");
     header_element.classList.add("scroll_tgl");
-    hover_icon.classList.add("icon_top");    
-    hover_text.classList.remove("hover_tgl");
   }
 });
 window.addEventListener("load", () => {
