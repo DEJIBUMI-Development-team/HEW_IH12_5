@@ -183,6 +183,7 @@ h2 {
 .history-content{
   display: flex;
   padding: 20px;
+  border-top: dashed 1px #000;
 }
 
 .history {
@@ -249,7 +250,8 @@ h2 {
 }
 
 .new_edit{
-  width: 100px;
+  width: 116px;
   margin-left: auto;
   margin-right: 20px;
+  padding: 20px;
 }
