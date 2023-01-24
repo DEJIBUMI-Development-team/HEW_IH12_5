@@ -3,7 +3,7 @@
 /* ------------------------------------------------
 setting
 --------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 
 html,body   {height:100%;}
 body  {min-width:960px; width:100%; color:#666;
@@ -132,6 +132,7 @@ CSS3 animation & parts layout
   position: fixed;
   bottom: 30px;
   right: 30px;
+  z-index: 10;
 }
 
 .video-open {
@@ -278,10 +279,10 @@ first_view
   animation-name:iconAnime;
   animation-duration:3.3s;
   padding: 10px;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
-.icon:hover {
+.icon_top {
   left: 40%;
 }
 
@@ -523,7 +524,8 @@ first_content
   border: 1px solid #ccc;
 }
 .speech-bubble {
-  display: none;
+  opacity: 0;
+  transition: all .5s ease;
   width: 200px;
   position: absolute;
   top: 0;
@@ -549,7 +551,7 @@ first_content
   content: " ";
 }
 .text:hover + .speech-bubble {
-  display: block;
+  opacity: 1;
 }
 
 /*---------------------吹き出し2-----------------------*/
@@ -566,7 +568,8 @@ first_content
   border: 1px solid #ccc;
 }
 .speech-bubble2 {
-  display: none;
+  opacity: 0;
+  transition: all .5s ease;
   width: 200px;
   position: absolute;
   top: 585px;
@@ -593,7 +596,7 @@ first_content
   content: " ";
 }
 .text2:hover + .speech-bubble2 {
-  display: block;
+  opacity: 1;
 }
 /*---------------------吹き出し3-----------------------*/
 .css-speech-bubble3 {
@@ -609,7 +612,8 @@ first_content
   border: 1px solid #ccc;
 }
 .speech-bubble3 {
-  display: none;
+  opacity: 0;
+  transition: all .5s ease;
   width: 200px;
   position: absolute;
   top: 1510px;
@@ -636,7 +640,7 @@ first_content
   content: " ";
 }
 .text3:hover + .speech-bubble3 {
-  display: block;
+  opacity: 1;
 }
 /*---------------------吹き出し4-----------------------*/
 .css-speech-bubble4 {
@@ -652,7 +656,8 @@ first_content
   border: 1px solid #ccc;
 }
 .speech-bubble4 {
-  display: none;
+  opacity: 0;
+  transition: all .5s ease;
   width: 200px;
   position: absolute;
   top: 1976px;
@@ -679,7 +684,7 @@ first_content
   content: " ";
 }
 .text4:hover + .speech-bubble4 {
-  display: block;
+  opacity: 1;
 }
 /* ------------------------------------------------
 third_content
