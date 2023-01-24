@@ -8,24 +8,33 @@ setting
 html,body   {height:100%;}
 body  {min-width:960px; width:100%; color:#666;
    /* letter-spacing:13pt; */
+   /* スクロールバー非表示 */
+   overflow: scroll;
+   /* ローディングアニメーション */
    animation-name:body;
    animation-duration:3.3s;
+   }
+
+/* スクロールバー非表示 */
+.body_box::-webkit-scrollbar{
+  display: none;
+  }
+ 
+/* ローディングアニメーション */
+.body{
+  animation-name:body;
+  animation-duration:3.3s;
+  }
+  
+  @keyframes body{
+  0% {
+    overflow: hidden;
   }
 
-  .body{
-    animation-name:body;
-    animation-duration:3.3s;
+  100% {
+    overflow: hidden;
     }
-  
-    @keyframes body{
-      0% {
-        overflow: hidden;
-      }
-
-      100% {
-        overflow: hidden;
-      }
-    }
+  }
     
 
 body a  {color:#666;}
@@ -35,6 +44,7 @@ body a  {color:#666;}
 
 .jsf    {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px; font-style: italic;}
 .jsf_n  {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px;}
+
 
 /* ------------------------------------------------
 CSS3 animation & parts layout
@@ -72,6 +82,103 @@ CSS3 animation & parts layout
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+
+
+/* ヘッダー独自スタイル */
+.navigator {
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  animation-name:iconAnime;
+  animation-duration:3.3s;
+}
+.navigator_content {
+  height: 100px;
+}
+.navigator_content img {
+  width: 120px;
+}
+.scroll_tgl {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* ------------------------------------------------
+右下モーダルウィンドウ
+--------------------------------------------------- */
+
+/*動画表示のモーダルの余白を変更したい場合*/
+.modaal-video .modaal-inner-wrapper{
+  padding:0;
+}
+
+/*モーダルのボタンの色を変更したい場合*/ 
+.modaal-close:after, 
+.modaal-close:before{
+  background:#ccc;  
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+  background:#666;
+}
+
+#video-open {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+}
+
+.video-open {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.video-open:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.video-open:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .video-open {
+    padding: 18px 50px 18px;
+  }
+}
+
+/* 表示・非表示 */
+.elm {
+  text-decoration:none;
+  transition: 0.2s;
+  opacity: 0;
+}
 /* ------------------------------------------------
 background
 --------------------------------------------------- */
@@ -90,39 +197,24 @@ background
 .back{
   animation-name:back;
   animation-duration:3.3s;
-  }
+}
 
-  @keyframes back{
-    0% {
-      filter: blur(40px);
-      opacity: 0;
-    }
-  
-    80% {
-      filter: blur(40px);
-      opacity: 0;
-    }
-
-    100% {
-      filter: blur(0px);
-      opacity: 1;
-    }
+@keyframes back{
+  0% {
+    filter: blur(40px);
+    opacity: 0;
   }
   
-  /* @keyframes back{
-    0% {
-      filter: sepia(100%);
-    }
-  
-    80% {
-      filter: sepia(100%);
-    }
+  80% {
+    filter: blur(40px);
+    opacity: 0;
+  }
 
-    100% {
-      filter: sepia(0%);
-    }
-  } */
-
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
 /* ------------------------------------------------
 first_view
 --------------------------------------------------- */
@@ -172,7 +264,6 @@ first_view
   }
 }
 
-
 /* icon見た目 */
 .icon{
   width: 50vw;
@@ -181,62 +272,203 @@ first_view
   border-radius:50%;
   object-fit: cover;
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name:iconAnime;
+  animation-duration:3.3s;
+  padding: 10px;
+  /* pointer-events: none; */
+}
+
+.icon_top {
+  left: 40%;
+}
+
+.hover_text{
+  position: absolute;
+  font-size: 3em;
+  top: 35%;
+  left: 53%;
+  transition: 0.3s ease-in-out 0.2s;
+  opacity: 1;
+  visibility: visible;
+  animation-name:iconAnime;
+  animation-duration:3.2s;
+}
+.hover_text h3{
+  margin: 30px;
+}
+.hover_tgl{
+  top: 36%;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* iconアニメーション */
-
-.icon{
-  animation-name:iconAnime;
-  animation-duration:3.3s;
-  }
+@keyframes iconAnime{
+  0% {
+    opacity: 0;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+   }
   
-  @keyframes iconAnime{
-    0% {
-      opacity: 0;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);;
-    }
-  
-    85% {
-      opacity: 0;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);;
-    }
-
-    100% {
-      opacity: 1;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);;
-    }
+  85% {
+    opacity: 0;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
   }
 
+  100% {
+    opacity: 1;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+  }
+}
+
+/*--------スクロールダウン---------*/
+.scrolldown1{
+  /*描画位置※位置は適宜調整してください*/
+position:absolute;
+left:50%;
+bottom:75px;
+  /*全体の高さ*/
+height:50px;
+animation-name:back;
+animation-duration:3.3s;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span{
+  /*描画位置*/
+position: absolute;
+left:-15px;
+top: -15px;
+  /*テキストの形状*/
+color: rgb(0, 0, 0);
+font-size: 0.7rem;
+letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+content: "";
+  /*描画位置*/
+position: absolute;
+top: 0;
+  /*線の形状*/
+width: 1px;
+height: 30px;
+background: rgb(0, 0, 0);
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+animation: pathmove 1.4s ease-in-out infinite;
+opacity:0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+0%{
+  height:0;
+  top:0;
+  opacity: 0;
+}
+30%{
+  height:30px;
+  opacity: 1;
+}
+100%{
+  height:0;
+  top:50px;
+  opacity: 0;
+}
+}
 
 /* ------------------------------------------------
 first_content
 --------------------------------------------------- */
 #first_content{
-  /* background-color: rgba(255, 255, 255, 0.235); */
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 50px;
+  height: 50vh;
+}
+#second_content {
+  margin-top: 200px;
 }
 
-video{
-  height: 300px;
+.Explanation{
+  font-size: 35px;
+  text-align: center;
 }
+/* -----------------slider----------------- */
+
+#Eslider {
+  height: 150px;
+  width: 600px;
+  margin: 180px auto 0;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Ebutton-right{
+  user-select: none;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid #484848d4;
+  border-right: 3px solid #484848d4;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#Ebutton-left{
+  user-select: none;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid #484848d4;
+  border-right: 3px solid #484848d4;
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+/*========= モーダル表示のためのCSS ===============*/
+
+/*動画表示のモーダルの余白を変更したい場合*/
+/* .modaal-video .modaal-inner-wrapper{
+  padding:0;
+} */
+
+/*モーダルのボタンの色を変更したい場合*/
+/* .modaal-close:after, 
+.modaal-close:before{
+  background:#111;  
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+  background:#222;
+}
+ */
+
+/* #first_content{
+  height: 50vh;
+  vertical-align:middle; 
+  padding: 100px 0;
+  text-align: center;
+} */
 
 /* ------------------------------------------------
-second_content
+.second_content
 --------------------------------------------------- */
 .Shadow   {box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;}
 
@@ -256,17 +488,17 @@ second_content
 
 #top_wrapper #lnk_00       { top:70px;    left:80%; }
 #top_wrapper #lnk_01       { top:660px;   left:23%; }
-#top_wrapper #lnk_02       { top:1570px;  left:80%; height: 0px;}
-#top_wrapper #lnk_03       { top:2040px;  left:25%; letter-spacing:13pt; height: 0px;}
+#top_wrapper #lnk_02       { top:1570px;  left:80%; }
+#top_wrapper #lnk_03       { top:2040px;  left:25%; }
 
-#top_wrapper h2#lnk_00   { background:url(../img/00.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_00 a { background:url(../img/00.jpg) no-repeat 0 0; padding-top: 114px; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_01   { background:url(../img/01.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_01 a { background:url(../img/01.jpg) no-repeat 0 0; padding-top: 115px; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_02   { background:url(../img/02.jpg) no-repeat 0 0; width: 174px; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_02 a { background:url(../img/02.jpg) no-repeat 0 0; padding-top: 115px; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_03   { background:url(../img/03.jpg) no-repeat 0 0; width: 90px; mix-blend-mode: multiply;}
-#top_wrapper h2#lnk_03 a { background:url(../img/03.jpg) no-repeat 0 0; padding-top: 116px; mix-blend-mode: multiply;}
+#top_wrapper #lnk_00   { background:url(../img/00.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
+#top_wrapper #lnk_00 a { background:url(../img/00.jpg) no-repeat 0 0; padding-top: 114px; mix-blend-mode: multiply;}
+#top_wrapper #lnk_01   { background:url(../img/01.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
+#top_wrapper #lnk_01 a { background:url(../img/01.jpg) no-repeat 0 0; padding-top: 115px; mix-blend-mode: multiply;}
+#top_wrapper #lnk_02   { background:url(../img/02.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
+#top_wrapper #lnk_02 a { background:url(../img/02.jpg) no-repeat 0 0; padding-top: 115px; mix-blend-mode: multiply;}
+#top_wrapper #lnk_03   { background:url(../img/03.jpg) no-repeat 0 0; width: 90px; mix-blend-mode: multiply;}
+#top_wrapper #lnk_03 a { background:url(../img/03.jpg) no-repeat 0 0; padding-top: 116px; mix-blend-mode: multiply;}
 
 /*---------------------svg-----------------------*/
 
@@ -278,6 +510,182 @@ second_content
 #top_wrapper #stitch_06  { top:2445px;  right:20%;  width: 2px;   height: 440px; }
 #top_wrapper #stitch_08  { top:330px;   left:130px; width: 570px; height: 570px; }
 
+/*---------------------吹き出し-----------------------*/
+.css-speech-bubble {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.text {
+  width: 200px;
+  /* position: relative; */
+  /* margin:80px 50px 50px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.speech-bubble {
+  opacity: 0;
+  transition: all .5s ease;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 891px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+}
+.speech-bubble:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text:hover + .speech-bubble {
+  opacity: 1;
+}
+
+/*---------------------吹き出し2-----------------------*/
+.css-speech-bubble2 {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.text2 {
+  width: 200px;
+  /* position: relative; */
+  /* margin:80px 50px 50px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.speech-bubble2 {
+  opacity: 0;
+  transition: all .5s ease;
+  width: 200px;
+  position: absolute;
+  top: 585px;
+  left: 279px;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10;
+}
+.speech-bubble2:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text2:hover + .speech-bubble2 {
+  opacity: 1;
+}
+/*---------------------吹き出し3-----------------------*/
+.css-speech-bubble3 {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.text3 {
+  width: 200px;
+  /* position: relative; */
+  /* margin:80px 50px 50px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.speech-bubble3 {
+  opacity: 0;
+  transition: all .5s ease;
+  width: 200px;
+  position: absolute;
+  top: 1510px;
+  left: 83%;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10;
+}
+.speech-bubble3:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text3:hover + .speech-bubble3 {
+  opacity: 1;
+}
+/*---------------------吹き出し4-----------------------*/
+.css-speech-bubble4 {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.text4 {
+  width: 200px;
+  /* position: relative; */
+  /* margin:80px 50px 50px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.speech-bubble4 {
+  opacity: 0;
+  transition: all .5s ease;
+  width: 200px;
+  position: absolute;
+  top: 1976px;
+  left: 27.5%;
+  padding: 16px;
+  border-radius: 5px;
+  background: #33cc99;
+  color: #fff;
+  font-weight: bold;
+  z-index: 10;
+}
+.speech-bubble4:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #33cc99;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text4:hover + .speech-bubble4 {
+  opacity: 1;
+}
 /* ------------------------------------------------
 third_content
 --------------------------------------------------- */
@@ -390,4 +798,3 @@ third_content
   width: 22px;
   height: 22px;
 }
-

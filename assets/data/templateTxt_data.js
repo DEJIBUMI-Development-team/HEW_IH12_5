@@ -127,7 +127,7 @@ class Template_object{
  * マウスイベントの追加を行い、DOM要素を配列に格納
  * @param elem_value イベントを追加する要素のclass
  */
-function addMouseEvent(elem_value) {
+function addMouseEvent(elem_value, e) {
     var object_ref = temp_objects[elem_value];
     el[temp_objects[elem_value].id] = {
         "move_elem": document.getElementById(object_ref.id),
@@ -150,7 +150,11 @@ function addMouseEvent(elem_value) {
     }
     el[object_ref.id].edit_text.addEventListener("dblclick", set_Editable);
     el[object_ref.id].edit_text.addEventListener("blur", set_Uneditable);
-    
+    // debugger;
+    // var clickedDom = e.composedPath();
+    // var font_p = clickedDom[0].dataset["font"]; 
+    // el[object_ref.id].edit_text.textContent = font_p;
+
     // コンテクストメニューを表示する関数を実行
     view_context_menu()
 
@@ -174,14 +178,14 @@ async function insert_dom(e) {
 
         // クリックされたボタン要素のvalueを取得(temp_objectsのキーとして使用)
     
-        var BtnRef =  e.composedPath();
+        var BtnRef = e.composedPath();
         var value_content = tempBtnRef[BtnRef[0].dataset.tempid]
         var value = value_content.getAttribute('value');
         
         // DOMのinsert
         var insert = document.getElementById("data");
         insert.insertAdjacentHTML('afterbegin', temp_objects[value].dom);
-
+        
         // insertされたDOMにドラッグイベントを付加
         addMouseEvent(value);
         fitty('.fit', {

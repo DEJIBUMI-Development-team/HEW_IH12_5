@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <title></title>
-  <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-
 <!-- footer-box -->
 <footer class="footer_element">
   <div class="top_element">
@@ -30,12 +20,10 @@
 
   <div class="body_element">
     <div class="body_inner">
-      <p class="footer_logo"><a href=""><img src="../img/logo.png"></a></p>
+      <p class="footer_logo"><a href=""><img src="/HEW_IH12_5/assets/img/logo.png"></a></p>
       <p class="footer_info">dejibumi  コールセンター 070-1234-5678 (09:00 ~ 18:00 平日)
       <br>
       Copyright © dejibumi. All Rights reserved.</p>
     </div>
   </div>
 </footer>
-</body>
-</html>
