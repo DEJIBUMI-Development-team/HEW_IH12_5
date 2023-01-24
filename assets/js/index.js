@@ -142,6 +142,9 @@ $(document).ready(function() {
 });
 
 const header_element = document.querySelector(".navigator");
+const hover_icon = document.querySelector(".icon");
+const hover_text = document.querySelector(".hover_text");
+
 let scroll_offset = 0;
 
 const hover_icon = document.querySelector(".icon");
@@ -158,11 +161,13 @@ window.addEventListener("scroll",()=>{
     hover_icon.classList.add("icon_top");
     hover_text.classList.remove("hover_tgl");
     header_element.classList.add("scroll_tgl");
+    hover_icon.classList.add("icon_top");    
+    hover_text.classList.remove("hover_tgl");
   }
 });
 window.addEventListener("load", () => {
   setTimeout(()=>{
-    hover_icon.classList.add("icon_top");
+    hover_icon.classList.add("icon_top");    
     hover_text.classList.remove("hover_tgl");
   }, 3500);
 });
