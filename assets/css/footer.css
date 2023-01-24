@@ -32,7 +32,8 @@ color: #444444;}
   .footer_menu a{color: rgb(96, 96, 96);
   font-size: 15px;
   font-weight: bold;
-  margin-right: 15px;}
+  margin-right: 15px;
+  margin-left: 15px;}
   
   .footer_menu a:hover{text-decoration: underline;}
   

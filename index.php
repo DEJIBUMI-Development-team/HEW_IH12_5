@@ -83,7 +83,7 @@ if (isset($_POST['add'])) {
 							<img src="assets/img/00.jpg" id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
 						<input class="text" type="submit" id="submit" name="update" style="display:none">
-						<p class="speech-bubble">吹き出しが表示されます</p>
+						<p class="speech-bubble">編集画面へ</p>
 					</div>
 
 					<div class="css-speech-bubble2">
@@ -91,7 +91,7 @@ if (isset($_POST['add'])) {
 							<img src="assets/img/01.jpg" id="lnk_01" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
 						<input class="text2" type="submit" id="submit1" name="update" style="display:none">
-						<p class="speech-bubble2">吹き出しが表示されます</p>
+						<p class="speech-bubble2">編集画面へ</p>
 					</div>
 
 					<div class="css-speech-bubble3">
@@ -99,7 +99,7 @@ if (isset($_POST['add'])) {
 							<img src="assets/img/02.jpg" id="lnk_02" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
 						<input class="text3" type="submit" id="submit2" name="update" style="display:none">
-						<p class="speech-bubble3">吹き出しが表示されます</p>
+						<p class="speech-bubble3">編集画面へ</p>
 					</div>
 
 					<div class="css-speech-bubble4">
@@ -107,7 +107,7 @@ if (isset($_POST['add'])) {
 							<img src="assets/img/03.jpg" id="lnk_03" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
 						<input class="text4" type="submit" id="submit3" name="update" style="display:none">
-						<p class="speech-bubble4">吹き出しが表示されます</p>
+						<p class="speech-bubble4">編集画面へ</p>
 					</div>
 
 				</form>
