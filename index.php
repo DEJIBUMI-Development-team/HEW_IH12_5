@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_regenerate_id(true);
 $result = "";
 if (isset($_POST['add'])) {
 	$_SESSION['HS'] = 'edit'; //セッション変数に登録
@@ -82,7 +83,7 @@ if (isset($_POST['add'])) {
 						<label for="submit">
 							<img src="assets/img/00.jpg" id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text" type="submit" id="submit" name="update" style="display:none">
+						<input class="text" type="submit" id="submit" name="add" style="display:none">
 						<p class="speech-bubble">編集画面へ</p>
 					</div>
 
@@ -90,7 +91,7 @@ if (isset($_POST['add'])) {
 						<label for="submit1">
 							<img src="assets/img/01.jpg" id="lnk_01" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text2" type="submit" id="submit1" name="update" style="display:none">
+						<input class="text2" type="submit" id="submit1" name="add" style="display:none">
 						<p class="speech-bubble2">編集画面へ</p>
 					</div>
 
@@ -98,7 +99,7 @@ if (isset($_POST['add'])) {
 						<label for="submit2">
 							<img src="assets/img/02.jpg" id="lnk_02" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text3" type="submit" id="submit2" name="update" style="display:none">
+						<input class="text3" type="submit" id="submit2" name="add" style="display:none">
 						<p class="speech-bubble3">編集画面へ</p>
 					</div>
 
@@ -106,7 +107,7 @@ if (isset($_POST['add'])) {
 						<label for="submit3">
 							<img src="assets/img/03.jpg" id="lnk_03" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text4" type="submit" id="submit3" name="update" style="display:none">
+						<input class="text4" type="submit" id="submit3" name="add" style="display:none">
 						<p class="speech-bubble4">編集画面へ</p>
 					</div>
 
@@ -696,11 +697,13 @@ if (isset($_POST['add'])) {
 			<div class="sliderArea">
 				<div class="sliderWide">
 					<ul class="slider">
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/godiva.png" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/saruta1.webp" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/tullys.png" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/star1.jpg" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/kome.jpg" alt="125naroom"></a></li>
+					  <label for="slider">
+						<li><a target="_blank"><img src="assets/img/godiva.png" alt="125naroom"></a></li></label>
+						<input type="submit" id="slider" name="add" style="display:none">
+						<li><a target="_blank"><img src="assets/img/saruta1.jpg" alt="125naroom"></a></li>
+						<li><a target="_blank"><img src="assets/img/tullys.png" alt="125naroom"></a></li>
+						<li><a target="_blank"><img src="assets/img/star1.jpg" alt="125naroom"></a></li>
+						<li><a target="_blank"><img src="assets/img/kome.jpg" alt="125naroom"></a></li>
 					</ul>
 				</div>
 			</div>
