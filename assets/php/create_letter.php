@@ -1,6 +1,9 @@
 <?php
 session_start();
 $data = [];
+$file = "../data/gift_data/gift.json";
+$json_file = file_get_contents($file);
+$gift_data = json_decode($json_file, true);
 
 if (isset($_POST["submit"])) {
 	if (!empty($_FILES["image"]["name"])) {
@@ -45,24 +48,44 @@ if (isset($_POST["submit"])) {
 					<div id="previewArea"></div>
 				</div>
 			</div>
+			<div class="additional-contents">
+				<div class="survey-elements">
+					<div class="survey-open">アンケート機能を利用する</div>
+					<div class="survey hidden">
+						<input type="text" name="survey_title" placeholder="アンケートタイトルを追加" class="input_element" disabled>
+						<br>
+						<div class="suvey-block" id="survey_elem">
+							<div class="survey-contents">
+								<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
+							</div>
 
-			<div class="survey-open">アンケート機能を利用する</div>
-
-			<div class="survey hidden">
-				<input type="text" name="survey_title" placeholder="アンケートタイトルを追加" class="input_element" disabled>
-				<br>
-				<div class="suvey-block" id="survey_elem">
-					<div class="survey-contents">
-						<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
-					</div>
-
-					<div class="survey-contents">
-						<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
+							<div class="survey-contents">
+								<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
+							</div>
+						</div>
+						<button id="add" type="button">追加</button>
+						<button id="delete" type="button">削除</button>
+						<div class="exit">閉じる</div>
 					</div>
 				</div>
-				<button id="add" type="button">追加</button>
-				<button id="delete" type="button">削除</button>
-				<div class="exit">閉じる</div>
+				<div class="gift-elements">
+					<div class="gift-open">
+						<a href="./gift.php" class="gift-select">ギフトを選択してください</a>
+						<?php
+						if (!empty($_POST["store"]) && !empty($_POST["product_name"])) {
+							echo <<<EOD
+								<div class="gift-name">{$gift_data[$_POST["store"]][$_POST["product_name"]]["fullName"]}</div>
+								<div class="gift-img">
+									<img src='../img/{$gift_data[$_POST["store"]][$_POST["product_name"]]["url"]}' alt="">									
+								</div>
+								<div class="gift-delete">ギフトを取り消す</div>					
+							EOD;
+						}
+						?>
+					</div>
+
+
+				</div>
 			</div>
 
 		</div>
@@ -73,7 +96,9 @@ if (isset($_POST["submit"])) {
 				<div>------</div>
 				<div class="dejibumi-price price">手紙設定料金 : 0円</div>
 				<div class="survey-price price">アンケート利用料金 : 0円</div>
-				<div class="gift-price price">ギフト総計 : 0円</div>
+				<div class="gift-price price">ギフト総計 : 
+					<?php echo !empty($_POST["store"]) ? $gift_data[$_POST["store"]][$_POST["product_name"]]["tall"] : 0?>円
+				</div>
 			</div>
 			<input type="submit" value="お支払いはこちらから" name="submit" class="submit-input">
 		</div>
@@ -107,12 +132,11 @@ if (isset($_POST["submit"])) {
 			} else {
 				survey_price = 0;
 			}
-
-			if (is_setGift) {
-				gift_price = 0
-			} else {
-				gift_price = 0;
-			}
+			// if (is_setGift) {
+			// 	gift_price = 0
+			// } else {
+			// 	gift_price = 0;
+			// }
 
 			total_price = img_price + survey_price + gift_price;
 			total_view_content.textContent = `${total_price}円`;

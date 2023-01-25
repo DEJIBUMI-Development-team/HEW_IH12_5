@@ -7,12 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/create_result.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 
 <body>
+    <?php include("./header.php")?>
     <div class="wrapper">
         <div class="clip-title">
             <div class="title-text">
+                <h1>購入完了</h1>
                 <h2>でじぶみURLが発行されました</h2>
                 <h2>大切な相手に気持ちを伝えよう！！！</h2>
             </div>
