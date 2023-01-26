@@ -14,6 +14,9 @@ if (!empty($_GET["title"])) {
 	foreach ($_GET["survey"] as $key => $value) {
 	}
 }
+$file = "../data/gift_data/gift.json";
+$json_file = file_get_contents($file);
+$gift_data = json_decode($json_file, true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,38 +36,56 @@ if (!empty($_GET["title"])) {
 	<div class="img_elem">
 		<img src="data:image/png;base64,<?php echo $img_data; ?>">
 	</div>
-	<?php
-	if (!empty($_GET["title"])) {
-		$title = $_GET["title"];
-		echo <<<EOD
-			<form action="" method="post" class="survey-form">
-				<div class="survey-contents">
-					<div class="survey-title"><h3>{$title}</h3></div>
-					<div class="respondent">
-						<label for="respondent-title"><h4>お名前</h4></label>
-						<input type="text" id="respondent-title" name="respondent-name">
-					</div>		
-			EOD;
-
-		foreach ($_GET["survey"] as $key => $value) {
+	<div class="additional">
+		<?php
+		if (!empty($_GET["title"])) {
+			$title = $_GET["title"];
 			echo <<<EOD
-					<div class="survey">
-						<input type="radio" name="survey" value="{$value}" id="survey{$key}">
-						<label for="survey{$key}" class="input-label"><div class="input-content"><h4>{$value}</h4></div></label>
-					</div>
+				<form action="" method="post" class="survey-form">
+					<div class="survey-contents">
+						<div class="survey-title"><h3>{$title}</h3></div>
+						<div class="respondent">
+							<label for="respondent-title"><h4>お名前</h4></label>
+							<input type="text" id="respondent-title" name="respondent-name">
+						</div>		
+				EOD;
+
+			foreach ($_GET["survey"] as $key => $value) {
+				echo <<<EOD
+						<div class="survey">
+							<input type="radio" name="survey" value="{$value}" id="survey{$key}">
+							<label for="survey{$key}" class="input-label"><div class="input-content"><h4>{$value}</h4></div></label>
+						</div>
+						
 					
-				
+					EOD;
+			}
+			echo <<<EOD
+					<div class="survey-submit">
+						<input type="submit" name="submit" value="アンケートを送信する" id="submit">				
+					</div>
+					</div>
+				</form>
 				EOD;
 		}
-		echo <<<EOD
-				<div class="survey-submit">
-					<input type="submit" name="submit" value="アンケートを送信する" id="submit">				
-				</div>
-				</div>
-			</form>
+		if (!empty($_GET["gift_name"])) {
+			echo <<<EOD
+				<form action="" method="POST" class="gift-form">
+					<div class="gift">
+						<h3 class="gift-title">ギフトが届いています</h3>
+						<h4 class="gift-name">{$gift_data[$_GET["store_name"]][$_GET["gift_name"]]["fullName"]}×{$_GET["count"]}</h4>
+						<img class="gift-img" src="../img/{$gift_data[$_GET["store_name"]][$_GET["gift_name"]]["url"]}">
+					</div>
+
+					<div class="gift-submit">
+						<input type="submit" name="gift" value="受け取る">
+					</div>
+				</form>
 			EOD;
-	}
-	?>
+		}
+		?>
+	</div>
+
 </body>
 
 </html>

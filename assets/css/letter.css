@@ -35,8 +35,7 @@ body {
 
 .survey-form {
 	width: 400px;
-	margin: 100px auto;
-	margin-bottom: 100px;
+	margin: 100px auto 0 auto;
 	background-color: white;
 	padding: 10px;
 	border-radius: 10px;
@@ -93,10 +92,35 @@ label {
 	font-family: serif;
 }
 
-@media all and (max-width: 820px) {
+.gift-title {
+	font-size: 1.5em;
+}
+
+.gift-form {
+	width: 400px;
+	margin: 10px auto;
+	margin-bottom: 100px;
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+	height: fit-content;
+	transform: translateX(-80px);
+	font-family: serif;
+}
+.gift-img {
+	width: 58%;
+}
+
+.gift {
+	margin-left: 20px;
+}
+.gift-submit {
+	width: 70px;
+	margin-left: auto;
+}
+@media all and (max-width: 1000px) {
 	.img_elem {
 		width: 100%;
-		transform: scale(1.2);
 		margin: 8% auto 3%;
 	}
 	body {
@@ -106,16 +130,23 @@ label {
 	.survey-form{
 		transform: translateX(0px);
 	}
+	.gift-form {
+		transform: translateX(0px);
+	}
 
 }
 
 @media all and (max-width: 450px) {
 	.img_elem {
+		transform: scale(1.5);
 		width: 100%;
 		/* transform: scale(1.5); */
 		margin: 25% auto 3%;
 	}
 	.survey-form {
+		width: 80%;
+	}
+	.gift-form {
 		width: 80%;
 	}
 }

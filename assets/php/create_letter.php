@@ -15,15 +15,24 @@ if (isset($_POST["submit"])) {
 				"survey" => $_POST["survey"]
 			];
 		}
-
+		if (!empty($_POST["product_settlement_name"])) {
+			$_SESSION["product_name"] = $_POST["product_settlement_name"];
+			$_SESSION["store_name"] = $_POST["store_settelement_name"];
+			$_SESSION["gift_count"] = $_POST["gift_count"];
+		}
 		$data = http_build_query($data);
 		header("Location:./settlement.php?{$data}");
 	} else {
 		echo "画像を選択してください";
 	}
 }
+if (isset($_POST["count"])) {
+	$count = $_POST["count"] == "" ?  1 : $_POST["count"]; 
+	
+}
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,10 +83,13 @@ if (isset($_POST["submit"])) {
 						<?php
 						if (!empty($_POST["store"]) && !empty($_POST["product_name"])) {
 							echo <<<EOD
-								<div class="gift-name">{$gift_data[$_POST["store"]][$_POST["product_name"]]["fullName"]}</div>
+								<div class="gift-name">{$gift_data[$_POST["store"]][$_POST["product_name"]]["fullName"]}×{$count}</div>
 								<div class="gift-img">
 									<img src='../img/{$gift_data[$_POST["store"]][$_POST["product_name"]]["url"]}' alt="">									
 								</div>
+								<input type="hidden" name="product_settlement_name" value='{$_POST["product_name"]}'>
+								<input type="hidden" name="store_settelement_name" value='{$_POST["store"]}'>
+								<input type="hidden" name="gift_count" value='{$count}'>
 								<div class="gift-delete">ギフトを取り消す</div>					
 							EOD;
 						}
@@ -118,7 +130,11 @@ if (isset($_POST["submit"])) {
 
 		var is_survey = false;
 		var is_setImg = false;
-		var is_setGift = false;
+		var is_setGift = <?php echo (isset($_POST["product_name"])) ? "true" :  "false"; ?>;
+
+		window.onload = ()=>{
+			set_price();
+		};
 
 		function set_price() {
 			if (is_setImg) {
@@ -132,11 +148,12 @@ if (isset($_POST["submit"])) {
 			} else {
 				survey_price = 0;
 			}
-			// if (is_setGift) {
-			// 	gift_price = 0
-			// } else {
-			// 	gift_price = 0;
-			// }
+			if (is_setGift) {
+
+				gift_price = <?php echo ($gift_data[$_POST["store"]][$_POST["product_name"]]["tall"]);?> * Number(<?php echo $count;?>)
+			} else {
+				gift_price = 0;
+			}
 
 			total_price = img_price + survey_price + gift_price;
 			total_view_content.textContent = `${total_price}円`;

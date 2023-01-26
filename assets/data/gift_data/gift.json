@@ -2,7 +2,7 @@
 	"starbucks":{
 		"store_name" : "スターバックス",
 		"america" : {
-			"fullName" : "カフェ アメリカーノ(Short~Venti)",
+			"fullName" : "カフェ アメリカーノ(tall)",
 			"subTitle" : "やっぱり甘いもの食べるときはスターバックスアメリカーノ",
 			"url" : "starbucks/stame.jpg",
 			"tall" : 450
