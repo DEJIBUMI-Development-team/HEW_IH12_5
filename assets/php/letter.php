@@ -85,6 +85,13 @@ $gift_data = json_decode($json_file, true);
 		}
 		?>
 	</div>
+	<script>
+					
+		if (document.querySelector(".survey-form")==null) {
+			var add_class_elem =  document.querySelector(".gift-form");
+			add_class_elem.classList.add("reset-margin");
+		}
+	</script>
 
 </body>
 

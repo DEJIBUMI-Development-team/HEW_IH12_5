@@ -118,6 +118,9 @@ label {
 	width: 70px;
 	margin-left: auto;
 }
+.reset-margin{
+	margin-top: 100px;
+}
 @media all and (max-width: 1000px) {
 	.img_elem {
 		width: 100%;

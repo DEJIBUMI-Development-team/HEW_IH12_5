@@ -41,7 +41,9 @@ session_start();
             $url =  "http://localhost/HEW_IH12_5/assets/php/letter.php?".http_build_query($_GET)."&".http_build_query($gift_data);
 
             echo <<<EOD
+
                 <div class="url-clip-boad_g">
+                    <div>GIFT付URLは下記のリンクをクリック</div>
                     <div class="text-erea_g">
                         <p id="target-text_g">
                             {$url}
