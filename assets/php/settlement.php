@@ -55,15 +55,15 @@ if (isset($_POST["settlement"])) {
 				<input type="text" id="card-name" name="card-name">
 			</div>
 			<div>
-				<label for="card-expiry-month">有効期限 (月)</label>
+				<label for="card-expiry-month">有効期限 (月)(2桁)</label>
 				<input type="text" id="card-expiry-month" name="card-expiry-month">
 			</div>
 			<div>
-				<label for="card-expiry-year">有効期限 (年)</label>
+				<label for="card-expiry-year">有効期限 (年)(2桁)</label>
 				<input type="text" id="card-expiry-year" name="card-expiry-year">
 			</div>
 			<div>
-				<label for="card-security-code">セキュリティコード</label>
+				<label for="card-security-code">セキュリティコード(3桁)</label>
 				<input type="text" id="card-security-code" name="card-security-code">
 			</div>
 			<div>
