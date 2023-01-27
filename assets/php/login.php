@@ -50,7 +50,7 @@ if (isset($_POST["login"])) {
                     $result = "ギフトページで";
                     header("Location:./gift.php");
                 }else {
-                    header("Location./mypage.php");   
+                    header("Location:./mypage.php"); 
                 }
 
             } else {
