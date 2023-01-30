@@ -13,7 +13,7 @@ if (isset($_POST["settlement"])) {
 				:content 
 			)';
 		$stmt = $pdo->prepare($sql);
-		$stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
+		$stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 		$stmt->bindValue(':img_name', $img_name, PDO::PARAM_STR);
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
