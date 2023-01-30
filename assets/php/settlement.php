@@ -1,25 +1,30 @@
 <?php
 session_start();
-include("./dbaccess.php");
+require("./dbaccess.php");
 
 if (isset($_POST["settlement"])) {
-	$img_name = $_SESSION["img_name"];
-	$content = $_SESSION["img_content"];
-	$sql = 'INSERT INTO t_user_letter(F_user_id, name, raw_data) VALUES(
-			:num,
-			:img_name, 
-			:content 
-		)';
-	$stmt = $pdo->prepare($sql);
-	$stmt->bindValue(':num', 1, PDO::PARAM_INT);
-	$stmt->bindValue(':img_name', $img_name, PDO::PARAM_STR);
-	$stmt->bindValue(':content', $content, PDO::PARAM_STR);
-	$stmt->execute();
-	$id =  $pdo->lastInsertId();
-	$get_data = $_GET;
-	$get_data["id"] = $id;
-	$data = http_build_query($get_data);
-	header("Location:./create_result.php?{$data}");
+	try {
+		$img_name = $_SESSION["img_name"];
+		$content = $_SESSION["img_content"];
+		$sql = 'INSERT INTO t_user_letter(F_user_id, name, raw_data) VALUES(
+				:num,
+				:img_name, 
+				:content 
+			)';
+		$stmt = $pdo->prepare($sql);
+		$stmt->bindValue(':num', 1, PDO::PARAM_INT);
+		$stmt->bindValue(':img_name', $img_name, PDO::PARAM_STR);
+		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
+		$stmt->execute();
+		$id =  $pdo->lastInsertId();
+		$get_data = $_GET;
+		$get_data["id"] = $id;
+		$data = http_build_query($get_data);
+		header("Location:./create_result.php?{$data}");
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+
 }
 ?>
 <!doctype html>
