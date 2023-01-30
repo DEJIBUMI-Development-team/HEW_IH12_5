@@ -28,7 +28,7 @@ $gift_data = json_decode($json_file, true);
 	<link rel="stylesheet" href="../css/letter.css">
 	<meta property="og:title" content="でじぶみ">
 	<meta property="og:description" content="あなたにお手紙が届いています">
-	<meta property="og:image" content="assets\img\logo.png">
+	<meta property="og:image" content="https://dejibumi.sakura.ne.jp/HEW_IH12_5/assets/img/logo.png">
 	<title>Document</title>
 </head>
 
