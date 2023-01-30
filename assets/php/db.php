@@ -4,9 +4,9 @@ function db($sql): mixed{
     // var_dump($sql);
     $db['host'] = "mysql57.dejibumi.sakura.ne.jp";  // DBサーバのURL
     $db['username'] = "dejibumi";  // ユーザー名
-    $db['password'] = "dejibumi";  // ユーザー名のパスワード
+    $db['password'] = "dejibumi-0";  // ユーザー名のパスワード
     $db['dbname'] = "dejibumi_db";  // データベース名
-    $dsn = 'mysql:host=dejibumi.sakura.ne.jp; dbname=dejibumi_db;charset=utf8';
+    $dsn = 'mysql:host=dejibumi.sakura.ne.jp;dbname=dejibumi_db;charset=utf8';
     try {
         // Mysqlへの接続への接続を確立
         $pdo = new PDO($dsn, $db['username'], $db['password'], array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
