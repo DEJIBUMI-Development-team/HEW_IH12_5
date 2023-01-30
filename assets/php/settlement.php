@@ -6,13 +6,14 @@ if (isset($_POST["settlement"])) {
 	try {
 		$img_name = $_SESSION["img_name"];
 		$content = $_SESSION["img_content"];
+		$user_id = $_SESSION["user_id"];
 		$sql = 'INSERT INTO t_user_letter(F_user_id, name, raw_data) VALUES(
-				:num,
+				:user_id,
 				:img_name, 
 				:content 
 			)';
 		$stmt = $pdo->prepare($sql);
-		$stmt->bindValue(':num', 1, PDO::PARAM_INT);
+		$stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
 		$stmt->bindValue(':img_name', $img_name, PDO::PARAM_STR);
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
