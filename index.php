@@ -699,20 +699,17 @@ if (isset($_POST['add'])) {
 					<form action="./assets/php/gift.php" method="post" name="gift">
 						<ul class="slider">
 							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/godiva.png" alt="godiva"></a></li>
-							<input type="hidden" name="update" value="godiva">
-							<li><a target="_blank" onclick="document.gift.submit();"><img src="assets/img/saruta1.jpg" alt="saruta1"></a></li>
-							<input type="hidden" name="update" value="saruta1">
-							<li><a target="_blank" onclick="document.gift.submit();"><img src="assets/img/tullys.png" alt="tullys"></a></li>
-							<input type="hidden" name="update" value="">
-							<li><a target="_blank" onclick="document.star1.submit();"><img src="assets/img/star1.jpg" alt="star1"></a></li>
-							<input type="hidden" name="update" value="star1">
-							<li><a target="_blank" onclick="document.kome.submit();"><img src="assets/img/kome.jpg" alt="kome"></a></li>
-							<input type="hidden" name="update" value="kome">
-							<select name="" id="">
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/saruta1.jpg" alt="saruta1"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/tullys.png" alt="tullys"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/star1.jpg" alt="star1"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/kome.jpg" alt="kome"></a></li>
+							<input type="submit" name="update" style="display:none">
+							<!-- <input class="text4" type="submit" id="submit3" name="add" style="display:none"> -->
+							<!-- <select name="" id=""> -->
+								<!-- <option value=""></option>
 								<option value=""></option>
 								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
+								<option value=""></option> -->
 							</select>
 						</ul>
 					</form>
