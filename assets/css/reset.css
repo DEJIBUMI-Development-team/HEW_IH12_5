@@ -182,7 +182,7 @@ a {text-decoration:underline;}
 a:hover {text-decoration:none;}
 
 /* -- form -- */
-input,textarea {}
+/* input,textarea {} */
 
 /* Start of "Micro clearfix" */
 .cf { zoom: 1; }
@@ -190,3 +190,4 @@ input,textarea {}
 .cf:after { content:""; display:table; }
 .cf:after { clear:both; }
 /* End of "Micro clearfix" */
+
