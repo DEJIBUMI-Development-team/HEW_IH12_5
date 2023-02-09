@@ -25,35 +25,49 @@ second_content
 --------------------------------------------------- */
 
 /*----------- IMG ----------*/
-.In{
+.In {
   animation-name: fadeInAnime;
-  animation-duration:2s;
-  animation-fill-mode:forwards;
-  opacity:0;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.fadeInTrigger {
+  opacity: 0;
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
   }
+
+  to {
+    opacity: 1;
+  }
+}
 
 /*----------- SVG ----------*/
 
 /* その場で */
-.fadein{
-  animation-name:fadeInAnime;/* アニメーションの名前を定義 */
-  animation-duration:0.1s;/* 再生時間 */
-  animation-fill-mode:forwards;
-  opacity:0;/* 初期非表示 */
-  }
-  
-/* SVG IMG 対応 */
+.fadein {
+  animation-name: svgAnimation; /* アニメーションの名前を定義 */
+  animation-duration: 0.1s;/* 再生時間 */
+  animation-fill-mode: forwards;/*これで値を保持*/
+  opacity: 0;/* 初期非表示 */
+}
 
-.fadeInTrigger{
+.delayScroll{
   opacity: 0;
 }
 
-  @keyframes fadeInAnime{
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+/* SVG IMG 対応 */
+
+@keyframes svgAnimation {
+  from {
+    opacity: 0;
   }
+
+  to {
+    opacity: 1;
+  }
+}
