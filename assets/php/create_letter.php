@@ -28,7 +28,10 @@ if (isset($_POST["submit"])) {
 }
 if (isset($_POST["count"])) {
 	$count = $_POST["count"] == "" ?  1 : $_POST["count"]; 
-	
+	$gift_price = $gift_data[$_POST["store"]][$_POST["product_name"]]["tall"];
+}else {
+	$count = 0; 	
+	$gift_price = 0;
 }
 
 ?>
@@ -150,7 +153,7 @@ if (isset($_POST["count"])) {
 			}
 			if (is_setGift) {
 
-				gift_price = <?php echo ($gift_data[$_POST["store"]][$_POST["product_name"]]["tall"]);?> * Number(<?php echo $count;?>)
+				gift_price = gift_price = <?php echo ($gift_price * $count);?>;
 			} else {
 				gift_price = 0;
 			}
