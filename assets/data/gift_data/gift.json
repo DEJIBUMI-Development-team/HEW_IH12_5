@@ -6,6 +6,12 @@
 			"subTitle" : "やっぱり甘いもの食べるときはスターバックスアメリカーノ",
 			"url" : "starbucks/stame.jpg",
 			"tall" : 450
+		},
+		"starlatte" : {
+			"fullName" : "カフェ ラテ(tall)",
+			"subTitle" : "やっぱり甘いもの食べるときはスターバックスラテ",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 500
 		}
 	}
 	

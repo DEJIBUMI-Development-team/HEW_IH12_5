@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_regenerate_id(true);
 $result = "";
 if (isset($_POST['add'])) {
 	$_SESSION['HS'] = 'edit'; //セッション変数に登録
@@ -24,10 +25,7 @@ if (isset($_POST['add'])) {
 	<title>でじぶみ</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/animation.css">
-	<link rel="stylesheet" href="./assets/css/header.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
 	<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/9-6-2/css/9-6-2.css">
 	<link rel="stylesheet" href="./assets/css/header.css">
@@ -82,32 +80,32 @@ if (isset($_POST['add'])) {
 						<label for="submit">
 							<img src="assets/img/00.jpg" id="lnk_00" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text" type="submit" id="submit" name="update" style="display:none">
-						<p class="speech-bubble">吹き出しが表示されます</p>
+						<input class="text" type="submit" id="submit" name="add" style="display:none">
+						<p class="speech-bubble">編集画面へ</p>
 					</div>
 
 					<div class="css-speech-bubble2">
 						<label for="submit1">
 							<img src="assets/img/01.jpg" id="lnk_01" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text2" type="submit" id="submit1" name="update" style="display:none">
-						<p class="speech-bubble2">吹き出しが表示されます</p>
+						<input class="text2" type="submit" id="submit1" name="add" style="display:none">
+						<p class="speech-bubble2">編集画面へ</p>
 					</div>
 
 					<div class="css-speech-bubble3">
 						<label for="submit2">
 							<img src="assets/img/02.jpg" id="lnk_02" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text3" type="submit" id="submit2" name="update" style="display:none">
-						<p class="speech-bubble3">吹き出しが表示されます</p>
+						<input class="text3" type="submit" id="submit2" name="add" style="display:none">
+						<p class="speech-bubble3">編集画面へ</p>
 					</div>
 
 					<div class="css-speech-bubble4">
 						<label for="submit3">
 							<img src="assets/img/03.jpg" id="lnk_03" class="obj trans_bg lnk action" style="cursor: pointer;">
 						</label>
-						<input class="text4" type="submit" id="submit3" name="update" style="display:none">
-						<p class="speech-bubble4">吹き出しが表示されます</p>
+						<input class="text4" type="submit" id="submit3" name="add" style="display:none">
+						<p class="speech-bubble4">編集画面へ</p>
 					</div>
 
 				</form>
@@ -695,13 +693,23 @@ if (isset($_POST['add'])) {
 			<h2 class="gift">贈り物</h2>
 			<div class="sliderArea">
 				<div class="sliderWide">
-					<ul class="slider">
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/godiva.png" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/saruta1.webp" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/tullys.png" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/star1.jpg" alt="125naroom"></a></li>
-						<li><a href="https://125naroom.com/web/2823" target="_blank"><img src="assets/img/kome.jpg" alt="125naroom"></a></li>
-					</ul>
+					<form action="./assets/php/gift.php" method="post" name="gift">
+						<ul class="slider">
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/godiva.png" alt="godiva"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/saruta1.jpg" alt="saruta1"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/tullys.png" alt="tullys"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/star1.jpg" alt="star1"></a></li>
+							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/kome.jpg" alt="kome"></a></li>
+							<input type="submit" name="update" style="display:none">
+							<!-- <input class="text4" type="submit" id="submit3" name="add" style="display:none"> -->
+							<!-- <select name="" id=""> -->
+								<!-- <option value=""></option>
+								<option value=""></option>
+								<option value=""></option>
+								<option value=""></option> -->
+							</select>
+						</ul>
+					</form>
 				</div>
 			</div>
 		</div>

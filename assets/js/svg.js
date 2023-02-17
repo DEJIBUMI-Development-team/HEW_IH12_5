@@ -1,4 +1,5 @@
 function delayScrollAnime() {
+
 	var time = 0.03;//遅延時間を増やす秒数の値
 	var value = time;
 	$('.delayScroll').each(function () {
@@ -8,11 +9,11 @@ function delayScrollAnime() {
 		var windowHeight = $(window).height();//画面の高さを取得
 		var childs = $(this).children();	//子要素を取得
 		
-		if (scroll >= elemPos - windowHeight +150 && !$(parent).hasClass("play")) {//指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
+		if (scroll >= elemPos - windowHeight +100 && !$(parent).hasClass("play")) {//指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
 			$(childs).each(function () {
 				
 				if (!$(this).hasClass("fadein")) {//アニメーションのクラス名が指定されているかどうかをチェック
-					
+					$(parent).removeClass("delayScroll");
 					$(parent).addClass("play");	//親要素にクラス名playを追加
 					$(this).css("animation-delay", value + "s");//アニメーション遅延のCSS animation-delayを追加し
 					$(this).addClass("fadein");//アニメーションのクラス名を追加
