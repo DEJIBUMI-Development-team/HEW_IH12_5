@@ -84,7 +84,7 @@ CSS3 animation & parts layout
 /*モーダルのボタンの色を変更したい場合*/ 
 .modaal-close:after, 
 .modaal-close:before{
-  background:#ccc;  
+  background:#fff;  
 }
 
 .modaal-close:focus:after,
@@ -434,8 +434,8 @@ first_content
 } */
 
 .modaal-overlay {
-  opacity: 0.2 !important;
-  background: #666;
+  opacity: 0.9 !important;
+  background: #666 !important;
 }
 /* ------------------------------------------------
 .second_content
@@ -662,6 +662,7 @@ third_content
 #third_content{
   /* background-color: rgba(68, 45, 221, 0.283); */
   height: 50vh;
+  margin-bottom: 50px;
 }
 
 .gift{
