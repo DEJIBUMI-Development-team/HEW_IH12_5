@@ -60,8 +60,9 @@ CREATE TABLE `t_user_letter` (
   `F_user_id` int(5) NOT NULL,
   `name` varchar(255) NOT NULL,
   `raw_data` mediumblob NOT NULL,
+  `survey` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`survey`)),
   PRIMARY KEY (`letter_id`),
   KEY `F_user_id` (`F_user_id`),
   CONSTRAINT `t_user_letter` FOREIGN KEY (`F_user_id`) REFERENCES `t_user` (`F_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4
 ```
