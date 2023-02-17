@@ -38,6 +38,22 @@ $gift_data = json_decode($json_file, true);
 	</div>
 	<div class="additional">
 		<?php
+		if (isset($_POST["submit"])) {
+			$survey_result = $_POST["survey"];
+			$post_name = $_POST["respondent-name"];
+			$survey_data = json_decode($elem[0]["survey"], true);
+			foreach ($survey_data as $key => $value) {
+				if ($key == "title") continue;
+				if ($value["survey_select"] == $survey_result) {
+					$survey_data[$key]["count"] += 1;
+					$survey_data[$key]["survey_name"][] = $post_name;
+				}
+			}
+			$update_data = json_encode($survey_data, JSON_UNESCAPED_UNICODE);
+			db("UPDATE `t_user_letter` SET `survey` = '{$update_data}' WHERE `letter_id` = '{$id}'");
+			$_POST["sumit"] = null;
+		}
+
 		if (!empty($_GET["title"])) {
 			$title = $_GET["title"];
 			echo <<<EOD
