@@ -63,7 +63,7 @@ if (isset($_POST["logout"])) {
 			<div class="item n01"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"><br></a><p>決済情報</p></div>
 			<div class="item n02"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a><p>クレジットカード</p></div>
 			<div class="item n03"><a href="barcode.php"><img src="../img/barcode.png" alt="バーコード決済"></a><p>バーコード決済</p></div>
-			<label for="submit" class="item n04"><div class="logout"><img src="../img/logout.png" alt="ログアウト"></div><p>ログアウト</p></label>
+			<div class="item n04"><a href="logout.php" class="logout" ><img src="../img/logout.png" alt="ログアウト"></a><p>ログアウト</p></div>
 		</div>
 	</div>
 	<div class="view-history" id="history">
@@ -71,9 +71,9 @@ if (isset($_POST["logout"])) {
 			<input type="submit" name="new" value="でじぶみを新規作成">
 		</form>
 	</div>
-	<form action="" method="POST">
-		<input type="submit" name="logout" value="ログアウト" id="submit" style="display: none;">
-	</form>
+	<!-- <form action="" method="POST">
+		<input type="submit" name="logout" value="ログアウト">
+	</form> -->
 	<script>
 		// mypage.jsに対して、sqlの結果を返す
 		function get_edit_history() {
