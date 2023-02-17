@@ -17,6 +17,7 @@ $gift_data = json_decode($json_file, true);
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

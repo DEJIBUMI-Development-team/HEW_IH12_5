@@ -26,9 +26,10 @@ $gift_data = json_decode($json_file, true);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/letter.css">
+	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
 	<meta property="og:title" content="でじぶみ">
 	<meta property="og:description" content="あなたにお手紙が届いています">
-	<meta property="og:image" content="https://dejibumi.sakura.ne.jp/HEW_IH12_5/assets/img/logo.png">
+	<meta property="og:image" content="https://dejibumi.sakura.ne.jp/HEW_IH12_5/assets/img/futo.png">
 	<title>Document</title>
 </head>
 

@@ -35,6 +35,7 @@ if (isset($_POST["settlement"])) {
 	<meta charset="utf-8">
 	<title>決済画面</title>
 	<link rel="stylesheet" href="../css/settlement.css">
+	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

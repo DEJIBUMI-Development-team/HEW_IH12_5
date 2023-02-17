@@ -32,6 +32,7 @@ if (!empty($_POST['check'])) {
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>確認画面</title>
     <link rel="stylesheet" href="../css/check.css">
+	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="backgrounds">
