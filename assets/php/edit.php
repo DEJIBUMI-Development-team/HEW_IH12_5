@@ -21,7 +21,7 @@ if (!isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="../data/templateTxt_data_style.css">
     <link rel="stylesheet" href="../css/picker.nano.css" />
     <link type="text/css" rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
-	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <script src="../package/fitty.min.js"></script>
     <script src="../package/html2canvas.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>

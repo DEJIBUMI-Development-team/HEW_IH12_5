@@ -11,6 +11,8 @@ session_start();
     <title>Document</title>
     <link rel="stylesheet" href="../css/create_result.css">
     <link rel="stylesheet" href="../css/header.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
