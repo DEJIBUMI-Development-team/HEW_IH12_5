@@ -77,8 +77,8 @@ html,body   {height:100%; overflow: hidden;}
 body  {min-width:960px; width:100%; color:#666; letter-spacing:3pt;}
 body a  {color:#666;}
 
-::selection {background: #fff; color: #98d9e7;}
-::-moz-selection {background: #fff; color: #98d9e7;}
+::selection {background: #fff; color: #1809e7;}
+::-moz-selection {background: #fff; color: #1809e7;}
 
 .jsf    {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px; font-style: italic;}
 .jsf_n  {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px;}

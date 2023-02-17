@@ -29,7 +29,7 @@ a {
 	box-sizing: border-box;
 }
 
-body {
+/* body {
 	font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック' 'Yu Gothic', 'メイリオ' 'ＭＳ Ｐゴシック', 'MS PGothic';
 	line-height: 1.8;
 }
@@ -37,7 +37,9 @@ body {
 header {
 	font-family: 'Kaisei Decol', serif;
 	font-family: 'Shippori Mincho', serif;
-}
+} */
+
+body {font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; font-weight: normal;}
 
 /*background*/
 .water {
