@@ -39,8 +39,8 @@ body  {min-width:960px; width:100%; color:#666;
 
 body a  {color:#666;}
 
-::selection {background: #fff; color: #98d9e7;}
-::-moz-selection {background: #fff; color: #98d9e7;}
+::selection {background: #fff; color: #1809e7;}
+::-moz-selection {background: #fff; color: #1809e7;}
 
 /* ------------------------------------------------
 CSS3 animation & parts layout
@@ -433,6 +433,10 @@ first_content
   text-align: center;
 } */
 
+.modaal-overlay {
+  opacity: 0.2 !important;
+  background: #666;
+}
 /* ------------------------------------------------
 .second_content
 --------------------------------------------------- */
