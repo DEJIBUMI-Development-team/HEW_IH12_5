@@ -25,6 +25,7 @@ if (isset($_POST["settlement"])) {
 			"count" => 0,
 		]; 
 	}
+	$survey_data["ending"] = false;
 
 	$survey_json = json_encode($survey_data, JSON_UNESCAPED_UNICODE);
 	$sql = 'INSERT INTO t_user_letter(F_user_id, name, raw_data, survey) VALUES(
