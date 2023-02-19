@@ -76,7 +76,7 @@ if (isset($_POST["count"])) {
 							</div>
 						</div>
 						<button id="add" type="button" style="display:none;">追加</button>
-						<button id="delete" type="button">削除</button>
+						<button id="delete" type="button" style="display:none">削除</button>
 						<div class="exit">閉じる</div>
 					</div>
 				</div>

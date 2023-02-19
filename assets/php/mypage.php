@@ -117,8 +117,8 @@ if (isset($survey_result)){
 							</div>
 				EOD;
 				
-				$all_element_count = round((count($chert[0]["survey_name"]) + count($chert[0]["survey_name"]))/2);
-				for ($i=0; $i < $all_element_count; $i++) {
+				$all_element_count = round((count($chert[0]["survey_name"]) + count($chert[1]["survey_name"]))/2);
+				for ($i=0; $i <= $all_element_count; $i++) {
 					$chert_elem_0 = isset($chert[0]["survey_name"][$i]) ? $chert[0]["survey_name"][$i] : "";
 					$chert_elem_1 = isset($chert[1]["survey_name"][$i]) ? $chert[1]["survey_name"][$i] : "";
 					echo <<<EOD
