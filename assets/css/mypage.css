@@ -1,7 +1,4 @@
 body {
-  /* background-image: url("../img/water_purple1.jpg"); */
-  /* background-attachment: fixed; */
-  /* background-size: cover; */
   background-color: rgb(248, 248, 215);
 }
 
@@ -189,6 +186,7 @@ h2 {
   margin: 0 auto;
   width: 70%;
   min-height: 30px;
+  margin-bottom: 40px;
   background-color: #fff;
 }
 
@@ -290,4 +288,19 @@ h2 {
   width: 100%;
   border-bottom: #919191 solid 2px;
   padding-bottom: 7%;
+}
+.question-status {
+  display: flex;
+  justify-content: center;
+}
+.question-status h4{
+  font-size: 0.9em;
+  color: red;
+  width: 100px;
+  padding: 5px;
+  margin-top: 0;
+}
+.finish {
+  margin: 5px 0px;
+  height: 24px;
 }
