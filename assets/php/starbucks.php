@@ -77,6 +77,19 @@ $gift_data = json_decode($json_file, true);
           </div>
         </a>
       </form>
+      <form action="./shohin.php" method="post" name="shouhin_3">
+        <a href="#" onclick="document.shouhin_3.submit();">
+          <input type="hidden" name="product" value="starlatte">
+          <div class="item_name">
+            <img src="../img/starbucks/stame.jpg">
+            <div class="item_title">
+              <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
+              <p><?php echo $gift_data[$store]["starlatte"]["fullName"]?></p>
+              <div class="item_price">￥<?php echo $gift_data[$store]["starlatte"]["tall"]?></div>
+            </div>
+          </div>
+        </a>
+      </form>
     </section>
 
     <section class="Starbucks_item">
