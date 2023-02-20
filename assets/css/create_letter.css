@@ -15,6 +15,7 @@ html {
 }
 
 .survey-open {
+	font-weight: bold;
 	margin: 20px 0px;
 	cursor: pointer;
 	display: inline-block;
@@ -113,6 +114,7 @@ input[type=text] {
 }
 
 .gift-select {
+	font-weight: bold;
 	text-decoration: none;
 	color: black;
 }
