@@ -86,33 +86,54 @@ if (isset($survey_result)){
 
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/mypage.css">
 	<link rel="stylesheet" href="../css/header.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 	<title>マイページ</title>
 </head>
 
 <body>
-	<?php include("./header.php") ?>
+	<header class="navigator scroll_tgl">
+  <div class="navigator_content">
+    <div class="navigator_left">
+      <a href="/HEW_IH12_5/index.php"><img src="/HEW_IH12_5/assets/img/logo.png" alt="logo"></a>
+      <a href="/HEW_IH12_5/assets/php/edit.php">でじぶみを新規作成</a>
+      <a href="/HEW_IH12_5/assets/php/gift.php">ギフト</a>
+      <a href="/HEW_IH12_5/assets/php/mypage.php">マイページ</a>
+    </div>
+    
+    <div class="navigator_right">
+      <a href="/HEW_IH12_5/assets/php/signup.php">会員登録</a>
+      <a href="/HEW_IH12_5/assets/php/login.php">ログイン</a>
+    </div>
+  </div>
+</header>
 	<h2>マイページ</h2>
 	<div class="user_icon">
 		<img src="../img/user_icon.svg" alt="マイページ">
 		<p>
-			<?php echo $_SESSION["user_name"]; ?>
-		</p>
+			a		</p>
 	</div>
 	<div class="container">
 		<div class="set-flex">
-			<div class="item n01"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"><br></a><p>決済情報</p></div>
-			<div class="item n02"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a><p>クレジットカード</p></div>
-			<div class="item n03"><a href="barcode.php"><img src="../img/barcode.png" alt="バーコード決済"></a><p>バーコード決済</p></div>
+			<div class="item n01 switch_elem check dejibumi"><div class="a"><img src="../img/画面.svg" alt="決済情報"><br></div>
+				<p>でじぶみ一覧</p>
+			</div>
+			<div class="item n02 switch_elem question"><div class="a" ><img src="../img/アンケート.svg" alt="クレジットカード"></div>
+				<p>お返事</p>
+			</div>
+			<div class="item n03"><a href="barcode.php"><img src="../img/dredit.jpg" alt="バーコード決済"></a>
+				<p>クレジットカード</p>
+			</div>
 			<div class="item n04">
 				<form action="" method="POST">
-					<label for="logout" class="logout" type="submit" name="logout"><img src="../img/logout.png" alt="ログアウト"><p>ログアウト</p></label>
+					<label for="logout" class="logout" type="submit" name="logout"><img src="../img/logout.png" alt="ログアウト">
+						<p>ログアウト</p>
+					</label>
 					<input type="submit" name="logout" id="logout" style="display: none;">
 				</form>
 			</div>
@@ -125,68 +146,7 @@ if (isset($survey_result)){
 	</div>
 
 	<div class="questionnaire" style="display:none">
-		<?php if($survey_flg){
-			foreach ($chert_contents as $key => $chert) {
-				
-				echo <<<EOD
-					<h4>お返事名 : {$chert[0]["title"]}</h4>
-				EOD;
-				if (isset($chert[0]["ending"])) {
-					$result = "";
-					$chert_status = $chert[0]["ending"];
-					if (!$chert_status) {
-						$result =  "投票期間中";
-						echo <<<EOD
-						<form action="" method="POST" class="question-status">
-							<h4>{$result} : </h4>
-							<input type="submit" value="投票を終了する" name="finish_survey" class="finish">
-							<input type="hidden" name="close_id" value="{$chert[1]}">
-						</form>
-						EOD;
-					}else {
-						$result =  "投票終了";
-						echo <<<EOD
-						<form class="question-status" action="" method="POST">
-							<h4>{$result} : </h4>
-							<input type="submit" value="投票を再開する" name="restart_survey" class="finish">
-							<input type="hidden" name="open_id" value="{$chert[1]}">
-						</form>
-						EOD;
-					}
-				}
-				echo <<<EOD
-					<div class="question-content">
-						<div class="quertion">
-							<canvas id="myChart-{$key}"></canvas>
-						</div>
-						<div class="result-table">
-							<div class="table-content">
-								<div class="tbl-elem tbl-1 tbl-title">{$chert[0][0]["survey_select"]}</div>
-								<div class="tbl-elem tbl-2 tbl-title">{$chert[0][1]["survey_select"]}</div>
-							</div>
-				EOD;
-				
-				$all_element_count = (count($chert[0][0]["survey_name"]) >= count($chert[0][1]["survey_name"])) ? count($chert[0][0]["survey_name"]) : count($chert[0][1]["survey_name"]);
-
-				for ($i=0; $i < $all_element_count; $i++) {
-					$chert_elem_0 = isset($chert[0][0]["survey_name"][$i]) ? $chert[0][0]["survey_name"][$i] : "";
-					$chert_elem_1 = isset($chert[0][1]["survey_name"][$i]) ? $chert[0][1]["survey_name"][$i] : "";
-					echo <<<EOD
-							<div class="table-content">
-								<div class="tbl-elem tbl-1">{$chert_elem_0}</div>
-								<div class="tbl-elem tbl-2">{$chert_elem_1}</div>
-							</div>
-					EOD;
-				}
-				echo <<<EOD
-						</div>
-					</div>
-				EOD;
-
-			}
-		}
-		?>
-	</div>
+			</div>
 
 	<!-- <form action="" method="POST">
 		<input type="submit" name="logout" value="ログアウト">
@@ -224,7 +184,7 @@ if (isset($survey_result)){
 
 		// mypage.jsに対して、sqlの結果を返す
 		function get_edit_history() {
-			var data = JSON.parse('<?php echo $data; ?>');
+			var data = JSON.parse('[]');
 			return data;
 		}
 
@@ -296,39 +256,7 @@ if (isset($survey_result)){
 				return false;
 			}
 		}
-		<?php if($survey_flg){ 
-			foreach ($chert_contents as $key => $chert) {?>
-			var ctx = document.getElementById('myChart-<?php echo $key;?>');
-			new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: ["<?php echo $chert[0][0]["survey_select"];?>", "<?php echo $chert[0][1]["survey_select"];?>"],
-				
-				datasets: [
-					{
-						backgroundColor:["#f2ffe5", "#fff2e5"],
-						label: "<?php echo $chert[0]["title"];?>",
-						data: [<?php echo $chert[0][0]["count"] ;?>, <?php echo $chert[0][1]["count"] ;?>],
-						borderWidth: 1,
-					}
-				]
-			},
-
-			options: {
-				scales: {
-				y: {
-					beginAtZero: true
-				}
-				},
-				plugins: {
-					legend: {
-						display: false
-					}
-				}
-			}
-			});
-		<?php }}?>
-	
+			
 	</script>
 </body>
 
