@@ -107,14 +107,14 @@ if (isset($survey_result)){
 	</div>
 	<div class="container">
 		<div class="set-flex">
-		<div class="item n01 switch_elem check dejibumi"><div class="a"><img src="../img/画面.svg" alt="決済情報"><br></div>
-				<p>でじぶみ一覧</p>
-			</div>
-			<div class="item n02 switch_elem question"><div class="a" ><img src="../img/アンケート.svg" alt="クレジットカード"></div>
-				<p>お返事</p>
+			<div class="item n01 switch_elem check dejibumi"><div class=<?php echo $_SESSION["user_name"]; ?>><img src="../img/画面.svg" alt="決済情報"><br></div>
+					<p>でじぶみ一覧</p>
+				</div>
+			<div class="item n02 switch_elem question"><div class=<?php echo $_SESSION["user_name"]; ?>><img src="../img/アンケート.svg" alt="クレジットカード"></div>
+					<p>お返事</p>
 			</div>
 			<div class="item n03"><a href="barcode.php"><img src="../img/dredit.jpg" alt="バーコード決済"></a>
-				<p>クレジットカード</p>
+					<p>クレジットカード</p>
 			</div>
 			<div class="item n04">
 				<form action="" method="POST">
@@ -124,7 +124,7 @@ if (isset($survey_result)){
 					<input type="submit" name="logout" id="logout" style="display: none;">
 				</form>
 			</div>
-		</div>
+	</div>
 	</div>
 	<div class="view-history" id="history">
 		<form class="new_edit" id="new_creation" method="POST" onsubmit="newSubmit()">
