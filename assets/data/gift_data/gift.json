@@ -5,13 +5,31 @@
 			"fullName" : "カフェ アメリカーノ(tall)",
 			"subTitle" : "やっぱり甘いもの食べるときはスターバックスアメリカーノ",
 			"url" : "starbucks/stame.jpg",
-			"tall" : 450
+			"tall" : 410
 		},
 		"starlatte" : {
-			"fullName" : "カフェ ラテ(tall)",
-			"subTitle" : "やっぱり甘いもの食べるときはスターバックスラテ",
+			"fullName" : "スターバックス ラテ(tall)",
+			"subTitle" : "ほんのり甘く一息つくならスターバックスラテ",
 			"url" : "starbucks/stame.jpg",
-			"tall" : 500
+			"tall" : 455
+		},
+		"whitemocha" : {
+			"fullName" : "ホワイト モカ(tall)",
+			"subTitle" : "白く美味しいホワイトモカ",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 495
+		},
+		"cappuccino" : {
+			"fullName" : "カプチーノ",
+			"subTitle" : "イタリアで好まれている飲み方をどうぞ",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 415
+		},
+		"cafemocha" : {
+			"fullName" : "キャラメル マキアート",
+			"subTitle" : "バニラ風味のラテにキャラメルソースをトッピング",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 455
 		}
 	}
 	
