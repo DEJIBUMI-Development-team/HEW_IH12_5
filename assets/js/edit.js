@@ -715,7 +715,7 @@ outputBtn.addEventListener('click', async function () {
         await (async function () {
             await reset_writing.each(async (_, elem) => {
                 if ($(elem).css("writing-mode") === "vertical-rl") {
-                    debugger;
+                    // debugger;
                     var data_id = $(elem).data("id");
                     var par_elem = $(elem).parents(`#${data_id}`);
                     if ($(elem).css("font-family") === "yosugara") {

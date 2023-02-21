@@ -5,7 +5,31 @@
 			"fullName" : "カフェ アメリカーノ(tall)",
 			"subTitle" : "やっぱり甘いもの食べるときはスターバックスアメリカーノ",
 			"url" : "starbucks/stame.jpg",
-			"tall" : 450
+			"tall" : 410
+		},
+		"starlatte" : {
+			"fullName" : "スターバックス ラテ(tall)",
+			"subTitle" : "ほんのり甘く一息つくならスターバックスラテ",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 455
+		},
+		"whitemocha" : {
+			"fullName" : "ホワイト モカ(tall)",
+			"subTitle" : "白く美味しいホワイトモカ",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 495
+		},
+		"cappuccino" : {
+			"fullName" : "カフェ モカ",
+			"subTitle" : "アメリカ生まれの甘くマイルドな一品",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 415
+		},
+		"cafemocha" : {
+			"fullName" : "カプチーノ",
+			"subTitle" : "イタリアで好まれている一品",
+			"url" : "starbucks/stame.jpg",
+			"tall" : 455
 		}
 	}
 	

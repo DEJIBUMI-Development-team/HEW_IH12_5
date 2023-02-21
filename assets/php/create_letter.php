@@ -28,7 +28,10 @@ if (isset($_POST["submit"])) {
 }
 if (isset($_POST["count"])) {
 	$count = $_POST["count"] == "" ?  1 : $_POST["count"]; 
-	
+	$gift_price = $gift_data[$_POST["store"]][$_POST["product_name"]]["tall"];
+}else {
+	$count = 0; 	
+	$gift_price = 0;
 }
 
 ?>
@@ -59,7 +62,7 @@ if (isset($_POST["count"])) {
 			</div>
 			<div class="additional-contents">
 				<div class="survey-elements">
-					<div class="survey-open">アンケート機能を利用する</div>
+					<div class="survey-open">お返事機能を利用する</div>
 					<div class="survey hidden">
 						<input type="text" name="survey_title" placeholder="アンケートタイトルを追加" class="input_element" disabled>
 						<br>
@@ -72,8 +75,8 @@ if (isset($_POST["count"])) {
 								<input type="text" name="survey[]" placeholder="選択肢を追加" class="input_element" disabled>
 							</div>
 						</div>
-						<button id="add" type="button">追加</button>
-						<button id="delete" type="button">削除</button>
+						<button id="add" type="button" style="display:none;">追加</button>
+						<button id="delete" type="button" style="display:none">削除</button>
 						<div class="exit">閉じる</div>
 					</div>
 				</div>
@@ -150,7 +153,7 @@ if (isset($_POST["count"])) {
 			}
 			if (is_setGift) {
 
-				gift_price = <?php echo ($gift_data[$_POST["store"]][$_POST["product_name"]]["tall"]);?> * Number(<?php echo $count;?>)
+				gift_price = gift_price = <?php echo ($gift_price * $count);?>;
 			} else {
 				gift_price = 0;
 			}

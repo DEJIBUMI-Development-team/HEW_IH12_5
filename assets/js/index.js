@@ -148,7 +148,7 @@ const hover_text = document.querySelector(".hover_text");
 let scroll_offset = 0;
 
 window.addEventListener("scroll",()=>{
-  debugger;
+  // debugger;
   scroll_offset = window.pageYOffset;
   if (scroll_offset > 0) {
     header_element.classList.remove("scroll_tgl");

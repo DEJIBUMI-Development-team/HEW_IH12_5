@@ -65,53 +65,65 @@ $gift_data = json_decode($json_file, true);
         </a>
       </form>
     </section>
-
     <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stalate.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>スターバックス ラテ</p>
-            <div class="item_price">￥415~￥545</div>
+      <form action="./shohin.php" method="post" name="shouhin_2">
+        <a href="#" onclick="document.shouhin_2.submit();">
+          <input type="hidden" name="product" value="starlatte">
+          <div class="item_name">
+            <img src="../img/starbucks/stalate.jpg">
+            <div class="item_title">
+              <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
+              <p><?php echo $gift_data[$store]["starlatte"]["fullName"]?></p>
+              <div class="item_price">￥<?php echo $gift_data[$store]["starlatte"]["tall"]?></div>
+            </div>
           </div>
-        </div>
+        </a>
+      </form>
     </section>
-
     <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stawitemoca.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>ホワイト モカ</p>
-            <div class="item_price">￥455~￥585</div>
+      <form action="./shohin.php" method="post" name="shouhin_3">
+        <a href="#" onclick="document.shouhin_3.submit();">
+          <input type="hidden" name="product" value="whitemocha">
+          <div class="item_name">
+            <img src="../img/starbucks/stawitemoca.jpg">
+            <div class="item_title">
+              <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
+              <p><?php echo $gift_data[$store]["whitemocha"]["fullName"]?></p>
+              <div class="item_price">￥<?php echo $gift_data[$store]["whitemocha"]["tall"]?></div>
+            </div>
           </div>
-        </div>
+        </a>
+      </form>
     </section>
-
     <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stmoca.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>カフェ モカ</p>
-            <div class="item_price">￥455~￥585</div>
+      <form action="./shohin.php" method="post" name="shouhin_4">
+        <a href="#" onclick="document.shouhin_4.submit();">
+          <input type="hidden" name="product" value="cafemocha">
+          <div class="item_name">
+            <img src="../img/starbucks/stmoca.jpg">
+            <div class="item_title">
+              <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
+              <p><?php echo $gift_data[$store]["cafemocha"]["fullName"]?></p>
+              <div class="item_price">￥<?php echo $gift_data[$store]["cafemocha"]["tall"]?></div>
+            </div>
           </div>
-        </div>
+        </a>
+      </form>
     </section>
-
     <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stkafu.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>カプチーノ</p>
-            <div class="item_price">￥415~￥545</div>
+      <form action="./shohin.php" method="post" name="shouhin_5">
+        <a href="#" onclick="document.shouhin_5.submit();">
+          <input type="hidden" name="product" value="cappuccino">
+          <div class="item_name">
+            <img src="../img/starbucks/stkafu.jpg">
+            <div class="item_title">
+              <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
+              <p><?php echo $gift_data[$store]["cappuccino"]["fullName"]?></p>
+              <div class="item_price">￥<?php echo $gift_data[$store]["cappuccino"]["tall"]?></div>
+            </div>
           </div>
-        </div>
+        </a>
+      </form>
     </section>
 
     <section class="Starbucks_item">
@@ -121,7 +133,7 @@ $gift_data = json_decode($json_file, true);
           <div class="item_title">
             <h3>スターバックス</h3>
             <p>キャラメル マキアート</p>
-            <div class="item_price">￥455~￥585</div>
+            <div class="item_price">￥455</div>
           </div>
         </div>
     </section>
