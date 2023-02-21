@@ -20,14 +20,14 @@
 			"tall" : 495
 		},
 		"cappuccino" : {
-			"fullName" : "カプチーノ",
-			"subTitle" : "イタリアで好まれている飲み方をどうぞ",
+			"fullName" : "カフェ モカ",
+			"subTitle" : "アメリカ生まれの甘くマイルドな一品",
 			"url" : "starbucks/stame.jpg",
 			"tall" : 415
 		},
 		"cafemocha" : {
-			"fullName" : "キャラメル マキアート",
-			"subTitle" : "バニラ風味のラテにキャラメルソースをトッピング",
+			"fullName" : "カプチーノ",
+			"subTitle" : "イタリアで好まれている一品",
 			"url" : "starbucks/stame.jpg",
 			"tall" : 455
 		}
