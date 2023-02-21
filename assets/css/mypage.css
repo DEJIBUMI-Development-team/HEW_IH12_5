@@ -41,7 +41,6 @@ h2 {
 }
 
 .container .item {
-  display: flex;
   margin: 0.5%;
   width: 24%;
   position: relative;
