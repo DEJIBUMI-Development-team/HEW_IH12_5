@@ -107,17 +107,14 @@ if (isset($survey_result)){
 	</div>
 	<div class="container">
 		<div class="set-flex">
-			<div class="item n01 switch_elem check dejibumi"><div class="a"><img src="../img/画面.svg" alt="決済情報"><br></div>
-				<p>でじぶみ一覧</p>
-			</div>
-			<div class="item n02 switch_elem question"><div class="a" ><img src="../img/アンケート.svg" alt="クレジットカード"></div>
-				<p>お返事</p>
-			</div>
-			<div class="item n03"><a href="barcode.php"><img src="../img/dredit.jpg" alt="バーコード決済"></a>
-				<p>クレジットカード</p>
-			</div>
-			<div class="item n04"><a href="logout.php" class="logout"><img src="../img/logout.png" alt="ログアウト"></a>
-				<p>ログアウト</p>
+			<div class="item n01"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"><br></a><p>決済情報</p></div>
+			<div class="item n02"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a><p>クレジットカード</p></div>
+			<div class="item n03"><a href="barcode.php"><img src="../img/barcode.png" alt="バーコード決済"></a><p>バーコード決済</p></div>
+			<div class="item n04">
+				<form action="" method="POST">
+					<label for="logout" class="logout" type="submit" name="logout"><img src="../img/logout.png" alt="ログアウト"><p>ログアウト</p></label>
+					<input type="submit" name="logout" id="logout" style="display: none;">
+				</form>
 			</div>
 		</div>
 	</div>
