@@ -70,7 +70,7 @@ $gift_data = json_decode($json_file, true);
         <a href="#" onclick="document.shouhin_2.submit();">
           <input type="hidden" name="product" value="starlatte">
           <div class="item_name">
-            <img src="../img/starbucks/stame.jpg">
+            <img src="../img/starbucks/stalate.jpg">
             <div class="item_title">
               <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
               <p><?php echo $gift_data[$store]["starlatte"]["fullName"]?></p>
@@ -85,7 +85,7 @@ $gift_data = json_decode($json_file, true);
         <a href="#" onclick="document.shouhin_3.submit();">
           <input type="hidden" name="product" value="whitemocha">
           <div class="item_name">
-            <img src="../img/starbucks/stame.jpg">
+            <img src="../img/starbucks/stawitemoca.jpg">
             <div class="item_title">
               <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
               <p><?php echo $gift_data[$store]["whitemocha"]["fullName"]?></p>
@@ -100,7 +100,7 @@ $gift_data = json_decode($json_file, true);
         <a href="#" onclick="document.shouhin_4.submit();">
           <input type="hidden" name="product" value="cafemocha">
           <div class="item_name">
-            <img src="../img/starbucks/stame.jpg">
+            <img src="../img/starbucks/stmoca.jpg">
             <div class="item_title">
               <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
               <p><?php echo $gift_data[$store]["cafemocha"]["fullName"]?></p>
@@ -115,7 +115,7 @@ $gift_data = json_decode($json_file, true);
         <a href="#" onclick="document.shouhin_5.submit();">
           <input type="hidden" name="product" value="cappuccino">
           <div class="item_name">
-            <img src="../img/starbucks/stame.jpg">
+            <img src="../img/starbucks/stkafu.jpg">
             <div class="item_title">
               <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
               <p><?php echo $gift_data[$store]["cappuccino"]["fullName"]?></p>
@@ -124,54 +124,6 @@ $gift_data = json_decode($json_file, true);
           </div>
         </a>
       </form>
-    </section>
-
-    <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stalate.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>スターバックス ラテ</p>
-            <div class="item_price">￥415</div>
-          </div>
-        </div>
-    </section>
-
-    <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stawitemoca.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>ホワイト モカ</p>
-            <div class="item_price">￥455</div>
-          </div>
-        </div>
-    </section>
-
-    <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stmoca.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>カフェ モカ</p>
-            <div class="item_price">￥455</div>
-          </div>
-        </div>
-    </section>
-
-    <section class="Starbucks_item">
-      <a href="">
-        <div class="item_name">
-          <img src="../img/starbucks/stkafu.jpg">
-          <div class="item_title">
-            <h3>スターバックス</h3>
-            <p>カプチーノ</p>
-            <div class="item_price">￥415</div>
-          </div>
-        </div>
     </section>
 
     <section class="Starbucks_item">
