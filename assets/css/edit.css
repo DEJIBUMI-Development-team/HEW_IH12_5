@@ -397,7 +397,7 @@ main {
 
 .select-img-10 {
     margin-left: 10px;
-    background-image: url("../data/img_data/night.png");
+    background-image: url("../data/img_data/night.PNG");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -486,7 +486,7 @@ main {
 }
 .text-0{
     font-size: 1.5em;
-    : sans-serif;
+    font-family: sans-serif;
 }
 
 .text-1 {
