@@ -75,6 +75,7 @@ if (isset($_POST["login"])) {
     <link rel="shortcut icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="../image/favicon_wood_life.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="../css/login.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
     <meta name="robots" content="none,noindex,nofollow">
 </head>
 

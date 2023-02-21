@@ -16,6 +16,7 @@ $gift_data = json_decode($json_file, true);
   <link rel="stylesheet" href="../css/starbucks.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

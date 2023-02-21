@@ -11,6 +11,8 @@ session_start();
     <title>Document</title>
     <link rel="stylesheet" href="../css/create_result.css">
     <link rel="stylesheet" href="../css/header.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -25,7 +27,7 @@ session_start();
         </div>
         <div class="url-clip-boad">
             <div class="text-erea">
-                <p id="target-text"><?php echo "http://localhost/HEW_IH12_5/assets/php/letter.php?" . http_build_query($_GET); ?></p>
+                <p id="target-text"><?php echo "https://dejibumi.sakura.ne.jp/HEW_IH12_5/assets/php/letter.php?" . http_build_query($_GET); ?></p>
             </div>
             <button id="copy_text">Copy URL</button>
             <div class="copy-result"></div>
@@ -38,7 +40,7 @@ session_start();
                 "store_name" => $_SESSION["store_name"],
                 "count"=> $_SESSION["gift_count"]
             ];
-            $url =  "http://localhost/HEW_IH12_5/assets/php/letter.php?".http_build_query($_GET)."&".http_build_query($gift_data);
+            $url =  "https://dejibumi.sakura.ne.jp/HEW_IH12_5/assets/php/letter.php?".http_build_query($_GET)."&".http_build_query($gift_data);
 
             echo <<<EOD
 

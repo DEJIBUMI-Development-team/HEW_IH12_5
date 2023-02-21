@@ -44,6 +44,7 @@ if (isset($_POST["count"])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/create_letter.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 	<title>手紙設定画面</title>
 </head>
 

@@ -1,17 +1,6 @@
 <?php
 session_start();
-function connectDB()
-{
-	$param = 'mysql:dbname=dejibumidb;host=localhost';
-	try {
-		$pdo = new PDO($param, 'root', '');
-		return $pdo;
-	} catch (PDOException $e) {
-		exit($e->getMessage());
-	}
-}
-
-$pdo = connectDB();
+require("./dbaccess.php");
 
 if (isset($_POST["settlement"])) {
 	$img_name = $_SESSION["img_name"];
@@ -56,6 +45,7 @@ if (isset($_POST["settlement"])) {
 	<meta charset="utf-8">
 	<title>決済画面</title>
 	<link rel="stylesheet" href="../css/settlement.css">
+	<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
