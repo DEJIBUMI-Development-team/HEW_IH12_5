@@ -63,7 +63,12 @@ if (isset($_POST["logout"])) {
 			<div class="item n01"><a href="kessai.php"><img src="../img/kessai.jpg" alt="決済情報"><br></a><p>決済情報</p></div>
 			<div class="item n02"><a href="dredit.php"><img src="../img/dredit.jpg" alt="クレジットカード"></a><p>クレジットカード</p></div>
 			<div class="item n03"><a href="barcode.php"><img src="../img/barcode.png" alt="バーコード決済"></a><p>バーコード決済</p></div>
-			<div class="item n04"><a href="logout.php"><img src="../img/logout.png" alt="ログアウト"></a><p>ログアウト</p></div>
+			<div class="item n04">
+				<form action="" method="POST">
+					<label for="logout" class="logout" type="submit" name="logout"><img src="../img/logout.png" alt="ログアウト"><p>ログアウト</p></label>
+					<input type="submit" name="logout" id="logout" style="display: none;">
+				</form>
+			</div>
 		</div>
 	</div>
 	<div class="view-history" id="history">
