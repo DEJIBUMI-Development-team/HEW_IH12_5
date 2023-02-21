@@ -64,6 +64,8 @@ $gift_data = json_decode($json_file, true);
           </div>
         </a>
       </form>
+    </section>
+    <section class="Starbucks_item">
       <form action="./shohin.php" method="post" name="shouhin_2">
         <a href="#" onclick="document.shouhin_2.submit();">
           <input type="hidden" name="product" value="starlatte">
@@ -77,6 +79,8 @@ $gift_data = json_decode($json_file, true);
           </div>
         </a>
       </form>
+    </section>
+    <section class="Starbucks_item">
       <form action="./shohin.php" method="post" name="shouhin_3">
         <a href="#" onclick="document.shouhin_3.submit();">
           <input type="hidden" name="product" value="whitemocha">
@@ -90,6 +94,8 @@ $gift_data = json_decode($json_file, true);
           </div>
         </a>
       </form>
+    </section>
+    <section class="Starbucks_item">
       <form action="./shohin.php" method="post" name="shouhin_4">
         <a href="#" onclick="document.shouhin_4.submit();">
           <input type="hidden" name="product" value="cafemocha">
@@ -103,6 +109,8 @@ $gift_data = json_decode($json_file, true);
           </div>
         </a>
       </form>
+    </section>
+    <section class="Starbucks_item">
       <form action="./shohin.php" method="post" name="shouhin_5">
         <a href="#" onclick="document.shouhin_5.submit();">
           <input type="hidden" name="product" value="cappuccino">
