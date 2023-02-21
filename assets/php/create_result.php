@@ -69,14 +69,29 @@ session_start();
         const focus_elem = document.querySelectorAll(".text-erea");
         
         const copy_button_g = document.getElementById("copy_text_g");
-        copy_button_g.addEventListener("click", copyText_g);
+        if (copy_button_g) {
+            copy_button_g.addEventListener("click", copyText_g);
+        }
+
         const focus_elem_g = document.querySelectorAll(".text-erea_g");
 
-        focus_elem.forEach((elem) => {
-            elem.addEventListener("focus", () => {
-                console.log("focus");
-            });
+        const target_text = document.getElementById("target-text");
+        target_text.addEventListener("click",()=>{
+            target_text.style.whiteSpace = "normal";
+            target_text.style.textOverflow = "unset";
+            target_text.style.overflow = "unset";
+            target_text.style.wordBreak = "break-all";
         });
+
+        
+        const target_text_g = document.getElementById("target-text_g");
+        target_text_g.addEventListener("click",()=>{
+            target_text_g.style.whiteSpace = "normal";
+            target_text_g.style.textOverflow = "unset";
+            target_text_g.style.overflow = "unset";
+            target_text_g.style.wordBreak = "break-all";
+        });
+
 
         function copyText() {
             // Select the text
