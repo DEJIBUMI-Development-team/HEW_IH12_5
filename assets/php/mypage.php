@@ -103,7 +103,7 @@ if (isset($survey_result)){
 	<div class="user_icon">
 		<img src="../img/user_icon.png" alt="マイページ">
 		<p>
-			<?php echo $_SESSION["user_name"]; ?>
+			<?= $_SESSION["user_name"]; ?>
 		</p>
 	</div>
 	<div class="container">
@@ -114,7 +114,7 @@ if (isset($survey_result)){
 			<div class="item n02 switch_elem question"><div class="a"><img src="../img/アンケート.svg" alt="クレジットカード"></div>
 					<p>お返事</p>
 			</div>
-			<div class="item n03"><a href="barcode.php"><img src="../img/dredit.jpg" alt="バーコード決済"></a>
+			<div class="item n03"><a href="credit.php"><img src="../img/dredit.jpg" alt="バーコード決済"></a>
 					<p>クレジットカード</p>
 			</div>
 			<div class="item n04">

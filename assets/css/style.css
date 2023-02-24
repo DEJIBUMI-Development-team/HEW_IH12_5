@@ -698,7 +698,7 @@ third_content
 /* .slider .slick-track {} */
 .slider .slick-slide {
   padding: 0 10px;
-  opacity: .5;
+  opacity: 0.5;
   transition-duration: 0.3s;
 }
 .slider .slick-slide.slick-current {

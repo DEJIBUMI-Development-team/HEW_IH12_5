@@ -101,7 +101,7 @@ $gift_data = json_decode($json_file, true);
         <a href="#" onclick="document.shouhin_4.submit();">
           <input type="hidden" name="product" value="cafemocha">
           <div class="item_name">
-            <img src="../img/starbucks/stmoca.jpg">
+            <img src="../img/starbucks/stkafu.jpg">
             <div class="item_title">
               <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
               <p><?php echo $gift_data[$store]["cafemocha"]["fullName"]?></p>
@@ -116,7 +116,7 @@ $gift_data = json_decode($json_file, true);
         <a href="#" onclick="document.shouhin_5.submit();">
           <input type="hidden" name="product" value="cappuccino">
           <div class="item_name">
-            <img src="../img/starbucks/stkafu.jpg">
+            <img src="../img/starbucks/stmoca.jpg">
             <div class="item_title">
               <h3><?php echo $gift_data[$store]["store_name"] ?></h3>
               <p><?php echo $gift_data[$store]["cappuccino"]["fullName"]?></p>

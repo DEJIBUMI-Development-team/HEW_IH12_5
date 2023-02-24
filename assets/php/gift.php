@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION["user_id"])) {
   $_SESSION["HS"] = "gift";
   header("Location:./login.php");
+  exit;
 }
 ?>
 <!DOCTYPE html>
