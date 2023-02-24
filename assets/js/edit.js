@@ -807,13 +807,13 @@ to_create_letter.addEventListener("click", ()=>{
 });
 const to_mypage = document.querySelector(".mypage");
 to_mypage.addEventListener("click", ()=>{
-    var result = window.confirm("マイページに移動します。保存されていないデータは破棄されます。よろしいですか？");
+    var result = window.confirm("マイページに移動します。よろしいですか？");
     if (!result) { return; }
     window.open("../php/mypage.php");
 });
 const to_toppage = document.querySelector(".top");
 to_toppage.addEventListener("click", ()=>{
-    var result = window.confirm("TOPページに移動します。保存されていないデータは破棄されます。よろしいですか？");
+    var result = window.confirm("TOPページに移動します。よろしいですか？");
     if (!result) { return; }
     window.open("../../index.php");
 });
