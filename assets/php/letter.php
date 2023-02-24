@@ -46,7 +46,7 @@ if (!empty($_POST["submit"])) {
 	<meta property="og:title" content="でじぶみ">
 	<meta property="og:description" content="あなたにお手紙が届いています">
 	<meta property="og:image" content="https://dejibumi.sakura.ne.jp/HEW_IH12_5/assets/img/futo.png">
-	<title>Document</title>
+	<title>お手紙が届きました</title>
 </head>
 
 <body>
