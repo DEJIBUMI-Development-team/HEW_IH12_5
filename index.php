@@ -12,6 +12,10 @@ if (isset($_POST['add'])) {
 	$result = "マイページで";
 	// echo $_SESSION['MY'];
 	header("Location:./assets/php/mypage.php");
+}elseif (isset($_POST["gift"])) {
+	$_SESSION["HS"] = "gift";
+	$result = "ギフトページで";
+	header("Location:./assets/php/gift.php");
 }
 ?>
 
@@ -693,22 +697,15 @@ if (isset($_POST['add'])) {
 			<h2 class="gift">贈り物</h2>
 			<div class="sliderArea">
 				<div class="sliderWide">
-					<form action="./assets/php/gift.php" method="post" name="gift">
+					<form action="" method="post">
 						<ul class="slider">
-							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/godiva.png" alt="godiva"></a></li>
-							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/saruta1.jpg" alt="saruta1"></a></li>
-							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/tullys.png" alt="tullys"></a></li>
-							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/star1.jpg" alt="star1"></a></li>
-							<li><a src="#" target="_blank" onclick="document.gift.submit();"><img src="assets/img/kome.jpg" alt="kome"></a></li>
-							<input type="submit" name="update" style="display:none">
-							<!-- <input class="text4" type="submit" id="submit3" name="add" style="display:none"> -->
-							<!-- <select name="" id=""> -->
-								<!-- <option value=""></option>
-								<option value=""></option>
-								<option value=""></option>
-								<option value=""></option> -->
-							</select>
+							<li><a href="./assets/php/gift.php" target="_blank" onclick="document.gift.submit();"><img src="assets/img/godiva.png" alt="godiva"></a></li>
+							<li><a href="./assets/php/gift.php" target="_blank" onclick="document.gift.submit();"><img src="assets/img/saruta1.jpg" alt="saruta1"></a></li>
+							<li><a href="./assets/php/gift.php" target="_blank" onclick="document.gift.submit();"><img src="assets/img/tullys.png" alt="tullys"></a></li>
+							<li><a href="./assets/php/gift.php" target="_blank" onclick="document.gift.submit();"><img src="assets/img/star1.jpg" alt="star1"></a></li>
+							<li><a href="./assets/php/gift.php" target="_blank" onclick="document.gift.submit();"><img src="assets/img/kome.jpg" alt="kome"></a></li>
 						</ul>
+						<input type="submit" name="gift" style="display:none">
 					</form>
 				</div>
 			</div>

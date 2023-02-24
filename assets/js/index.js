@@ -129,14 +129,15 @@ third_content
 --------------------------------------------------- */
 $(document).ready(function() {
   $('.slider').slick({
-    centerMode: true,
-    centerPadding: '5%',
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 1500,
-    speed: 1500,
+    centerMode: true, // スライドを中心に表示して部分的に前後のスライドが見えるように設定（奇数番号のスライドに使用）
+    centerPadding: '5%', // センターモード時のサイドパディング。見切れるスライドの幅。’px’または’％’。
+    dots: true, // ドットインジケーターの表示
+    autoplay: false, // 自動再生を設定
+    // autoplay: true, // 自動再生を設定
+    autoplaySpeed: 3000, // 自動再生のスピード（ミリ秒単位）
+    speed: 1000, // スライド/フェードアニメーションの速度を設定
     focusOnSelect: true,
-    infinite: true,
+    infinite: true, // スライドのループを有効にするか
     touchMove: true
   });
 });

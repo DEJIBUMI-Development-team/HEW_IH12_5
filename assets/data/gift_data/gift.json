@@ -10,25 +10,25 @@
 		"starlatte" : {
 			"fullName" : "スターバックス ラテ(tall)",
 			"subTitle" : "ほんのり甘く一息つくならスターバックスラテ",
-			"url" : "starbucks/stame.jpg",
+			"url" : "starbucks/stalate.jpg",
 			"tall" : 455
 		},
 		"whitemocha" : {
 			"fullName" : "ホワイト モカ(tall)",
 			"subTitle" : "白く美味しいホワイトモカ",
-			"url" : "starbucks/stame.jpg",
+			"url" : "starbucks/stawitemoca.jpg",
 			"tall" : 495
 		},
 		"cappuccino" : {
 			"fullName" : "カフェ モカ",
 			"subTitle" : "アメリカ生まれの甘くマイルドな一品",
-			"url" : "starbucks/stame.jpg",
+			"url" : "starbucks/stmoca.jpg",
 			"tall" : 415
 		},
 		"cafemocha" : {
 			"fullName" : "カプチーノ",
 			"subTitle" : "イタリアで好まれている一品",
-			"url" : "starbucks/stame.jpg",
+			"url" : "starbucks/stkafu.jpg",
 			"tall" : 455
 		}
 	}
