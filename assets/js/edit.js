@@ -413,10 +413,9 @@ remove_button.addEventListener("click", remove_element)
  */
 function remove_element() {
     var remove_elem = document.getElementById(`${delete_point_dom}`);
+    pickr.setColor("#000");
     remove_elem.remove();
     delete el[delete_point_dom];
-
-    pickr.setColor("#000");
     $("#fontFamily").val("none");
     $("#writingMode").val("none");
     $("#now_elem").text("");
