@@ -23,6 +23,8 @@ session_start();
                 <h1>購入完了</h1>
                 <h2>でじぶみURLが発行されました</h2>
                 <h2>大切な相手に気持ちを伝えよう！！！</h2>
+                <p style="color: red">※ページ遷移する前に、必ずPCに下記URLを保存してください。</h3>
+                <p style="color: red">※URLの有効期限は3か月です。</p>
             </div>
         </div>
         <div class="url-clip-boad">
