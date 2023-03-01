@@ -112,6 +112,9 @@ if (!empty($_POST["submit"])) {
 
 		function submitChk() {
 			var flag = confirm("送信してもよろしいですか？\n\n送信したくない場合は[キャンセル]ボタンを押して下さい");
+			if (flag) {
+				alert("送信しました！ありがとうございます。");
+			}
 			return flag;
 		}
 
