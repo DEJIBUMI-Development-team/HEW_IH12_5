@@ -33,9 +33,8 @@ if (isset($_POST["login"])) {
         $merge_row = call_user_func_array("array_merge", $row);
         //結果情報表示ログ
         ChromePhp::log($merge_row);
-
         //ユーザ―判定
-        if ($userName == $merge_row["user_name"]) {
+        if (array_key_exists("user_name", $merge_row) && $userName == $merge_row["user_name"]) {
             // パスワード判定
             if (password_verify($password,  $merge_row["password"])) {
                 $_SESSION["user_id"] = $merge_row["F_user_id"];
@@ -50,7 +49,7 @@ if (isset($_POST["login"])) {
                     $result = "ギフトページで";
                     header("Location:./gift.php");
                 }else {
-                    header("Location./mypage.php");   
+                    header("Location:./mypage.php"); 
                 }
 
             } else {

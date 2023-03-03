@@ -1,0 +1,100 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/* background-image: url(../img/water_blue1.jpg); */
+	background-color: rgb(248, 248, 215);
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+
+.text-erea {
+	background-color: white;
+	padding: 2px;
+}
+
+.text-erea p {
+	font-size: 18px;
+	background-color: white;
+	padding-left: 20px;
+	white-space: nowrap;
+	/* 横幅のMAXに達しても改行しない */
+	overflow: hidden;
+	/* ハミ出した部分を隠す */
+	text-overflow: ellipsis;
+	/* 「…」と省略 */
+	-webkit-text-overflow: ellipsis;
+	/* Safari */
+	-o-text-overflow: ellipsis;
+	/* Opera */
+}
+.text-erea_g {
+	background-color: white;
+	padding: 2px;
+}
+
+.text-erea_g p {
+	font-size: 18px;
+	background-color: white;
+	padding-left: 20px;
+	white-space: nowrap;
+	/* 横幅のMAXに達しても改行しない */
+	overflow: hidden;
+	/* ハミ出した部分を隠す */
+	text-overflow: ellipsis;
+	/* 「…」と省略 */
+	-webkit-text-overflow: ellipsis;
+	/* Safari */
+	-o-text-overflow: ellipsis;
+	/* Opera */
+}
+
+button {
+	font-size: 16px;
+	background-color: green;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: rgb(18, 96, 18);
+}
+
+.url-clip-boad {
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.url-clip-boad_g {
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.clip-title {
+	width: 600px;
+	background-color: #fff;
+	margin: 0 auto;
+
+}
+
+.title-text {
+	padding: 20px;
+}
+
+.wrapper {
+	margin-top: 70px;
+}
+
+.copy_text_g {
+	margin-bottom: 10px;
+}
+.copy-result_g {
+	margin-bottom: 20px;
+}

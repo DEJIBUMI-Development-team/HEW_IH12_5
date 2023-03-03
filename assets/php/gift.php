@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION["user_id"])) {
   $_SESSION["HS"] = "gift";
   header("Location:./login.php");
+  exit;
 }
 ?>
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ if (!isset($_SESSION["user_id"])) {
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/gift.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"> -->
 </head>
 <body>  
 

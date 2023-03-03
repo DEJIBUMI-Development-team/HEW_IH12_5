@@ -15,9 +15,13 @@ html {
 }
 
 .survey-open {
+	font-weight: bold;
 	margin: 20px 0px;
 	cursor: pointer;
 	display: inline-block;
+}
+.survey-elements {
+	width: 45%;
 }
 
 .suvey-block {
@@ -70,7 +74,7 @@ html {
 }
 
 input[type=text] {
-	width: 40%;
+	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
@@ -100,4 +104,30 @@ input[type=text] {
 	display: block;
 	width: 150px;
 	margin: 10px auto;
+}
+.additional-contents {
+	display: flex;
+}
+.gift-open{
+	margin: 20px 0px;
+    display: inline-block;
+}
+
+.gift-select {
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+}
+.gift-img {
+	width: 100%;
+}
+.gift-name {
+	margin-top: 10px;
+}
+.gift-img img{
+	width: 100%;
+}
+.gift-elements {
+	width: 45%;
+	margin-left: 5%; ;
 }

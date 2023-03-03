@@ -413,10 +413,9 @@ remove_button.addEventListener("click", remove_element)
  */
 function remove_element() {
     var remove_elem = document.getElementById(`${delete_point_dom}`);
+    pickr.setColor("#000");
     remove_elem.remove();
     delete el[delete_point_dom];
-
-    pickr.setColor("#000");
     $("#fontFamily").val("none");
     $("#writingMode").val("none");
     $("#now_elem").text("");
@@ -715,7 +714,7 @@ outputBtn.addEventListener('click', async function () {
         await (async function () {
             await reset_writing.each(async (_, elem) => {
                 if ($(elem).css("writing-mode") === "vertical-rl") {
-                    debugger;
+                    // debugger;
                     var data_id = $(elem).data("id");
                     var par_elem = $(elem).parents(`#${data_id}`);
                     if ($(elem).css("font-family") === "yosugara") {
@@ -807,13 +806,13 @@ to_create_letter.addEventListener("click", ()=>{
 });
 const to_mypage = document.querySelector(".mypage");
 to_mypage.addEventListener("click", ()=>{
-    var result = window.confirm("マイページに移動します。保存されていないデータは破棄されます。よろしいですか？");
+    var result = window.confirm("マイページに移動します。よろしいですか？");
     if (!result) { return; }
     window.open("../php/mypage.php");
 });
 const to_toppage = document.querySelector(".top");
 to_toppage.addEventListener("click", ()=>{
-    var result = window.confirm("TOPページに移動します。保存されていないデータは破棄されます。よろしいですか？");
+    var result = window.confirm("TOPページに移動します。よろしいですか？");
     if (!result) { return; }
     window.open("../../index.php");
 });

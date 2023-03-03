@@ -39,50 +39,16 @@ body  {min-width:960px; width:100%; color:#666;
 
 body a  {color:#666;}
 
-::selection {background: #fff; color: #98d9e7;}
-::-moz-selection {background: #fff; color: #98d9e7;}
-
-.jsf    {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px; font-style: italic;}
-.jsf_n  {font-family: 'Josefin Sans', "游ゴシック体", "Yu Gothic", YuGothic, sans-serif; letter-spacing: 3px;}
-
+::selection {background: #fff; color: #1809e7;}
+::-moz-selection {background: #fff; color: #1809e7;}
 
 /* ------------------------------------------------
 CSS3 animation & parts layout
 --------------------------------------------------- */
 /* link */
-/* .trans_bg a         {opacity:1; filter:alpha(opacity=100); display:block; overflow:hidden; height:0; -moz-transition:all 0.2s ease-in; -webkit-transition:all 0.2s ease-in;}
-.trans_bg a:hover   {opacity:0; filter:alpha(opacity=0); -moz-transition: all 0.2s ease-in; -webkit-transition:all 0.2s ease-in;}
-.trans_bg_disabled a        {opacity:1; display:block; overflow:hidden; height:0; cursor: default;} */
 
 .obj  {position:absolute; z-index:0;}
 .t_disabled {color: #cacaca;}
-
-/* vietnamese */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMlhLzTs.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMhhLzTs.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhLw.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-
 
 /* ヘッダー独自スタイル */
 .navigator {
@@ -118,7 +84,7 @@ CSS3 animation & parts layout
 /*モーダルのボタンの色を変更したい場合*/ 
 .modaal-close:after, 
 .modaal-close:before{
-  background:#ccc;  
+  background:#fff;  
 }
 
 .modaal-close:focus:after,
@@ -467,6 +433,10 @@ first_content
   text-align: center;
 } */
 
+.modaal-overlay {
+  opacity: 0.9 !important;
+  background: #666 !important;
+}
 /* ------------------------------------------------
 .second_content
 --------------------------------------------------- */
@@ -487,17 +457,17 @@ first_content
 #top_wrapper #description  { top: 70px;   right: 110px; }
 
 #top_wrapper #lnk_00       { top:70px;    left:80%; }
-#top_wrapper #lnk_01       { top:660px;   left:23%; }
-#top_wrapper #lnk_02       { top:1570px;  left:80%; }
-#top_wrapper #lnk_03       { top:2040px;  left:25%; }
+#top_wrapper #lnk_01       { top:660px;   left:18%; }
+#top_wrapper #lnk_02       { top:1570px;  left:86%; }
+#top_wrapper #lnk_03       { top:2040px;  left:20%; }
 
-#top_wrapper #lnk_00   { background:url(../img/00.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
+#top_wrapper #lnk_00   { background:url(../img/00.jpg) no-repeat 0 0; width: 120px; mix-blend-mode: multiply;}
 #top_wrapper #lnk_00 a { background:url(../img/00.jpg) no-repeat 0 0; padding-top: 114px; mix-blend-mode: multiply;}
-#top_wrapper #lnk_01   { background:url(../img/01.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
+#top_wrapper #lnk_01   { background:url(../img/01.jpg) no-repeat 0 0; width: 120px; mix-blend-mode: multiply;}
 #top_wrapper #lnk_01 a { background:url(../img/01.jpg) no-repeat 0 0; padding-top: 115px; mix-blend-mode: multiply;}
-#top_wrapper #lnk_02   { background:url(../img/02.jpg) no-repeat 0 0; mix-blend-mode: multiply;}
+#top_wrapper #lnk_02   { background:url(../img/02.jpg) no-repeat 0 0; width: 120px; mix-blend-mode: multiply;}
 #top_wrapper #lnk_02 a { background:url(../img/02.jpg) no-repeat 0 0; padding-top: 115px; mix-blend-mode: multiply;}
-#top_wrapper #lnk_03   { background:url(../img/03.jpg) no-repeat 0 0; width: 90px; mix-blend-mode: multiply;}
+#top_wrapper #lnk_03   { background:url(../img/03.jpg) no-repeat 0 0; width: 120px; mix-blend-mode: multiply;}
 #top_wrapper #lnk_03 a { background:url(../img/03.jpg) no-repeat 0 0; padding-top: 116px; mix-blend-mode: multiply;}
 
 /*---------------------svg-----------------------*/
@@ -692,6 +662,7 @@ third_content
 #third_content{
   /* background-color: rgba(68, 45, 221, 0.283); */
   height: 50vh;
+  margin-bottom: 50px;
 }
 
 .gift{
@@ -727,7 +698,7 @@ third_content
 /* .slider .slick-track {} */
 .slider .slick-slide {
   padding: 0 10px;
-  opacity: .5;
+  opacity: 0.5;
   transition-duration: 0.3s;
 }
 .slider .slick-slide.slick-current {
