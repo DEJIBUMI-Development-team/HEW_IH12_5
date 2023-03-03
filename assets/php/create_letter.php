@@ -232,7 +232,7 @@ if (isset($_POST["count"])) {
 		});
 
 		function photoPreview(event, f = null) {
-			debugger;
+			// debugger;
 			var file = f;
 			is_setImg = false;
 			set_price();
